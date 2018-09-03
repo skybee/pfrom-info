@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $host_lang = array(
-    'express.lh'=>              'uk', //defult code = lh
+    'express.lh'=>              'lh', //defult code = lh
+    'express-info.lh'=>         'uk', //defult code = lh
     
     'smiexpress.ru'=>           'ru',
     'ru.pressfrom.com'=>        'ru',
@@ -105,7 +106,7 @@ $db['default'] = array(
 	'database' => '',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
-	'pconnect' => true,
+	'pconnect' => false, /*true,*/
 	'db_debug' => TRUE,
 	'cache_on' => FALSE,
 	'cachedir' => '',
@@ -141,7 +142,7 @@ define('TMP_HOST_LANG', $host_lang[$_SERVER['HTTP_HOST']]);
 
 
 
-if($host_lang[$_SERVER['HTTP_HOST']] == 'lh'){
+if(LANG_CODE == 'lh'){
     $db['default']['hostname'] = 'localhost';
     $db['default']['username'] = 'root';
     $db['default']['password'] = '';
@@ -149,7 +150,7 @@ if($host_lang[$_SERVER['HTTP_HOST']] == 'lh'){
 }
 
 
-if($host_lang[$_SERVER['HTTP_HOST']] == 'ru'){
+if(LANG_CODE == 'ru'){
     $db['default']['hostname'] = $db_ip;
     $db['default']['username'] = 'admin_smi_ru';
     $db['default']['password'] = 'smi-ru-ujyrjyu8444';
@@ -157,7 +158,7 @@ if($host_lang[$_SERVER['HTTP_HOST']] == 'ru'){
 }
 
 
-if($host_lang[$_SERVER['HTTP_HOST']] == 'fr'){
+if(LANG_CODE == 'fr'){
     $db['default']['hostname'] = $db_ip;
     $db['default']['username'] = 'admin_smi_fr';
     $db['default']['password'] = 'smi-fr-ujyrjyu8444';
@@ -165,35 +166,35 @@ if($host_lang[$_SERVER['HTTP_HOST']] == 'fr'){
 }
 
 
-if($host_lang[$_SERVER['HTTP_HOST']] == 'de'){
+if(LANG_CODE == 'de'){
     $db['default']['hostname'] = $db_ip;
     $db['default']['username'] = 'admin_smi_de';
     $db['default']['password'] = 'smi-de-ujyrjyu8444';
     $db['default']['database'] = 'admin_smi_de';
 }
 
-if($host_lang[$_SERVER['HTTP_HOST']] == 'uk'){
+if(LANG_CODE == 'uk'){
     $db['default']['hostname'] = $db_ip;
     $db['default']['username'] = 'admin_smi_en';
     $db['default']['password'] = 'smi-en-ujyrjyu8444';
     $db['default']['database'] = 'admin_smi_en';
 }
 
-if($host_lang[$_SERVER['HTTP_HOST']] == 'us'){
+if(LANG_CODE == 'us'){
     $db['default']['hostname'] = $db_ip;
     $db['default']['username'] = 'admin_pf_us';
     $db['default']['password'] = 'pf-us-ujyrjyu8444';
     $db['default']['database'] = 'admin_pf_us';
 }
 
-if($host_lang[$_SERVER['HTTP_HOST']] == 'ca'){
+if(LANG_CODE == 'ca'){
     $db['default']['hostname'] = $db_ip;
     $db['default']['username'] = 'admin_pf_ca';
     $db['default']['password'] = 'pf-ca-ujyrjyu8444';
     $db['default']['database'] = 'admin_pf_ca';
 }
 
-if($host_lang[$_SERVER['HTTP_HOST']] == 'au'){
+if(LANG_CODE == 'au'){
     $db['default']['hostname'] = $db_ip;
     $db['default']['username'] = 'admin_pf_au';
     $db['default']['password'] = 'pf-au-ujyrjyu8444';

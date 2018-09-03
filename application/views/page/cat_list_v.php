@@ -43,22 +43,7 @@
                             <?=  preg_replace("#(www\.|\.com$)#i", '', $news_page_ar['d_host'])?>
                         </div>
                     </div>
-                    <p>
-                        <?=$news_page_ar['text']?>[...]
-                        
-                        
-                        <!-- TMP PR24 Link START-->
-                        <?php
-                            if(isset($this->PR24CatLink)){
-                                echo '<br /> <a href="'.$this->PR24CatLink.'" target="_blank" style="font-size: 12px; opacity:0.7;" >'.
-                                        $cat_ar['p_name'].' / '.$cat_ar['name']
-                                        .'</a>';
-                                unset($this->PR24CatLink);
-                            }
-                        ?>
-                        <!-- TMP PR24 Link END-->
-                        
-                    </p>
+                    <p><?=$news_page_ar['text']?>[...]</p>
                 </div><!-- #small-desc -->
             </div><!-- #right -->
         </div><!-- #content -->

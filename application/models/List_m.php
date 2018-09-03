@@ -22,7 +22,7 @@ class List_m extends CI_Model{
         
         if( empty($catName) ) $catName = 'news';
         
-        $cacheName = $_SERVER['HTTP_HOST'].'_'.'s_cat_'.$catName;
+        $cacheName = LANG_CODE.'_'.$_SERVER['HTTP_HOST'].'_'.'s_cat_'.$catName;
         
         if( !$result_ar = $this->cache->file->get($cacheName) ){
             $query = $this->db->query(" SELECT `category`.* "
@@ -49,7 +49,7 @@ class List_m extends CI_Model{
     }
     
     function get_footer_cat_link(){
-        $cacheName = $_SERVER['HTTP_HOST'].'_'.'footer_cat';
+        $cacheName = LANG_CODE.'_'.$_SERVER['HTTP_HOST'].'_'.'footer_cat';
         
         if( !$allCatAr = $this->cache->file->get($cacheName) ){
             $mainCatAr = $this->get_cat(0);
@@ -71,7 +71,7 @@ class List_m extends CI_Model{
     }
     
     function getMenuListForMobile(){
-        $cacheName = $_SERVER['HTTP_HOST'].'_'.'mobile_menu';
+        $cacheName = LANG_CODE.'_'.$_SERVER['HTTP_HOST'].'_'.'mobile_menu';
         
         if( !$mainList = $this->cache->file->get($cacheName) ){
             $mainList = $this->get_cat(0);

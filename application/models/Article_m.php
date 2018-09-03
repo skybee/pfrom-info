@@ -68,7 +68,7 @@ class Article_m extends CI_Model{
     
     function get_last_left_news( $idParentId, $cnt = 1 ){
         
-        $cacheName = $_SERVER['HTTP_HOST'].'_'.'last_news_'.$idParentId.'_'.$cnt;
+        $cacheName = LANG_CODE.'_'.$_SERVER['HTTP_HOST'].'_'.'last_news_'.$idParentId.'_'.$cnt;
         
         if( !$lastNewsCache = $this->cache->file->get($cacheName) ){
 //            $data['first']  = $this->get_last_news($idParentId, 1, true, true /*, true*/);
@@ -186,7 +186,7 @@ class Article_m extends CI_Model{
         
         $result_ar = array();
         foreach( $query->result_array() as $row){
-            $row['text']    = $this->get_short_txt($row['description'],$text_len); #$this->get_short_txt( $row['text'], $text_len );
+            $row['text']    = $this->get_short_txt($row['description'],$text_len,'word','...'); #$this->get_short_txt( $row['text'], $text_len );
             $row['date']    = get_date_str_ar( $row['date'] );
             $result_ar[]    = $row;
         }
@@ -194,13 +194,17 @@ class Article_m extends CI_Model{
         return $result_ar;
     }
     
-    function get_short_txt( $text, $length = 100, $txtFin = 'word' ){
+    static function get_short_txt( $text, $length = 100, $txtFin = 'word', $finChar = '' ){
+        $text = html_entity_decode($text);
         $text = strip_tags($text);
         $text = mb_substr($text, 0, $length);
         
         if( $txtFin == 'word' ){
             $replacePattern = "# \S+$#i";
             $replace = '';
+            if(!empty($finChar)){
+                $replace = (string) $finChar;
+            }
         }
         elseif( $txtFin == 'dot' ){
             $replacePattern = "#\. [^\.]+$#i";
@@ -379,7 +383,7 @@ class Article_m extends CI_Model{
     
     function get_top_slider_data( $idParentId, $cntNews, $hourAgo, $textLength = 200, $img = true, $parentCat = false, $cacheName = 'slider' ){
         
-        $topSliderCacheName = $_SERVER['HTTP_HOST'].'_'.$cacheName.'_'.$idParentId;
+        $topSliderCacheName = LANG_CODE.'_'.$_SERVER['HTTP_HOST'].'_'.$cacheName.'_'.$idParentId;
         if( !$sliderCache = $this->cache->file->get($topSliderCacheName) ){
             $data = $this->get_popular_articles( $idParentId, $cntNews, $hourAgo, $textLength, $img, $parentCat );
             $this->cache->file->save($topSliderCacheName, $data, $this->catConfig['cache_time_top_slider_m'] * 60 );

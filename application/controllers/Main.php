@@ -77,6 +77,8 @@ class Main extends CI_Controller {
         $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', array('mobile_menu_list'=>$mobile_menu_list), true);
 
         $this->load->view('main_v', $tpl_ar);
+
+	$this->changeOutput();
     }
 
     function document($url_id_name) {
@@ -90,23 +92,23 @@ class Main extends CI_Controller {
         if (!$data_ar['doc_data']){
             $cat_url = preg_replace("#/-\d+-\S+?/$#i", '/', $_SERVER['REQUEST_URI']);
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: {$cat_url}#404");
+            header("Location: ".'/'.LANG_CODE."{$cat_url}#404");
             exit();
         }
 
         $right['serp_list'] = serpDataFromJson($data_ar['doc_data']['serp_object']);
         unset($data_ar['doc_data']['serp_object']);
         
-        $true_url = '/'.$data_ar['doc_data']['cat_full_uri'].'-'.$data_ar['doc_data']['id'].'-'.$data_ar['doc_data']['url_name'].'/';
+        $true_url = '/'.$data_ar['doc_data']['cat_full_uri'].'-'.$data_ar['doc_data']['id'].'-'.$data_ar['doc_data']['url_name'].'.html';
         
         if( $true_url != $_SERVER['REQUEST_URI'] ){
             header("HTTP/1.1 301 Moved Permanently");
-            header("Location: ".$true_url);
+            header("Location: ".'/'.LANG_CODE.$true_url);
             exit();
         }
         
         # Redirect to PR24
-        $this->docRedirectToPR24('document', $data_ar['doc_data']['date']);
+        # $this->docRedirectToPR24('document', $data_ar['doc_data']['date']);
         
         $data_ar['cat_ar']              = $this->category_m->get_cat_data_from_id($data_ar['doc_data']['cat_id']);
         $data_ar['like_articles']       = $this->article_m->get_like_articles( $data_ar['doc_data']['id'], $data_ar['doc_data']['cat_id'] /*$data_ar['cat_ar']['parent_id']*/, $data_ar['doc_data']['title'], 8, $this->catConfig['like_news_day_d'], $data_ar['doc_data']['date'] );
@@ -164,6 +166,8 @@ class Main extends CI_Controller {
         $tpl_ar['out_popup']    = $this->load->view('component/out_popup_v', $data_ar['like_articles'], true);
 
         $this->load->view('main_v', $tpl_ar);
+
+	$this->changeOutput();
     }
 
     function cat_list($cat_name, $page) {
@@ -183,7 +187,7 @@ class Main extends CI_Controller {
 //        }
         
         // TMP PR24 Link
-        if($page <=10){ $this->PR24CatLink = "https://pressreview24.com/".TMP_HOST_LANG.preg_replace("#\d+/$#i", '', $_SERVER['REQUEST_URI']); }
+        // if($page <=10){ $this->PR24CatLink = "https://pressreview24.com/".TMP_HOST_LANG.preg_replace("#\d+/$#i", '', $_SERVER['REQUEST_URI']); }
         
         if($page > 100) { // temp redirect 
             header("Location: /{$data_ar['cat_ar']['full_uri']}", true, 302);
@@ -219,6 +223,8 @@ class Main extends CI_Controller {
         $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', array('mobile_menu_list'=>$mobile_menu_list), true);
 
         $this->load->view('main_v', $tpl_ar);
+	
+        $this->changeOutput();
     }
     
     function search( $page=1 ){
@@ -328,6 +334,14 @@ class Main extends CI_Controller {
             header("Location: {$pr24Url}"); 
             exit();
        }
+    }
+    
+    private function changeOutput(){
+        
+        //Add lang code to IMG Path
+        $output = $this->output->get_output();
+        $output = preg_replace("#(/upload/images/)#i", "/".LANG_CODE."$1", $output);
+        $this->output->set_output($output);
     }
 
 }

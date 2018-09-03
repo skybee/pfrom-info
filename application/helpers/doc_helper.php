@@ -4,8 +4,8 @@
 
 
 
-function getDescriptionFromText( string &$text, integer $length ){
-}
+//function getDescriptionFromText( string &$text, integer $length ){
+//}
 
 
 function botRelNofollow(){

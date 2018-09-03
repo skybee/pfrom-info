@@ -52,21 +52,7 @@ $lock_host = array(
 );
 
 function get_country_code(){
-    $host = $_SERVER['HTTP_HOST'];
-    
-    if(preg_match("#^([a-z]{2})\.#i", $host, $matches)){
-        return $matches[1];
-    }
-    else{
-        $country_host['smiexpress.ru']          = 'ru';
-        $country_host['francais-express.com']   = 'fr';
-        
-        if(!isset($country_host[$host])){
-            return 'us';
-        }
-        
-        return $country_host[$host];
-    }
+    return LANG_CODE;
 }
 
 function get_host_conf($config_var){
@@ -101,6 +87,7 @@ $config['multidomaine']['host_set'][$_SERVER['HTTP_HOST']] = get_country_code();
 //===== Ru =====//
 $config['multidomaine']['ru']['site_name_str']      = $config_var['default']['site_name'].' - Россия';
 $config['multidomaine']['ru']['lang']               = 'ru';
+$config['multidomaine']['ru']['country_name']       = 'Russia';
 $config['multidomaine']['ru']['logo_img']           = $config_var['default']['logo_img'];
 $config['multidomaine']['ru']['logo_img_mobile']    = $config_var['default']['logo_img_mobile'];
 $config['multidomaine']['ru']['e_mail']             = $config_var['default']['mail'];
@@ -126,6 +113,7 @@ $config['multidomaine']['ru']['static_server']       = 'ru.static.lalalay.com';
 //===== Fr =====//
 $config['multidomaine']['fr']['site_name_str']      = $config_var['default']['site_name'].' - France';
 $config['multidomaine']['fr']['lang']               = 'fr';
+$config['multidomaine']['fr']['country_name']       = 'France';
 $config['multidomaine']['fr']['logo_img']           = $config_var['default']['logo_img'];
 $config['multidomaine']['fr']['logo_img_mobile']    = $config_var['default']['logo_img_mobile'];
 $config['multidomaine']['fr']['e_mail']             = $config_var['default']['mail'];
@@ -152,6 +140,7 @@ $config['multidomaine']['fr']['static_server']       = 'fr.static.lalalay.com';
 //===== De =====//
 $config['multidomaine']['de']['site_name_str']      = $config_var['default']['site_name'].' - Deutschland';
 $config['multidomaine']['de']['lang']               = 'de';
+$config['multidomaine']['de']['country_name']       = 'Deutschland';
 $config['multidomaine']['de']['logo_img']           = $config_var['default']['logo_img'];
 $config['multidomaine']['de']['logo_img_mobile']    = $config_var['default']['logo_img_mobile'];
 $config['multidomaine']['de']['e_mail']             = $config_var['default']['mail'];
@@ -178,6 +167,7 @@ $config['multidomaine']['de']['static_server']      = 'de.static.lalalay.com';
 //===== Gb =====//
 $config['multidomaine']['uk']['site_name_str']      = $config_var['default']['site_name'].' - United Kingdom';
 $config['multidomaine']['uk']['lang']               = 'en';
+$config['multidomaine']['uk']['country_name']       = 'United Kingdom';
 $config['multidomaine']['uk']['logo_img']           = $config_var['default']['logo_img'];
 $config['multidomaine']['uk']['logo_img_mobile']    = $config_var['default']['logo_img_mobile'];
 $config['multidomaine']['uk']['e_mail']             = $config_var['default']['mail'];
@@ -203,6 +193,7 @@ $config['multidomaine']['uk']['static_server']      = 'uk.static.lalalay.com';
 
 //===== US =====//
 $config['multidomaine']['us'] = $config['multidomaine']['uk'];
+$config['multidomaine']['us']['country_name']       = 'United States';
 $config['multidomaine']['us']['site_name_str']      = $config_var['default']['site_name'].' - US';
 $config['multidomaine']['us']['e_mail']             = $config_var['default']['mail'];
 $config['multidomaine']['us']['host']               = 'us.pressfrom.com';
@@ -214,6 +205,7 @@ $config['multidomaine']['us']['static_server']       = 'us.static.lalalay.com';
 
 //===== CA =====//
 $config['multidomaine']['ca'] = $config['multidomaine']['us'];
+$config['multidomaine']['ca']['country_name']       = 'Canada';
 $config['multidomaine']['ca']['site_name_str']      = $config_var['default']['site_name'].' - Canada';
 $config['multidomaine']['ca']['host']               = 'ca.pressfrom.com';
 $config['multidomaine']['ca']['lock_donor']         = $lock_host;
@@ -222,6 +214,7 @@ $config['multidomaine']['ca']['static_server']      = 'ca.static.lalalay.com';
 
 //===== AU =====//
 $config['multidomaine']['au'] = $config['multidomaine']['us'];
+$config['multidomaine']['au']['country_name']       = 'Australia';
 $config['multidomaine']['au']['site_name_str']      = $config_var['default']['site_name'].' - Australia';
 $config['multidomaine']['au']['host']               = 'au.pressfrom.com';
 $config['multidomaine']['au']['lock_donor']         = $lock_host;
