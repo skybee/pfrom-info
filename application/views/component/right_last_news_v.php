@@ -11,7 +11,7 @@
     <?php
         $i=0;
         foreach($right_top as $key => $article):
-            $newsUrl    = "/{$article['full_uri']}-{$article['id']}-{$article['url_name']}/";
+            $newsUrl    = '/'.LANG_CODE."/{$article['full_uri']}-{$article['id']}-{$article['url_name']}.html";
         if($i==0):
     ?>
     <div class="big-rtn">
@@ -75,7 +75,7 @@
     <?php
         $i=0;
         foreach($right_top as $article):
-            $newsUrl    = "/{$article['full_uri']}-{$article['id']}-{$article['url_name']}/";
+            $newsUrl    = '/'.LANG_CODE."/{$article['full_uri']}-{$article['id']}-{$article['url_name']}.html";
         if($i==0):
     ?>
     <div class="big-rtn">
@@ -124,8 +124,8 @@
             <?#=$lnews['date_ar']['time']?> 
         </span>
         -->
-        <a href="<?="/{$lnews['full_uri']}-{$lnews['id']}-{$lnews['url_name']}/"?>" class="right-last-news-item">
-            <img src="/upload/_donor-logo/<?=$lnews['d_img']?>" alt="<?=$lnews['d_name']?>" title="<?=$lnews['d_name']?>" />
+        <a href="<?='/'.LANG_CODE."/{$lnews['full_uri']}-{$lnews['id']}-{$lnews['url_name']}.html"?>" class="right-last-news-item">
+            <!--<img src="/upload/_donor-logo/<?=$lnews['d_img']?>" alt="<?=$lnews['d_name']?>" title="<?=$lnews['d_name']?>" />-->
             <?=$lnews['title']?>
         </a>    
     </div>

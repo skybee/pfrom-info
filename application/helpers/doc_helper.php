@@ -54,7 +54,7 @@ function insertLikeArticleInTxt($text, $likeList)
 
 //    echo $likeList[0]['text'];
     
-    $newsUrl    = "/{$likeList[0]['full_uri']}-{$likeList[0]['id']}-{$likeList[0]['url_name']}/";
+    $newsUrl    = '/'.LANG_CODE."/{$likeList[0]['full_uri']}-{$likeList[0]['id']}-{$likeList[0]['url_name']}.html";
     
     $likeTitle  = str_replace('$', '&dollar;', $likeList[0]['title']);
     $likeText   = str_replace('$', '&dollar;', $likeList[0]['text']);
@@ -98,7 +98,7 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
     $ii=0; //для LikeSerp
     foreach ($likeList as $likeArticle)
     {
-        $newsUrl        = "/{$likeArticle['full_uri']}-{$likeArticle['id']}-{$likeArticle['url_name']}/";
+        $newsUrl        = '/'.LANG_CODE."/{$likeArticle['full_uri']}-{$likeArticle['id']}-{$likeArticle['url_name']}.html";
         $likeTitle      = str_replace('$', '&dollar;', $likeArticle['title']);
         $likeText       = str_replace('$', '&dollar;', $likeArticle['description']);
         $likeSerpTxt    = '';

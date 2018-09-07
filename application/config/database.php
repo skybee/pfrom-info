@@ -123,7 +123,7 @@ $db['default'] = array(
 $db_ip = '5.9.104.44';
 
 
-define('TMP_HOST_LANG', $host_lang[$_SERVER['HTTP_HOST']]);
+//define('TMP_HOST_LANG', $host_lang[$_SERVER['HTTP_HOST']]);
 
 //if($_SERVER['HTTP_HOST'] == 'express.lh')
 //{

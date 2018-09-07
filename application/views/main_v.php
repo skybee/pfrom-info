@@ -24,7 +24,7 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
-        <?php if(isset($meta['canonical'])) echo $meta['canonical']; ?>
+        <?php #if(isset($meta['canonical'])) echo $meta['canonical']; ?>
         
         <?php if(isset($meta['og'])) echo $meta['og']; ?>
         
@@ -64,7 +64,7 @@
                     <ul class="firstnav-menu">
                         <?php foreach ($main_menu_list as $main_link): ?>
                             <li class="page_item page-item-372" catname="<?=$main_link['url_name']?>">
-                                <a href="/<?= $main_link['url_name'] ?>/"><?= $main_link['name'] ?></a>
+                                <a href="/<?=LANG_CODE?>/<?= $main_link['url_name'] ?>/"><?= $main_link['name'] ?></a>
                                 <div class="firstnav-menu-arrow"></div>
                             </li>
                         <?php endforeach; ?>
@@ -80,20 +80,20 @@
                         @media(max-width: 980px){#headernavigation div.navigation a.lang-link{display: none;}}
                     </style>    
                     
-                    <?php if(preg_match("#(pressfrom.com|lalalay.com|francais-express.com)$#i", $_SERVER['HTTP_HOST'], $pregHostResult)):?>
-                    <a class="lang-link" href="//ru.<?=$pregHostResult[1]?>/">RU</a>
-                    <a class="lang-link" href="//au.<?=$pregHostResult[1]?>/">AU</a>
-                    <a class="lang-link" href="//fr.<?=$pregHostResult[1]?>/">FR</a>
-                    <a class="lang-link" href="//de.<?=$pregHostResult[1]?>/">DE</a>
-                    <a class="lang-link" href="//uk.<?=$pregHostResult[1]?>/">UK</a>
-                    <a class="lang-link" href="//ca.<?=$pregHostResult[1]?>/">CA</a>
-                    <a class="lang-link" href="//us.<?=$pregHostResult[1]?>/">US</a>
-                    <?php endif;?>
+                    <?php #if(preg_match("#(pressfrom.com|lalalay.com|francais-express.com)$#i", $_SERVER['HTTP_HOST'], $pregHostResult)):?>
+                    <a class="lang-link" href="/ru/">RU</a>
+                    <a class="lang-link" href="/au/">AU</a>
+                    <a class="lang-link" href="/fr/">FR</a>
+                    <a class="lang-link" href="/de/">DE</a>
+                    <a class="lang-link" href="/uk/">UK</a>
+                    <a class="lang-link" href="/ca/">CA</a>
+                    <a class="lang-link" href="/us/">US</a>
+                    <?php #endif;?>
                     
                     
                 </div><!-- #navigation closer -->
                 
-                <a href="/" title="<?=$this->multidomaine['site_name_str'];?>" id="mobile_logo" style="background-image: url('/img/<?=$this->multidomaine['logo_img_mobile'];?>')"></a>
+                <a href="/<?=LANG_CODE?>/" title="<?=$this->multidomaine['site_name_str'];?>" id="mobile_logo" style="background-image: url('/img/<?=$this->multidomaine['logo_img_mobile'];?>')"></a>
                 
                 <!-- Mobile Menu -->
                 <?=$mobile_menu;?>
@@ -105,7 +105,7 @@
                 <div id="white_space">
                     <div id="content_holder">
                         <div id="header">
-                            <a href="/"><img src="/img/<?=$this->multidomaine['logo_img'];?>" border="0" alt="<?=$this->multidomaine['site_name_str'];?> Logo" class="logo"  /></a>
+                            <a href="/<?=LANG_CODE?>/"><img src="/img/<?=$this->multidomaine['logo_img'];?>" border="0" alt="<?=$this->multidomaine['site_name_str'];?> Logo" class="logo"  /></a>
                             <!--                            <div class="ad "></div> #ad 468x60 closer -->
 
                             <div class="search_top_block">
@@ -120,13 +120,13 @@
                             <ul class="secondnav-menu">
                                 <?php foreach ($second_menu_list as $second_menu_ar): ?>
                                     <li class="cat-item cat-item-<?= $second_menu_ar['id'] ?>" catname="<?=$second_menu_ar['url_name']?>">
-                                        <a href="/<?= $second_menu_ar['full_uri'] ?>" ><?= $second_menu_ar['name'] ?></a>
+                                        <a href="/<?=LANG_CODE?>/<?= $second_menu_ar['full_uri'] ?>" ><?= $second_menu_ar['name'] ?></a>
                                         <div class="secondnav-menu-arrow"></div>
                                         
                                         <?php if( isset($second_menu_ar['sub_cat_list']) ): ?>
                                         <ul class="secondnav-drop-cat">
                                             <?php foreach($second_menu_ar['sub_cat_list'] as $third_menu_ar): ?>
-                                            <li><a href="/<?= $third_menu_ar['full_uri'] ?>" ><?= $third_menu_ar['name'] ?></a></li>
+                                            <li><a href="/<?=LANG_CODE?>/<?= $third_menu_ar['full_uri'] ?>" ><?= $third_menu_ar['name'] ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                         <?php endif; ?>
@@ -165,13 +165,13 @@
                         foreach ($footer_menu_list as $menuList):
                             ?>
                             <div class="footer_acb_main_cat">
-                                <a href="/<?= $menuList['url_name'] ?>/" class="footer_main_cat_a"><?= $menuList['name'] ?></a><br />
+                                <a href="/<?=LANG_CODE?>/<?= $menuList['url_name'] ?>/" class="footer_main_cat_a"><?= $menuList['name'] ?></a><br />
                                 <div class="footer_acb_sec_cat">
                                     <?php
                                     if ($menuList['s_cat'] != NULL):
                                         foreach ($menuList['s_cat'] as $sCat):
                                             ?>
-                                            <a href="/<?= $menuList['url_name'] ?>/<?= $sCat['url_name'] ?>/"><?= $sCat['name'] ?></a>
+                                            <a href="/<?=LANG_CODE?>/<?= $menuList['url_name'] ?>/<?= $sCat['url_name'] ?>/"><?= $sCat['name'] ?></a>
                                         <?php endforeach;
                                     endif; ?>
                                 </div>
@@ -180,7 +180,8 @@
                     </div>
                     <div class="footer_contact">
                         <span><?=$this->multidomaine['contact_str'];?></span><br />
-                        E-mail: <a href="mailto:<?=$this->multidomaine['e_mail'];?>"><?=$this->multidomaine['e_mail'];?></a>
+                        E-mail: <!--<a href="mailto:<?#=$this->multidomaine['e_mail'];?>"><?#=$this->multidomaine['e_mail'];?></a>-->
+                        <a href="#" id="foot_mail"></a>
                     </div>
                 </div><!-- #inside -->
             </div><!-- #footer_widget closer -->

@@ -51,7 +51,9 @@ class Main extends CI_Controller {
         
 //        if($cat_name == 'news')
 //        {
-            $data_ar['express_news'] = $this->express_news_lib->get_news();
+            #$data_ar['express_news'] = $this->express_news_lib->get_news();
+            $expressNewsLangCodeAr = ['us','ca','uk','de','fr','au','ru'];
+            $data_ar['express_news'] = $this->express_news_lib->get_news_OneHost($expressNewsLangCodeAr, false);
 //        }
         
         
@@ -99,6 +101,7 @@ class Main extends CI_Controller {
         $right['serp_list'] = serpDataFromJson($data_ar['doc_data']['serp_object']);
         unset($data_ar['doc_data']['serp_object']);
         
+        /* ! LANG_CODE Down */ 
         $true_url = '/'.$data_ar['doc_data']['cat_full_uri'].'-'.$data_ar['doc_data']['id'].'-'.$data_ar['doc_data']['url_name'].'.html';
         
         if( $true_url != $_SERVER['REQUEST_URI'] ){
@@ -140,21 +143,21 @@ class Main extends CI_Controller {
         $right['last_news']             = $this->article_m->get_last_left_news( $data_ar['cat_ar']['parent_id'], 20 );
         
         if($_SERVER['HTTP_HOST'] !== $this->multidomaine['host']){ //Aliases Canonical
-            $canonicalUrl                   = 'http://'.$this->multidomaine['host'].$_SERVER['REQUEST_URI'];
-            
-            $url_str = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-            $url_int = abs(crc32($url_str));
-            
-            mt_srand($url_int);
-            $rnd_int = mt_rand(1, 1000);
-            mt_srand();
-            
-            if($rnd_int<=500){
-                $data_ar['meta']['canonical']   = '<link rel="canonical" href="'.$canonicalUrl.'" />'."\n";
-            }
-            else{
-                $data_ar['source_url'] = $canonicalUrl;
-            }
+//            $canonicalUrl                   = 'http://'.$this->multidomaine['host'].$_SERVER['REQUEST_URI'];
+//            
+//            $url_str = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+//            $url_int = abs(crc32($url_str));
+//            
+//            mt_srand($url_int);
+//            $rnd_int = mt_rand(1, 1000);
+//            mt_srand();
+//            
+//            if($rnd_int<=500){
+//                $data_ar['meta']['canonical']   = '<link rel="canonical" href="'.$canonicalUrl.'" />'."\n";
+//            }
+//            else{
+//                $data_ar['source_url'] = $canonicalUrl;
+//            }
         }
         
         $tpl_ar                 = $data_ar; //== !!! tmp
@@ -303,7 +306,7 @@ class Main extends CI_Controller {
         
         foreach( $query->result_array() as $catData ){
             $html   .= $catData['views'].' - '.$catData['title']."<br />\n";
-            $html   .= "<a href=\"/{$catData['full_uri']}-{$catData['id']}-{$catData['url_name']}/\" >".$catData['title'].'</a>'."<br /><br />\n\n";
+            $html   .= '<a href="/'.LANG_CODE."/{$catData['full_uri']}-{$catData['id']}-{$catData['url_name']}.html\" >".$catData['title'].'</a>'."<br /><br />\n\n";
         }
         
         $html  .= '</body></html>';
@@ -313,28 +316,28 @@ class Main extends CI_Controller {
         $this->load->view('page/spe_link_v', $data );
     }
     
-    private function docRedirectToPR24($page=false, $timestamp=false) { 
-        $pr24Url = 'https://pressreview24.com/'.TMP_HOST_LANG.$_SERVER['REQUEST_URI'];
-       
-        if($page=='document'){ // If this page = News(document)
-            $pr24Url = preg_replace("#/$#i", '', $pr24Url);
-            $pr24Url = $pr24Url.'.html   ';
-        }
-
-        if($timestamp != false){ //cnt Day redirect
-            $periodTime = 90*(3600*24);  //cnt sec.
-            $newsTime   = strtotime($timestamp);
-            $nowTime    = time();
-            
-            if($nowTime < $newsTime+$periodTime){ return false; }
-        }
-       
-       if(preg_match("#Googlebot#i", $_SERVER['HTTP_USER_AGENT'])){
-            header("HTTP/1.1 301 Moved Permanently"); 
-            header("Location: {$pr24Url}"); 
-            exit();
-       }
-    }
+//    private function docRedirectToPR24($page=false, $timestamp=false) { 
+//        $pr24Url = 'https://pressreview24.com/'.TMP_HOST_LANG.$_SERVER['REQUEST_URI'];
+//       
+//        if($page=='document'){ // If this page = News(document)
+//            $pr24Url = preg_replace("#/$#i", '', $pr24Url);
+//            $pr24Url = $pr24Url.'.html   ';
+//        }
+//
+//        if($timestamp != false){ //cnt Day redirect
+//            $periodTime = 90*(3600*24);  //cnt sec.
+//            $newsTime   = strtotime($timestamp);
+//            $nowTime    = time();
+//            
+//            if($nowTime < $newsTime+$periodTime){ return false; }
+//        }
+//       
+//       if(preg_match("#Googlebot#i", $_SERVER['HTTP_USER_AGENT'])){
+//            header("HTTP/1.1 301 Moved Permanently"); 
+//            header("Location: {$pr24Url}"); 
+//            exit();
+//       }
+//    }
     
     private function changeOutput(){
         

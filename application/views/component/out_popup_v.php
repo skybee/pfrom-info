@@ -8,7 +8,7 @@
             foreach($like_articles as $lArticle):
             $i++;
             if($i > 3){ break; }
-            $url = '/'.$lArticle['full_uri'].'-'.$lArticle['id'].'-'.$lArticle['url_name'].'/';
+            $url = '/'.LANG_CODE.'/'.$lArticle['full_uri'].'-'.$lArticle['id'].'-'.$lArticle['url_name'].'.html';
         ?>
         <div class="ow_item">
             <a href="<?=$url;?>">

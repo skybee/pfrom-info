@@ -82,10 +82,10 @@
     <?=$doc_data['text']?>
         
     <?php if(isset($source_url)):?>
-    <p style="font-size: 0.7em; margin-top: 20px; margin-bottom: 0;">
+<!--    <p style="font-size: 0.7em; margin-top: 20px; margin-bottom: 0;">
         <span>Source:</span>
         <a style="font-size: 0.9em" href="<?=$source_url?>"><?=$source_url?></a>
-    </p>
+    </p>-->
     <?php endif;?>
 
     </div><!-- #content -->
@@ -160,7 +160,7 @@
             <div class="like-article-list">
                 <?php
                     foreach ($like_articles as $likeArts):
-                        $newsUrl    = "/{$likeArts['full_uri']}-{$likeArts['id']}-{$likeArts['url_name']}/";
+                        $newsUrl    = '/'.LANG_CODE."/{$likeArts['full_uri']}-{$likeArts['id']}-{$likeArts['url_name']}.html";
                         $imgUrl     = '/upload/images/small/' . $likeArts['main_img']
                 ?>
                 <div class="like-article-item">

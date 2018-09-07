@@ -32,6 +32,9 @@ function imgError(image){
 
 $( document ).ready(function(){
     
+    //MAIL Show in footer
+    $('a#foot_mail').attr('href','mailto:mail'+'@'+'pressfrom'+'.info').text('mail'+'@'+'pressfrom'+'.info');
+    
     $('#left .copy-url img, .like-article-list img, #out_window img').error( //удаление изображений 404
                 function(){
                     $(this).remove();

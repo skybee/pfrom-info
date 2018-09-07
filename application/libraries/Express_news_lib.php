@@ -36,6 +36,35 @@ class Express_news_lib{
         return $data;
     }
     
+    function get_news_OneHost($langCodeAr, $host = false){
+        if(empty($host)){
+            $host = $_SERVER['HTTP_HOST'];
+        }
+        
+        $data = array();
+        
+        foreach($langCodeAr as $langCode){
+            if($langCode == LANG_CODE){
+                continue;
+            }
+            
+            $url = 'http://'.$host.'/'.$langCode.'/api/main/get_top_news/';
+            
+            $newsData = $this->download_data($url);
+            
+//            print_r($newsData);
+            
+            if($newsData)
+            {
+                $newsData['host']       = $host;
+                $newsData['lang_code']  = $langCode;
+                $data[] = $newsData;
+            }
+        }
+        
+        return $data;
+    }
+    
     private function get_express_host()
     {
         $hosts = array(

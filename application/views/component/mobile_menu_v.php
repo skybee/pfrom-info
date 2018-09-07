@@ -20,19 +20,20 @@ $mobile_menu_list = array_reverse($mobile_menu_list);
         <div id="tabs-<?=$i?>">
             <ul class="mobile_sub_menu">
                 <li>
-                    <span data-url="/<?=$menuTop['full_uri']?>" data-anchor="<?=$menuTop['name']?> / Главная" ></span>
+                    &nbsp;&nbsp;
+                    <span data-url="/<?=LANG_CODE?>/<?=$menuTop['full_uri']?>" data-anchor="<?=$menuTop['name']?>" ></span>
                     <!--<a href="/<?=$menuTop['full_uri']?>"><?=$menuTop['name']?> / Главная</a>-->
                 </li>
             <?php foreach ($menuTop['sub_menu'] as $subMenu):?>
                 <li>
-                    <span data-url="/<?=$subMenu['full_uri']?>" data-anchor="<?=$subMenu['name']?>" ></span>
+                    <span data-url="/<?=LANG_CODE?>/<?=$subMenu['full_uri']?>" data-anchor="<?=$subMenu['name']?>" ></span>
                     <!--<a href="/<?=$subMenu['full_uri']?>"><?=$subMenu['name']?></a>-->
                     
                     <?php if(isset($subMenu['sub_cat_list'])):?>
                     <ul class="mobile_sub_menu mobile_sub_sub_menu">
                         <?php foreach ($subMenu['sub_cat_list'] as $subSubMenu):?>
                         <li>
-                            <span data-url="/<?=$subSubMenu['full_uri']?>" data-anchor="<?=$subSubMenu['name']?>" ></span>
+                            <span data-url="/<?=LANG_CODE?>/<?=$subSubMenu['full_uri']?>" data-anchor="<?=$subSubMenu['name']?>" ></span>
                             <!-- <a href="/<?=$subSubMenu['full_uri']?>"><?=$subSubMenu['name']?></a> -->
                         </li>
                         <?php endforeach;?>

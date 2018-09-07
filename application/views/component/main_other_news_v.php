@@ -13,9 +13,12 @@
         <?php
             foreach($express_news as $expressData):
                 
+//            print_r($expressData);    
+                
             $hostData   = $expressData['host_data'];
             $newsData   = $expressData['news'];
             $host       = $expressData['host'];
+            $lang_code  = $expressData['lang_code'];
         ?>
     
         <div id="like-acle-slider" class="listing in-doc-listing" lang="<?=$hostData['lang'];?>">
@@ -26,8 +29,11 @@
             <div class="like-article-list">
                 <?php
                     foreach ($newsData as $news):
-                        $newsUrl    = 'http://'.$host.'/'.$news['full_uri'].'-'.$news['id'].'-'.$news['url_name'].'/';
-                        $imgUrl     = 'http://'.$host.'/upload/images/small/'.$news['main_img'];
+//                        $newsUrl    = 'http://'.$host.'/'.$news['full_uri'].'-'.$news['id'].'-'.$news['url_name'].'/';
+//                        $imgUrl     = 'http://'.$host.'/upload/images/small/'.$news['main_img'];
+                        
+                        $newsUrl    = '/'.$lang_code.'/'.$news['full_uri'].'-'.$news['id'].'-'.$news['url_name'].'.html';
+                        $imgUrl     = '/'.$lang_code.'/upload/images/small/'.$news['main_img'];
                 ?>
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">

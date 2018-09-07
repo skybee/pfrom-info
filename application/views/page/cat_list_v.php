@@ -10,7 +10,7 @@
 <?php
     if( isset($news_page_list) && $news_page_list != NULL ):
     foreach( $news_page_list as $news_page_ar ):
-        $news_url   = "/{$news_page_ar['full_uri']}-{$news_page_ar['id']}-{$news_page_ar['url_name']}/";
+        $news_url   = '/'.LANG_CODE."/{$news_page_ar['full_uri']}-{$news_page_ar['id']}-{$news_page_ar['url_name']}.html";
         $dateAr     =& $news_page_ar['date'];
         $dateStr    = $dateAr['day_str'].' &nbsp;'.$dateAr['time'].', &nbsp;&nbsp;'.$dateAr['day_nmbr'].' '.$dateAr['month_str'].' '.$dateAr['year_nmbr'];
 ?>
@@ -62,9 +62,9 @@
             <?php
                 foreach ($pager_ar as $page): 
                 if( !isset($search_url_str) )
-                    $pager_url = '/'.$cat_ar['full_uri'].$page.'/';
+                    $pager_url = '/'.LANG_CODE.'/'.$cat_ar['full_uri'].$page.'/';
                 else
-                    $pager_url = '/search/'.$page.'/?q='.$search_url_str;
+                    $pager_url = '/'.LANG_CODE.'/search/'.$page.'/?q='.$search_url_str;
             ?>
             <li>
                 <?php if($page != $page_nmbr && $page != '...'): ?>

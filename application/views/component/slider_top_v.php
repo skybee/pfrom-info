@@ -22,7 +22,7 @@
     $i=0;
     foreach($articles as $article):
         
-    $newsUrl    = "/{$article['full_uri']}-{$article['id']}-{$article['url_name']}/"; 
+    $newsUrl    = '/'.LANG_CODE."/{$article['full_uri']}-{$article['id']}-{$article['url_name']}.html"; 
     $dateAr     =& $article['date'];
     $dateStr    = $dateAr['day_str'].', '.$dateAr['day_nmbr'].' '.$dateAr['month_str'].' '.$dateAr['year_nmbr'];
 ?>
