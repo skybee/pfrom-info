@@ -41,6 +41,36 @@
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!--<script async type='text/javascript' src='/js/all-files.min.js?v=050218-1515'></script>-->
         
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter50253969 = new Ya.Metrika2({
+                            id:50253969,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true
+                        });
+                    } catch(e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks2");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/50253969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+        
     </head>
 
     <body>
@@ -209,35 +239,6 @@
                         "border='0' width='88' height='31'><\/a>")
                         //--></script>
             <!--/LiveInternet--> 
-            
-            <!-- Yandex.Metrika counter -->
-            <script type="text/javascript">
-                (function (d, w, c) {
-                    (w[c] = w[c] || []).push(function() {
-                        try {
-                            w.yaCounter36782165 = new Ya.Metrika({
-                                id:36782165,
-                                clickmap:true,
-                                trackLinks:true,
-                                accurateTrackBounce:true
-                            });
-                        } catch(e) { }
-                    });
-
-                    var n = d.getElementsByTagName("script")[0],
-                        s = d.createElement("script"),
-                        f = function () { n.parentNode.insertBefore(s, n); };
-                    s.type = "text/javascript";
-                    s.async = true;
-                    s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-                    if (w.opera == "[object Opera]") {
-                        d.addEventListener("DOMContentLoaded", f, false);
-                    } else { f(); }
-                })(document, window, "yandex_metrika_callbacks");
-            </script>
-            <noscript><div><img src="https://mc.yandex.ru/watch/36782165" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-            <!-- /Yandex.Metrika counter -->
         </div>
         
         <div id="top_hide_line"></div>

@@ -1,13 +1,15 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
+//logo-pressfrom-mob-1.png
+
 define('STATIC_REMOTE_HOST', 'us.static.lalalay.com');
 define('STATIC_REMOTE_ADD_URI', '/file_remote/add_file/');
 define('STATIC_REMOTE_DEL_URI', '/file_remote/del_file/');
 
 $config_var['pressfrom.com']['mail']                    = 'mail@pressfrom.com';
 $config_var['pressfrom.com']['logo_img']                = 'logo-pressfrom-1.png';
-$config_var['pressfrom.com']['logo_img_mobile']         = 'logo-fr-mobile.png';
+$config_var['pressfrom.com']['logo_img_mobile']         = 'logo-pressfrom-mob-1.png';
 $config_var['pressfrom.com']['site_name']               = 'PressFrom';
 
 $config_var['francais-express.com']['mail']             = 'mail@francais-express.com';

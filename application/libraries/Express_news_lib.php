@@ -48,7 +48,7 @@ class Express_news_lib{
                 continue;
             }
             
-            $url = 'http://'.$host.'/'.$langCode.'/api/main/get_top_news/';
+            $url = 'https://'.$host.'/'.$langCode.'/api/main/get_top_news/';
             
             $newsData = $this->download_data($url);
             

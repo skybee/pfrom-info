@@ -37,8 +37,4 @@ class Main extends CI_Controller{
         header('Content-Type: application/json');
         echo json_encode($returnAr);
     }
-    
-    function get_top_news_one_host($langCodes){
-        
-    }
 }
