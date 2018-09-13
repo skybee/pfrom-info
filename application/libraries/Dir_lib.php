@@ -38,15 +38,15 @@ class Dir_lib {
         }
     }
     
-    function getImgSdir($host=true, $dateStr=true){
+    function getImgSdir($host=false, $dateStr=true){ //$host=false for PR24
         return $this->getImgDir( $this->sDir, $host, $dateStr );
     }
     
-    function getImgMdir($host=true, $dateStr=true){
+    function getImgMdir($host=false, $dateStr=true){
         return $this->getImgDir( $this->mDir, $host, $dateStr );
     }
     
-    function getImgRdir($host=true, $dateStr=true){
+    function getImgRdir($host=false, $dateStr=true){
         return $this->getImgDir( $this->rDir, $host, $dateStr );
     }
     
