@@ -83,6 +83,16 @@ $config['multidomaine']['main_host'] = [
     'au.pressfrom.com'
 ];
 
+$config['multidomaine']['parse_lang'] = [
+    'ru',
+    'fr',
+    'de',
+    'uk',
+    'us',
+    'ca',
+    'au'
+];
+
 $config['multidomaine']['host_set'][$_SERVER['HTTP_HOST']] = get_country_code();
 
 
