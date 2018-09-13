@@ -41,7 +41,7 @@ class Main extends CI_Controller
     function get_url_from_rss(){
         header("Content-type:text/html;Charset=utf-8");
         
-        if( $this->single_work( 2, 'get_url_from_rss') == false ) exit('The work temporary Lock');
+        if( $this->single_work( 2, 'get_url_from_rss') == false ) exit('The work temporary Lock 1 get_url_from_rss');
         
         $urls = array(
                         array('url'=>'http://rss.unian.net/site/news_rus.rss',  'host'=>'unian.net'),           //== CAT TRUE        
@@ -87,7 +87,7 @@ class Main extends CI_Controller
         set_time_limit( 300 );
         header("Content-type:text/html;Charset=utf-8");
         
-        if( $this->single_work( 2, 'parse_news') == false ) exit('The work temporary Lock');
+        if( $this->single_work( 2, 'parse_news') == false ) exit('The work temporary Lock 2 parse_news');
         
         $parse_list = $this->parser_m->get_news_url_to_parse( $cnt_news );
         
@@ -142,11 +142,12 @@ class Main extends CI_Controller
 //            echo '<pre>'.print_r($insert_data,1).'</pre>';
             
             $this->news_parser_msn_lib->insert_news( $insert_data );
-    
-            $this->remote_serv_transfer_lib->send_file_to_remote();
+            
+            #Lock remote transfer for PR24(PF info)
+            #$this->remote_serv_transfer_lib->send_file_to_remote();
             
             flush(); $i++;
-            sleep(5);
+            sleep(0);
         }
 
     }
@@ -194,7 +195,7 @@ class Main extends CI_Controller
     
     function get_articles_url_all(){
         
-        if( $this->single_work( 2, 'parse_articles_url_all') == false ) exit('The work temporary Lock');
+        if( $this->single_work( 2, 'parse_articles_url_all') == false ) exit('The work temporary Lock 3 get_articles_url_all');
         
         $scanUrlAr = $this->donor_m->getAllScanPageListUrl();
         
@@ -209,7 +210,7 @@ class Main extends CI_Controller
             {
                 $this->get_articles_url($scanUrl);
                 flush();
-                sleep(2);
+                sleep(0);
             }
         }
     }
@@ -318,12 +319,12 @@ class Main extends CI_Controller
             foreach( $data as $urlAr ){
                 $this->parser_m->add_to_scanlist( $urlAr['url'], $scanUrl['cat_id'], $scanUrl['donor_id'], $urlAr['img'] );
             }
-            sleep(5);
+            sleep(0);
         }
     }
     
     private function single_work( $minutes, $fname = 'null' ){
-        $lockFile   = 'lock/'.$_SERVER['HTTP_HOST'].'_'.$fname.'.lock';
+        $lockFile   = 'lock/'.$_SERVER['HTTP_HOST'].'_'.LANG_CODE.'_'.$fname.'.lock';
         $lockTime   = time() + (60*$minutes);
         
         
