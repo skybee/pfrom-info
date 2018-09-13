@@ -48,4 +48,10 @@ class Multidomaine_lib
         
         return $multidomaineAll['main_host'];
     }
+    
+    function getParseLang(){
+        $multidomaineAll    = $this->ci->config->item('multidomaine');
+        
+        return $multidomaineAll['parse_lang'];
+    }
 }
