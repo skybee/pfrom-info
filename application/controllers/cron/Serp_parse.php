@@ -26,7 +26,7 @@ class Serp_parse extends CI_Controller
         if($action != 'add' && $action != 'upd' ){ exit('ERROR Action Name'); }
 
         if( $this->single_work( 2, 'serp_parse_'.$action) == false ){
-            exit('The work temporary Lock');
+            exit('The work temporary Lock yandex_xml');
         }
 
         $cnt_scan = (int) $cnt_scan;
@@ -78,12 +78,12 @@ class Serp_parse extends CI_Controller
             }
             
             flush();
-            sleep(1);
+            sleep(0);
         }
     }
 
     private function single_work( $minutes, $fname = 'null' ){
-        $lockFile   = 'lock/'.$_SERVER['HTTP_HOST'].'_'.$fname.'.lock';
+        $lockFile   = 'lock/'.$_SERVER['HTTP_HOST'].'_'.LANG_CODE.'_'.$fname.'.lock';
         $lockTime   = time() + (60*$minutes);
 
 
