@@ -342,9 +342,9 @@ class Main extends CI_Controller {
     private function changeOutput(){
         
         //Add lang code to IMG Path
-        $output = $this->output->get_output();
-        $output = preg_replace("#(['\"])(/upload/images/)#i", "$1/".LANG_CODE."$2", $output);
-        $this->output->set_output($output);
+//        $output = $this->output->get_output();
+//        $output = preg_replace("#(['\"])(/upload/images/)#i", "$1/".LANG_CODE."$2", $output);
+//        $this->output->set_output($output);
     }
 
 }
