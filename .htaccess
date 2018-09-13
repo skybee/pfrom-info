@@ -3,7 +3,7 @@
     RewriteBase /
 
     #True Host Redirect
-    RewriteCond %{HTTP_HOST} !^pressfrom\.info [NC]
+    RewriteCond %{HTTP_HOST} !^(.*\.|)pressfrom\.info [NC]
     RewriteCond %{HTTP_HOST} !^$
     RewriteRule ^/?(.*)      https://pressfrom.info/$1 [L,R,NE]
     
@@ -28,8 +28,10 @@
     
     
 #   Images Redirect:
-    RewriteRule ^([a-z]{2})/upload/images(.*) http://$1.static.lalalay.com/upload/images$2 [NC,L,R=301]
-    RewriteRule ^upload/images(.*) http://us.static.lalalay.com/upload/images$1 [NC,L,R=301]
+#    RewriteRule ^([a-z]{2})/upload/images(.*) http://$1.static.lalalay.com/upload/images$2 [NC,L,R=301]
+#    RewriteRule ^upload/images(.*) http://us.static.lalalay.com/upload/images$1 [NC,L,R=301]
+    RewriteCond %{HTTP_HOST} !^static.*
+    RewriteRule ^(upload/images/.*) https://static.pressfrom.info/$1 [NC,L,R=301]
 
 #    RewriteCond %{REQUEST_URI} ^.* [NC]
 #    RewriteRule ^upload/images(.*) http://us.static.lalalay.com/upload/images$1 [NC,L,R=301]
