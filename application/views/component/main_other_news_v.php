@@ -33,7 +33,8 @@
 //                        $imgUrl     = 'http://'.$host.'/upload/images/small/'.$news['main_img'];
                         
                         $newsUrl    = '/'.$lang_code.'/'.$news['full_uri'].'-'.$news['id'].'-'.$news['url_name'].'.html';
-                        $imgUrl     = '/'.$lang_code.'/upload/images/small/'.$news['main_img'];
+//                        $imgUrl     = '/'.$lang_code.'/upload/images/small/'.$news['main_img'];
+                        $imgUrl     = '/upload/images/small/'.$news['main_img'];
                 ?>
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">
