@@ -50,44 +50,9 @@
         @media(max-width: 980px){ #left div.single div.content-gAd-bottom .mobile-noimg{width: 336px; height: 280px;} }
         @media(max-width: 340px){ #left div.single div.content-gAd-bottom .mobile-noimg{width: 300px; height: 250px;} }
     </style>
-    <?php if(0):?>
-    <div class="content-gAd content-gAd-bottom" style="padding: 15px 0;border-color:#009ddb;" >
-        <div class="content-gAd-center">
-            <!--<span class="gAd" data="content bottom Netboard"></span>-->
-<!--            <ins class="adsbygoogle mobile-noimg"
-                style="display:block"
-                data-ad-client="ca-pub-6096727633142370"
-                data-ad-slot="8859464449"
-                data-ad-format="rectangle"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>-->
-        </div>
-    </div>
-    <?php endif;?>
 
     <div class="content copy-url">
-
-<!--        
-        <style>
-            @media(max-width: 980px){ #left div.single div.thumb-gAd .mobile-noimg{width: 336px; height: 280px;} }
-            @media(max-width: 340px){ #left div.single div.thumb-gAd .mobile-noimg{width: 300px; height: 250px;} }
-        </style>
-        
-        <div class="thumb thumb-gAd">
-            <span class="gAd" data="content noImg"></span>
-        </div>
--->
-        
-    <?=$doc_data['text']?>
-        
-    <?php if(isset($source_url)):?>
-<!--    <p style="font-size: 0.7em; margin-top: 20px; margin-bottom: 0;">
-        <span>Source:</span>
-        <a style="font-size: 0.9em" href="<?=$source_url?>"><?=$source_url?></a>
-    </p>-->
-    <?php endif;?>
-
+        <?=$doc_data['text']?>
     </div><!-- #content -->
     
     <div class="doc-date doc-date-bottom">
@@ -105,20 +70,11 @@
         @media(max-width: 980px){ #left div.single div.content-gAd-bottom .mobile-noimg{width: 336px; height: 280px;} }
         @media(max-width: 340px){ #left div.single div.content-gAd-bottom .mobile-noimg{width: 300px; height: 250px;} }
     </style>
-    <div class="content-gAd content-gAd-bottom" style="padding: 15px 0;border-color:#009ddb;" >
+    <div class="content-gAd content-gAd-bottom" >
         <div class="content-gAd-center">
             <span class="gAd" data="content bottom Netboard"></span>
         </div>
     </div>
-    
-<!--    <div class="content-gAd content-gAd-bottom" id="bottom-games" style="padding: 15px 0;margin:40px 0;border-color:#009ddb;" >
-        <div style="height:32px;line-height:32px;font-size:16px;padding-left:37px;margin:5px 0px 5px 240px;display:inline-block;background-image:url('/img/slider/bx_loader.gif');background-repeat:no-repeat;">
-            Game loading...
-        </div>
-    </div>-->
-    
-
-    
 
     <div id="video_holder" style="display:none;"></div>
     
