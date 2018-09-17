@@ -9,6 +9,7 @@
 
 <?php
     if( isset($news_page_list) && $news_page_list != NULL ):
+        $i = 0;
     foreach( $news_page_list as $news_page_ar ):
         $news_url   = '/'.LANG_CODE."/{$news_page_ar['full_uri']}-{$news_page_ar['id']}-{$news_page_ar['url_name']}.html";
         $dateAr     =& $news_page_ar['date'];
@@ -48,6 +49,17 @@
             </div><!-- #right -->
         </div><!-- #content -->
     </div><!-- #listing -->
+    <?php
+    // ADD GAds to category list
+        $i++;
+        if($i==2 || $i==5 || $i==8 || $i==13 ){
+            echo '  <div class="listing">
+                        <div class="content" style="padding-bottom:15px;">
+                            <span class="gAd" data="InCategoryList"></span>
+                        </div>
+                    </div>';
+        }
+    ?>
 <?php
     endforeach; 
     else:
