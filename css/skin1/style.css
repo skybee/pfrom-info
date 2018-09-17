@@ -511,13 +511,13 @@ hr {
 }
 
 #left div.single .content-gAd{
-    background-color: #F7F7F7;
-    background-image: url('/img/gad-loader.gif');
-    background-repeat: no-repeat;
-    background-position: center center;
-    border:#eee 1px solid; border-width: 1px 0px;
+    /*background-color: #F7F7F7;*/
+    /*background-image: url('/img/gad-loader.gif');*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center;*/
+    /*border:#eee 1px solid; border-width: 1px 0px;*/
     /*height: 100px;*/
-    margin-top: 15px;
+    margin: 25px 0px;
     
 }
     #left div.single .content-gAd .content-gAd-center{
@@ -532,7 +532,8 @@ hr {
 }    
 
 #left div.single .content-gAd-bottom .content-gAd-center{
-    width: 580px;
+    /*width: 580px;*/
+    width: 100%;
 }
 
 #left div.single table{
