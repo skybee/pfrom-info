@@ -1,5 +1,21 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
+<!-- TMP RAND INT-->
+<?php 
+    $rndInt = mt_rand(1, 900);
+    if($rndInt <= 300 ){
+        $js_int = 1;
+    }
+    elseif($rndInt <= 600){
+        $js_int = 2;
+    }
+    else{
+        $js_int = 3;
+    }
+?>
+<span id="jsrnd" rnd="<?=$js_int?>" frand="<?=$rndInt?>" style="display: none;"></span>
+<!-- /TMP RAND INT-->
+
 <style>
     #fscreen-right-top-padding{ display: block;}
 </style>
@@ -90,7 +106,10 @@
                 <div class="like-video-item">
                     <div class="like-video-item-left">
                         <div class="respon_video">
-                            <iframe width="auto" height="auto"  src="https://www.youtube.com/embed/<?=$lVideo['video_id']?>" frameborder="0" allowfullscreen></iframe>
+                            <div class="yt_video" width="auto" height="auto" style="width:100%;height:100%;" src="https://www.youtube.com/embed/<?=$lVideo['video_id']?>" >
+                                <div class="yt_preloader"></div>
+                            </div>
+                            <!--<iframe width="auto" height="auto"  src="https://www.youtube.com/embed/<?=$lVideo['video_id']?>" frameborder="0" allowfullscreen></iframe>-->
                         </div>
                     </div>
                     <div class="like-video-item-right">
@@ -122,7 +141,7 @@
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">
                         <img src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>" />
-                        <?=$likeArts['title']?>
+                        <?=Article_m::get_short_txt($likeArts['title'],80,'word','...')?>
                     </a>
                 </div>
                 <?php
