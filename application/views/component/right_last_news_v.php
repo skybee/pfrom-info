@@ -2,6 +2,25 @@
 
 <div id="fscreen-right-top-padding"></div>
 
+<!-- TOP Video -->
+<?php 
+    if(isset($like_video) && $like_video!==false ): 
+        $videoData = $like_video[0];
+?>
+    <h3 class="widget-title" id="like_video_title">
+        <span class="title" style="color:#d80000;"><?=$this->multidomaine['like_video_str'];?></span>
+    </h3>
+    <div class="right_video">
+        <div class="yt_video yt_video_top" width="325" height="220" style="width:325px;height:220px;" src="https://www.youtube.com/embed/<?=$videoData['video_id']?>" >
+            <div class="yt_preloader"></div>
+        </div>
+        <!--<iframe width="325" height="220"  src="https://www.youtube.com/embed/<?=$videoData['video_id']?>" frameborder="0" allowfullscreen></iframe>-->
+        <span id="right_video_title"><?=$videoData['title']?></span>
+    </div>
+<?php endif;?>
+
+
+<!-- TOP News -->
 <h3 class="widget-title">
     <span class="title"><?=$this->multidomaine['top_news_str'];?></span>
 </h3>
@@ -9,6 +28,10 @@
 <div class="right-top-news">
     
     <?php
+        $cntFirstBlockNews = 6;
+        if(isset($doc_data)){
+            $cntFirstBlockNews = 4;
+        }
         $i=0;
         foreach($right_top as $key => $article):
             $newsUrl    = '/'.LANG_CODE."/{$article['full_uri']}-{$article['id']}-{$article['url_name']}.html";
@@ -20,7 +43,7 @@
         </a>
         <div class="big-rtn-title">
             <a href="<?=$newsUrl?>" >
-                <?=$article['title']?>
+                <?=Article_m::get_short_txt($article['title'],80,'word','...')?>
             </a>
         </div>
     </div>
@@ -33,7 +56,9 @@
                 </a>
             </div>
             <div style="display: table-cell; vertical-align: middle;">
-                <a href="<?=$newsUrl?>" class="small-rtn-txt-link" ><?=$article['title']?></a>
+                <a href="<?=$newsUrl?>" class="small-rtn-txt-link" >
+                    <?= Article_m::get_short_txt($article['title'],75,'word','...')?>
+                </a>
             </div>
         </div>
     </div>
@@ -41,7 +66,7 @@
         endif;
         unset($right_top[$key]);
         $i++;
-        if($i == 6 ){break;}
+        if($i == $cntFirstBlockNews ){break;}
         endforeach; 
     ?>    
 </div>
@@ -97,7 +122,9 @@
                 </a>
             </div>
             <div style="display: table-cell; vertical-align: middle;">
-                <a href="<?=$newsUrl?>" class="small-rtn-txt-link" ><?=$article['title']?></a>
+                <a href="<?=$newsUrl?>" class="small-rtn-txt-link" >
+                    <?= Article_m::get_short_txt($article['title'],75,'word','...')?>
+                </a>
             </div>
         </div>
     </div>
