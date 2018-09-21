@@ -6,20 +6,22 @@
         <title><?= $meta['title'] ?></title>
         <link rel="shortcut icon" href="/img/favico.png" type="image/png" />
         
-<!--        <link rel="stylesheet" type="text/css" href="/css/skin1/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        
+        <link rel="stylesheet" type="text/css" href="/css/skin1/style.css?v=190918-1517" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long_style.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/default.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/skin.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/font.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/font.css?v=170918-1628" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/magnific-popup.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/jquery.bxslider.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/msn-parse.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/mobile.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css" />-->
+        <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=170918-1631" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=170918-1426" />
         
-        <link rel="stylesheet" type="text/css" href="/css/all-style.min.css?v=240117-0220" />
+        <!--<link rel="stylesheet" type="text/css" href="/css/all-style.min.css?v=240117-0220" />-->
         
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,9 +38,11 @@
         <script type='text/javascript' src='/js/skin1/jquery-ui.min-tabs.js'></script>
         <script type='text/javascript' src='/js/skin1/jquery.magnific-popup.min.js'></script>
         <script type='text/javascript' src='/js/skin1/jquery.bxslider.min.js'></script>
-        <script type='text/javascript' src='/js/skin1/sb.js?v=050218-1705'></script>
+        <script type='text/javascript' src='/js/skin1/gads.js?v=190918-1440'></script>
+        <script type='text/javascript' src='/js/skin1/sb.js?v=210918-1602'></script>
             
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
         <!--<script async type='text/javascript' src='/js/all-files.min.js?v=050218-1515'></script>-->
         
         <!-- Yandex.Metrika counter -->
@@ -174,6 +178,9 @@
                         <!-- !!! Top Slider Here-->
 
                         <div id="middle">
+                            <div class="under_slider_gads">
+                                <span class="gAd" data="UnderSlider"></span>
+                            </div>
                             <div id="left">
                                 <?= $content ?>
                             </div><!-- #left closer -->
