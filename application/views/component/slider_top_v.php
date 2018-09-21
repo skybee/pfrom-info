@@ -37,7 +37,11 @@
             <?php endif;?>
         </a>
         <div class="info">
-            <h2><a href="<?=$newsUrl?>" ><?=$article['title']?></a></h2>
+            <h2>
+                <a href="<?=$newsUrl?>" >
+                    <?=Article_m::get_short_txt($article['title'],100,'word','...')?>
+                </a>
+            </h2>
             <span class="date"><?=$dateStr?></span>
             <p><?=$article['text']?> [&hellip;]</p>
         </div><!-- #info closer -->
