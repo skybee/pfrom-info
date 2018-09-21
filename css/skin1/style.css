@@ -517,7 +517,7 @@ hr {
     /*background-position: center center;*/
     /*border:#eee 1px solid; border-width: 1px 0px;*/
     /*height: 100px;*/
-    margin: 25px 0px;
+    margin: 25px 0px !important;
     
 }
     #left div.single .content-gAd .content-gAd-center{
@@ -3576,6 +3576,60 @@ img.alignleft,a img.alignleft {
 /* </Right Top News> */
 
 
+/* <Right TopLike Video> */
+#right .right_video{
+    float: left;
+    position: relative;
+    left: -5px;
+    width: 325px;
+}
+#right  #right_video_title{
+    display: inline-block;
+    padding: 10px 7px 30px 7px;
+    color: #6b6b6b;
+    font-size: 13px;
+}
+/* </Right TopLike Video> */
+
+/* <Video PreLoader> */
+.yt_video{
+    position: relative;
+    background-image: url('/img/no_video.png');
+    background-position: center center;
+    min-height: 180px;
+}
+.yt_preloader {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.yt_preloader:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 4px solid #f00;
+  border-color: #009DDB transparent #009DDB transparent;
+  animation: yt_preloader 1.2s linear infinite;
+}
+@keyframes yt_preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* </Video PreLoader> */
+
 /* <nav cat arrow> */ 
 .firstnav-menu li .firstnav-menu-arrow{
     width: 0px; height: 0px; 
@@ -3734,7 +3788,14 @@ img.alignleft,a img.alignleft {
             overflow: hidden;
             padding: 0;
         }
-
+span.gads_in_more_hdn{
+    display: block;
+    border-bottom: 1px solid #009DDB;
+    background-color: #fcfcfc;
+    /*background-color: #fcc;*/
+    padding: 10px 0px;
+    /*height: 30px;*/
+}
         
 div.parse-version{
     position: relative;
@@ -3903,7 +3964,7 @@ span.first-like-art-in-txt{
         box-shadow: 0 0 0 4px #009DDB;
     }
     #out_window a.ow_item_title{
-        font-size: 24px;
+        font-size: 20px;
         color: #009DDB;
         text-decoration: none;
         line-height: 1.4em;
@@ -3971,4 +4032,17 @@ span.first-like-art-in-txt{
 }
 /*</Like Article List>*/
     
+/*<GAds Under Slider>*/
+#middle .under_slider_gads{
+    /*height: 40px;*/
+    background-color: #000;
+    border-bottom: solid 4px #009DDB; 
+    margin-right: 19px;
+    padding: 5px
+}
+@media screen and (max-width: 980px) {
+    #middle .under_slider_gads{ display:none; }
+}
+/*<GAds Under Slider>*/
+
 /*============== </My> ==============*/
