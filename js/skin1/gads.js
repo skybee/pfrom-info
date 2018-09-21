@@ -3,7 +3,11 @@
 $( document ).ready(function(){
 
     // <top adsense after image> //
-    gAdsInContentHtml = '<div class="content-gAd content-gAd-bottom" ><div class="content-gAd-center"><span class="gAd" data="InArticles"></span></div></div>';
+    gAdsInContentHtml = '<div class="content-gAd content-gAd-bottom" >\n\
+                            <div class="content-gAd-center">\n\
+                                <span class="gAd" data="InArticles"></span>\n\
+                            </div>\n\
+                        </div>';
     
     if( $('span.storyimage').length > 0 ){ //add after first(main) img
         $('span.storyimage:first').after(gAdsInContentHtml);
@@ -14,7 +18,11 @@ $( document ).ready(function(){
     }
     
     if($('h2.look_more_hdn').length >= 3){ //add after like news block
-        $('p.look_more_hdn:eq(2)').after(gAdsInContentHtml);
+//        $('p.look_more_hdn:eq(2)').after(gAdsInContentHtml);
+        $('span.gads_in_more_hdn:eq(2)').after(gAdsInContentHtml);
+        if($('h2.look_more_hdn').length >= 5){ //add after like news block
+            $('span.gads_in_more_hdn:eq(4)').after(gAdsInContentHtml);
+        }
     }
     
     // </top adsense after image> //
@@ -145,16 +153,43 @@ function loadGAdDesctop(blockName){
     }
     
     if(blockName == 'InArticles'){
-        toWrite = " <ins class=\"adsbygoogle\" \
-                        style=\"display:block; text-align:center;\" \
-                        data-ad-layout=\"in-article\" \
-                        data-ad-format=\"fluid\" \
-                        data-ad-client=\"ca-pub-6096727633142370\" \
-                        data-ad-slot=\"8326627839\"> \
-                    </ins> \
-                    <script> \
-                         (adsbygoogle = window.adsbygoogle || []).push({}); \
-                    </script>";
+        rndInt = $('#jsrnd').attr('rnd');
+        if(rndInt == 1){ //_test Full inArt Adaptive
+            toWrite = " <ins class=\"adsbygoogle\" \
+                            style=\"display:block\" \
+                            data-ad-client=\"ca-pub-6096727633142370\" \
+                            data-ad-slot=\"9281283135\" \
+                            data-ad-format=\"auto\" \
+                            data-full-width-responsive=\"true\"> \
+                        </ins> \
+                        <script> \
+                            (adsbygoogle = window.adsbygoogle || []).push({}); \
+                        </script>";
+        }
+        if(rndInt == 2){ //_test Full inArt Feed
+            toWrite = " <ins class=\"adsbygoogle\" \
+                            style=\"display:block\" \
+                            data-ad-format=\"fluid\" \
+                            data-ad-layout-key=\"-ek+56-1c-c4+10c\" \
+                            data-ad-client=\"ca-pub-6096727633142370\" \
+                            data-ad-slot=\"8912358297\"> \
+                        </ins> \
+                        <script> \
+                            (adsbygoogle = window.adsbygoogle || []).push({}); \
+                        </script>";
+        }
+        if(rndInt == 3){ //_test Full inArt In-Article
+            toWrite = " <ins class=\"adsbygoogle\" \
+                            style=\"display:block; text-align:center;\" \
+                            data-ad-layout=\"in-article\" \
+                            data-ad-format=\"fluid\" \
+                            data-ad-client=\"ca-pub-6096727633142370\" \
+                            data-ad-slot=\"1907966247\"> \
+                        </ins> \
+                        <script> \
+                            (adsbygoogle = window.adsbygoogle || []).push({}); \
+                        </script>";
+        }
     }
     
     if( blockName == 'content bottom Netboard' ){
@@ -162,6 +197,30 @@ function loadGAdDesctop(blockName){
                         style=\"display:inline-block;width:580px;height:400px\" \
                         data-ad-client=\"ca-pub-6096727633142370\" \
                         data-ad-slot=\"2826759265\"> \
+                    </ins> \
+                    <script> \
+                        (adsbygoogle = window.adsbygoogle || []).push({}); \
+                    </script>";
+    }
+    if(blockName == 'UnderSlider'){ //PR24 info LinkBlock under slider
+        toWrite = " <ins class=\"adsbygoogle\" \
+                        style=\"display:block;height:30px;\" \
+                        data-ad-client=\"ca-pub-6096727633142370\" \
+                        data-ad-slot=\"5033317876\" \
+                        data-ad-format=\"link\" \
+                        data-full-width-responsive=\"true\"> \
+                    </ins> \
+                    <script> \
+                        (adsbygoogle = window.adsbygoogle || []).push({}); \
+                    </script>";
+    }
+    if(blockName == 'LoockMoreInTxt'){ //PR24 info LinkBlock under slider
+        toWrite = " <ins class=\"adsbygoogle\" \
+                        style=\"display:block;height:26px;\" \
+                        data-ad-client=\"ca-pub-6096727633142370\" \
+                        data-ad-slot=\"9048159474\" \
+                        data-ad-format=\"link\" \
+                        data-full-width-responsive=\"true\"> \
                     </ins> \
                     <script> \
                         (adsbygoogle = window.adsbygoogle || []).push({}); \
