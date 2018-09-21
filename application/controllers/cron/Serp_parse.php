@@ -39,7 +39,7 @@ class Serp_parse extends CI_Controller
         {
             $articlesList = $this->serp_parse_m->getSerpList($cnt_scan);
         }
-
+        
 //        print_r($articlesList);
 //        exit;
         
