@@ -195,6 +195,7 @@ class Article_m extends CI_Model{
     }
     
     static function get_short_txt( $text, $length = 100, $txtFin = 'word', $finChar = '' ){
+        $text = preg_replace("#\s+#i",' ',$text);
         $text = html_entity_decode($text);
         $text = strip_tags($text);
         $text = mb_substr($text, 0, $length);
