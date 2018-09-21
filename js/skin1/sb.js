@@ -180,6 +180,9 @@ $( document ).ready(function(){
 //    }
     // </top adsense after image> //
     
+    
+    setRightBlockTopSpace(); // Set RightTop Space size
+    
 });
 
 var outWindow = 0;
@@ -460,3 +463,27 @@ function ifDesktop(){
 //    setTimeout('$("#bottom-games").load("/html/bottom-games.html");', 10000);
 }
 //===================== <if Desktop> =====================//
+
+
+
+// ===== <YouTube Video Load> ===== //
+$( document ).ready(function(){
+    setTimeout("replace_yt_video('.yt_video_top')", 6000);
+    setTimeout("replace_yt_video('.yt_video')", 10000);
+});
+
+function replace_yt_video(selector){
+    $(selector).replaceWith(function(){
+        return '<iframe width="'+$(this).attr('width')+'" height="'+$(this).attr('height')+'"  src="'+$(this).attr('src')+'" frameborder="0" allowfullscreen></iframe>';
+    });
+}
+// ===== </YouTube Video Load> ===== //
+
+
+function setRightBlockTopSpace(){ //установка верхнего отступа правой колонки, в зависимости от высоты заголовка 
+    startSpaceSize = 45;
+    titleHeight = $('.single h1').outerHeight(true);
+    rightSpaceSize = startSpaceSize + titleHeight;
+    $('#fscreen-right-top-padding').css('height', rightSpaceSize+'px');
+//    alert(titleHeight);
+}
