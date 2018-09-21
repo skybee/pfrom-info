@@ -99,6 +99,10 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
     foreach ($likeList as $likeArticle)
     {
         $newsUrl        = '/'.LANG_CODE."/{$likeArticle['full_uri']}-{$likeArticle['id']}-{$likeArticle['url_name']}.html";
+        ####
+        $likeArticle['description'] = html_entity_decode($likeArticle['description']);
+        $likeArticle['description'] = strip_tags($likeArticle['description']);
+        ####
         $likeTitle      = str_replace('$', '&dollar;', $likeArticle['title']);
         $likeText       = str_replace('$', '&dollar;', $likeArticle['description']);
         $likeSerpTxt    = '';
@@ -121,7 +125,9 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
                         . "\t".'<span class="lmh_height_txt">'."\n"
                         . '<img src="/upload/images/real/'.$likeArticle['main_img'].'" alt="'.$likeTitle.'" onerror="imgError(this);"/>'."\n"
                         . $likeText."\n "
-                        . "\t</span>\n</p>\n "
+                        . "\t</span>\n "
+                        . "</p>\n "
+                        . "<span class=\"gads_in_more_hdn\"> <span class=\"gAd\" data=\"LoockMoreInTxt\"></span> </span>\n " //GAds Block for JS Change
                         .'<blockquote class="serp-blockquote">'."\n".$likeSerpTxt."\n".'</blockquote>'."\n";
         
         if($i==0)
