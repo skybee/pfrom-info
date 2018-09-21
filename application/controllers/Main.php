@@ -212,7 +212,7 @@ class Main extends CI_Controller {
         $data_ar['meta']['title']       = $data_ar['cat_ar']['title']; 
         if( $page > 1){
             $data_ar['meta']['title']  .= ' - '.$this->multidomaine['page_str'].' '.$page;
-            $data_ar['meta']['noindex'] = true;
+//            $data_ar['meta']['noindex'] = true;
         }
 
         $top_slider['articles']         = $this->article_m->get_top_slider_data( $data_ar['cat_ar']['id'], 8, $this->catConfig['top_news_time_h'], $this->topSliderTxtLength, true, false);
