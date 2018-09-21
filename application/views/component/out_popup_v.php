@@ -14,7 +14,9 @@
             <a href="<?=$url;?>">
                 <img src="/upload/images/real/<?=$lArticle['main_img'];?>" />
             </a>
-            <a href="<?=$url;?>" class="ow_item_title"><?=$lArticle['title'];?></a>
+            <a href="<?=$url;?>" class="ow_item_title">
+                <?=Article_m::get_short_txt($lArticle['title'],110,'word','...');?>
+            </a>
         </div>
         <?php endforeach; ?>
     </div>
