@@ -18,7 +18,13 @@
                 <a href="/<?=LANG_CODE?><?="/{$catlist_ar['s_cat_ar']['full_uri']}-{$catlist_ar[0]['id']}-{$catlist_ar[0]['url_name']}.html"?>">
                     <!--medium--><img src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />
                 </a>
-                <div class="description"><h3><a href="/<?=LANG_CODE?><?="/{$catlist_ar['s_cat_ar']['full_uri']}-{$catlist_ar[0]['id']}-{$catlist_ar[0]['url_name']}.html"?>"><?=$catlist_ar[0]['title']?></a></h3></div><!-- #description -->
+                <div class="description">
+                    <h3>
+                        <a href="/<?=LANG_CODE?><?="/{$catlist_ar['s_cat_ar']['full_uri']}-{$catlist_ar[0]['id']}-{$catlist_ar[0]['url_name']}.html"?>">
+                            <?= Article_m::get_short_txt($catlist_ar[0]['title'],90,'word','...')?>
+                        </a>
+                    </h3>
+                </div><!-- #description -->
             </div><!-- #imgholder -->
         </div><!-- #left -->
         
@@ -31,7 +37,13 @@
                         <img src="/upload/images/small/<?=$catlist_ar[1]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />
                     </a>
                 </div><!-- #thumb -->
-                <div class="description"><h4><a href="/<?=LANG_CODE?><?="/{$catlist_ar[1]['full_uri']}-{$catlist_ar[1]['id']}-{$catlist_ar[1]['url_name']}.html"?>"><?=$catlist_ar[1]['title']?></a></h4></div><!-- #description -->
+                <div class="description">
+                    <h4>
+                        <a href="/<?=LANG_CODE?><?="/{$catlist_ar[1]['full_uri']}-{$catlist_ar[1]['id']}-{$catlist_ar[1]['url_name']}.html"?>">
+                            <?= Article_m::get_short_txt($catlist_ar[1]['title'],100,'word','...')?>
+                        </a>
+                    </h4>
+                </div><!-- #description -->
             </div><!-- #small-listing -->
             <?php endif; ?>
             
@@ -42,7 +54,13 @@
                         <img src="/upload/images/small/<?=$catlist_ar[2]['main_img']?>" alt="<?=$catlist_ar[2]['title']?>"  border="0" onerror="imgError(this);" />
                     </a>
                 </div><!-- #thumb -->
-                <div class="description"><h4><a href="/<?=LANG_CODE?><?="/{$catlist_ar[2]['full_uri']}-{$catlist_ar[2]['id']}-{$catlist_ar[2]['url_name']}.html"?>"><?=$catlist_ar[2]['title']?></a></h4></div><!-- #description -->
+                <div class="description">
+                    <h4>
+                        <a href="/<?=LANG_CODE?><?="/{$catlist_ar[2]['full_uri']}-{$catlist_ar[2]['id']}-{$catlist_ar[2]['url_name']}.html"?>">
+                            <?= Article_m::get_short_txt($catlist_ar[2]['title'],100,'word','...')?>
+                        </a>
+                    </h4>
+                </div><!-- #description -->
             </div><!-- #small-listing -->
             <?php endif; ?>
             
@@ -53,7 +71,13 @@
                         <img src="/upload/images/small/<?=$catlist_ar[3]['main_img']?>" alt="<?=$catlist_ar[3]['title']?>"  border="0" onerror="imgError(this);" />
                     </a>
                 </div><!-- #thumb -->
-                <div class="description"><h4><a href="/<?=LANG_CODE?><?="/{$catlist_ar[3]['full_uri']}-{$catlist_ar[3]['id']}-{$catlist_ar[3]['url_name']}.html"?>"><?=$catlist_ar[3]['title']?></a></h4></div><!-- #description -->
+                <div class="description">
+                    <h4>
+                        <a href="/<?=LANG_CODE?><?="/{$catlist_ar[3]['full_uri']}-{$catlist_ar[3]['id']}-{$catlist_ar[3]['url_name']}.html"?>">
+                            <?= Article_m::get_short_txt($catlist_ar[3]['title'],100,'word','...')?>
+                        </a>
+                    </h4>
+                </div><!-- #description -->
             </div><!-- #small-listing -->
             <?php endif; ?>
             
