@@ -39,7 +39,7 @@
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">
                         <img src="<?=$imgUrl?>" alt="<?=htmlspecialchars($news['title'])?>" />
-                        <?=$news['title']?>
+                        <?=Article_m::get_short_txt($news['title'],100,'word','...')?>
                     </a>
                 </div>
                 <?php
