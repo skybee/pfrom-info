@@ -3,7 +3,7 @@
     RewriteBase /
 
     #True Host Redirect
-    RewriteCond %{HTTP_HOST} !^(.*\.|)pressfrom\.info [NC]
+    RewriteCond %{HTTP_HOST} !^(.*\.|)(pressfrom\.info|pressreview24\.com) [NC]
     RewriteCond %{HTTP_HOST} !^$
     RewriteRule ^/?(.*)      https://pressfrom.info/$1 [L,R,NE]
     
