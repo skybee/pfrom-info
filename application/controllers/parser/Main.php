@@ -21,7 +21,9 @@ class Main extends CI_Controller
         $this->load->library('parser/parse_lib');
         $this->load->library('parser/news_parser_lib');
         $this->load->library('parser/news_parser_msn_lib');
-        $this->load->library('parser/parse_page_lib');
+//        $this->load->library('parser/parse_page_lib');
+//        $this->load->library('parser/parse_page_didom_lib');
+        $this->load->library('parser/parse_page_msn_lib');
         $this->load->library('parser/video_replace_lib');
         $this->load->library('dir_lib');
         $this->load->model('parser_m');
@@ -101,7 +103,7 @@ class Main extends CI_Controller
             $this->parser_m->set_url_scaning( $news_ar['id'] );
 			
             #<for test>
-//            $news_ar['url']     = 'http://www.msn.com/en-gb/news/us/highway-patrol-3-dead-8-hurt-in-florida-wreck/ar-BBtFAy9';  
+//            $news_ar['url']     = 'https://www.msn.com/de-de/gesundheit/ernaehrung/die-fünf-besten-lebensmittel-gegen-stress/ar-AAAr4N0';  
 //            $news_ar['host']    = 'www.msn.com';
             #</for test>
             
@@ -115,7 +117,8 @@ class Main extends CI_Controller
             }
             
 //            $host                           = $this->news_parser_lib->get_donor_url( $news_ar['url'] );
-            $insert_data                    = $this->parse_page_lib->get_data( $html, $news_ar );
+            $insert_data                    = $this->parse_page_msn_lib->get_data( $html, $news_ar );
+//            $insert_data                    = $this->parse_page_didom_lib->get_data( $html, $news_ar );
             
             if(check_lock_donor($insert_data['donor-data']['host'], $this->multidomaine['lock_donor']))
             {
