@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $host_lang = array(
     'express.lh'=>              'lh', //defult code = lh
-    'express-info.lh'=>         'uk', //defult code = lh
+    'express-info.lh'=>         'lh', //defult code = lh
     
     'smiexpress.ru'=>           'ru',
     'ru.pressfrom.com'=>        'ru',
@@ -142,12 +142,8 @@ $db_ip = '5.9.104.44';
 
 
 
-if(LANG_CODE == 'lh'){
-    $db['default']['hostname'] = 'localhost';
-    $db['default']['username'] = 'root';
-    $db['default']['password'] = '';
-    $db['default']['database'] = 'admin_pf_us'; //'fr-express'; //DB: france, fr-express
-}
+
+
 
 
 if(LANG_CODE == 'ru'){
@@ -199,4 +195,12 @@ if(LANG_CODE == 'au'){
     $db['default']['username'] = 'admin_pf_au';
     $db['default']['password'] = 'pf-au-ujyrjyu8444';
     $db['default']['database'] = 'admin_pf_au';
+}
+
+
+if( $_SERVER['HTTP_HOST'] == 'express-info.lh'){
+    $db['default']['hostname'] = 'localhost';
+    $db['default']['username'] = 'root';
+    $db['default']['password'] = '';
+    $db['default']['database'] = 'admin_smi_ru'; //'fr-express'; //DB: france, fr-express
 }
