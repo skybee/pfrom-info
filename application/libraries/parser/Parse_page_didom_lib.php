@@ -1,6 +1,21 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+require_once('./application/libraries/DiDOM/src/DiDom/ClassAttribute.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Document.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Element.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Encoder.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Errors.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Query.php');
+require_once('./application/libraries/DiDOM/src/DiDom/StyleAttribute.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Exceptions/InvalidSelectorException.php');
+use DiDom\ClassAttribute;
 use DiDom\Document;
+use DiDom\Element;
+use DiDom\Encoder;
+use DiDom\Errors;
+use DiDom\Query;
+use DiDom\StyleAttribute;
+use DiDom\Exceptions\InvalidSelectorException;
 
 //$document = new Document($html);
 
@@ -26,11 +41,11 @@ abstract class parse_page{
     function get_data( $html ){
         
         $html = $this->predParseHTML( $html );
-        $this->html_obj = str_get_html($html);
+//        $this->html_obj = str_get_html($html);
+        $this->html_obj = new Document($html); //DiDOM Create Object
         if( !is_object($this->html_obj) ) return false;
 //        $this->cleaner  = new cleanDOM( $this->html_obj );
         $this->parseDOM();
-        $this->html_obj->clear();
         
         unset( $this->html_obj );
         
@@ -64,15 +79,15 @@ class parseMsn extends parse_page{
     
     function parseDOM() {
         
-        if( is_object( $this->html_obj->find('.collection-headline h1',0) ) ){
-            $this->data['title'] = $this->html_obj->find('.collection-headline h1',0)->innertext;
+        if( $this->html_obj->has('.collection-headline h1') ){
+            $this->data['title'] = $this->html_obj->find('.collection-headline h1')[0]->text();
         }
-        elseif(is_object( $this->html_obj->find('.collection-headline-flex h1',0) )){ //new page stile
-            $this->data['title'] = $this->html_obj->find('.collection-headline-flex h1',0)->innertext;
+        elseif( $this->html_obj->has('.collection-headline-flex h1') ){ //new page stile
+            $this->data['title'] = $this->html_obj->find('.collection-headline-flex h1')[0]->text();
         }
         
-        if( is_object( $this->html_obj->find('section.articlebody',0) ) ){
-            $textObj = $this->html_obj->find('section.articlebody',0);
+        if( $this->html_obj->has('section.articlebody') ){
+            $textObj = $this->html_obj->find('section.articlebody')[0];
             $textObj = $this->changeVideo($textObj);
             $textObj = $this->imgInTxt($textObj);
             $textObj = $this->slideerRewrite($textObj);
@@ -89,8 +104,8 @@ class parseMsn extends parse_page{
         }
         
         #<DonorData>
-        if( is_object( $this->html_obj->find('.partnerlogo-img img',0) ) ){
-            $imgJson    = $this->html_obj->find('.partnerlogo-img img',0)->attr['data-src'];
+        if( $this->html_obj->has('.partnerlogo-img img') ){
+            $imgJson    = $this->html_obj->find('.partnerlogo-img img')[0]->attr('data-src');
             
             $imgJson    = html_entity_decode($imgJson);
             $imgAr      = json_decode($imgJson, true);
@@ -103,25 +118,25 @@ class parseMsn extends parse_page{
             $this->data['donor-data']['img'] = $imgSrc;
         }
         
-        if( is_object( $this->html_obj->find('.sourcename-txt a',0) ) ){
-            $this->data['donor-data']['name'] = $this->html_obj->find('.sourcename-txt a',0)->innertext;
+        if( $this->html_obj->has('.sourcename-txt a') ){
+            $this->data['donor-data']['name'] = $this->html_obj->find('.sourcename-txt a')[0]->text();
             
-            $donorUrl   = $this->html_obj->find('.sourcename-txt a',0)->href;
+            $donorUrl   = $this->html_obj->find('.sourcename-txt a')[0]->attr('href');
             $donorUrlAr = parse_url($donorUrl);
             
             $this->data['donor-data']['host'] = trim($donorUrlAr['host']);
         }
-        elseif ( is_object($this->html_obj->find('.partnerlogo-img a',0)) ) { // ===== new page style =====
-            $this->data['donor-data']['name'] = $this->html_obj->find('.partnerlogo-img a',0)->title;
+        elseif ( $this->html_obj->has('.partnerlogo-img a') ) { // ===== new page style =====
+            $this->data['donor-data']['name'] = $this->html_obj->find('.partnerlogo-img a')[0]->attr('title');
             
-            $donorUrl   = $this->html_obj->find('.partnerlogo-img a',0)->href;
+            $donorUrl   = $this->html_obj->find('.partnerlogo-img a')[0]->attr('href');
             $donorUrlAr = parse_url($donorUrl);
             
             $this->data['donor-data']['host'] = trim($donorUrlAr['host']);
         }
         else{   
-            if( is_object($this->html_obj->find('.sourcename-txt',0)) ){ //получение хоста по имени из массива сохраненных
-                $donorName      = trim($this->html_obj->find('.sourcename-txt',0)->innertext);
+            if( $this->html_obj->has('.sourcename-txt') ){ //получение хоста по имени из массива сохраненных
+                $donorName      = trim( $this->html_obj->find('.sourcename-txt')[0]->text() );
                 echo "<br />\n--Text Source--".$donorName."--/Text Source--\n<br />";
                 $donorInfoAr    = get_donor_info_by_name($donorName);
                 
@@ -136,31 +151,31 @@ class parseMsn extends parse_page{
             {
                 $this->data['donor-data']['host'] = 'www.msn.com';
                 $this->data['donor-data']['name'] = 'MSN';
-                if( is_object( $this->html_obj->find('link[rel=shortcut icon]',0) ) ){
-                    $this->data['donor-data']['img'] = 'http:'.$this->html_obj->find('link[rel=shortcut icon]',0)->href;
+                if( $this->html_obj->has('link[rel=shortcut icon]') ){
+                    $this->data['donor-data']['img'] = 'http:'.$this->html_obj->find('link[rel=shortcut icon]')[0]->attr('href');
                 }
             }
         }
         
-        if( is_object( $this->html_obj->find('meta[name=description]',0) ) ){
-            $description = $this->html_obj->find('meta[name=description]',0)->content;
+        if( $this->html_obj->has('meta[name=description]') ){
+            $description = $this->html_obj->find('meta[name=description]')[0]->attr('content');
             $this->data['description'] = $this->getBigDescription($description, $this->data['text'], 600, 1500);
             #echo "\n\n<br />------<br />\n".$this->data['description']."\n<br />------<br />\n\n";
         }
         
-        if( is_object( $this->html_obj->find('link[rel=canonical]',0) ) ){
-            $this->data['canonical'] = $this->html_obj->find('link[rel=canonical]',0)->href;
+        if( $this->html_obj->has('link[rel=canonical]') ){
+            $this->data['canonical'] = $this->html_obj->find('link[rel=canonical]')[0]->attr('href');
         }
         #</DonorData>
     }
     
     private function changeVideo($textObj){
-        if( !is_object($textObj->find('.wcvideoplayer',0)) ){
+        if(!$textObj->has('.wcvideoplayer')){
             return $textObj;
         }
         
         foreach($textObj->find('.wcvideoplayer') as $videoObj){
-            $metaData   = $videoObj->attr['data-metadata'];
+            $metaData   = $videoObj->attr('data-metadata');
             $metaData   = html_entity_decode($metaData);
             $metaDataAr = json_decode($metaData,true);
 //            print_r($metaDataAr);
@@ -170,8 +185,19 @@ class parseMsn extends parse_page{
                     . 'Your browser does not support this video'
                     . '</video>';
             
-            $videoObj->outertext = $htmlVideo;
+            
+            $newTmpElement = new Element('span','Hello');
+            
+            $videoObj->first('div')->replace($newTmpElement);
+//            $videoObj->setInnerHtml($htmlVideo);
+            
+            
+            echo "\n\n\n--------------------------\n\n\n".$videoObj->html()."\n\n\n--------------------------\n\n\n";
+            
+//            $videoObj->outertext = $htmlVideo;
         }
+        
+        echo $textObj->html();
         
         return $textObj;
     }
