@@ -23,7 +23,9 @@ class Main extends CI_Controller
         $this->load->library('parser/news_parser_msn_lib');
 //        $this->load->library('parser/parse_page_lib');
 //        $this->load->library('parser/parse_page_didom_lib');
-        $this->load->library('parser/parse_page_msn_lib');
+//        $this->load->library('parser/parse_page_msn_lib');
+        $this->load->library('parser/parse_page_msn_didom_lib');
+        
         $this->load->library('parser/video_replace_lib');
         $this->load->library('dir_lib');
         $this->load->model('parser_m');
@@ -110,15 +112,16 @@ class Main extends CI_Controller
             echo "<br />\n $i - <i>".$news_ar['url']."</i><br />\n";
             flush();
             
-            $html = $this->news_parser_lib->down_with_curl( $news_ar['url'], false, true );
+            $html = $this->news_parser_lib->down_with_curl( $news_ar['url'], false, true ); 
             
             if( empty($html) ){
                 continue;
             }
             
-//            $host                           = $this->news_parser_lib->get_donor_url( $news_ar['url'] );
-            $insert_data                    = $this->parse_page_msn_lib->get_data( $html, $news_ar );
+            $host                           = $this->news_parser_lib->get_donor_url( $news_ar['url'] );
+//            $insert_data                    = $this->parse_page_msn_lib->get_data( $html, $news_ar );
 //            $insert_data                    = $this->parse_page_didom_lib->get_data( $html, $news_ar );
+            $insert_data                    = $this->parse_page_msn_didom_lib->get_data($html, $news_ar);
             
             if(check_lock_donor($insert_data['donor-data']['host'], $this->multidomaine['lock_donor']))
             {
@@ -145,6 +148,10 @@ class Main extends CI_Controller
 //            echo '<pre>'.print_r($insert_data,1).'</pre>';
             
             $this->news_parser_msn_lib->insert_news( $insert_data );
+            
+//            print_r($insert_data);
+            
+            unset($insert_data);
             
             #Lock remote transfer for PR24(PF info)
             #$this->remote_serv_transfer_lib->send_file_to_remote();
