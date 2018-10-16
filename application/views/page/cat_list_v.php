@@ -44,7 +44,7 @@
                             <?=  preg_replace("#(www\.|\.com$)#i", '', $news_page_ar['d_host'])?>
                         </div>
                     </div>
-                    <p><?=$news_page_ar['text']?>[...]</p>
+                    <p><?=$news_page_ar['text']?> <a href="<?=$news_url?>" target="_blank">>>></a> </p>
                 </div><!-- #small-desc -->
             </div><!-- #right -->
         </div><!-- #content -->
