@@ -11,9 +11,8 @@ class News_parser_msn_lib extends News_parser_lib{
     
     function insert_news($data_ar, $count_word = 10) { //принимает массив array('url','img','title','text','date') и минимальный размер текста(колличество шинглов/5) ; 
         
-//        $data_ar['text'] = $this->clear_txt($data_ar['text']);
-        $data_ar['title'] = $this->CI->db->escape_str(strip_tags($data_ar['title']));
-//        $data_ar['donor'] = $this->get_donor_url($data_ar['url']);
+//        $data_ar['title'] = $this->CI->db->escape_str(strip_tags($data_ar['title']));
+        $data_ar['title'] = strip_tags($data_ar['title']);
 
         $txtLenth = $this->txtLenth($data_ar['text']);
         
@@ -66,7 +65,7 @@ class News_parser_msn_lib extends News_parser_lib{
                         `canonical`     = '{$data_ar['canonical']}'    
                 ";               
 
-//        echo $sql;                
+//        echo $sql2;                
                         
 //        $this->CI->db->query($sql);
         $this->CI->db->query($sql2, array($data_ar['title'], $data_ar['description'], $data_ar['text']));
