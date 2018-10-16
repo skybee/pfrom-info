@@ -157,7 +157,7 @@ class Main extends CI_Controller
             #$this->remote_serv_transfer_lib->send_file_to_remote();
             
             flush(); $i++;
-            sleep(0);
+            sleep(2);
         }
 
     }
@@ -193,7 +193,7 @@ class Main extends CI_Controller
         foreach( $data as $urlAr ){
             
             $stopURLsPattern = "#(www\.bing\.com/news/apiclick\.aspx\?ref)#"; 
-            if( preg_match($stopURLsPattern, $urlAr['url']) )
+            if( preg_match($stopURLsPattern, $urlAr['url']) || strpos($urlAr['url'],'msn.com') == false )
             {
                 echo "\n-- Bad URL -- {$urlAr['url']}<br />\n";
                 continue;
@@ -201,6 +201,7 @@ class Main extends CI_Controller
             
             $this->parser_m->add_to_scanlist( $urlAr['url'], $scanUrl['cat_id'], $scanUrl['donor_id'], $urlAr['img'] );
         }
+        unset($data);
     }
     
     function get_articles_url_all(){
@@ -220,9 +221,10 @@ class Main extends CI_Controller
             {
                 $this->get_articles_url($scanUrl);
                 flush();
-                sleep(0);
+                sleep(2);
             }
         }
+        unset($scanUrlAr);
     }
       
     function _get_old_articles_url(){
