@@ -8,7 +8,7 @@
         
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         
-        <link rel="stylesheet" type="text/css" href="/css/skin1/style.css?v=190918-1517" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/style.css?v=161018-1735" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long_style.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/default.css" />
