@@ -3,17 +3,17 @@
     RewriteBase /
 
     #True Host Redirect
-    RewriteCond %{HTTP_HOST} !^(.*\.|)(pressfrom\.info|pressreview24\.com) [NC]
+    RewriteCond %{HTTP_HOST} !^(.*\.|)(pressfrom\.info|pressreview24\.com|express-info.lh) [NC]
     RewriteCond %{HTTP_HOST} !^$
     RewriteRule ^/?(.*)      https://pressfrom.info/$1 [L,R,NE]
     
-    #HTTPS Redirect
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+    #HTTPS Redirect ( !!! Comment this section on CloudFlare )
+#    RewriteCond %{HTTPS} !=on
+#    RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
 
     #www redirect
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
     # <Image Flip>
 #    RewriteCond %{HTTP_USER_AGENT} (Googlebot|YandexImages|msnbot)
