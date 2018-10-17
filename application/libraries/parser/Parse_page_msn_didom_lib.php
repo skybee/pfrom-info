@@ -1,7 +1,25 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Parse_page_msn_lib{
+require_once('./application/libraries/DiDOM/src/DiDom/ClassAttribute.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Document.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Element.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Encoder.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Errors.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Query.php');
+require_once('./application/libraries/DiDOM/src/DiDom/StyleAttribute.php');
+require_once('./application/libraries/DiDOM/src/DiDom/Exceptions/InvalidSelectorException.php');
+use DiDom\ClassAttribute;
+use DiDom\Document;
+use DiDom\Element;
+use DiDom\Encoder;
+use DiDom\Errors;
+use DiDom\Query;
+use DiDom\StyleAttribute;
+use DiDom\Exceptions\InvalidSelectorException;
+
+
+class Parse_page_msn_didom_lib{
    
     public $donorData, $cleaner, $data = array('img'=>false,'title'=>false,'description'=>false,'text'=>false,'date'=>false,'canonical'=>false);
     public $htmlObj, $articleBodyObj;
@@ -10,30 +28,39 @@ class Parse_page_msn_lib{
     
     function get_data( $html, $donorData ){
         $html = $this->predParseHTML( $html );
-        $this->htmlObj =  new simple_html_dom();
-        $this->htmlObj->load($html);
+        $this->htmlObj =  new Document();
+        $this->htmlObj->loadHtml($html);
         if( !is_object($this->htmlObj) ) return false;
         
         $this->parseDOM();
         
-        $this->htmlObj->clear();
-        unset($this->htmlObj);
-        
         $this->data['text'] =  video_replace_lib::get_video_tags( $this->data['text'] );
         
-        return $this->data;
+        $returnData = $this->data;
+        
+        //=== Delete Last Data ===//
+        $this->htmlObj          = NULL;
+        $this->articleBodyObj   = NULL;
+        $this->donorData        = NULL;
+        $this->cleaner          = NULL;
+        $this->data             = array('img'=>false,'title'=>false,'description'=>false,'text'=>false,'date'=>false,'canonical'=>false);
+        //=== Delete Last Data ===//
+        
+        return $returnData; 
     }
     
     
     function parseDOM(){
-        if( is_object( $this->htmlObj->find('.collection-headline h1',0) ) ){
-            $this->data['title'] = $this->htmlObj->find('.collection-headline h1',0)->innertext;
+        if( $this->htmlObj->has('.collection-headline h1') ){
+            $this->data['title'] = $this->htmlObj->find('.collection-headline h1')[0]->innerHtml();
         }
-        elseif(is_object( $this->htmlObj->find('.collection-headline-flex h1',0) )){ //new page stile
-            $this->data['title'] = $this->htmlObj->find('.collection-headline-flex h1',0)->innertext;
+        elseif($this->htmlObj->has('.collection-headline-flex h1')){ //new page stile
+            $this->data['title'] = $this->htmlObj->find('.collection-headline-flex h1')[0]->innerHtml();
         }
         
-        if( is_object( $this->htmlObj->find('section.articlebody',0) ) ){
+        $this->data['title'] = trim($this->data['title']);
+        
+        if( $this->htmlObj->has('section.articlebody') ){
 //            $this->articleBodyObj = $this->htmlObj->find('section.articlebody',0);
             $this->changeVideo();
             $this->imgInTxt();
@@ -42,7 +69,7 @@ class Parse_page_msn_lib{
             $this->changeLink();
             
             
-            $htmlTxt = $this->htmlObj->find('section.articlebody',0)->innertext;
+            $htmlTxt = $this->htmlObj->find('section.articlebody')[0]->innerHtml();
             $htmlTxt = $this->delHtmlTagData($htmlTxt);
             $htmlTxt = $this->delAttrFromHtml($htmlTxt);
             $htmlTxt = $this->delTagFromHtml($htmlTxt);
@@ -54,25 +81,25 @@ class Parse_page_msn_lib{
         
         #<DonorData>
         
-        if( is_object( $this->htmlObj->find('.sourcename-txt a',0) ) ){
-            $this->data['donor-data']['name'] = $this->htmlObj->find('.sourcename-txt a',0)->innertext;
+        if( $this->htmlObj->has('.sourcename-txt a') ){
+            $this->data['donor-data']['name'] = $this->htmlObj->find('.sourcename-txt a')[0]->innerHtml();
             
-            $donorUrl   = $this->htmlObj->find('.sourcename-txt a',0)->href;
+            $donorUrl   = $this->htmlObj->find('.sourcename-txt a')[0]->attr('href');
             $donorUrlAr = parse_url($donorUrl);
             
             $this->data['donor-data']['host'] = trim($donorUrlAr['host']);
         }
-        elseif ( is_object($this->htmlObj->find('.partnerlogo-img a',0)) ) { // ===== new page style =====
-            $this->data['donor-data']['name'] = $this->htmlObj->find('.partnerlogo-img a',0)->title;
+        elseif ( $this->htmlObj->has('.partnerlogo-img a') ) { // ===== new page style =====
+            $this->data['donor-data']['name'] = $this->htmlObj->find('.partnerlogo-img a')[0]->attr('title');
             
-            $donorUrl   = $this->htmlObj->find('.partnerlogo-img a',0)->href;
+            $donorUrl   = $this->htmlObj->find('.partnerlogo-img a')[0]->attr('href');
             $donorUrlAr = parse_url($donorUrl);
             
             $this->data['donor-data']['host'] = trim($donorUrlAr['host']);
         }
         else{   
-            if( is_object($this->htmlObj->find('.sourcename-txt',0)) ){ //получение хоста по имени из массива сохраненных
-                $donorName      = trim($this->htmlObj->find('.sourcename-txt',0)->innertext);
+            if($this->htmlObj->has('.sourcename-txt')){ //получение хоста по имени из массива сохраненных
+                $donorName      = trim($this->htmlObj->find('.sourcename-txt')[0]->innerHtml());
                 echo "<br />\n--Text Source--".$donorName."--/Text Source--\n<br />";
                 $donorInfoAr    = get_donor_info_by_name($donorName);
                 
@@ -87,19 +114,19 @@ class Parse_page_msn_lib{
             {
                 $this->data['donor-data']['host'] = 'www.msn.com';
                 $this->data['donor-data']['name'] = 'MSN';
-                if( is_object( $this->htmlObj->find('link[rel=shortcut icon]',0) ) ){
-                    $this->data['donor-data']['img'] = 'http:'.$this->htmlObj->find('link[rel=shortcut icon]',0)->href;
+                if($this->htmlObj->has('link[rel=shortcut icon]') ){
+                    $this->data['donor-data']['img'] = 'http:'.$this->htmlObj->find('link[rel=shortcut icon]')[0]->attr('href');
                 }
             }
         }
         
-        if( is_object( $this->htmlObj->find('meta[name=description]',0) ) ){
-            $description = $this->htmlObj->find('meta[name=description]',0)->content;
+        if($this->htmlObj->has('meta[name=description]')){
+            $description = $this->htmlObj->find('meta[name=description]')[0]->attr('content');
             $this->data['description'] = $this->getBigDescription($description, $this->data['text'], 600, 1500);
         }
         
-        if( is_object( $this->htmlObj->find('link[rel=canonical]',0) ) ){
-            $this->data['canonical'] = $this->htmlObj->find('link[rel=canonical]',0)->href;
+        if( $this->htmlObj->find('link[rel=canonical]') ){
+            $this->data['canonical'] = $this->htmlObj->find('link[rel=canonical]')[0]->attr('href');
         }
         #</DonorData>
     }
@@ -108,12 +135,12 @@ class Parse_page_msn_lib{
     //  < parseDOM Function >
     
     private function changeVideo(){
-        if( !is_object($this->htmlObj->find('.wcvideoplayer',0)) ){
+        if( !$this->htmlObj->has('.wcvideoplayer') ){
             return false;
         }
         
-        foreach($this->htmlObj->find('.wcvideoplayer') as $videoObj){
-            $metaData   = $videoObj->attr['data-metadata'];
+        foreach($this->htmlObj->find('.wcvideoplayer') as $key => $videoObj){
+            $metaData   = $videoObj->attr('data-metadata');
             $metaData   = html_entity_decode($metaData);
             $metaDataAr = json_decode($metaData,true);
 //            print_r($metaDataAr);
@@ -123,21 +150,24 @@ class Parse_page_msn_lib{
                     . 'Your browser does not support this video'
                     . '</video>';
             
-            $videoObj->outertext = $htmlVideo;
+//            $videoObj->outertext = $htmlVideo;
+            $videoElement = new Element('span');
+            $videoElement->setInnerHtml($htmlVideo);
+            $this->htmlObj->find('.wcvideoplayer')[$key]->replace($videoElement);
         }
     }
 
     private function imgInTxt(){
-        if( !is_object($this->htmlObj->find('img',0)) ){
+        if( !$this->htmlObj->has('img') ){
             return false;
         }
         
         foreach($this->htmlObj->find('img') as $imgObj){
-            if(!isset($imgObj->attr['data-src'])){
+            if( !$imgObj->hasAttribute('data-src') ){
                 continue;
             }
             
-            $imgJson    = $imgObj->attr['data-src'];
+            $imgJson    = $imgObj->attr('data-src');
             $imgJson    = html_entity_decode($imgJson);
             $imgAr      = json_decode($imgJson, true);
             if(is_array($imgAr['default']))
@@ -161,34 +191,36 @@ class Parse_page_msn_lib{
             
             $imgSrc = preg_replace("#q=\d{1,2}#iu", "q=100", $imgSrc); // quality 100%
             
-            $imgObj->attr['src'] = $imgSrc;
+            $imgObj->attr('src',$imgSrc);
             
-            if( !isset($imgObj->attr['alt']) || empty($imgObj->attr['alt']) )
+            if( $imgObj->hasAttribute('alt') || empty($imgObj->attr('alt')) )
             {
-                $imgObj->attr['alt'] = $this->data['title'];
+                $imgObj->attr('alt',$this->data['title']);
             }
-            unset($imgObj->attr['data-src']);
+            $imgObj->removeAttribute('data-src');
         }
     } 
     
     private function slideerRewrite(){
-        if( !is_object($this->htmlObj->find('.inline-slideshow',0)) )
+        if( !$this->htmlObj->has('.inline-slideshow') )
         {
             return false;
         }
         
-        foreach($this->htmlObj->find('.inline-slideshow') as $sliderObj)
+        foreach($this->htmlObj->find('.inline-slideshow') as $key => $sliderObj)
         {
             $i=0;
-            foreach($sliderObj->find('ul.slideshow li') as $slideLi)
+            foreach($this->htmlObj->find('.inline-slideshow')[$key]->find('ul.slideshow li') as $key2 => $slideLi)
             {
-                $slideTxtData  = $sliderObj->find('.gallerydata div.slidemetadata-container',$i)->outertext;
-                $slideTxtData .= $sliderObj->find('.gallerydata div.body-text',$i)->outertext;
+                $slideTxtData  = $sliderObj->find('.gallerydata div.slidemetadata-container')[$i]->html();
+                $slideTxtData .= $sliderObj->find('.gallerydata div.body-text')[$i]->html();
                 
-                $slideLi->innertext = $slideLi->innertext."\n".$slideTxtData;
+//                $slideLi->setInnerHtml($slideLi->innerHtml()."\n".$slideTxtData);
+                $this->htmlObj->find('.inline-slideshow')[$key]->find('ul.slideshow li')[$key2]->setInnerHtml($slideLi->innerHtml()."\n".$slideTxtData);
                 $i++;
             }
-            $sliderObj->find('.gallerydata',0)->outertext = '';
+            
+            $sliderObj->find('.gallerydata')[0]->remove();
         }
     }
     
@@ -200,6 +232,9 @@ class Parse_page_msn_lib{
         $this->delAll('#findacar'); // del auto search block 
         $this->delAll('button'); // del all <button>
         $this->delAll('div.ec-module'); //msn <iframe> in div.ec-module
+        $this->delAll('div.msnews-container'); //msnNewsBlock .msnews-container
+        $this->delAll('div.autos_rlc1'); //autos_rlc1 search block in Auto
+        $this->delAll('style'); //style in text
        
         
         //<video player content>
@@ -276,15 +311,15 @@ class Parse_page_msn_lib{
                 
                 $descripion .=  $descPlus;
             }
-            elseif(is_object($this->htmlObj->find('section.articlebody',0))){ //add text in <p/> to description
-                $articleObj = $this->htmlObj->find('section.articlebody',0);
-                if(is_object($articleObj->find('span.storyimage',0)))
+            elseif($this->htmlObj->has('section.articlebody')){ //add text in <p/> to description
+                $articleObj = $this->htmlObj->find('section.articlebody')[0];
+                if($articleObj->has('span.storyimage')[0])
                 {
-                    $articleObj->find('span.storyimage',0)->outertext = '';
+                    $articleObj->find('span.storyimage')[0]->remove();
                 }
-                if(is_object($articleObj->find('p',1)))
+                if($articleObj->has('p')[1])
                 {
-                    $pTxt   = $articleObj->find('p',1)->innertext;
+                    $pTxt   = $articleObj->find('p')[1]->innerHtml();
                     $pTxt   = strip_tags($pTxt);
                     $descPlus   = mb_substr($pTxt, 0, $intPlusDesc+30); //+30 - deleted search text in upper function
                     $descPlus   = preg_replace("#\.[^\.]+$#iu", '.', $descPlus);
@@ -317,17 +352,20 @@ class Parse_page_msn_lib{
     }
     
     private function changeLink(){
-        if(is_object($this->htmlObj->find('a',0)) == false){
+        if($this->htmlObj->has('a')[0] == false){
             return false;
         }
         
-        foreach($this->htmlObj->find('a') as $linkObj){
+        foreach($this->htmlObj->find('a') as $key => $linkObj){
             $anchor = $linkObj->innertext;
             $href   = $linkObj->href;
             
             $spanLink = '<span class="out-link" src="'.$href.'">'.$anchor.'</span>';
             
-            $linkObj->outertext = $spanLink;
+//            $linkObj->outertext = $spanLink;
+            $aSpanElement = new Element('span'); 
+            $aSpanElement->setInnerHtml($spanLink);
+            $this->htmlObj->find('a')[$key]->remove($aSpanElement);
         }
     }
     
@@ -393,29 +431,40 @@ class Parse_page_msn_lib{
     //<Del From Object Function>
     
     private function delSingle($selector, $key){
-        if( is_object( $this->htmlObj->find($selector, $key) ) ){
-            $this->htmlObj->find($selector, $key)->outertext = '';
-            $this->htmlObj->load($this->htmlObj->save());
+        if( $this->htmlObj->has($selector)[$key] ){
+            $this->htmlObj->find($selector)[$key]->remove();
+//            $this->htmlObj->loadHtml($this->htmlObj->html());
         }
     }
     
     private function delAll( $selector ){
-        if(is_object( $this->htmlObj->find($selector,0) ) ){
+        if( $this->htmlObj->has($selector) ){
             $cntElements = count($this->htmlObj->find($selector));
-            for($i=0;$i<$cntElements;$i++){
-                $this->htmlObj->find($selector,$i)->outertext = '<!-- WWW -->';
-            } 
-            $this->htmlObj->load($this->htmlObj->save());
+//            for($i=0;$i<$cntElements;$i++){
+//                $this->htmlObj->find($selector)[$i]->remove();
+//            }
+            foreach ($this->htmlObj->find($selector) as $nextElement){
+                $nextElement->remove();
+            }
+//            $this->htmlObj->loadHtml($this->htmlObj->html());            
         }
     }
     
     private function delAllWrapper($selector){
-        if(is_object( $this->htmlObj->find($selector,0) ) ){
-            $cntElements = count($this->htmlObj->find($selector));
-            for($i=0;$i<$cntElements;$i++){
-                $this->htmlObj->find($selector,$i)->outertext = $this->htmlObj->find($selector,$i)->innertext;
+        if( $this->htmlObj->has($selector) ){
+            $cntElements = $this->htmlObj->count($selector);
+//            for($i=0;$i<$cntElements;$i++){
+//                $element = new Element('span');
+//                $element->setInnerHtml( $this->htmlObj->find($selector)[$i]->innerHtml() );
+//                $this->htmlObj->find($selector)[$i]->replace($element);
+//            }
+            foreach ($this->htmlObj->find($selector) as $key => $nextElement){
+                $element = new Element('span');
+                $element->setInnerHtml( $nextElement->innerHtml() );
+                $nextElement->replace($element);
             }
-            $this->htmlObj->load($this->htmlObj->save());
+            
+//            $this->htmlObj->loadHtml($this->htmlObj->html()); 
         }
     }
     
