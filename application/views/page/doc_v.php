@@ -86,7 +86,7 @@
         @media(max-width: 980px){ #left div.single div.content-gAd-bottom .mobile-noimg{width: 336px; height: 280px;} }
         @media(max-width: 340px){ #left div.single div.content-gAd-bottom .mobile-noimg{width: 300px; height: 250px;} }
     </style>
-    <div class="content-gAd content-gAd-bottom" >
+    <div class="content-gAd content-gAd-bottom content-gAd-bottom-after-news " >
         <div class="content-gAd-center">
             <span class="gAd" data="content bottom Netboard"></span>
         </div>
