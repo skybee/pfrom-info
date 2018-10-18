@@ -91,31 +91,6 @@ $( document ).ready(function(){
         ifDesktop();
     }
     
-    // <top adsense after image> //
-//    gAdsInContentHtml = '<div class="content-gAd content-gAd-bottom" style="padding: 15px 0; margin:30px 0px;border-color:#009ddb;" ><div class="content-gAd-center"><span class="gAd" data="content bottom Netboard"></span></div></div>';
-//    
-//    if( $('span.storyimage').length > 0 ){ //add after first(main) img
-//        $('span.storyimage:first').after(gAdsInContentHtml);
-//    }
-//    else if( $('ul.slideshow').length > 0){ //add in slider
-//        $('ul.slideshow:first li:first').after( '<li id="adsInSliderList"></li>');
-//        $(gAdsInContentHtml).appendTo('li#adsInSliderList');
-//    }
-    
-//    if($('h2.look_more_hdn').length >= 3){ //add after like news block
-//        $('p.look_more_hdn:eq(2)').after(gAdsInContentHtml);
-//    }
-    
-    // </top adsense after image> //
-    
-//    if(addGadPosition()){ // добовляет дополнительные места(теги) для рекламы
-//        $('span.gAd').each(function(){ // простановка блоков рекламы
-//            blockName = $(this).attr('data');
-//            toWrite = loadGAd(blockName);
-//            $(this).replaceWith(toWrite);
-//        });
-//    }
-    
     
     // <Content Link>
     if($('span.out-link').length > 0)
@@ -167,169 +142,12 @@ $( document ).ready(function(){
     });
     // </show out window> //
     
-    
-    // <top adsense after image> //
-//    if( $('span.storyimage').length > 0 ){
-//        $('span.storyimage:first').after($('#left .content-gAd:first'));
-//        $('#left .content-gAd:first').css({'margin-top':'30px', 'margin-bottom':'30px'});
-//    }
-//    else if( $('ul.slideshow').length > 0){
-//        $('ul.slideshow:first li:first').after( '<li id="adsInSliderList"></li>');
-//        $('#left .content-gAd:first').appendTo('li#adsInSliderList');
-//        $('#left .content-gAd:first').css({'margin-top':'20px', 'margin-bottom':'40px'});
-//    }
-    // </top adsense after image> //
-    
-    
     setRightBlockTopSpace(); // Set RightTop Space size
     
 });
 
 var outWindow = 0;
 function setOutWindow(){outWindow=1;}
-
-
-//function loadGAd( blockName ){
-//    return false;
-//    width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-//    if( width <= 980 ){
-//        return loadGAdMobile(blockName);
-//    }
-//    else{
-//        return loadGAdDesctop(blockName);
-//    }  
-//}
-//
-//
-//function addGadPosition(){ // добовляет дополнительные места(теги) для рекламы 
-//    return false;
-//    // 2й блок справа
-//    leftHeight     = $("#left").outerHeight(true); 
-//    rightHeight    = $("#right").outerHeight(true);
-//    if(leftHeight-rightHeight > 700){
-//        $("#right").append('<h3 class="widget-title" style="margin-bottom: -10px; margin-top: 30px;"><span class="title">Ads</span></h3><div class="right_gad_block" style="margin-top: 30px;"><span class="gAd" data="right top"></span></div>');   
-//    }
-//    
-//    return true;
-//}
-
-
-//function loadGAdMobile(blockName){
-//    return false;
-//    toWrite = '<!-- No Ads -->';
-//    
-//    if( blockName == 'content noImg' || blockName == 'content bottom Netboard' ){
-//        /* Grey in Text */
-//        toWrite = "<!-- mobile -->\
-//                    <ins class=\"adsbygoogle mobile-noimg\"\
-//                         style=\"display:block\"\
-//                         data-ad-client=\"ca-pub-6096727633142370\"\
-//                         data-ad-slot=\"8859464449\"\
-//                         data-ad-format=\"rectangle\"></ins>\
-//                    <script>\
-//                    (adsbygoogle = window.adsbygoogle || []).push({});\
-//                    </script>";
-//    }
-//    
-//    if(blockName == 'mobile greyInTxt'){
-//        /* Grey in Text */
-//        toWrite = " <div class=\"mobile-in-txt\"> \n\
-//                        <!-- Mobile In Text -->\
-//                        <ins class=\"adsbygoogle mobile-intxt-grey\"\
-//                             style=\"display:block\"\
-//                             data-ad-client=\"ca-pub-6096727633142370\"\
-//                             data-ad-slot=\"8410309242\"\
-//                             data-ad-format=\"horizontal\"></ins>\
-//                        <script>\
-//                        (adsbygoogle = window.adsbygoogle || []).push({});\
-//                        </script> \n\
-//                    </div> ";
-//    }
-//    
-////    document.write(toWrite);
-//    return toWrite;
-//}
-
-
-//function loadGAdDesctop(blockName){
-//    return false;
-//    function getRandomInt(min, max){
-//        return Math.floor(Math.random() * (max - min + 1)) + min;
-//    }
-//    
-//    toWrite         = '<!-- No Ads -->';
-//    writeCheck      = false;
-//    responsive      = false;
-//    blockClass      = '';
-//    dataFormat      = 'auto';
-//    dataAdClient    = "ca-pub-6096727633142370";
-//
-//    if( blockName == 'content noImg' ){
-//        /* Content NoImg Block */
-//        adStyle         = "display:inline-block;width:300px;height:250px";
-//        dataAdSlot      = "7412278844";
-//        writeCheck      = true;
-//    }
-//    if( blockName == 'content bottom Netboard' ){
-//        /* Bottom Content Netboard */
-////        adStyle         = "display:inline-block;width:580px;height:400px";
-////        dataAdSlot      = "5547096043";
-////        writeCheck      = true;
-//
-//        /* Content Bottom Netboard Block - 2 "Respon" */
-//        responsive      = true;
-//        adStyle         = "display:block";
-//        dataAdSlot      = "8216029246";
-//        dataFormat      = 'rectangle';
-//        blockClass      = 'gad-bottom-respon';
-//        writeCheck      = true;
-//    }
-//    if( blockName == 'right top' ){
-//        adStyle         = "display:inline-block;width:300px;height:600px";
-//        dataAdSlot      = "4927119649";
-//        writeCheck      = true;
-//    }
-//    if( blockName == 'under slider'){
-//        /* Under Slider */
-//        adStyle         = "display:inline-block;width:956px;height:120px";
-//        dataAdSlot      = "7088605248";
-//        writeCheck      = true;
-//    }
-//    if( blockName == 'content greyInTxt'){
-//        /* Grey in Text */        
-//        adStyle         = "display:inline-block;width:468px;height:60px";
-//        dataAdSlot      = "2811858046";
-//        writeCheck      = true;
-//    }
-//
-//    if( writeCheck == true ){
-//        toWrite = '<ins class="adsbygoogle" \
-//                         style="'+adStyle+'" \
-//                         data-ad-client="'+dataAdClient+'" \
-//                         data-ad-slot="'+dataAdSlot+'" \
-//                    </ins> \
-//                    <script> \
-//                    (adsbygoogle = window.adsbygoogle || []).push({}); \
-//                    </script>';
-//        
-//        if(responsive == true){
-//            toWrite = '<ins class="adsbygoogle '+blockClass+'" \
-//                         style="'+adStyle+'" \
-//                         data-ad-client="'+dataAdClient+'" \
-//                         data-ad-slot="'+dataAdSlot+'" \
-//                         data-ad-format="'+dataFormat+'" \
-//                    </ins> \
-//                    <script> \
-//                    (adsbygoogle = window.adsbygoogle || []).push({}); \
-//                    </script>';
-//        }
-//    }
-//    
-//    return toWrite;
-//}
-
-
-
 
 
 function setTop(){
@@ -379,31 +197,7 @@ function ifDesktop(){
         });
     }
     loadSliderPagerImg();
-
-//    $('.slider-block').bxSlider(
-//        {
-//            speed: 1000,
-//            pause: 6000,
-//            auto: true,
-//            //randomStart: true,
-//            pager: false
-//        });
-        
-        
-        // Slider in content
-//    $('ul.slideshow').bxSlider({ 
-//        mode: 'fade',
-//        pager: false
-//    });    
-
-//    $('#right-top-news-slider').bxSlider({
-//        speed: 1000,
-//        pause: 6000,
-//        auto: true,
-//        //randomStart: true,
-//        pager: false,
-//        onSlideBefore: lazySliderBefore
-//    });    
+   
 
     $('.bxslider').bxSlider({
         mode: 'fade',
