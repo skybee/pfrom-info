@@ -531,9 +531,23 @@ hr {
     /*margin-bottom: 35px;*/
 }    
 
-#left div.single .content-gAd-bottom .content-gAd-center{
+#left div.single .content-gAd-bottom-after-news{
+    padding: 10px 0px;
+    background: #FCFCFC;
+    border-top: 1px solid #009DDB;
+    border-bottom: 1px solid #009DDB;
+}
+#left div.single .content-gAd-bottom-after-news .content-gAd-center{
+    width: 580px;
+}
+
+/*#left div.single .content-gAd-bottom .content-gAd-center*/
+#left div.single .content-gAd-in-text .content-gAd-center{
     /*width: 580px;*/
     width: 100%;
+    padding-left: 17px;
+    border-left: 3px solid #f92f05;
+    margin-left: -21px;
 }
 
 #left div.single table{
@@ -3793,13 +3807,13 @@ span.gads_in_more_hdn{
     border-bottom: 1px solid #009DDB;
     background-color: #fcfcfc;
     /*background-color: #fcc;*/
-    padding: 10px 0px;
+    padding: 0px 0px;
     /*height: 30px;*/
 }
         
 div.parse-version{
     position: relative;
-    padding-bottom: 205px;
+    padding-bottom: 295px;
     padding-top: 15px;
 }
         
@@ -3830,6 +3844,7 @@ span.first-like-art-in-txt{
     }
         #left div.single div.content h2.look_more_hdn a:hover{
             text-decoration: underline;
+            color: #009ddb !important;
         }
     #left div.single div.content h2.look_more_hdn span{
         color: #209C00;
