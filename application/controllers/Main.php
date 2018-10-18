@@ -13,6 +13,7 @@ class Main extends CI_Controller {
         $this->load->model('category_m');
         $this->load->helper('date_convert');
         $this->load->helper('doc_helper');
+        $this->load->helper('js_version');
         $this->load->driver('cache');
         $this->load->config('category'); // -?
         $this->load->config('multidomaine');
