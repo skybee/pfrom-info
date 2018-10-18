@@ -8,7 +8,7 @@
         
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         
-        <link rel="stylesheet" type="text/css" href="/css/skin1/style.css?v=161018-1735" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/style.css?v=171018-1741" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long_style.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/default.css" />
@@ -18,10 +18,10 @@
         <link rel="stylesheet" type="text/css" href="/css/skin1/jquery.bxslider.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/msn-parse.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/mobile.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=170918-1631" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=170918-1426" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=<?=js_version('/css/skin1/media-queries.css')?>" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=<?=js_version('/css/skin1/mobile_gads.css')?>" />
         
-        <!--<link rel="stylesheet" type="text/css" href="/css/all-style.min.css?v=240117-0220" />-->
+        <!--<link rel="stylesheet" type="text/css" href="/css/all-style.min.css?v=<?=js_version('/css/all-style.min.css')?>" />-->
         
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,12 +38,12 @@
         <script type='text/javascript' src='/js/skin1/jquery-ui.min-tabs.js'></script>
         <script type='text/javascript' src='/js/skin1/jquery.magnific-popup.min.js'></script>
         <script type='text/javascript' src='/js/skin1/jquery.bxslider.min.js'></script>
-        <script type='text/javascript' src='/js/skin1/gads.js?v=190918-1440'></script>
-        <script type='text/javascript' src='/js/skin1/sb.js?v=210918-1602'></script>
+        <script type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>
+        <script type='text/javascript' src='/js/skin1/sb.js?v=<?=js_version('/js/skin1/sb.js')?>'></script>
             
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         
-        <!--<script async type='text/javascript' src='/js/all-files.min.js?v=050218-1515'></script>-->
+        <!--<script async type='text/javascript' src='/js/all-files.min.js?v=<?=js_version('/js/all-files.min.js')?>'></script>-->
         
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
