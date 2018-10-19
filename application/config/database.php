@@ -203,4 +203,6 @@ if( $_SERVER['HTTP_HOST'] == 'express-info.lh'){
     $db['default']['username'] = 'root';
     $db['default']['password'] = '';
     $db['default']['database'] = 'admin_smi_ru'; //'fr-express'; //DB: france, fr-express
+    
+//    $db['default']['database'] = 'admin_pf_us'; // TMP test
 }
