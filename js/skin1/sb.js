@@ -160,7 +160,19 @@ function setTop(){
 //===================== <if Mobile> =====================//
 function ifMobile(){
     
-    $('#mobile_menu_tabs').tabs();
+    // <show this cat>
+    if( $('span').is('#opt-tag-main-cat') ){ 
+        $mainCatName = $('#opt-tag-main-cat').text();
+        mobMenuTabIndex = $('#mobile_menu_tabs #nav-tabs li[catname='+$mainCatName+']').index();
+    }
+     if( $('span').is('#opt-tag-sub-cat') ){ 
+        $subCatName = $('#opt-tag-sub-cat').text();
+        $('.mobile_sub_menu li[catname='+$subCatName+']').addClass('mobile_sub_menu_active');
+    }
+    // </show this cat>
+    
+//    alert('123-'+mobMenuTabIndex);
+    $('#mobile_menu_tabs').tabs({active: mobMenuTabIndex});
     
     $('#mobile_nav_btn').click(function(){
             $('#mobile_menu').slideToggle();
@@ -232,6 +244,7 @@ function ifDesktop(){
     if( $('span').is('#opt-tag-main-cat') ){ 
         $mainCatName = $('#opt-tag-main-cat').text();
         $('.firstnav-menu li[catname='+$mainCatName+']').addClass('main-nav-cat-active');
+        window.mobMenuTabIndex = $('#mobile_menu_tabs #nav-tabs li[catname='+$mainCatName+']').index();
     }
      if( $('span').is('#opt-tag-sub-cat') ){ 
         $subCatName = $('#opt-tag-sub-cat').text();
