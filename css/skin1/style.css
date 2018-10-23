@@ -3751,14 +3751,14 @@ img.alignleft,a img.alignleft {
         font-size: 12px;
         font-weight: bold;
         line-height: 1.2em !important;
-        color: #009DDB;
+        color: #4c8296;
     }
         .serp_block h4:hover,
         .serp_block a:hover{ text-decoration: underline;}
         .serp_block h4 span,
         .serp_block a span{
             font-weight: normal;
-            color: #209C00;
+            color: #888; /*#209C00;*/
         }
     .serp_block p{
         line-height: 1.2em !important;
