@@ -60,6 +60,13 @@
     float: none;
     list-style: none;
     display: block;
+    padding-left: 10px;
+}
+#mobile_menu ul.mobile_sub_menu li:first-child{
+    padding-left: 0px;
+}
+#mobile_menu ul.mobile_sub_menu li.mobile_sub_menu_active{
+    border-left: 3px solid #009DDB;
 }
 #mobile_menu ul.mobile_sub_menu li a{
     color: #fff;
