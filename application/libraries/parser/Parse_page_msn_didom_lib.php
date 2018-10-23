@@ -234,6 +234,7 @@ class Parse_page_msn_didom_lib{
         $this->delAll('div.ec-module'); //msn <iframe> in div.ec-module
         $this->delAll('div.msnews-container'); //msnNewsBlock .msnews-container
         $this->delAll('div.autos_rlc1'); //autos_rlc1 search block in Auto
+        $this->delAll('div.researchcars'); //autos search block in Auto
         $this->delAll('style'); //style in text
        
         
