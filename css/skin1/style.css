@@ -3772,6 +3772,7 @@ img.alignleft,a img.alignleft {
     /*background-color: #F7F7F7;*/
     background-color: #FCFCFC;
     padding: 15px 15px !important;
+    padding-top: 7px !important;
     margin: 0 !important;
     
     border: 1px solid #009DDB;
@@ -3836,11 +3837,11 @@ span.first-like-art-in-txt{
     border-width: 1px 0px 0px 0px;
 }
     #left div.single div.content h2.look_more_hdn a{
-        font-size: 14px !important;
+        font-size: 20px !important;
         color: #4c8296 !important;
         line-height: 1.2em !important;
         text-decoration: none;
-        font-weight: bold !important;
+        font-weight: normal !important;
     }
         #left div.single div.content h2.look_more_hdn a:hover{
             text-decoration: underline;
@@ -3852,10 +3853,11 @@ span.first-like-art-in-txt{
     }
     #left div.single div.content h2.look_more_hdn img.look_more_img_mobile{
         display:none;
-        width: 120px;
-        height: 80px;
+        width: 120px !important;
+        height: 80px !important;
         float: left;
         margin-right: 10px;
+        
     }
     
     
