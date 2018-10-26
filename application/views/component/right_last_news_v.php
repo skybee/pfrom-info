@@ -73,7 +73,7 @@
 
 
 <h3 class="widget-title" style="margin-bottom: -10px; margin-top: 30px;">
-    <span class="title">Ads</span>
+    <span class="title">&nbsp;</span>
 </h3>
 
 
