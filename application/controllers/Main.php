@@ -93,7 +93,7 @@ class Main extends CI_Controller {
         $data_ar['doc_data']            = $this->article_m->get_doc_data($doc_id);
         
         if (!$data_ar['doc_data']){
-            $cat_url = preg_replace("#/-\d+-\S+?/$#i", '/', $_SERVER['REQUEST_URI']);
+            $cat_url = preg_replace("#/-\d+-\S+$#i", '/', $_SERVER['REQUEST_URI']);
             header("HTTP/1.1 301 Moved Permanently");
             header("Location: ".'/'.LANG_CODE."{$cat_url}#404");
             exit();
