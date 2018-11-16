@@ -10,7 +10,8 @@
         ?>
         <li class="ui-tabs-nav-item ">
             <a href="" data-slide-index="<?=$i?>">
-                <img data-src="/upload/images/small/<?=$article['main_img']?>" src="/img/default_news.jpg" alt="" onerror="imgError(this);" />
+                <!-- src="/img/default_news.jpg" -->
+                <img data-src="/upload/images/small/<?=$article['main_img']?>" src="/img/lazy-preload.gif" alt="" onerror="imgError(this);" />
             </a>
         </li>
         <?php $i++; endforeach; ?>
