@@ -123,7 +123,7 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
                         . "</h2>\n"
                         . '<p class="look_more_hdn"> '."\n "
                         . "\t".'<span class="lmh_height_txt">'."\n"
-                        . '<img src="/upload/images/real/'.$likeArticle['main_img'].'" alt="'.$likeTitle.'" onerror="imgError(this);"/>'."\n"
+                        . '<img data-src="/upload/images/real/'.$likeArticle['main_img'].'" src="/img/lazy-preload.gif"  alt="'.$likeTitle.'" onerror="imgError(this);" class="lazyload" />'."\n"
                         . $likeText."\n "
                         . "\t</span>\n "
                         . "</p>\n "
