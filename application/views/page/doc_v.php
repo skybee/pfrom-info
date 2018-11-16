@@ -2,15 +2,18 @@
 
 <!-- TMP RAND INT-->
 <?php 
-    $rndInt = mt_rand(1, 900);
-    if($rndInt <= 300 ){
+    $rndInt = mt_rand(1, 4000);
+    if($rndInt <= 1000 ){
         $js_int = 1;
     }
-    elseif($rndInt <= 600){
+    elseif($rndInt <= 2000){
         $js_int = 2;
     }
-    else{
+    elseif($rndInt <= 3000){
         $js_int = 3;
+    }
+    else{
+        $js_int = 4;
     }
 ?>
 <span id="jsrnd" rnd="<?=$js_int?>" frand="<?=$rndInt?>" style="display: none;"></span>
@@ -140,7 +143,7 @@
                 ?>
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">
-                        <img src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>" />
+                        <img class="lazyload" data-src="<?=$imgUrl?>" src="/img/lazy-preload.gif" alt="<?=$likeArts['title']?>" />
                         <?=Article_m::get_short_txt($likeArts['title'],80,'word','...')?>
                     </a>
                 </div>
