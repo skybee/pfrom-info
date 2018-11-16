@@ -39,7 +39,7 @@
     ?>
     <div class="big-rtn">
         <a href="<?=$newsUrl?>" >
-            <img src="/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
+            <img class="lazyload" data-src="/upload/images/real/<?=$article['main_img']?>" src="/img/lazy-preload.gif" alt="<?=$article['title']?>" onerror="imgError(this);" />
         </a>
         <div class="big-rtn-title">
             <a href="<?=$newsUrl?>" >
@@ -52,7 +52,7 @@
         <div style="display: table;">
             <div style="display: table-cell; vertical-align: middle;">
                 <a href="<?=$newsUrl?>" >
-                    <img src="/upload/images/small/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
+                    <img class="lazyload" data-src="/upload/images/small/<?=$article['main_img']?>" src="/img/lazy-preload.gif" alt="<?=$article['title']?>" onerror="imgError(this);" />
                 </a>
             </div>
             <div style="display: table-cell; vertical-align: middle;">
@@ -105,7 +105,7 @@
     ?>
     <div class="big-rtn">
         <a href="<?=$newsUrl?>" >
-            <img src="/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
+            <img class="lazyload" data-src="/upload/images/real/<?=$article['main_img']?>" src="/img/lazy-preload.gif" alt="<?=$article['title']?>" onerror="imgError(this);" />
         </a>
         <div class="big-rtn-title">
             <a href="<?=$newsUrl?>" >
@@ -118,7 +118,7 @@
         <div style="display: table;">
             <div style="display: table-cell; vertical-align: middle;">
                 <a href="<?=$newsUrl?>" >
-                    <img src="/upload/images/small/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
+                    <img class="lazyload" data-src="/upload/images/small/<?=$article['main_img']?>" src="/img/lazy-preload.gif" alt="<?=$article['title']?>" onerror="imgError(this);" />
                 </a>
             </div>
             <div style="display: table-cell; vertical-align: middle;">
