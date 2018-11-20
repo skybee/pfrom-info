@@ -60,7 +60,7 @@ function addGadPosition(){ // добовляет дополнительные м
     leftHeight     = $("#left").outerHeight(true); 
     rightHeight    = $("#right").outerHeight(true);
     if(leftHeight-rightHeight > 700){
-        $("#right").append('<h3 class="widget-title" style="margin-bottom: -10px; margin-top: 30px;"><span class="title">Ads</span></h3><div class="right_gad_block" style="margin-top: 30px;"><span class="gAd" data="right top"></span></div>');   
+        $("#right").append('<h3 class="widget-title" style="margin-bottom: -10px; margin-top: 30px;"><span class="title">&nbsp;</span></h3><div class="right_gad_block" style="margin-top: 30px;"><span class="gAd" data="right top"></span></div>');   
     }
     
     return true;
@@ -100,16 +100,91 @@ function loadGAdMobile(blockName){
     }
     
     if(blockName == 'InArticles'){ //TMP Test from big size site
+        rndInt = $('#jsrnd').attr('rnd');
+        
+        //PFinfo Mobi inArt Adaptive
         toWrite = " <ins class=\"adsbygoogle\" \
-                        style=\"display:block; text-align:center;\" \
-                        data-ad-layout=\"in-article\" \
-                        data-ad-format=\"fluid\" \
-                        data-ad-client=\"ca-pub-6096727633142370\" \
-                        data-ad-slot=\"8326627839\"> \
-                    </ins> \
-                    <script> \
-                         (adsbygoogle = window.adsbygoogle || []).push({}); \
-                    </script>";
+                            style=\"display:block\" \
+                            data-ad-client=\"ca-pub-6096727633142370\" \
+                            data-ad-slot=\"2670565727\" \
+                            data-ad-format=\"auto\" \
+                            data-full-width-responsive=\"true\"> \
+                        </ins> \
+                        <script> \
+                             (adsbygoogle = window.adsbygoogle || []).push({}); \
+                        </script>";
+        
+        if(cntAdsInArticleIncrement == 2){
+            //  PFinfo Mobi inArt Feed TitleTop 
+            toWrite = " <ins class=\"adsbygoogle\" \
+                            style=\"display:block\" \
+                            data-ad-format=\"fluid\" \
+                            data-ad-layout-key=\"-am+4z+b-2a+gu\" \
+                            data-ad-client=\"ca-pub-6096727633142370\" \
+                            data-ad-slot=\"3397609443\"> \
+                        </ins> \
+                        <script> \
+                             (adsbygoogle = window.adsbygoogle || []).push({}); \
+                        </script>";
+        }
+        
+        window.cntAdsInArticleIncrement ++;
+        
+//        if(rndInt == 1){
+//         // PFinfo Mobi inArt In-Article
+//            toWrite = " <ins class=\"adsbygoogle\" \
+//                            style=\"display:block; text-align:center;\" \
+//                            data-ad-layout=\"in-article\" \
+//                            data-ad-format=\"fluid\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"8326627839\"> \
+//                        </ins> \
+//                        <script> \
+//                             (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                        </script>";
+//        }
+//        
+//        if(rndInt == 2){
+//        //  PFinfo Mobi inArt Feed TitleTop 
+//            toWrite = " <ins class=\"adsbygoogle\" \
+//                            style=\"display:block\" \
+//                            data-ad-format=\"fluid\" \
+//                            data-ad-layout-key=\"-am+4z+b-2a+gu\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"3397609443\"> \
+//                        </ins> \
+//                        <script> \
+//                             (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                        </script>";
+//        }
+//        
+//        if(rndInt == 3){
+//        // PFinfo Mobi inArt Feed TitleBottom
+//            toWrite = " <ins class=\"adsbygoogle\" \
+//                            style=\"display:block\" \
+//                            data-ad-format=\"fluid\" \
+//                            data-ad-layout-key=\"-5c+c9+8-38+ij\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"6042834529\"> \
+//                        </ins> \
+//                        <script> \
+//                             (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                        </script>";
+//        }
+//        
+//        if(rndInt == 4){
+//        //PFinfo Mobi inArt Adaptive
+//            toWrite = " <ins class=\"adsbygoogle\" \
+//                            style=\"display:block\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"2670565727\" \
+//                            data-ad-format=\"auto\" \
+//                            data-full-width-responsive=\"true\"> \
+//                        </ins> \
+//                        <script> \
+//                             (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                        </script>";
+//        }
     }
     
     if(blockName == 'InCategoryList'){
@@ -123,6 +198,35 @@ function loadGAdMobile(blockName){
                     <script> \
                          (adsbygoogle = window.adsbygoogle || []).push({}); \
                     </script>";
+    }
+    
+    if(blockName == 'LoockMoreInTxt'){
+        // PFinfo Mobi in LikeNews
+//        toWrite = " <ins class=\"adsbygoogle\" \
+//                        <ins class=\"adsbygoogle\" \
+//                            style=\"display:inline-block;width:auto;height:60px\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"7812756355\"> \
+//                        </ins> \
+//                    <script> \
+//                        (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                    </script>";
+        
+        // PFinfo Mobi in LikeNews 320x100
+        toWrite = " <ins class=\"adsbygoogle\" \
+                        <ins class=\"adsbygoogle\" \
+                            style=\"display:inline-block;width:320px;height:100px\" \
+                            data-ad-client=\"ca-pub-6096727633142370\" \
+                            data-ad-slot=\"4760051757\"> \
+                        </ins> \
+                    <script> \
+                        (adsbygoogle = window.adsbygoogle || []).push({}); \
+                    </script>";
+        
+        if( window.cntAdsInArtGreyIncrement == 3 || window.cntAdsInArtGreyIncrement == 5 ){
+            toWrite = '<!-- No Ads second block -->';
+        }
+        window.cntAdsInArtGreyIncrement ++;
     }
     
     return toWrite;
@@ -158,31 +262,7 @@ function loadGAdDesctop(blockName){
     
     if(blockName == 'InArticles'){
 //        rndInt = $('#jsrnd').attr('rnd');
-        if(window.cntAdsInArticleIncrement == 5){ //PFinfo FullScr inArt Adaptive
-            toWrite = " <ins class=\"adsbygoogle\" \
-                            style=\"display:block; min-height:100px;\" \
-                            data-ad-client=\"ca-pub-6096727633142370\" \
-                            data-ad-slot=\"9281283135\" \
-                            data-ad-format=\"auto\" \
-                            data-full-width-responsive=\"true\"> \
-                        </ins> \
-                        <script> \
-                            (adsbygoogle = window.adsbygoogle || []).push({}); \
-                        </script>";
-        }
-        else if(window.cntAdsInArticleIncrement%3 == 0){ //PFinfo FullScr inArt In-Article
-            toWrite = " <ins class=\"adsbygoogle\" \
-                            style=\"display:block; text-align:center;\" \
-                            data-ad-layout=\"in-article\" \
-                            data-ad-format=\"fluid\" \
-                            data-ad-client=\"ca-pub-6096727633142370\" \
-                            data-ad-slot=\"1907966247\"> \
-                        </ins> \
-                        <script> \
-                            (adsbygoogle = window.adsbygoogle || []).push({}); \
-                        </script>";
-        }
-        else { //PFinfo FullScr inArt Feed
+            //PFinfo FullScr inArt Feed
             toWrite = " <ins class=\"adsbygoogle\" \
                             style=\"display:block\" \
                             data-ad-format=\"fluid\" \
@@ -193,7 +273,43 @@ function loadGAdDesctop(blockName){
                         <script> \
                             (adsbygoogle = window.adsbygoogle || []).push({}); \
                         </script>";
-        }
+        
+//        if(window.cntAdsInArticleIncrement == 2 || window.cntAdsInArticleIncrement == 4){ //PFinfo FullScr inArt Adaptive
+//            toWrite = " <ins class=\"adsbygoogle\" \
+//                            style=\"display:block; min-height:100px;\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"9281283135\" \
+//                            data-ad-format=\"auto\" \
+//                            data-full-width-responsive=\"true\"> \
+//                        </ins> \
+//                        <script> \
+//                            (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                        </script>";
+//        }
+//        else if(window.cntAdsInArticleIncrement == 5){ //PFinfo FullScr inArt In-Article
+//            toWrite = " <ins class=\"adsbygoogle\" \
+//                            style=\"display:block; text-align:center;\" \
+//                            data-ad-layout=\"in-article\" \
+//                            data-ad-format=\"fluid\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"1907966247\"> \
+//                        </ins> \
+//                        <script> \
+//                            (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                        </script>";
+//        }
+//        else { //PFinfo FullScr inArt Feed
+//            toWrite = " <ins class=\"adsbygoogle\" \
+//                            style=\"display:block\" \
+//                            data-ad-format=\"fluid\" \
+//                            data-ad-layout-key=\"-d2+6f-3y-ip+1my\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"8912358297\"> \
+//                        </ins> \
+//                        <script> \
+//                            (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                        </script>";
+//        }
         
         window.cntAdsInArticleIncrement ++;
     }
@@ -225,7 +341,7 @@ function loadGAdDesctop(blockName){
                         style=\"display:block; max-height:90px;\" \
                         data-ad-client=\"ca-pub-6096727633142370\" \
                         data-ad-slot=\"8066584408\" \
-                        data-ad-format=\"auto\" \
+                        data-ad-format=\"horizontal\" \
                         data-full-width-responsive=\"true\"></ins> \
                     <script> \
                         (adsbygoogle = window.adsbygoogle || []).push({}); \

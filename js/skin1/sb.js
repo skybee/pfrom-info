@@ -41,6 +41,10 @@ $( document ).ready(function(){
                 }
             );
     
+    // < LasyLoad Images >
+    $("img.lazyload").Lazy();
+    // </ LasyLoad Images >
+    
     // <add url link to copy post>
     var source_link = '<p>Source: <a href="' + location.href + '">' + location.href + '</a></p>';
     $(
@@ -80,6 +84,7 @@ $( document ).ready(function(){
     
     
     setTimeout('setTop()', 15000);
+    
     
     
 
@@ -144,6 +149,8 @@ $( document ).ready(function(){
     
     setRightBlockTopSpace(); // Set RightTop Space size
     
+    setTimeout('pagePreloadClose()', 4000); //Close Page Preload
+    
 });
 
 var outWindow = 0;
@@ -156,6 +163,15 @@ function setTop(){
     
     $.post( '/ajax/background/set_top/', {docId: docId, ref: document.referrer} );
 }
+
+
+
+// < Preload Page Close >
+function pagePreloadClose(){
+    $('.page-preload-bg').fadeOut(1000);
+}
+// </ Preload Page Close >
+
 
 //===================== <if Mobile> =====================//
 function ifMobile(){
@@ -275,8 +291,8 @@ function ifDesktop(){
 
 // ===== <YouTube Video Load> ===== //
 $( document ).ready(function(){
-    setTimeout("replace_yt_video('.yt_video_top')", 6000);
-    setTimeout("replace_yt_video('.yt_video')", 10000);
+    setTimeout("replace_yt_video('.yt_video_top')", 7000);
+    setTimeout("replace_yt_video('.yt_video')", 15000);
 });
 
 function replace_yt_video(selector){
