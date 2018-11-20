@@ -89,7 +89,7 @@ class Main extends CI_Controller
     
     function parse_news( $cnt_news = 1 ){
         set_time_limit( 300 );
-        header("Content-type:text/html;Charset=utf-8");
+        header("Content-type:text/plain;Charset=utf-8");
         
         if( $this->single_work( 2, 'parse_news') == false ) exit('The work temporary Lock 2 parse_news');
         
@@ -105,22 +105,20 @@ class Main extends CI_Controller
             $this->parser_m->set_url_scaning( $news_ar['id'] );
 			
             #<for test>
-//            $news_ar['url']     = 'https://www.msn.com/en-ca/news/other/bregman-trolls-eovaldi-hinch-says-back-it-up-in-alcs/ar-BBOrk9d';  
+//            $news_ar['url']     = 'https://www.msn.com/en-us/sports/ncaafb/notre-dame-seems-headed-to-playoff-will-it-be-different-than-last-time/ar-BBPOi7E';  
 //            $news_ar['host']    = 'www.msn.com';
             #</for test>
             
             echo "<br />\n $i - <i>".$news_ar['url']."</i><br />\n";
             flush();
             
-            $html = $this->news_parser_lib->down_with_curl( $news_ar['url'], false, true ); 
-            
+            $html = $this->news_parser_lib->down_with_curl( $news_ar['url'], false, true ); #($url, $getInfo, $useProxy)
+
             if( empty($html) ){
                 continue;
             }
             
             $host                           = $this->news_parser_lib->get_donor_url( $news_ar['url'] );
-//            $insert_data                    = $this->parse_page_msn_lib->get_data( $html, $news_ar );
-//            $insert_data                    = $this->parse_page_didom_lib->get_data( $html, $news_ar );
             $insert_data                    = $this->parse_page_msn_didom_lib->get_data($html, $news_ar);
             
             if(check_lock_donor($insert_data['donor-data']['host'], $this->multidomaine['lock_donor']))
@@ -144,12 +142,7 @@ class Main extends CI_Controller
                 $insert_data['img']         = $news_ar['main_img_url'];
             }
             
-//            echo '<pre>'.print_r($news_ar,1).'</pre>';
-//            echo '<pre>'.print_r($insert_data,1).'</pre>';
-            
             $this->news_parser_msn_lib->insert_news( $insert_data );
-            
-//            print_r($insert_data);
             
             unset($insert_data);
             
