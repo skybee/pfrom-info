@@ -120,29 +120,8 @@ $db['default'] = array(
 	'save_queries' => TRUE
 );
 
-$db_ip = '5.9.104.44';
 
-
-//define('TMP_HOST_LANG', $host_lang[$_SERVER['HTTP_HOST']]);
-
-//if($_SERVER['HTTP_HOST'] == 'express.lh')
-//{
-//    $db['default']['pconnect'] = false;
-//    
-//    $db['default']['hostname'] = 'localhost';
-//    $db['default']['username'] = 'root';
-//    $db['default']['password'] = '';
-//    $db['default']['database'] = 'fr-express'; //DB: france, fr-express
-//
-////    $db['default']['hostname'] = $db_ip;
-////    $db['default']['username'] = 'admin_smi_en';
-////    $db['default']['password'] = 'smi-en-ujyrjyu8444';
-////    $db['default']['database'] = 'admin_smi_en';
-//}
-
-
-
-
+$db_ip = '78.46.32.84';
 
 
 
@@ -199,10 +178,10 @@ if(LANG_CODE == 'au'){
 
 
 if( $_SERVER['HTTP_HOST'] == 'express-info.lh'){
-    $db['default']['hostname'] = 'localhost';
-    $db['default']['username'] = 'root';
-    $db['default']['password'] = '';
-    $db['default']['database'] = 'admin_smi_ru'; //'fr-express'; //DB: france, fr-express
-    
+//    $db['default']['hostname'] = 'localhost';
+//    $db['default']['username'] = 'root';
+//    $db['default']['password'] = '';
+//    $db['default']['database'] = 'admin_smi_ru'; //'fr-express'; //DB: france, fr-express
+//    
 //    $db['default']['database'] = 'admin_pf_us'; // TMP test
 }
