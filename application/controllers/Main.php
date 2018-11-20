@@ -2,11 +2,19 @@
 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+
 class Main extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        
+        if($_SERVER['HTTP_HOST'] != 'pressfrom.info' && $_SERVER['HTTP_HOST'] != 'express-info.lh' ){
 
+            header("HTTP/1.1 301 Moved Permanently"); 
+            header("Location: https://pressfrom.info/".LANG_CODE."{$_SERVER['REQUEST_URI']}"); 
+            exit(); 
+        }
+        
         $this->load->database();
         $this->load->model('list_m');
         $this->load->model('article_m');
@@ -168,6 +176,7 @@ class Main extends CI_Controller {
         $tpl_ar['meta']['og']   = $this->load->view('component/meta_og_v', $data_ar['doc_data'], true);
         $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', array('mobile_menu_list'=>$mobile_menu_list), true);
         $tpl_ar['out_popup']    = $this->load->view('component/out_popup_v', $data_ar['like_articles'], true);
+        $tpl_ar['preload']      = $this->load->view('component/preload_v', array(), true);
 
         $this->load->view('main_v', $tpl_ar);
 
