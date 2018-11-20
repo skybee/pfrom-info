@@ -6,8 +6,7 @@
         <title><?= $meta['title'] ?></title>
         <link rel="shortcut icon" href="/img/favico.png" type="image/png" />
         
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-        
+<!--        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/style.css?v=<?=js_version('/css/skin1/style.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long_style.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long.css" />
@@ -19,9 +18,9 @@
         <link rel="stylesheet" type="text/css" href="/css/skin1/msn-parse.css?v=<?=js_version('/css/skin1/msn-parse.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/mobile.css?v=<?=js_version('/css/skin1/mobile.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=<?=js_version('/css/skin1/media-queries.css')?>" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=<?=js_version('/css/skin1/mobile_gads.css')?>" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=<?=js_version('/css/skin1/mobile_gads.css')?>" />-->
         
-        <!--<link rel="stylesheet" type="text/css" href="/css/all-style.min.css?v=<?=js_version('/css/all-style.min.css')?>" />-->
+        <link rel="stylesheet" type="text/css" href="/css/all-style.css?v=<?=js_version('/css/all-style.css')?>" />
         
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,19 +35,24 @@
 
 <!--        <script type='text/javascript' src='/js/skin1/jquery-1.11.3.min.js'></script>
         <script type='text/javascript' src='/js/skin1/jquery-ui.min-tabs.js'></script>-->
+            
         <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
         <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
         <script type='text/javascript' src='/js/skin1/jquery.magnific-popup.min.js'></script>
         <script type='text/javascript' src='/js/skin1/jquery.bxslider.min.js'></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
         <script type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>
         <script type='text/javascript' src='/js/skin1/sb.js?v=<?=js_version('/js/skin1/sb.js')?>'></script>
             
+        <!--<script async type='text/javascript' src='/js/all-script.js?v=<?=js_version('/js/all-script.js')?>'></script>-->
+            
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <!--<script async type='text/javascript' src='/js/all-files.min.js?v=<?=js_version('/js/all-files.min.js')?>'></script>-->
         
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
+            var yaParams = {ip_adress: "<?= $_SERVER['REMOTE_ADDR']; ?>"}; //Add User IP
+            
             (function (d, w, c) {
                 (w[c] = w[c] || []).push(function() {
                     try {
@@ -80,6 +84,7 @@
     </head>
 
     <body>
+        <?php if(isset($preload)) echo $preload;?>
         
 <!--        <div style="position: fixed; top:0; left: 0; width: 100%; height: 200%; background-color: #009DDB; z-index: 100; " class="sbtmplock">
             <div style="color: #fff; font-size: 24px; text-align: center; margin-top: 20%;">
