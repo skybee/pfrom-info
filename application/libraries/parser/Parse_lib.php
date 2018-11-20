@@ -20,6 +20,8 @@ class Parse_lib{
     
     static function down_with_curl($url, $getInfo = false, $useProxy = false, $useCount=0){
         
+        $useProxy = false;
+        
         if($useProxy !== false){
             $proxy = self::getRandProxy();
         }
@@ -232,6 +234,11 @@ class Parse_lib{
     
     function load_img( $img_url, $base_url, $imgAlt = '', $flip = true){
         if( empty($img_url) ) return FALSE;
+        
+        #TEMP FIX img_url (20.11.18)
+        $img_url = str_replace(';', '&', $img_url);
+        
+//        echo "Parse_lib::load_img {$img_url} \n\n";
         
         $absolute_url   = $this->uri2absolute($img_url, $base_url);
         $imgDataAr      = $this->down_with_curl($absolute_url, true, true); //скачивание изображения
