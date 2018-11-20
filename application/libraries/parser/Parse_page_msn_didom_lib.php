@@ -181,15 +181,18 @@ class Parse_page_msn_didom_lib{
             
             //<MaxImgSize>
             preg_match("#w=(\d+)#iu", $imgSrc, $matches);
-            if(isset($matches[1]) && $matches[1] > 616)
+//            print_r($matches);
+            if(isset($matches[1]) && $matches[1] > 800) // 616 px
             {
                 $searchAr   = array("#h=\d{2,4}#iu","#w=\d{2,4}#iu","#q=\d{1,2}#iu");
-                $replaceAr  = array("h=","w=616");
+                $replaceAr  = array("h=","w=800");
                 $imgSrc     = preg_replace($searchAr, $replaceAr, $imgSrc);
             }
             //</MaxImgSize>
             
             $imgSrc = preg_replace("#q=\d{1,2}#iu", "q=100", $imgSrc); // quality 100%
+            
+//            echo $imgSrc."\n\n" ;
             
             $imgObj->attr('src',$imgSrc);
             
