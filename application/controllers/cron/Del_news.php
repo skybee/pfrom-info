@@ -47,6 +47,8 @@ class Del_news extends CI_Controller{
     }
     
     function del_news($id,$code){
+        header("Content-type:text/plain; Charset=utf-8");
+        
         $code = (int) $code;
         if($code != $this->get_code())
         {
@@ -69,9 +71,13 @@ class Del_news extends CI_Controller{
 //            $msg .= $this->del_img($this->dir_lib->getImgMdir().$row['main_img']);
 //            $msg .= $this->del_img($this->dir_lib->getImgSdir().$row['main_img']);
             
-            $msg .= $this->del_img('./upload/'.$this->hostData['static_server'].'/images/medium/'.$row['main_img']);
-            $msg .= $this->del_img('./upload/'.$this->hostData['static_server'].'/images/real/'.$row['main_img']);
-            $msg .= $this->del_img('./upload/'.$this->hostData['static_server'].'/images/small/'.$row['main_img']);
+//            $msg .= $this->del_img('./upload/'.$this->hostData['static_server'].'/images/medium/'.$row['main_img']);
+//            $msg .= $this->del_img('./upload/'.$this->hostData['static_server'].'/images/real/'.$row['main_img']);
+//            $msg .= $this->del_img('./upload/'.$this->hostData['static_server'].'/images/small/'.$row['main_img']);
+            
+            $msg .= $this->del_img('./upload/images/medium/'.$row['main_img']);
+            $msg .= $this->del_img('./upload/images/real/'.$row['main_img']);
+            $msg .= $this->del_img('./upload/images/small/'.$row['main_img']);
         }
         
         $imgPathAr = $this->get_img_from_txt($row['text']);
@@ -80,7 +86,7 @@ class Del_news extends CI_Controller{
         {
             foreach($imgPathAr as $imgPath)
             {
-                $imgPath = $this->add_static_servname_to_path($imgPath); //File Path to Remote Server
+//                $imgPath = $this->add_static_servname_to_path($imgPath); //File Path to Remote Server
                 
                 $msg .= $this->del_img('.'.$imgPath);
             }
@@ -139,7 +145,7 @@ class Del_news extends CI_Controller{
     
     private function del_img($fName){
         
-        return $this->remote_serv_transfer_lib->del_remote_file($fName);
+//        return $this->remote_serv_transfer_lib->del_remote_file($fName);
         
         $fName = preg_replace("#^([a-z]+.+)#","./$1", $fName);
         
