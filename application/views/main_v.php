@@ -2,52 +2,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="<?=$this->multidomaine['lang'];?>"> 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title><?= $meta['title'] ?></title>
-        <link rel="shortcut icon" href="/img/favico.png" type="image/png" />
         
-<!--        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/style.css?v=<?=js_version('/css/skin1/style.css')?>" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long_style.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/default.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/skin.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/font.css?v=<?=js_version('/css/skin1/font.css')?>" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/magnific-popup.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/jquery.bxslider.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/msn-parse.css?v=<?=js_version('/css/skin1/msn-parse.css')?>" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile.css?v=<?=js_version('/css/skin1/mobile.css')?>" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=<?=js_version('/css/skin1/media-queries.css')?>" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=<?=js_version('/css/skin1/mobile_gads.css')?>" />-->
-        
-        <link rel="stylesheet" type="text/css" href="/css/all-style.css?v=<?=js_version('/css/all-style.css')?>" />
-        
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-        <?php #if(isset($meta['canonical'])) echo $meta['canonical']; ?>
-        
-        <?php if(isset($meta['og'])) echo $meta['og']; ?>
-        
-        <?php if(isset($meta['noindex']) && $meta['noindex'] == true ): ?>
-            <meta name="robots" content="noindex, follow" />
-        <?php endif; ?>   
-
-<!--        <script type='text/javascript' src='/js/skin1/jquery-1.11.3.min.js'></script>
-        <script type='text/javascript' src='/js/skin1/jquery-ui.min-tabs.js'></script>-->
-            
-        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
-        <script type='text/javascript' src='/js/skin1/jquery.magnific-popup.min.js'></script>
-        <script type='text/javascript' src='/js/skin1/jquery.bxslider.min.js'></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
-        <script type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>
-        <script type='text/javascript' src='/js/skin1/sb.js?v=<?=js_version('/js/skin1/sb.js')?>'></script>
-            
-        <!--<script async type='text/javascript' src='/js/all-script.js?v=<?=js_version('/js/all-script.js')?>'></script>-->
-            
+        <!-- Google Ads -->
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133437377-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-133437377-1');
+        </script>
         
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
@@ -80,6 +46,48 @@
         </script>
         <noscript><div><img src="https://mc.yandex.ru/watch/50253969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
         <!-- /Yandex.Metrika counter -->
+
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><?= $meta['title'] ?></title>
+        <link rel="shortcut icon" href="/img/favico.png" type="image/png" />
+        
+<!--        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/style.css?v=<?=js_version('/css/skin1/style.css')?>" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long_style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/default.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/skin.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/font.css?v=<?=js_version('/css/skin1/font.css')?>" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/magnific-popup.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/jquery.bxslider.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/msn-parse.css?v=<?=js_version('/css/skin1/msn-parse.css')?>" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile.css?v=<?=js_version('/css/skin1/mobile.css')?>" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=<?=js_version('/css/skin1/media-queries.css')?>" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=<?=js_version('/css/skin1/mobile_gads.css')?>" />-->
+        
+        <link rel="stylesheet" type="text/css" href="/css/all-style.css?v=<?=js_version('/css/all-style.css')?>" />
+        
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <?php #if(isset($meta['canonical'])) echo $meta['canonical']; ?>
+        
+        <?php if(isset($meta['og'])) echo $meta['og']; ?>
+        
+        <?php if(isset($meta['noindex']) && $meta['noindex'] == true ): ?>
+            <meta name="robots" content="noindex, follow" />
+        <?php endif; ?>   
+            
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+        
+<!--        <script type='text/javascript' src='/js/skin1/jquery.magnific-popup.min.js'></script>
+        <script type='text/javascript' src='/js/skin1/jquery.bxslider.min.js'></script>
+        <script type='text/javascript' src='/js/skin1/sb.js?v=<?=js_version('/js/skin1/sb.js')?>'></script>
+        <script type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>-->
+            
+        <script async type='text/javascript' src='/js/all-script.js?v=<?=js_version('/js/all-script.js')?>'></script>
         
     </head>
 
@@ -123,6 +131,7 @@
                     
                     <?php #if(preg_match("#(pressfrom.com|lalalay.com|francais-express.com)$#i", $_SERVER['HTTP_HOST'], $pregHostResult)):?>
                     <a class="lang-link" href="/ru/">RU</a>
+                    <a class="lang-link" href="/br/">BR</a>
                     <a class="lang-link" href="/au/">AU</a>
                     <a class="lang-link" href="/fr/">FR</a>
                     <a class="lang-link" href="/de/">DE</a>
@@ -186,7 +195,7 @@
 
                         <div id="middle">
                             <div class="under_slider_gads">
-                                <span class="gAd" data="UnderSlider"></span>
+                                <span class="gAd" data="UnderSlider" load-queue="1"></span>
                             </div>
                             <div id="left">
                                 <?= $content ?>
