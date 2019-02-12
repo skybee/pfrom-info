@@ -146,7 +146,7 @@ $( document ).ready(function(){
     
     setRightBlockTopSpace(); // Set RightTop Space size
     
-    setTimeout('pagePreloadClose()', 4000); //Close Page Preload
+    setTimeout('pagePreloadClose()', 1500); //Close Page Preload
     
 });
 
@@ -165,7 +165,7 @@ function setTop(){
 
 // < Preload Page Close >
 function pagePreloadClose(){
-    $('.page-preload-bg').fadeOut(1000);
+    $('.page-preload-bg').fadeOut(500);
 }
 // </ Preload Page Close >
 
@@ -262,7 +262,7 @@ function ifDesktop(){
 //===================== <TopSliderLoad> =====================//
 function showTopSliderTimeOut(){
         $('#featured .featured-hide-preload').css({'display':'block'});
-        $('#featured .featured-hide-preload').animate({opacity:1}, 1000,function(){
+        $('#featured .featured-hide-preload').animate({opacity:1}, 600,function(){
             $('.bxslider').bxSlider({
                 mode: 'fade',
                 pagerCustom: '#bx-pager',
