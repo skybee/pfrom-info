@@ -3574,6 +3574,10 @@ img.alignleft,a img.alignleft {
 #right .right-top-news .small-rtn img{
     width: 120px;
     margin-right: 10px;
+    opacity: 0.8;
+}
+#right .right-top-news .small-rtn:hover img{
+    opacity: 1;
 }
 #right .right-top-news .small-rtn a.small-rtn-txt-link{
     text-decoration: none;
