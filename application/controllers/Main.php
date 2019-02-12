@@ -176,7 +176,7 @@ class Main extends CI_Controller {
         $tpl_ar['meta']['og']   = $this->load->view('component/meta_og_v', $data_ar['doc_data'], true);
         $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', array('mobile_menu_list'=>$mobile_menu_list), true);
         $tpl_ar['out_popup']    = $this->load->view('component/out_popup_v', $data_ar['like_articles'], true);
-        $tpl_ar['preload']      = $this->load->view('component/preload_v', array(), true);
+        $tpl_ar['preload']      = $this->load->view('component/preload_mobi_v', array(), true);
 
         $this->load->view('main_v', $tpl_ar);
 
