@@ -3,6 +3,7 @@
 <!-- SLIDER -->
 
 <div id="featured" >
+    <div class="featured-hide-preload">
     
     <ul class="ui-tabs-nav" id="bx-pager">
         <?php  $i = 0;
@@ -10,8 +11,7 @@
         ?>
         <li class="ui-tabs-nav-item ">
             <a href="" data-slide-index="<?=$i?>">
-                <!-- src="/img/default_news.jpg" -->
-                <img data-src="/upload/images/small/<?=$article['main_img']?>" src="/img/lazy-preload.gif" alt="" onerror="imgError(this);" />
+                <img src="/upload/images/small/<?=$article['main_img']?>" alt="" onerror="imgError(this);" />
             </a>
         </li>
         <?php $i++; endforeach; ?>
@@ -53,6 +53,6 @@
     endforeach; 
 ?>
 </ul>
-    
+    </div>
 </div><!-- #featured closer -->
 <!-- SLIDER END -->
