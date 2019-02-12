@@ -80,7 +80,8 @@ $config['multidomaine']['main_host'] = [
     'uk.pressfrom.com',
     'us.pressfrom.com',
     'ca.pressfrom.com',
-    'au.pressfrom.com'
+    'au.pressfrom.com',
+    'br.pressfrom.com'
 ];
 
 $config['multidomaine']['parse_lang'] = [
@@ -90,7 +91,8 @@ $config['multidomaine']['parse_lang'] = [
     'uk',
     'us',
     'ca',
-    'au'
+    'au',
+    'br'
 ];
 
 $config['multidomaine']['host_set'][$_SERVER['HTTP_HOST']] = get_country_code();
@@ -231,3 +233,31 @@ $config['multidomaine']['au']['site_name_str']      = $config_var['default']['si
 $config['multidomaine']['au']['host']               = 'au.pressfrom.com';
 $config['multidomaine']['au']['lock_donor']         = $lock_host;
 $config['multidomaine']['au']['static_server']      = 'au.static.lalalay.com';
+
+
+//===== ID =====//
+$config['multidomaine']['br'] = $config['multidomaine']['us'];
+$config['multidomaine']['br']['site_name_str']      = $config_var['default']['site_name'].' - Brasil';
+$config['multidomaine']['br']['lang']               = 'pt';
+$config['multidomaine']['br']['country_name']       = 'Brasil';
+$config['multidomaine']['br']['logo_img']           = $config_var['default']['logo_img'];
+$config['multidomaine']['br']['logo_img_mobile']    = $config_var['default']['logo_img_mobile'];
+$config['multidomaine']['br']['e_mail']             = $config_var['default']['mail'];
+$config['multidomaine']['br']['host']               = 'br.pressfrom.com';
+$config['multidomaine']['br']['contact_str']        = 'Contatos';
+$config['multidomaine']['br']['top_news_str']       = 'TOP notícias';
+$config['multidomaine']['br']['last_news_str']      = 'Últimas notícias';
+$config['multidomaine']['br']['like_news_str']      = 'Ver também';
+$config['multidomaine']['br']['like_video_str']     = 'Vídeos temáticos';
+$config['multidomaine']['br']['serp_news_str']      = 'Semelhante a partir da Web';
+$config['multidomaine']['br']['comments_str']       = 'Comentários';
+$config['multidomaine']['br']['source_str']         = 'Fonte';
+$config['multidomaine']['br']['repost_news_str']    = 'Compartilhe notícias nas redes sociais';
+$config['multidomaine']['br']['page_str']           = 'Página';
+$config['multidomaine']['br']['month_ar']           = array( 1=>'janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro');
+$config['multidomaine']['br']['day_ar']             = array('Domingo','Segunda','Terça-feira','Quarta-feira','Quinta','Sexta-feira','Sábado');
+$config['multidomaine']['br']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D15';
+$config['multidomaine']['br']['social_btn_list']    = 'facebook,twitter,gplus';
+$config['multidomaine']['br']['outwindow_str']      = 'Isto é interessante!';
+$config['multidomaine']['br']['lock_donor']         = $lock_host;
+$config['multidomaine']['br']['static_server']      = 'br.static.lalalay.com';
