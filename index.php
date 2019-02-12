@@ -68,7 +68,7 @@
     
 
 
-    if($_SERVER['HTTP_HOST'] == 'express-info.lh' || $_SERVER['HTTP_X_REAL_IP'] == '109.86.165.207' || $_SERVER['HTTP_X_REAL_IP'] == '94.153.255.250')
+    if($_SERVER['HTTP_HOST'] == 'express-info.lh' || $_SERVER['REMOTE_ADDR'] == '109.86.165.207')
     {
         define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
     }
