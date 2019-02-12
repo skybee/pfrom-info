@@ -20,7 +20,7 @@ class Parse_lib{
     
     static function down_with_curl($url, $getInfo = false, $useProxy = false, $useCount=0){
         
-        $useProxy = false;
+//        $useProxy = false;
         
         if($useProxy !== false){
             $proxy = self::getRandProxy();
