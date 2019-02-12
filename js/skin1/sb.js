@@ -41,9 +41,6 @@ $( document ).ready(function(){
                 }
             );
     
-    // < LasyLoad Images >
-    $("img.lazyload").Lazy();
-    // </ LasyLoad Images >
     
     // <add url link to copy post>
     var source_link = '<p>Source: <a href="' + location.href + '">' + location.href + '</a></p>';
@@ -105,7 +102,7 @@ $( document ).ready(function(){
             inner   = $(this).html();
             cls     = $(this).attr('class');
             stl     = $(this).attr('style');
-            aHtml = '<a target="_blank" href="'+url+'" class="'+cls+'" style="'+stl+'" >'+inner+'</a>';
+            aHtml = '<a target="_blank" href="'+url+'" class="'+cls+'" style="'+stl+'" rel="nofollow" >'+inner+'</a>';
             $(this).replaceWith(aHtml);
         });
     }
@@ -207,35 +204,9 @@ function ifMobile(){
 
 //===================== <if Desktop> =====================//
 function ifDesktop(){
+    
     //========== <Sliders> ==========//
-    function lazySliderBefore(thisBlock){
-        thisImg = $('img', thisBlock);
-        newSrc = thisImg.attr('data-src');
-        if(newSrc !== undefined){
-            thisImg.attr('src',newSrc);
-            thisImg.removeAttr('data-src');
-        }
-    }
-
-    function loadSliderPagerImg(){
-        imges = $('#bx-pager li img');
-        $('#bx-pager li img').each(function(){
-            newSrc = $(this).attr('data-src');
-            $(this).attr('src',newSrc);
-        });
-    }
-    loadSliderPagerImg();
-   
-
-    $('.bxslider').bxSlider({
-        mode: 'fade',
-        pagerCustom: '#bx-pager',
-        controls: false,
-        auto: true,
-        speed: 600,
-        pause: 6000,
-        onSlideBefore: lazySliderBefore
-    });    
+    window.setTimeout("showTopSliderTimeOut()",2000);   
     //========== </Sliders> ==========//
 
 
@@ -286,6 +257,34 @@ function ifDesktop(){
 //    setTimeout('$("#bottom-games").load("/html/bottom-games.html");', 10000);
 }
 //===================== <if Desktop> =====================//
+
+
+//===================== <TopSliderLoad> =====================//
+function showTopSliderTimeOut(){
+        $('#featured .featured-hide-preload').css({'display':'block'});
+        $('#featured .featured-hide-preload').animate({opacity:1}, 1000,function(){
+            $('.bxslider').bxSlider({
+                mode: 'fade',
+                pagerCustom: '#bx-pager',
+                controls: false,
+                auto: true,
+                speed: 400,
+                pause: 3000,
+                onSlideBefore: lazySliderBefore
+            });
+        });
+//        alert("slider");
+};
+
+function lazySliderBefore(thisBlock){
+    thisImg = $('img', thisBlock);
+    newSrc = thisImg.attr('data-src');
+    if(newSrc !== undefined){
+        thisImg.attr('src',newSrc);
+        thisImg.removeAttr('data-src');
+    }
+}
+//===================== </TopSliderLoad> =====================//
 
 
 
