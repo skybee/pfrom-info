@@ -31,6 +31,8 @@ class merger_css_js extends CI_Controller{
         
         header("Content-Type:text/plain; charset=utf-8");
         
+        # example: http://express-info.lh/tmp/merger_css_js/?fileType=css&url=http://express-info.lh
+        
         $url        = $_GET['url'];
         $fileType   = $_GET['fileType'];
         
@@ -59,7 +61,7 @@ class merger_css_js extends CI_Controller{
         if($htmlObj->has('script[src]') && $fileType=='js'){
             foreach($htmlObj->find('script[src]') as $key => $scriptObj){
                 $JSfileUri = $scriptObj->src;
-                if(preg_match("#googlesyndication.com#i", $JSfileUri)){
+                if(preg_match("#google#i", $JSfileUri)){
                     continue;
                 }
                 $this->getNewFileContent($JSfileUri, 'js');
