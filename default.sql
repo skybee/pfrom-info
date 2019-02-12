@@ -365,7 +365,9 @@ ALTER TABLE `files`
 -- Индексы таблицы `scan_url`
 --
 ALTER TABLE `scan_url`
- ADD PRIMARY KEY (`id`), ADD KEY `url` (`url`(333));
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `donor_url_id` (`donor_url_id`),
+  ADD KEY `url` (`url`(333));
 
 --
 -- Индексы таблицы `shingles`
