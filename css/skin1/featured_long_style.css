@@ -56,3 +56,9 @@
 #featured .info a{
 	color:#fff;
 }
+
+
+#featured .featured-hide-preload{
+    opacity: 0;
+    display: none;
+}
