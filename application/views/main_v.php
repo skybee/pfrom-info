@@ -3,8 +3,6 @@
 <html lang="<?=$this->multidomaine['lang'];?>"> 
     <head>
         
-        <!-- Google Ads -->
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133437377-1"></script>
         <script>
@@ -88,6 +86,9 @@
         <script type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>-->
             
         <script async type='text/javascript' src='/js/all-script.js?v=<?=js_version('/js/all-script.js')?>'></script>
+        
+        <!-- Google Ads -->
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         
     </head>
 
