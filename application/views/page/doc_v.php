@@ -91,7 +91,7 @@
     </style>
     <div class="content-gAd content-gAd-bottom content-gAd-bottom-after-news " >
         <div class="content-gAd-center">
-            <span class="gAd" data="content bottom Netboard"></span>
+            <span class="gAd" data="content bottom Netboard" load-queue="2"></span>
         </div>
     </div>
 
@@ -143,7 +143,7 @@
                 ?>
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">
-                        <img class="lazyload" data-src="<?=$imgUrl?>" src="/img/lazy-preload.gif" alt="<?=$likeArts['title']?>" />
+                        <img src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>" />
                         <?=Article_m::get_short_txt($likeArts['title'],80,'word','...')?>
                     </a>
                 </div>
