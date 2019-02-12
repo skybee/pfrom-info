@@ -79,8 +79,8 @@
             <meta name="robots" content="noindex, follow" />
         <?php endif; ?>   
             
-        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
         
 <!--        <script type='text/javascript' src='/js/skin1/jquery.magnific-popup.min.js'></script>
         <script type='text/javascript' src='/js/skin1/jquery.bxslider.min.js'></script>
