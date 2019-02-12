@@ -35,6 +35,10 @@ $host_lang = array(
     'au.lalalay.com'=>          'au',
     'au.francais-express.com'=> 'au',
     
+    'br.pressfrom.com'=>        'br',
+    'br.lalalay.com'=>          'br',
+    'br.francais-express.com'=> 'br',
+    
 );
 
 /*
@@ -174,6 +178,13 @@ if(LANG_CODE == 'au'){
     $db['default']['username'] = 'admin_pf_au';
     $db['default']['password'] = 'pf-au-ujyrjyu8444';
     $db['default']['database'] = 'admin_pf_au';
+}
+
+if(LANG_CODE == 'br'){
+    $db['default']['hostname'] = $db_ip;
+    $db['default']['username'] = 'admin_pf_br';
+    $db['default']['password'] = 'pf-br-ujyrjyu8444';
+    $db['default']['database'] = 'admin_pf_br';
 }
 
 
