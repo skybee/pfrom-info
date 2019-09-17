@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-<!-- SLIDER -->
 
+<!-- SLIDER -->
 <div id="featured" >
     <div class="featured-hide-preload">
     
@@ -56,3 +56,65 @@
     </div>
 </div><!-- #featured closer -->
 <!-- SLIDER END -->
+
+
+
+<!--======================= MOBILE SLIDER ==========================-->
+
+
+
+<!-- Mobile Top Slider START -->
+
+<div class="mobile-slider">
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <?php 
+                $cntArt = count($articles);
+                for($i=0;$i<$cntArt;$i++):
+            ?>
+                    <div class="swiper-slide">
+                        
+                        <?php $newsUrl    = '/'.LANG_CODE."/{$articles[$i]['full_uri']}-{$articles[$i]['id']}-{$articles[$i]['url_name']}.html"; ?>
+                        
+                        <div class="mob-slider-news">
+                            <a href="<?=$newsUrl?>" class="mob-slider-news-imglink">
+                                <img src="/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
+                            </a>
+                            <h4>
+                            <a href="<?=$newsUrl?>" class="mob-slider-news-titlelink">
+                                <?=Article_m::get_short_txt($articles[$i]['title'],100,'word','...')?>
+                            </a>
+                            </h4>>
+                        </div>
+                        
+                        <?php $i++ ?>
+                        
+                        <?php if($i<$cntArt): ?>
+                        <?php $newsUrl    = '/'.LANG_CODE."/{$articles[$i]['full_uri']}-{$articles[$i]['id']}-{$articles[$i]['url_name']}.html"; ?>
+                            
+                            <div class="mob-slider-news">
+                                <a href="<?=$newsUrl?>" class="mob-slider-news-imglink">
+                                    <img src="/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
+                                </a>
+                                <h4>
+                                <a href="<?=$newsUrl?>" class="mob-slider-news-titlelink">
+                                    <?=Article_m::get_short_txt($articles[$i]['title'],100,'word','...')?>
+                                </a>
+                                </h4>
+                            </div>
+                        <?php endif;?>
+                        
+                    </div>
+            <?php endfor; ?>
+        </div>
+        
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+</div>
+<!-- Mobile Top Slider END -->
