@@ -67,6 +67,15 @@ class Combined_pr24 extends CI_Controller
         echo date("H:i:s")."- OK - ".__METHOD__;
     }
     
+    function del_old_not_popular_news($cntNews=10){
+        set_time_limit(300);
+        $url = "http://-host-/cron/del_news/del_old_not_popular_news/{$cntNews}/";
+        
+        $this->each_http_query($url);
+        
+        echo date("H:i:s")."- OK - ".__METHOD__;
+    }
+    
     private function each_http_query($urlTpl){
         
         foreach ($this->parse_lang as $lang){
