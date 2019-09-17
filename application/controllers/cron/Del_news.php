@@ -21,16 +21,30 @@ class Del_news extends CI_Controller{
         header("Content-type:text/plain; Charset=utf-8");
         set_time_limit(300);
         
+        if(!isset($this->hostData['del_old_art_catid']) || empty($this->hostData['del_old_art_catid'])){
+            echo "\n\n -- Empty Category IDs list in Multidomain Config file --  \n\n";
+            return false;
+        }
+        
+        if($this->hostData['del_old_art_catid'] == 'all'){ //Delete art from all category 
+            $sql_catid_condition = '';
+        }
+        else{ //Delete art from 'select in multidomain conf' category 
+            $sql_catid_condition = " AND `cat_id` IN ( ".$this->hostData['del_old_art_catid']." ) ";
+        }
+        
         $cnt    = (int) $cnt;
-        $date   = date("Y-m-d",strtotime("- 2 month"));
+        $date   = date("Y-m-d",strtotime("- 6 month"));
         $sql    = "SELECT `id` FROM  `article` "
                 . "WHERE  "
                 . "`views`=0 "
                 . "AND  "
                 . "`date`<'{$date}' "
-                . "AND  "
-                . "`cat_id` IN ( 4, 5, 6, 7, 8, 9, 10, 11 ) "
+                . $sql_catid_condition
+                . "ORDER BY `id` ASC "
                 . "LIMIT {$cnt}";
+                 
+//        echo "\n\n".$sql."\n\n";        
                 
         $query = $this->db->query($sql);
         
