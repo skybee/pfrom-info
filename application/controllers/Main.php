@@ -28,6 +28,7 @@ class Main extends CI_Controller {
         $this->load->library('multidomaine_lib');
         $this->load->library('cat_lib');
         $this->load->library('Express_news_lib');
+//        $this->load->library('user_agent');
         
         $this->catNameAr = $this->cat_lib->getCatFromUri();
         $this->catConfig = $this->cat_lib->getCatConfig();
@@ -138,12 +139,6 @@ class Main extends CI_Controller {
         //вставка like_articles[0] в текст
         $data_ar['doc_data']['text']    = insertLikeArtInTxt($data_ar['doc_data']['text'], $data_ar['like_articles'], $right['serp_list']);
         $data_ar['doc_data']['text']    = addResponsiveVideoTag($data_ar['doc_data']['text']);
-        
-        //CCTV Linkator
-//        if($this->multidomaine['lang'] == 'ru'){
-//            $data_ar['doc_data']['text'] = cctv_article_linkator($data_ar['doc_data']['text']);
-//            $right['sape_donor_link']    = get_sape_donor_link();
-//        }
 
         $data_ar['like_video']          = $this->article_m->get_like_video($data_ar['doc_data']['id'],2);
         
