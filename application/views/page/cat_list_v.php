@@ -54,7 +54,8 @@
         $i++;
         if($i==2 || $i==5 || $i==8 || $i==13 ){
             echo '  <div class="listing">
-                        <div class="content" style="padding-bottom:15px;">
+                        <div class="content" style="padding-bottom:15px; position:relative;">
+                            <div style="width:2px; height:85%; background-color:#f92f05; position:absolute; left:-21px;"></div>
                             <span class="gAd" data="InCategoryList"></span>
                         </div>
                     </div>';
