@@ -114,7 +114,9 @@ class Article_m extends CI_Model{
 //                                  ");
 
         $sql = "SELECT  `article`.`id`, `article`.`cat_id`, `article`.`date`, `article`.`url_name`, `article`.`title`, 
-                        `article`.`text`, `article`.`main_img`, `article`.`donor`, `article`.`donor_id`, `article`.`scan_url_id`,                                             `category`.`name` AS 'cat_name', `category`.`full_uri` AS 'cat_full_uri', 
+                        `article`.`text`, `article`.`main_img`, `article`.`donor`, `article`.`donor_id`, `article`.`scan_url_id`, 
+                        `article`.`views`,
+                        `category`.`name` AS 'cat_name', `category`.`full_uri` AS 'cat_full_uri', 
                         `donor`.`name` AS 'd_name', `donor`.`img` AS 'd_img', `donor`.`host` AS 'd_host',
                         `article_like_serp`.`serp_object`
                 FROM 
@@ -482,11 +484,12 @@ class Article_m extends CI_Model{
         if( $row['cnt'] < 1 ){ //запись новой записи в базу
             $this->db->query("INSERT INTO `article_top` SET `article_id` = '{$id}', `ip` = '{$ip}', `rank` = {$rank} ");
             
-            if( rand(1, 1000) <= 50 ){ //удаление старых записей
-                $control_date   = date("Y-m-d H:i:s", strtotime("- 30 day", time() ) ); //дата удаления записи
-                
-                $this->db->query("DELETE FROM `article_top` WHERE `date` < '{$control_date}' ");
-            }
+            # -- This ccode was move to Artice_top/upd_article_view --
+//            if( rand(1, 1000) <= 50 ){ //удаление старых записей
+//                $control_date   = date("Y-m-d H:i:s", strtotime("- 60 day", time() ) ); //дата удаления записи
+//                
+//                $this->db->query("DELETE FROM `article_top` WHERE `date` < '{$control_date}' ");
+//            }
         }
     }
     
