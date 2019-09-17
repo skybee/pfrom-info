@@ -64,6 +64,7 @@
         <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=<?=js_version('/css/skin1/media-queries.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=<?=js_version('/css/skin1/mobile_gads.css')?>" />-->
         
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css" />
         <link rel="stylesheet" type="text/css" href="/css/all-style.css?v=<?=js_version('/css/all-style.css')?>" />
         
         
@@ -77,15 +78,16 @@
             <meta name="robots" content="noindex, follow" />
         <?php endif; ?>   
             
-        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+        <script defer type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+        <script defer type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+        <script defer type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
         
-<!--        <script type='text/javascript' src='/js/skin1/jquery.magnific-popup.min.js'></script>
-        <script type='text/javascript' src='/js/skin1/jquery.bxslider.min.js'></script>
-        <script type='text/javascript' src='/js/skin1/sb.js?v=<?=js_version('/js/skin1/sb.js')?>'></script>
-        <script type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>-->
+<!--        <script defer type='text/javascript' src='/js/skin1/jquery.magnific-popup.min.js'></script>
+        <script defer type='text/javascript' src='/js/skin1/jquery.bxslider.min.js'></script>
+        <script defer type='text/javascript' src='/js/skin1/sb.js?v=<?=js_version('/js/skin1/sb.js')?>'></script>
+        <script defer type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>-->
             
-        <script async type='text/javascript' src='/js/all-script.js?v=<?=js_version('/js/all-script.js')?>'></script>
+        <script defer type='text/javascript' src='/js/all-script.js?v=<?=js_version('/js/all-script.js')?>'></script>
         
         <!-- Google Ads -->
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -93,7 +95,9 @@
     </head>
 
     <body>
-        <?php if(isset($preload)) echo $preload;?>
+        <span id="langCode" data="<?=LANG_CODE?>" style="display: none;" ></span>
+        
+        <?php // if(isset($preload)) echo $preload;?>
         
 <!--        <div style="position: fixed; top:0; left: 0; width: 100%; height: 200%; background-color: #009DDB; z-index: 100; " class="sbtmplock">
             <div style="color: #fff; font-size: 24px; text-align: center; margin-top: 20%;">
