@@ -46,6 +46,10 @@ class Parse_page_msn_didom_lib{
         $this->data             = array('img'=>false,'title'=>false,'description'=>false,'text'=>false,'date'=>false,'canonical'=>false);
         //=== Delete Last Data ===//
         
+//        echo "\n\n -- GET DATA -- \n\n";
+//        print_r($returnData);
+//        echo "\n\n -- /GET DATA -- \n\n";
+        
         return $returnData; 
     }
     
@@ -204,6 +208,30 @@ class Parse_page_msn_didom_lib{
         }
     } 
     
+//    private function slideerRewrite(){ // Old, not work orectly
+//        if( !$this->htmlObj->has('.inline-slideshow') )
+//        {
+//            return false;
+//        }
+//        
+//        foreach($this->htmlObj->find('.inline-slideshow') as $key => $sliderObj)
+//        {
+//            $i=0;
+//            foreach($this->htmlObj->find('.inline-slideshow')[$key]->find('ul.slideshow li') as $key2 => $slideLi)
+//            {
+//                $slideTxtData  = $sliderObj->find('.gallerydata div.slidemetadata-container')[$i]->html();
+//                $slideTxtData .= $sliderObj->find('.gallerydata div.body-text')[$i]->html();
+//                
+////                $slideLi->setInnerHtml($slideLi->innerHtml()."\n".$slideTxtData);
+//                $this->htmlObj->find('.inline-slideshow')[$key]->find('ul.slideshow li')[$key2]->setInnerHtml($slideLi->innerHtml()."\n".$slideTxtData);
+//                $i++;
+//                echo $slideLi->innerHtml()."\n".$slideTxtData;
+//            }
+//            
+//            $sliderObj->find('.gallerydata')[0]->remove();
+//        }
+//    }
+    
     private function slideerRewrite(){
         if( !$this->htmlObj->has('.inline-slideshow') )
         {
@@ -212,18 +240,17 @@ class Parse_page_msn_didom_lib{
         
         foreach($this->htmlObj->find('.inline-slideshow') as $key => $sliderObj)
         {
+            $newSlideHtml = '';
             $i=0;
             foreach($this->htmlObj->find('.inline-slideshow')[$key]->find('ul.slideshow li') as $key2 => $slideLi)
-            {
+            {   
                 $slideTxtData  = $sliderObj->find('.gallerydata div.slidemetadata-container')[$i]->html();
                 $slideTxtData .= $sliderObj->find('.gallerydata div.body-text')[$i]->html();
                 
-//                $slideLi->setInnerHtml($slideLi->innerHtml()."\n".$slideTxtData);
-                $this->htmlObj->find('.inline-slideshow')[$key]->find('ul.slideshow li')[$key2]->setInnerHtml($slideLi->innerHtml()."\n".$slideTxtData);
+                $newSlideHtml .= $slideLi->innerHtml()."\n".$slideTxtData;
                 $i++;
             }
-            
-            $sliderObj->find('.gallerydata')[0]->remove();
+            $sliderObj->setInnerHtml($newSlideHtml);
         }
     }
     
