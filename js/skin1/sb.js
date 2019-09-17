@@ -158,7 +158,9 @@ function setTop(){
     var docId = $('#docId').attr('docId');
     if( !docId ){ return; }
     
-    $.post( '/ajax/background/set_top/', {docId: docId, ref: document.referrer} );
+    langCode = $('#langCode').attr('data');
+    
+    $.post( '/'+langCode+'/ajax/background/set_top/', {docId: docId, ref: document.referrer} );
 }
 
 
@@ -198,6 +200,22 @@ function ifMobile(){
         spanAnchor  = $(this).attr('data-anchor');
         $(this).replaceWith('<a href="'+spanUrl+'">'+spanAnchor+'</a>');
     });
+    
+    
+    // top slider mobile
+    //initialize swiper when document ready
+    var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+      
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        }
+    });
+    
 }
 //===================== </if Mobile> =====================//
 
