@@ -12,7 +12,7 @@
         ?>
         <div class="ow_item">
             <a href="<?=$url;?>">
-                <img src="/upload/images/real/<?=$lArticle['main_img'];?>" />
+                <img src="/upload/images/real/<?=$lArticle['main_img'];?>" onerror="imgError(this);" />
             </a>
             <a href="<?=$url;?>" class="ow_item_title">
                 <?=Article_m::get_short_txt($lArticle['title'],110,'word','...');?>
