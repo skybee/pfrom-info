@@ -154,7 +154,6 @@
         </div>
         <!-- /likeArticlesSlider -->
         
-        
     </div><!-- #othernews -->
     
     <?php if(0): ?>
@@ -200,6 +199,6 @@
     </div>
     <?php endif; ?>
     
-
+    <div style="font-size: 10px; color: #999; margin-top: 10px; float: left;">usr:  <?=$doc_data['views']?></div>
 
 </div>
