@@ -122,7 +122,8 @@ $config['multidomaine']['ru']['xml_yandex_url']     = 'https://xmlsearch.yandex.
 $config['multidomaine']['ru']['social_btn_list']    = 'vkontakte,facebook,twitter,odnoklassniki';
 $config['multidomaine']['ru']['outwindow_str']      = 'Это интересно!';
 $config['multidomaine']['ru']['lock_donor']         = $lock_host;
-$config['multidomaine']['ru']['static_server']       = 'ru.static.lalalay.com';
+$config['multidomaine']['ru']['static_server']      = 'ru.static.lalalay.com';
+$config['multidomaine']['ru']['del_old_art_catid']  = '2,3,6,7,8,12,20,22'; //Category IDs from which old news will be deleted; Format: 1,2,3,...
 
 //===== Fr =====//
 $config['multidomaine']['fr']['site_name_str']      = $config_var['default']['site_name'].' - France';
@@ -149,7 +150,7 @@ $config['multidomaine']['fr']['social_btn_list']    = 'facebook,twitter,gplus';
 $config['multidomaine']['fr']['outwindow_str']      = 'C\'est intéressant!';
 $config['multidomaine']['fr']['lock_donor']         = $lock_host;
 $config['multidomaine']['fr']['static_server']       = 'fr.static.lalalay.com';
-
+$config['multidomaine']['fr']['del_old_art_catid']  = '2,3,4,7,10';
 
 //===== De =====//
 $config['multidomaine']['de']['site_name_str']      = $config_var['default']['site_name'].' - Deutschland';
@@ -176,6 +177,7 @@ $config['multidomaine']['de']['social_btn_list']    = 'facebook,twitter,gplus';
 $config['multidomaine']['de']['outwindow_str']      = 'Das ist interessant!';
 $config['multidomaine']['de']['lock_donor']         = $lock_host;
 $config['multidomaine']['de']['static_server']      = 'de.static.lalalay.com';
+$config['multidomaine']['de']['del_old_art_catid']  = '3,4,7,8,9';
 
 
 //===== Gb =====//
@@ -203,6 +205,7 @@ $config['multidomaine']['uk']['social_btn_list']    = 'facebook,twitter,gplus';
 $config['multidomaine']['uk']['outwindow_str']      = 'This is interesting!';
 $config['multidomaine']['uk']['lock_donor']         = $lock_host;
 $config['multidomaine']['uk']['static_server']      = 'uk.static.lalalay.com';
+$config['multidomaine']['uk']['del_old_art_catid']  = '3,5,6,7,9,10,11,12';
 
 
 //===== US =====//
@@ -215,6 +218,7 @@ $config['multidomaine']['us']['logo_img']           = $config_var['default']['lo
 $config['multidomaine']['us']['logo_img_mobile']    = $config_var['default']['logo_img_mobile'];
 $config['multidomaine']['us']['lock_donor']         = $lock_host;
 $config['multidomaine']['us']['static_server']       = 'us.static.lalalay.com';
+$config['multidomaine']['us']['del_old_art_catid']  = '3,4,5,9,17,18';
 
 
 //===== CA =====//
@@ -224,6 +228,7 @@ $config['multidomaine']['ca']['site_name_str']      = $config_var['default']['si
 $config['multidomaine']['ca']['host']               = 'ca.pressfrom.com';
 $config['multidomaine']['ca']['lock_donor']         = $lock_host;
 $config['multidomaine']['ca']['static_server']      = 'ca.static.lalalay.com';
+$config['multidomaine']['ca']['del_old_art_catid']  = '4,7,8,11';
 
 
 //===== AU =====//
@@ -233,6 +238,7 @@ $config['multidomaine']['au']['site_name_str']      = $config_var['default']['si
 $config['multidomaine']['au']['host']               = 'au.pressfrom.com';
 $config['multidomaine']['au']['lock_donor']         = $lock_host;
 $config['multidomaine']['au']['static_server']      = 'au.static.lalalay.com';
+$config['multidomaine']['au']['del_old_art_catid']  = '3,4,7,8,9';
 
 
 //===== ID =====//
@@ -261,3 +267,4 @@ $config['multidomaine']['br']['social_btn_list']    = 'facebook,twitter,gplus';
 $config['multidomaine']['br']['outwindow_str']      = 'Isto é interessante!';
 $config['multidomaine']['br']['lock_donor']         = $lock_host;
 $config['multidomaine']['br']['static_server']      = 'br.static.lalalay.com';
+$config['multidomaine']['br']['del_old_art_catid']  = 'all';
