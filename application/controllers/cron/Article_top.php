@@ -17,6 +17,17 @@ class Article_top extends CI_Controller{
         
         if( $this->single_work( 10, 'upd_article_view') == false ) exit('The work temporary Lock upd_article_view');
         
+        if( rand(1, 1000) <= 100 ){ //удаление старых записей
+            $control_date   = date("Y-m-d H:i:s", strtotime("- 60 day", time() ) ); //дата удаления записи
+
+            if($this->db->query("DELETE FROM `article_top` WHERE `date` < '{$control_date}' ") ){
+                echo "Del old row from `article_top` - OK <br />\n";
+            }
+        }
+        else{
+            echo "Del old row from `article_top` will be next time <br />\n";
+        }
+        
         $sql = "UPDATE LOW_PRIORITY `article` ,
                 (
                     SELECT  `article_id` , SUM(`rank`) AS  `rank` 
