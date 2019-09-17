@@ -1,8 +1,5 @@
 User-Agent: *
-Disallow:
-#Fr
-#Disallow: /actualite/
-#Disallow: /lifestyle/
-
-User-agent: Mediapartners-Google
-Disallow:
+Disallow: /js/
+Disallow: /ajax/
+Disallow: /cron/
+Disallow: /parser/
