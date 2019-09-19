@@ -23,8 +23,8 @@ class Main extends CI_Controller
         $this->load->library('parser/news_parser_msn_lib');
 //        $this->load->library('parser/parse_page_lib');
 //        $this->load->library('parser/parse_page_didom_lib');
-//        $this->load->library('parser/parse_page_msn_lib');
-        $this->load->library('parser/parse_page_msn_didom_lib');
+        $this->load->library('parser/parse_page_msn_lib');
+//        $this->load->library('parser/parse_page_msn_didom_lib');
         
         $this->load->library('parser/video_replace_lib');
         $this->load->library('dir_lib');
@@ -105,7 +105,7 @@ class Main extends CI_Controller
             $this->parser_m->set_url_scaning( $news_ar['id'] );
 			
             #<for test>
-//            $news_ar['url']     = 'http://www.msn.com/en-gb/cars/news/new-ferrari-f8-tributo-is-fastest-mid-engined-ferrari-yet/ar-BBUciGf';  
+//            $news_ar['url']     = 'https://www.msn.com/pt-br/noticias/meio-ambiente/o-agrot%C3%B3xico-que-matou-50-milh%C3%B5es-de-abelhas-em-santa-catarina-em-um-s%C3%B3-m%C3%AAs/ar-AAHraLB';  
 //            $news_ar['host']    = 'www.msn.com';
             #</for test>
             
@@ -119,7 +119,8 @@ class Main extends CI_Controller
             }
             
             $host                           = $this->news_parser_lib->get_donor_url( $news_ar['url'] );
-            $insert_data                    = $this->parse_page_msn_didom_lib->get_data($html, $news_ar);
+//            $insert_data                    = $this->parse_page_msn_didom_lib->get_data($html, $news_ar);
+            $insert_data                    = $this->parse_page_msn_lib->get_data($html, $news_ar);
             
             if(check_lock_donor($insert_data['donor-data']['host'], $this->multidomaine['lock_donor']))
             {
@@ -150,7 +151,7 @@ class Main extends CI_Controller
             #$this->remote_serv_transfer_lib->send_file_to_remote();
             
             flush(); $i++;
-            sleep(2);
+            sleep(0);
         }
 
     }
