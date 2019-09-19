@@ -151,10 +151,10 @@ class Parse_page_msn_lib{
             
             //<MaxImgSize>
             preg_match("#w=(\d+)#iu", $imgSrc, $matches);
-            if(isset($matches[1]) && $matches[1] > 616)
+            if(isset($matches[1]) && $matches[1] > 800) //616px
             {
                 $searchAr   = array("#h=\d{2,4}#iu","#w=\d{2,4}#iu","#q=\d{1,2}#iu");
-                $replaceAr  = array("h=","w=616");
+                $replaceAr  = array("h=","w=800");
                 $imgSrc     = preg_replace($searchAr, $replaceAr, $imgSrc);
             }
             //</MaxImgSize>
@@ -200,6 +200,14 @@ class Parse_page_msn_lib{
         $this->delAll('#findacar'); // del auto search block 
         $this->delAll('button'); // del all <button>
         $this->delAll('div.ec-module'); //msn <iframe> in div.ec-module
+        $this->delAll('div.msnews-container'); //msnNewsBlock .msnews-container
+        $this->delAll('div.autos_rlc1'); //autos_rlc1 search block in Auto
+        $this->delAll('div.researchcars'); //autos search block in Auto
+        $this->delAll('style'); //style in text
+        $this->delAll('div.configurableAd'); //msn ads
+        $this->delAll('#WidgetDiv'); //msn widgetLink
+        $this->delAll('#ContentDiv15'); //msn videoADS 
+        $this->delAll('div.readmore'); //msn ads
        
         
         //<video player content>
