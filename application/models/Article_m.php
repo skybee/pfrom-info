@@ -115,7 +115,7 @@ class Article_m extends CI_Model{
 
         $sql = "SELECT  `article`.`id`, `article`.`cat_id`, `article`.`date`, `article`.`url_name`, `article`.`title`, 
                         `article`.`text`, `article`.`main_img`, `article`.`donor`, `article`.`donor_id`, `article`.`scan_url_id`, 
-                        `article`.`views`,
+                        `article`.`views`, `article`.`show_ads`,
                         `category`.`name` AS 'cat_name', `category`.`full_uri` AS 'cat_full_uri', 
                         `donor`.`name` AS 'd_name', `donor`.`img` AS 'd_img', `donor`.`host` AS 'd_host',
                         `article_like_serp`.`serp_object`
