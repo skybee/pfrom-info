@@ -266,6 +266,10 @@ class Parse_page_msn_didom_lib{
         $this->delAll('div.autos_rlc1'); //autos_rlc1 search block in Auto
         $this->delAll('div.researchcars'); //autos search block in Auto
         $this->delAll('style'); //style in text
+        $this->delAll('div.configurableAd'); //msn ads
+        $this->delAll('#WidgetDiv'); //msn widgetLink
+        $this->delAll('#ContentDiv15'); //msn videoADS 
+        $this->delAll('div.readmore'); //msn ads
        
         
         //<video player content>
