@@ -189,10 +189,10 @@ if(LANG_CODE == 'br'){
 
 
 if( $_SERVER['HTTP_HOST'] == 'express-info.lh'){
-//    $db['default']['hostname'] = 'localhost';
-//    $db['default']['username'] = 'root';
-//    $db['default']['password'] = '';
-//    $db['default']['database'] = 'admin_pf_br'; //'fr-express'; //DB: france, fr-express
+    $db['default']['hostname'] = 'localhost';
+    $db['default']['username'] = 'root';
+    $db['default']['password'] = '';
+    $db['default']['database'] = 'admin_pf_br'; //'fr-express'; //DB: france, fr-express
 //    
 //    $db['default']['database'] = 'admin_pf_us'; // TMP test
 }
