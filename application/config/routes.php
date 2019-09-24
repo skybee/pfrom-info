@@ -87,6 +87,7 @@ $route['^(:any)$']        = "main/main_page/$1";
 
 $route['search/(:any)']                                         = "main/search/$1";
 $route['tmp/(:any)']                                            = "tmp/$1";
+$route['sbadmin/(:any)/(:any)']                                 = "sbadmin/$1/$2";
 $route['[-a-z\d/]+?/([-a-z\d]+?)/?(\d*)']                       = "main/cat_list/$1/$2";
 $route['parser/(:any)']                                         = "parser/$1";
 $route['donor/(:any)']                                          = "donor/$1";
