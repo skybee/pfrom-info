@@ -206,7 +206,7 @@ class Parse_page_msn_lib{
         $this->delAll('style'); //style in text
         $this->delAll('div.configurableAd'); //msn ads
         $this->delAll('#WidgetDiv'); //msn widgetLink
-        $this->delAll('#ContentDiv15'); //msn videoADS 
+        $this->delAll('#ContentDiv'); //msn videoADS 
         $this->delAll('div.readmore'); //msn ads
        
         
@@ -430,5 +430,14 @@ class Parse_page_msn_lib{
     //</Del From Object Function>
     
     
-    function predParseHTML( $html ){ return $html; }
+    function predParseHTML( $html ){
+        
+        //change ID #ContentDiv(int) BEGIN
+        $pattern = "#\"(ContentDiv)\d+\"#i";
+        $replacement = "\"$1\"";
+        $html = preg_replace($pattern, $replacement, $html);
+        //change ID #ContentDiv END
+        
+        return $html;
+    }
 }
