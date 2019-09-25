@@ -428,10 +428,16 @@ class parseMsnList extends parseArticleList{
             $data[$i]['url']    =  $list->find('a',0)->href;
             
             if( is_object($list->find('img',0)) ){
-                $imgJson    = $list->find('img',0)->attr['data-src'];
-                $imgJson    = html_entity_decode($imgJson);
-                $imgAr      = json_decode($imgJson, true);
-                $img        = 'http:'.$imgAr['default'];
+                $imgObj = $list->find('img',0);
+                if(isset($imgObj->attr['data-src'])){
+                    $imgJson    = $imgObj->attr['data-src'];
+                    $imgJson    = html_entity_decode($imgJson);
+                    $imgAr      = json_decode($imgJson, true);
+                    $img        = 'http:'.$imgAr['default'];
+                }
+                elseif(isset($imgObj->attr['src']) && preg_match("#\.(jpg|jpeg|img|)#i", $imgObj->attr['src'])){
+                    $img        = $imgObj->attr['src'];
+                }
                 
                 $searchAr   = array("#h=\d{2,3}#i","#w=\d{2,3}#i","#q=\d{1,2}#i");
                 $replaceAr  = array("h=200","w=300","q=100");
