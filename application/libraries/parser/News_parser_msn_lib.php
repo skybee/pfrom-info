@@ -149,13 +149,13 @@ class donorMsn{
     private function updDonor($id){
         
         $date       = date("Y-m-d H:i:s");
-        $imgName    = $this->loadImg();
+//        $imgName    = $this->loadImg();
         
         $sql = "UPDATE `donor` "
                 . "SET "
                 . "`name`='{$this->ci->db->escape_str($this->donorData['name'])}', "
                 . "`host`='{$this->donorData['host']}', "
-                . "`img`='{$imgName}', "
+//                . "`img`='{$imgName}', "
                 . "`upd`='{$date}' "
                 . "WHERE `id`='{$id}' "
                 . "LIMIT 1";
