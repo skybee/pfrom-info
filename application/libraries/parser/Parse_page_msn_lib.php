@@ -154,12 +154,12 @@ class Parse_page_msn_lib{
             if(isset($matches[1]) && $matches[1] > 800) //616px
             {
                 $searchAr   = array("#h=\d{2,4}#iu","#w=\d{2,4}#iu","#q=\d{1,2}#iu");
-                $replaceAr  = array("h=","w=800");
+                $replaceAr  = array("h=","w=800","q=100");
                 $imgSrc     = preg_replace($searchAr, $replaceAr, $imgSrc);
             }
             //</MaxImgSize>
             
-            $imgSrc = preg_replace("#q=\d{1,2}#iu", "q=100", $imgSrc); // quality 100%
+//            $imgSrc = preg_replace("#q=\d{1,2}#iu", "q=100", $imgSrc); // quality 100%
             
             $imgObj->attr['src'] = $imgSrc;
             
