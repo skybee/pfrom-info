@@ -22,6 +22,8 @@ class Parse_lib{
         
 //        $useProxy = false;
         
+        if($useCount>0){ echo "\n New iteration ({$useCount}) - URL: {$url} \n"; }
+        
         if($useProxy !== false){
             $proxy = self::getRandProxy();
         }
@@ -235,13 +237,21 @@ class Parse_lib{
     function load_img( $img_url, $base_url, $imgAlt = '', $flip = true){
         if( empty($img_url) ) return FALSE;
         
-        #TEMP FIX img_url (20.11.18)
+        #TEMP FIX img_url (20.11.18) && (25.09.19)
+        $img_url = str_replace('&amp;', '&', $img_url); #(25.09.19)
         $img_url = str_replace(';', '&', $img_url);
+        # /TEMP FIX img_url (20.11.18) (25.09.19)
         
 //        echo "Parse_lib::load_img {$img_url} \n\n";
         
         $absolute_url   = $this->uri2absolute($img_url, $base_url);
+        
         $imgDataAr      = $this->down_with_curl($absolute_url, true, true); //скачивание изображения
+        if( empty($imgDataAr['http_data']['content_type']) || empty($imgDataAr['data']) ){ // повторное скачивание изображения
+            echo "\n-- Load Image ERROR. Sleep 3sec & try again --\n";
+            sleep(3);
+            $imgDataAr  = $this->down_with_curl($absolute_url, true, true); //скачивание изображения
+        }
         
 //        $new_img_name   = $this->get_fname_from_url($img_url);
         $new_img_name   = $this->getLoadImgFname($imgDataAr['http_data']['content_type'], $imgAlt);
