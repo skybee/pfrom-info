@@ -91,7 +91,7 @@ class Main extends CI_Controller
         set_time_limit( 300 );
         header("Content-type:text/plain;Charset=utf-8");
         
-        if( $this->single_work( 2, 'parse_news') == false ) exit('The work temporary Lock 2 parse_news');
+        if( $this->single_work( 2, 'parse_news') == false ){ exit('The work temporary Lock 2 parse_news'); }
         
         $parse_list = $this->parser_m->get_news_url_to_parse( $cnt_news );
         
@@ -105,11 +105,11 @@ class Main extends CI_Controller
             $this->parser_m->set_url_scaning( $news_ar['id'] );
 			
             #<for test>
-//            $news_ar['url']     = 'https://www.msn.com/pt-br/noticias/meio-ambiente/o-agrot%C3%B3xico-que-matou-50-milh%C3%B5es-de-abelhas-em-santa-catarina-em-um-s%C3%B3-m%C3%AAs/ar-AAHraLB';  
+//            $news_ar['url']     = 'http://www.msn.com/pt-br/noticias/brasil/oab-rj-pede-fim-de-opera%c3%a7%c3%b5es-policiais-em-hor%c3%a1rio-escolar-e-de-tiros-a-partir-de-helic%c3%b3pteros/ar-AAHJVlp';  
 //            $news_ar['host']    = 'www.msn.com';
             #</for test>
             
-            echo "<br />\n $i - <i>".$news_ar['url']."</i><br />\n";
+            echo "<br />\n {$i} - <i>".$news_ar['url']."</i><br />\n";
             flush();
             
             $html = $this->news_parser_lib->down_with_curl( $news_ar['url'], false, true ); #($url, $getInfo, $useProxy)
