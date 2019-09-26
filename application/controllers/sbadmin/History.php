@@ -1,4 +1,4 @@
-<?php
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 // URL: /ru/sbadmin/history/show_graph/3/
 
