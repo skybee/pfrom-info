@@ -59,14 +59,14 @@ class Parse_lib{
         
         if($getInfo==false)
         {
-            if(empty($content) && $useCount<5){
+            if((empty($content)||$httpData['http_code'] != '200') && $useCount<5){
                 $content = Parse_lib::down_with_curl($url, $getInfo, $useProxy, $useCount+1);
             }
             return $content;
         }
         else
         {
-            if(empty($content) && $useCount<5){
+            if((empty($content)||$httpData['http_code'] != '200') && $useCount<5){
                 $returnAr = Parse_lib::down_with_curl($url, $getInfo, $useProxy, $useCount+1);
             }
             $returnAr['data']       = $content;
