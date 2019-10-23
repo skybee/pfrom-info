@@ -531,6 +531,22 @@ class Article_m extends CI_Model{
         }
     }
     
+    function getTranslateForArticle($articleId,$host){
+        $host = $this->db->escape_str($host);
+        $articleId = (int)$articleId;
+        $sql    = "SELECT * FROM `article_like_translate` "
+                . " WHERE "
+                . "`article_id`= '{$articleId}' AND `host`='{$host}' "
+                . "LIMIT 1";
+        $query  = $this->db->query($sql);
+        
+        if($query->num_rows()<1){ 
+            return ['title'=>'','text'=>''];
+        }
+        
+        return $query->row_array();
+    }
+    
     private function insert_like_article_id($articleId, $likeArticlesAr){
         $cntLike = count($likeArticlesAr);
         if($cntLike<1) {return false;}

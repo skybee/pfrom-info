@@ -125,12 +125,15 @@ class Main extends CI_Controller {
         
         $data_ar['cat_ar']              = $this->category_m->get_cat_data_from_id($data_ar['doc_data']['cat_id']);
         $data_ar['like_articles']       = $this->article_m->get_like_articles( $data_ar['doc_data']['id'], $data_ar['doc_data']['cat_id'] /*$data_ar['cat_ar']['parent_id']*/, $data_ar['doc_data']['title'], 8, $this->catConfig['like_news_day_d'], $data_ar['doc_data']['date'] );
+        $data_ar['like_translate']      = $this->article_m->getTranslateForArticle($data_ar['doc_data']['id'],'pressfrom.info');
+        
+        $data_ar['doc_data']['text']    = addTranslateToMainTxt($data_ar['doc_data']['text'], $data_ar['like_translate']);
         
         $data_ar['main_menu_list']      = $this->list_m->get_cat(0);
         $data_ar['second_menu_list']    = $this->list_m->get_sCat_from_name($this->catNameAr[0]);
         $data_ar['footer_menu_list']    = $this->list_m->get_footer_cat_link();
         $mobile_menu_list               = $this->list_m->getMenuListForMobile();
-        $data_ar['meta']['title']       = $data_ar['cat_ar']['name'].': '.$data_ar['doc_data']['title'].' - '.$this->multidomaine['site_name_str'];
+        $data_ar['meta']['title']       = $data_ar['cat_ar']['name'].': '.$data_ar['doc_data']['title'].' - '.$data_ar['like_translate']['title'].' - '.$this->multidomaine['site_name_str'];
         $data_ar['donor_rel']           = ' rel="nofollow" '; #botRelNofollow();
 
         //пометка изображений в тексте (костыль для редиректа при image 404)

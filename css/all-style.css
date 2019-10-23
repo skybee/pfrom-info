@@ -2,7 +2,7 @@
 
  - https://fonts.googleapis.com/css?family=Roboto
 
- - http://express-info.lh/css/skin1/style.css?v=20190212-1654
+ - http://express-info.lh/css/skin1/style.css?v=20191023-1841
 
  - http://express-info.lh/css/skin1/featured_long_style.css
 
@@ -33,14 +33,14 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
 
  /* FILE END: https://fonts.googleapis.com/css?family=Roboto */ 
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/style.css?v=20190212-1654 */ 
+ /* FILE START: http://express-info.lh/css/skin1/style.css?v=20191023-1841 */ 
 /*******************************************************************************
 
 Theme Name: London Live
@@ -766,6 +766,17 @@ color:
     line-height: 1.5em;
     /*margin: 20px 0px;*/
     color: #212121;
+}
+
+#left div.single div.copy-url div.like-trnslte p{
+    color:#414141;
+    font-size: 0.95em;
+    line-height: 1.4em;
+}
+
+#left div.single div.content .parse-version div.like-trnslte a{
+    font-size: 0.95em;
+    line-height: 1.4em;
 }
 
 #left div.listing div.content div.right {
@@ -3861,7 +3872,7 @@ span.gads_in_more_hdn{
         
 div.parse-version{
     position: relative;
-    padding-bottom: 295px;
+    padding-bottom: 330px;
     padding-top: 15px;
 }
         
@@ -4110,7 +4121,7 @@ span.first-like-art-in-txt{
 /*<GAds Under Slider>*/
 
 /*============== </My> ==============*/
- /* FILE END: http://express-info.lh/css/skin1/style.css?v=20190212-1654 */ 
+ /* FILE END: http://express-info.lh/css/skin1/style.css?v=20191023-1841 */ 
 
 
 

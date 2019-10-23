@@ -725,6 +725,17 @@ color:
     color: #212121;
 }
 
+#left div.single div.copy-url div.like-trnslte p{
+    color:#414141;
+    font-size: 0.95em;
+    line-height: 1.4em;
+}
+
+#left div.single div.content .parse-version div.like-trnslte a{
+    font-size: 0.95em;
+    line-height: 1.4em;
+}
+
 #left div.listing div.content div.right {
 	width:353px;
 	height:190px;
@@ -3818,7 +3829,7 @@ span.gads_in_more_hdn{
         
 div.parse-version{
     position: relative;
-    padding-bottom: 295px;
+    padding-bottom: 330px;
     padding-top: 15px;
 }
         

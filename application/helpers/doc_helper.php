@@ -240,3 +240,25 @@ function get_sape_donor_link(){
         return '';
     }
 }
+
+
+function addTranslateToMainTxt($mainTxt,$translateData){
+    if(empty($translateData['text'])){return $mainTxt;}
+    
+    $translateHtml = "\n".'<div class="like-trnslte">'."\n";
+    $translateHtml .= '<h2>'.ucfirst(trim($translateData['title'])).'</h2>'."\n";
+    $translateHtml .= $translateData['text'];
+    $translateHtml .= "\n</div>\n";
+    
+    
+    $patternLastDiv = "#(</div>\s*)$#i";
+    
+    if(preg_match($patternLastDiv, $mainTxt)){
+        $mainTxt = preg_replace($patternLastDiv, $translateHtml."$1", $mainTxt);
+    }
+    else{
+        $mainTxt .= $translateHtml;
+    }
+    
+    return $mainTxt;
+}
