@@ -50,7 +50,9 @@ $lock_host = array(
     'bfmtv.fr',
     'bfmtv.com',
     'mamamia.com.au',
-    'cbs.com'
+    'cbs.com',
+    
+    '\.abril.com.br'
 );
 
 function get_country_code(){
@@ -219,6 +221,8 @@ $config['multidomaine']['us']['logo_img_mobile']    = $config_var['default']['lo
 $config['multidomaine']['us']['lock_donor']         = $lock_host;
 $config['multidomaine']['us']['static_server']       = 'us.static.lalalay.com';
 $config['multidomaine']['us']['del_old_art_catid']  = '3,4,5,9,17,18';
+$config['multidomaine']['us']['translate']['lang_from'] = ['de','fr'];
+$config['multidomaine']['us']['translate']['cat_id']    = '8,10,13,14,17';
 
 
 //===== CA =====//

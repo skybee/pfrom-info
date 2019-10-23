@@ -54,4 +54,14 @@ class Multidomaine_lib
         
         return $multidomaineAll['parse_lang'];
     }
+    
+    function getMultidomaineConf($langCode){
+        $allMultidomaineConf = $this->ci->config->item('multidomaine');
+        if(isset($allMultidomaineConf[$langCode]) && is_array($allMultidomaineConf[$langCode])){
+            return $allMultidomaineConf[$langCode];
+        }
+        else{
+            return false;
+        }
+    }
 }

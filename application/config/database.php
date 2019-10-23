@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $host_lang = array(
@@ -102,7 +101,8 @@ $host_lang = array(
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['default'] = array(
+function getStaticDbConnectSetting(){
+    return array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => '',
@@ -123,76 +123,74 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+}
 
+$db['default'] = getStaticDbConnectSetting();
 
 $db_ip = '5.9.40.120';
 
-
-
-if(LANG_CODE == 'ru'){
-    $db['default']['hostname'] = $db_ip;
-    $db['default']['username'] = 'admin_smi_ru';
-    $db['default']['password'] = 'smi-ru-ujyrjyu8444';
-    $db['default']['database'] = 'admin_smi_ru';
+function getDbConnectSetting($langCode,$db_ip = '5.9.40.120'){
+    #-- RU --
+    $db['ru']['hostname'] = $db_ip;
+    $db['ru']['username'] = 'admin_smi_ru';
+    $db['ru']['password'] = 'smi-ru-ujyrjyu8444';
+    $db['ru']['database'] = 'admin_smi_ru';
+    #-- FR --
+    $db['fr']['hostname'] = $db_ip;
+    $db['fr']['username'] = 'admin_smi_fr';
+    $db['fr']['password'] = 'smi-fr-ujyrjyu8444';
+    $db['fr']['database'] = 'admin_smi_fr';
+    #-- DE --
+    $db['de']['hostname'] = $db_ip;
+    $db['de']['username'] = 'admin_smi_de';
+    $db['de']['password'] = 'smi-de-ujyrjyu8444';
+    $db['de']['database'] = 'admin_smi_de';
+    #-- UK --
+    $db['uk']['hostname'] = $db_ip;
+    $db['uk']['username'] = 'admin_smi_en';
+    $db['uk']['password'] = 'smi-en-ujyrjyu8444';
+    $db['uk']['database'] = 'admin_smi_en';
+    #-- US --
+    $db['us']['hostname'] = $db_ip;
+    $db['us']['username'] = 'admin_pf_us';
+    $db['us']['password'] = 'pf-us-ujyrjyu8444';
+    $db['us']['database'] = 'admin_pf_us';
+    #-- CA --
+    $db['ca']['hostname'] = $db_ip;
+    $db['ca']['username'] = 'admin_pf_ca';
+    $db['ca']['password'] = 'pf-ca-ujyrjyu8444';
+    $db['ca']['database'] = 'admin_pf_ca';
+    #-- AU --
+    $db['au']['hostname'] = $db_ip;
+    $db['au']['username'] = 'admin_pf_au';
+    $db['au']['password'] = 'pf-au-ujyrjyu8444';
+    $db['au']['database'] = 'admin_pf_au';
+    #-- BR --
+    $db['br']['hostname'] = $db_ip;
+    $db['br']['username'] = 'admin_pf_br';
+    $db['br']['password'] = 'pf-br-ujyrjyu8444';
+    $db['br']['database'] = 'admin_pf_br';
+    
+    if(!isset($db[$langCode])){
+        return $db['us'];
+    }
+    else{
+        return $db[$langCode];
+    }
 }
 
 
-if(LANG_CODE == 'fr'){
-    $db['default']['hostname'] = $db_ip;
-    $db['default']['username'] = 'admin_smi_fr';
-    $db['default']['password'] = 'smi-fr-ujyrjyu8444';
-    $db['default']['database'] = 'admin_smi_fr';
-}
+$connectData = getDbConnectSetting(LANG_CODE, $db_ip);
+$db['default'] = array_merge($db['default'], $connectData);
 
 
-if(LANG_CODE == 'de'){
-    $db['default']['hostname'] = $db_ip;
-    $db['default']['username'] = 'admin_smi_de';
-    $db['default']['password'] = 'smi-de-ujyrjyu8444';
-    $db['default']['database'] = 'admin_smi_de';
-}
-
-if(LANG_CODE == 'uk'){
-    $db['default']['hostname'] = $db_ip;
-    $db['default']['username'] = 'admin_smi_en';
-    $db['default']['password'] = 'smi-en-ujyrjyu8444';
-    $db['default']['database'] = 'admin_smi_en';
-}
-
-if(LANG_CODE == 'us'){
-    $db['default']['hostname'] = $db_ip;
-    $db['default']['username'] = 'admin_pf_us';
-    $db['default']['password'] = 'pf-us-ujyrjyu8444';
-    $db['default']['database'] = 'admin_pf_us';
-}
-
-if(LANG_CODE == 'ca'){
-    $db['default']['hostname'] = $db_ip;
-    $db['default']['username'] = 'admin_pf_ca';
-    $db['default']['password'] = 'pf-ca-ujyrjyu8444';
-    $db['default']['database'] = 'admin_pf_ca';
-}
-
-if(LANG_CODE == 'au'){
-    $db['default']['hostname'] = $db_ip;
-    $db['default']['username'] = 'admin_pf_au';
-    $db['default']['password'] = 'pf-au-ujyrjyu8444';
-    $db['default']['database'] = 'admin_pf_au';
-}
-
-if(LANG_CODE == 'br'){
-    $db['default']['hostname'] = $db_ip;
-    $db['default']['username'] = 'admin_pf_br';
-    $db['default']['password'] = 'pf-br-ujyrjyu8444';
-    $db['default']['database'] = 'admin_pf_br';
-}
 
 
 if( $_SERVER['HTTP_HOST'] == 'express-info.lh'){
-    $db['default']['hostname'] = 'localhost';
-    $db['default']['username'] = 'root';
-    $db['default']['password'] = '';
-    $db['default']['database'] = 'admin_pf_br'; //'fr-express'; //DB: france, fr-express
+//    $db['default']['hostname'] = 'localhost';
+//    $db['default']['username'] = 'root';
+//    $db['default']['password'] = '';
+//    $db['default']['database'] = 'admin_pf_br'; //'fr-express'; //DB: france, fr-express
 //    
 //    $db['default']['database'] = 'admin_pf_us'; // TMP test
 }

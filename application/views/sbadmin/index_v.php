@@ -115,7 +115,7 @@
                     <p>
                         ----- 
                         <b><?=$catData['name'];?>:</b> 
-                        &n&nbsp;&n&nbsp;
+                        &nbsp;&nbsp;
                         <i>
                             <?=$catData['dateData'][count($catData['dateData'])-1]['ddate'];?>
                         </i> 

@@ -8,7 +8,7 @@ class Main extends CI_Controller {
     function __construct() {
         parent::__construct();
         
-        if($_SERVER['HTTP_HOST'] != 'pressfrom.info' && $_SERVER['HTTP_HOST'] != 'express-info.lh' ){
+        if($_SERVER['HTTP_HOST'] != 'pressfrom.info' && $_SERVER['HTTP_HOST'] != 'express-info.lh' && $_SERVER['HTTP_HOST'] != 'pressfrom.vbox' ){
 
             header("HTTP/1.1 301 Moved Permanently"); 
             header("Location: https://pressfrom.info/".LANG_CODE."{$_SERVER['REQUEST_URI']}"); 
