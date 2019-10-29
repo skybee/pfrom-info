@@ -245,18 +245,18 @@ function get_sape_donor_link(){
 function addTranslateToMainTxt($mainTxt,$translateData){
     if(empty($translateData['text'])){return $mainTxt;}
     
-    $GAdsBlock  = '<div class="content-gAd content-gAd-bottom content-gAd-bottom-after-news " >
+    $GAdsBlock  = '<div class="content-gAd content-gAd-bottom content-gAd-bottom-after-news" >
                         <div class="content-gAd-center">
                             <span class="gAd" data="content bottom Netboard" load-queue="2"></span>
                         </div>
                     </div>';
     
     $translateHtml = "\n".'<div class="like-trnslte">'."\n";
-    $translateHtml .= '<h2>'.ucfirst(trim($translateData['title'])).'</h2>'."\n";
+    $translateHtml .= '<h2 id="trnslte_title">'.ucfirst(trim($translateData['title'])).'</h2>'."\n";
     $translateHtml .= $translateData['text'];
     $translateHtml .= "\n</div>\n";
     
-    $translateHtml = $GAdsBlock.$translateHtml;
+    $translateHtml = '<tlate>'.$GAdsBlock.$translateHtml.'</tlate>';
     
     
     $patternLastDiv = "#(</div>\s*)$#i";
