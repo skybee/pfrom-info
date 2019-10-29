@@ -66,9 +66,9 @@ function insertLikeArticleInTxt($text, $likeList)
                     . '@media(max-width: 540px){ #left div.single div.mobile-in-txt .mobile-intxt-grey{width: 320px; height: 100px;} } '
                     . '@media(max-width: 340px){ #left div.single div.mobile-in-txt .mobile-intxt-grey{width: 234px; height: 60px;} } '
                 . '</style> '
-                .'<h2 class="look_more_hdn" rel="'.$newsUrl.'"><span>Смотрите также:</span> '.$likeTitle
+                .'<h3 class="look_more_hdn" rel="'.$newsUrl.'"><span>Смотрите также:</span> '.$likeTitle
                     ."<span class=\"gAd\" data=\"mobile greyInTxt\"></span> \n  "
-                . "</h2>\n";
+                . "</h3>\n";
     
     $replace   .= '<p class="look_more_hdn">'."\n";
 
@@ -117,10 +117,10 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
         }
         
         $likeArtHtml =  "\n"
-                        .' <h2 class="look_more_hdn" rel="'.$newsUrl.'">'
+                        .' <h3 class="look_more_hdn" rel="'.$newsUrl.'">'
                         . '<img src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
                         .$likeTitle
-                        . "</h2>\n"
+                        . "</h3>\n"
                         . '<p class="look_more_hdn"> '."\n "
                         . "\t".'<span class="lmh_height_txt">'."\n"
                         . '<img src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n"

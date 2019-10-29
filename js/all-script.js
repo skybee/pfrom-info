@@ -4,9 +4,9 @@
 
  - http://express-info.lh/js/skin1/jquery.bxslider.min.js
 
- - http://express-info.lh/js/skin1/sb.js?v=20190305-1129
+ - http://express-info.lh/js/skin1/sb.js?v=20191029-1838
 
- - http://express-info.lh/js/skin1/gads.js?v=20181113-1246
+ - http://express-info.lh/js/skin1/gads.js?v=20191029-1837
 
 */
 
@@ -34,7 +34,7 @@
 
 
 
- /* FILE START: http://express-info.lh/js/skin1/sb.js?v=20190305-1129 */ 
+ /* FILE START: http://express-info.lh/js/skin1/sb.js?v=20191029-1838 */ 
 function imgError(image){
     image.onerror = "";
 //    image.src = "/img/default_news_error.jpg";
@@ -147,9 +147,9 @@ $( document ).ready(function(){
     
     
     // <Like Link in Text>
-    if($('h2.look_more_hdn').length > 0)
+    if($('h3.look_more_hdn').length > 0)
     {
-        $('h2.look_more_hdn').each(function(){
+        $('h3.look_more_hdn').each(function(){
             likeInTxtLink = $(this).attr('rel');
             $(this).wrapInner('<a href="'+likeInTxtLink+'"></a>');
         });
@@ -185,6 +185,8 @@ $( document ).ready(function(){
     
     setTimeout('pagePreloadClose()', 1500); //Close Page Preload
     
+    //Rewrite TranslateTxt Position
+    $('tlate').appendTo('.like-translate-bottom-position');
 });
 
 var outWindow = 0;
@@ -364,11 +366,11 @@ function setRightBlockTopSpace(){ //установка верхнего отст
     $('#fscreen-right-top-padding').css('height', rightSpaceSize+'px');
 //    alert(titleHeight);
 }
- /* FILE END: http://express-info.lh/js/skin1/sb.js?v=20190305-1129 */ 
+ /* FILE END: http://express-info.lh/js/skin1/sb.js?v=20191029-1838 */ 
 
 
 
- /* FILE START: http://express-info.lh/js/skin1/gads.js?v=20181113-1246 */ 
+ /* FILE START: http://express-info.lh/js/skin1/gads.js?v=20191029-1837 */ 
 
 
 $( document ).ready(function(){
@@ -388,10 +390,10 @@ $( document ).ready(function(){
         $(gAdsInContentHtml).appendTo('li#adsInSliderList');
     }
     
-    if($('h2.look_more_hdn').length >= 3){ //add after like news block
+    if($('h3.look_more_hdn').length >= 3){ //add after like news block
 //        $('p.look_more_hdn:eq(2)').after(gAdsInContentHtml);
         $('span.gads_in_more_hdn:eq(2)').after(gAdsInContentHtml);
-        if($('h2.look_more_hdn').length >= 5){ //add after like news block
+        if($('h3.look_more_hdn').length >= 5){ //add after like news block
             $('span.gads_in_more_hdn:eq(4)').after(gAdsInContentHtml);
         }
     }
@@ -584,15 +586,26 @@ function loadGAdMobile(blockName){
 //                    </script>";
         
         // PFinfo Mobi in LikeNews 320x100
+//        toWrite = " <ins class=\"adsbygoogle\" \
+//                        <ins class=\"adsbygoogle\" \
+//                            style=\"display:inline-block;width:320px;height:100px\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"4760051757\"> \
+//                        </ins> \
+//                    <script> \
+//                        (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                    </script>";
+        
+        // <!-- Test Mobile Small -->
         toWrite = " <ins class=\"adsbygoogle\" \
-                        <ins class=\"adsbygoogle\" \
-                            style=\"display:inline-block;width:320px;height:100px\" \
-                            data-ad-client=\"ca-pub-6096727633142370\" \
-                            data-ad-slot=\"4760051757\"> \
-                        </ins> \
-                    <script> \
+                        style=\"display:block\" \
+                        data-ad-client=\"ca-pub-6096727633142370\" \
+                        data-ad-slot=\"7018265929\" \
+                        data-ad-format=\"auto\" \
+                        data-full-width-responsive=\"true\"></ins> \
+                   <script> \
                         (adsbygoogle = window.adsbygoogle || []).push({}); \
-                    </script>";
+                   </script>";
         
         if( window.cntAdsInArtGreyIncrement == 3 || window.cntAdsInArtGreyIncrement == 5 ){
             toWrite = '<!-- No Ads second block -->';
@@ -725,5 +738,5 @@ function loadGAdDesctop(blockName){
 
     return toWrite;
 }
- /* FILE END: http://express-info.lh/js/skin1/gads.js?v=20181113-1246 */ 
+ /* FILE END: http://express-info.lh/js/skin1/gads.js?v=20191029-1837 */ 
 

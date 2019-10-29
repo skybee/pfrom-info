@@ -2,7 +2,7 @@
 
  - https://fonts.googleapis.com/css?family=Roboto
 
- - http://express-info.lh/css/skin1/style.css?v=20191023-1841
+ - http://express-info.lh/css/skin1/style.css?v=20191029-1835
 
  - http://express-info.lh/css/skin1/featured_long_style.css
 
@@ -18,11 +18,11 @@
 
  - http://express-info.lh/css/skin1/jquery.bxslider.css
 
- - http://express-info.lh/css/skin1/msn-parse.css?v=20181023-1644
+ - http://express-info.lh/css/skin1/msn-parse.css?v=20191024-1338
 
  - http://express-info.lh/css/skin1/mobile.css?v=20190214-1420
 
- - http://express-info.lh/css/skin1/media-queries.css?v=20181023-1235
+ - http://express-info.lh/css/skin1/media-queries.css?v=20191029-1839
 
  - http://express-info.lh/css/skin1/mobile_gads.css?v=20180917-1425
 
@@ -40,7 +40,7 @@
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/style.css?v=20191023-1841 */ 
+ /* FILE START: http://express-info.lh/css/skin1/style.css?v=20191029-1835 */ 
 /*******************************************************************************
 
 Theme Name: London Live
@@ -572,7 +572,10 @@ hr {
     width: 616px;
     float: left;
     /*margin-bottom: 35px;*/
-}    
+}
+#left div.single div.content .content-gAd-bottom{
+    float:none;
+}
 
 #left div.single .content-gAd-bottom-after-news{
     padding: 10px 0px;
@@ -768,17 +771,39 @@ color:
     color: #212121;
 }
 
+#left div.single div.copy-url div.like-trnslte{
+    background: #fcfcfc;
+    padding: 15px 10px;
+    border: 1px solid #94c2ce;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
 #left div.single div.copy-url div.like-trnslte p{
-    color:#414141;
-    font-size: 0.95em;
-    line-height: 1.4em;
+    /*color:#414141;*/
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+#left div.single div.content div.like-trnslte h2#trnslte_title{
+    font-weight: normal !important;
+    line-height: 1em !important;
+    font-size: 20px !important;
+    margin-bottom: 25px;
 }
 
 #left div.single div.content .parse-version div.like-trnslte a{
-    font-size: 0.95em;
-    line-height: 1.4em;
+    font-size: 0.9em;
+    line-height: 1.3em;
 }
 
+#left div.single div.content div.like-trnslte img{
+    max-width: 596px;
+}
+#left div.single div.content div.like-trnslte .content-gAd-in-text .content-gAd-center{
+    border-left: none;
+    padding-left: 0;
+    margin-left: -12px;
+}
 #left div.listing div.content div.right {
 	width:353px;
 	height:190px;
@@ -3833,7 +3858,7 @@ img.alignleft,a img.alignleft {
     padding-top: 7px !important;
     margin: 0 !important;
     
-    border: 1px solid #009DDB;
+    border: 1px solid #94c2ce;
     /*border-width: 0px 1px 1px 1px;*/
     border-width: 0px 0px 1px 0px;
     /*display: none;*/
@@ -3863,7 +3888,7 @@ img.alignleft,a img.alignleft {
         }
 span.gads_in_more_hdn{
     display: block;
-    border-bottom: 1px solid #009DDB;
+    border-bottom: 1px solid #94c2ce;
     background-color: #fcfcfc;
     /*background-color: #fcc;*/
     padding: 10px 10px;
@@ -3883,7 +3908,7 @@ span.first-like-art-in-txt{
     width: 100%;
 }        
         
-#left div.single div.content h2.look_more_hdn{
+#left div.single div.content h3.look_more_hdn{
     font-size: 14px !important;
     color: #4c8296 !important;
     line-height: 1.2em !important;
@@ -3894,22 +3919,22 @@ span.first-like-art-in-txt{
     /*border-width: 1px 1px 0px 1px;*/
     border-width: 1px 0px 0px 0px;
 }
-    #left div.single div.content h2.look_more_hdn a{
-        font-size: 20px !important;
+    #left div.single div.content h3.look_more_hdn a{
+        font-size: 18px !important;
         color: #4c8296 !important;
         line-height: 1.2em !important;
         text-decoration: none;
         font-weight: normal !important;
     }
-        #left div.single div.content h2.look_more_hdn a:hover{
+        #left div.single div.content h3.look_more_hdn a:hover{
             text-decoration: underline;
             color: #009ddb !important;
         }
-    #left div.single div.content h2.look_more_hdn span{
+    #left div.single div.content h3.look_more_hdn span{
         color: #209C00;
         font-size: 14px;
     }
-    #left div.single div.content h2.look_more_hdn img.look_more_img_mobile{
+    #left div.single div.content h3.look_more_hdn img.look_more_img_mobile{
         display:none;
         width: 120px !important;
         height: 80px !important;
@@ -4121,7 +4146,7 @@ span.first-like-art-in-txt{
 /*<GAds Under Slider>*/
 
 /*============== </My> ==============*/
- /* FILE END: http://express-info.lh/css/skin1/style.css?v=20191023-1841 */ 
+ /* FILE END: http://express-info.lh/css/skin1/style.css?v=20191029-1835 */ 
 
 
 
@@ -5287,7 +5312,7 @@ img.mfp-img {
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/msn-parse.css?v=20181023-1644 */ 
+ /* FILE START: http://express-info.lh/css/skin1/msn-parse.css?v=20191024-1338 */ 
 .parse-version{}
 .p-version-1{}
 
@@ -5319,7 +5344,7 @@ img.mfp-img {
 .parse-version .storyimage .caption .attribution{color: #777;}
 
 #left div.single div.content .parse-version a{
-    color: #3a6472; /*#4c8296;*/
+    color: #2c5b6b; /*#4c8296;*/
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
@@ -5333,7 +5358,7 @@ img.mfp-img {
 #left div.single h1 i{display: none;}
 
 
- /* FILE END: http://express-info.lh/css/skin1/msn-parse.css?v=20181023-1644 */ 
+ /* FILE END: http://express-info.lh/css/skin1/msn-parse.css?v=20191024-1338 */ 
 
 
 
@@ -5487,7 +5512,7 @@ img.mfp-img {
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/media-queries.css?v=20181023-1235 */ 
+ /* FILE START: http://express-info.lh/css/skin1/media-queries.css?v=20191029-1839 */ 
 @media screen and (min-width: 981px) { /*-== Full Screen ==-*/
     
     #left div.single h1{ /*широкий заголовок*/
@@ -5532,9 +5557,9 @@ img.mfp-img {
     #headernavigation div.navigation{ width: auto; }
     #left div.single .doc-date-bottom { width: 100%; }
     p.look_more_hdn{ display: none;}
-    #left div.single div.content h2.look_more_hdn{ padding-bottom: 15px !important; border-bottom-width: 1px; height: 80px; min-height: 80px; padding-left: 0 !important;}
-    #left div.single div.content h2.look_more_hdn a{font-size: 16px !important; line-height: 1.4em !important }
-    #left div.single div.content h2.look_more_hdn img.look_more_img_mobile{display: inline-block;}
+    #left div.single div.content h3.look_more_hdn{ padding-bottom: 15px !important; border-bottom-width: 1px; height: 80px; min-height: 80px; padding-left: 0 !important;}
+    #left div.single div.content h3.look_more_hdn a{font-size: 16px !important; line-height: 1.4em !important }
+    #left div.single div.content h3.look_more_hdn img.look_more_img_mobile{display: inline-block;}
     ul.firstnav-menu{ padding-left: 12px;}
     #content_holder{padding-left: 5px;}
     #left{padding-right: 5px;}
@@ -5824,7 +5849,7 @@ img.mfp-img {
     #content_holder {padding-left: 0;}
     
 }
- /* FILE END: http://express-info.lh/css/skin1/media-queries.css?v=20181023-1235 */ 
+ /* FILE END: http://express-info.lh/css/skin1/media-queries.css?v=20191029-1839 */ 
 
 
 

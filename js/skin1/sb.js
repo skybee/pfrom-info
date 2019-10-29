@@ -110,9 +110,9 @@ $( document ).ready(function(){
     
     
     // <Like Link in Text>
-    if($('h2.look_more_hdn').length > 0)
+    if($('h3.look_more_hdn').length > 0)
     {
-        $('h2.look_more_hdn').each(function(){
+        $('h3.look_more_hdn').each(function(){
             likeInTxtLink = $(this).attr('rel');
             $(this).wrapInner('<a href="'+likeInTxtLink+'"></a>');
         });
@@ -148,6 +148,8 @@ $( document ).ready(function(){
     
     setTimeout('pagePreloadClose()', 1500); //Close Page Preload
     
+    //Rewrite TranslateTxt Position
+    $('tlate').appendTo('.like-translate-bottom-position');
 });
 
 var outWindow = 0;

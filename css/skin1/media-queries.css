@@ -42,9 +42,9 @@
     #headernavigation div.navigation{ width: auto; }
     #left div.single .doc-date-bottom { width: 100%; }
     p.look_more_hdn{ display: none;}
-    #left div.single div.content h2.look_more_hdn{ padding-bottom: 15px !important; border-bottom-width: 1px; height: 80px; min-height: 80px; padding-left: 0 !important;}
-    #left div.single div.content h2.look_more_hdn a{font-size: 16px !important; line-height: 1.4em !important }
-    #left div.single div.content h2.look_more_hdn img.look_more_img_mobile{display: inline-block;}
+    #left div.single div.content h3.look_more_hdn{ padding-bottom: 15px !important; border-bottom-width: 1px; height: 80px; min-height: 80px; padding-left: 0 !important;}
+    #left div.single div.content h3.look_more_hdn a{font-size: 16px !important; line-height: 1.4em !important }
+    #left div.single div.content h3.look_more_hdn img.look_more_img_mobile{display: inline-block;}
     ul.firstnav-menu{ padding-left: 12px;}
     #content_holder{padding-left: 5px;}
     #left{padding-right: 5px;}

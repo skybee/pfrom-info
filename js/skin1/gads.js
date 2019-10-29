@@ -17,10 +17,10 @@ $( document ).ready(function(){
         $(gAdsInContentHtml).appendTo('li#adsInSliderList');
     }
     
-    if($('h2.look_more_hdn').length >= 3){ //add after like news block
+    if($('h3.look_more_hdn').length >= 3){ //add after like news block
 //        $('p.look_more_hdn:eq(2)').after(gAdsInContentHtml);
         $('span.gads_in_more_hdn:eq(2)').after(gAdsInContentHtml);
-        if($('h2.look_more_hdn').length >= 5){ //add after like news block
+        if($('h3.look_more_hdn').length >= 5){ //add after like news block
             $('span.gads_in_more_hdn:eq(4)').after(gAdsInContentHtml);
         }
     }
@@ -213,15 +213,26 @@ function loadGAdMobile(blockName){
 //                    </script>";
         
         // PFinfo Mobi in LikeNews 320x100
+//        toWrite = " <ins class=\"adsbygoogle\" \
+//                        <ins class=\"adsbygoogle\" \
+//                            style=\"display:inline-block;width:320px;height:100px\" \
+//                            data-ad-client=\"ca-pub-6096727633142370\" \
+//                            data-ad-slot=\"4760051757\"> \
+//                        </ins> \
+//                    <script> \
+//                        (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                    </script>";
+        
+        // <!-- Test Mobile Small -->
         toWrite = " <ins class=\"adsbygoogle\" \
-                        <ins class=\"adsbygoogle\" \
-                            style=\"display:inline-block;width:320px;height:100px\" \
-                            data-ad-client=\"ca-pub-6096727633142370\" \
-                            data-ad-slot=\"4760051757\"> \
-                        </ins> \
-                    <script> \
+                        style=\"display:block\" \
+                        data-ad-client=\"ca-pub-6096727633142370\" \
+                        data-ad-slot=\"7018265929\" \
+                        data-ad-format=\"auto\" \
+                        data-full-width-responsive=\"true\"></ins> \
+                   <script> \
                         (adsbygoogle = window.adsbygoogle || []).push({}); \
-                    </script>";
+                   </script>";
         
         if( window.cntAdsInArtGreyIncrement == 3 || window.cntAdsInArtGreyIncrement == 5 ){
             toWrite = '<!-- No Ads second block -->';

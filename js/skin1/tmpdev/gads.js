@@ -30,10 +30,10 @@ $( document ).ready(function(){
         $(getArtGAdsHTML()).appendTo('li#adsInSliderList');
     }
     
-    if($('h2.look_more_hdn').length >= 3){ //add after like news block
+    if($('h3.look_more_hdn').length >= 3){ //add after like news block
 //        $('p.look_more_hdn:eq(2)').after(getArtGAdsHTML());
         $('span.gads_in_more_hdn:eq(2)').after(getArtGAdsHTML());
-        if($('h2.look_more_hdn').length >= 5){ //add after like news block
+        if($('h3.look_more_hdn').length >= 5){ //add after like news block
             $('span.gads_in_more_hdn:eq(4)').after(getArtGAdsHTML());
         }
     }
