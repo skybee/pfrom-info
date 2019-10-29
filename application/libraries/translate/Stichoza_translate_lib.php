@@ -125,6 +125,20 @@ class getAcceptorArticles{
         return $this->translateConf['lang_from'];
     }
     
+    function hasTranslateConf(){
+        if( isset       ($this->translateConf['lang_from'])
+            && is_array ($this->translateConf['lang_from'])
+            && count    ($this->translateConf['lang_from']) > 0
+            && isset    ($this->translateConf['cat_id'])
+            && !empty   ($this->translateConf['cat_id'])
+        ){
+            return TRUE;
+        }
+        else{
+            return FALSE;
+        }
+    }
+    
     private function getTranslateConf($langCode){
         $langConf = $this->CI->multidomaine_lib->getMultidomaineConf($langCode);
         
@@ -159,7 +173,17 @@ class searchLikeArtsInOtherDB{ //поиск релевантных записе�
     
     function getLikeArts($cnt=2){
         $this->dbConnect();
-        $translatedTitle = $this->translate(STICHOZA_USE_PROXY); //$useProxy = true
+        
+        $savedTranslate = singletonTranslatedTitle::getInstance();
+        if($translatedTitle = $savedTranslate->getTranslatedTitle($this->title,$this->dbLang)){ //получение сохраненного перевода если есть
+            echo "\n\n Getting Translation \n\n";
+        } 
+        else{
+            $translatedTitle = $this->translate(STICHOZA_USE_PROXY); //$useProxy = true
+            $savedTranslate->setTranslate($this->title,$this->dbLang,$translatedTitle);
+            echo "\n\n Save Translation \n\n";
+        }
+        
         
         if($translatedTitle==false || empty($translatedTitle)){
             return false;
@@ -233,6 +257,39 @@ class searchLikeArtsInOtherDB{ //поиск релевантных записе�
         $this->CI->db->close();
     }
 } 
+
+
+class singletonTranslatedTitle{
+    private $title, $lang, $translatedTitle;
+    
+    private static $instance = null;
+    private function __clone() {}
+    private function __construct() {}
+    
+    public static function getInstance()
+    {
+        if (null === self::$instance)
+        {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+    
+    function getTranslatedTitle($title,$lang){
+        if($this->title==$title && $this->lang==$lang && !empty($this->translatedTitle)){
+            return $this->translatedTitle;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    function setTranslate($title,$lang,$translatedTitle){
+        $this->title            = $title;
+        $this->lang             = $lang;
+        $this->translatedTitle  = $translatedTitle;
+    }
+}
 
 
 class stTranslating{
