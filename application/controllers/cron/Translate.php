@@ -6,19 +6,25 @@ define('STICHOZA_USE_PROXY', TRUE); // включить/выключить Proxy
 
 
 class Translate extends CI_Controller{
-    private $helper;
+    private $helper, $minLikeRank=6;
     
     function __construct() {
         parent::__construct();
     }
     
-    function stichoza_translate_do($acceptorDbLangCode='us',$cnt=1){
+    function stichoza_translate_do($cnt=1,$acceptorDbLangCode=LANG_CODE){
         $this->load->library('translate/Stichoza_translate_lib');
         $this->helper = new stichoza_translate_helper();
         
         $cnt = (int)$cnt;
+        if($cnt<1){$cnt=1;}
         
         $acceptorObj    = $this->stichoza_translate_lib->getAcceptorArticles($acceptorDbLangCode); //return Object of getAcceptorArticles;   
+        
+        if($acceptorObj->hasTranslateConf() !== TRUE){
+            echo "\n\n-- NOTE: -- No Translate Configuration for Lang: ".LANG_CODE." --\n\n";
+            return TRUE;
+        }
         
         $acceptorArts   = $acceptorObj->getArticles($cnt); //получение статей для перевода [id],[title]
         $langFrom       = $acceptorObj->getLangFrom(); //получение массива языков в которых будет выполнятся поиск и перевод
@@ -57,6 +63,20 @@ class Translate extends CI_Controller{
             
             foreach($hostsAr as $key=>$host){
                 $relevantArtData = $unitedLikeArts[$key];
+                
+                
+                echo "\n\n-----------\n\nRank[{$key}] = ".$relevantArtData['rank']."\n";
+                if($relevantArtData['rank'] > $this->minLikeRank){
+                    echo "Will be translated\n";
+                }
+                else{
+                    echo "Will Not be translated\n";
+                    $writeResult->setAcceptorLangCode($acceptorDbLangCode);
+                    $writeResult->insertTranslatedArt($acceptArt['id'],'','',$host);
+                    $writeResult->dbClose();
+                    continue;
+                }
+                
             
                 #подготовка текста к переводу и перевод
                 $cleanArt->setText($relevantArtData['text']);
