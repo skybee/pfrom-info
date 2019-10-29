@@ -76,6 +76,15 @@ class Combined_pr24 extends CI_Controller
         echo date("H:i:s")."- OK - ".__METHOD__;
     }
     
+    function like_translate($cntNews=1){
+        set_time_limit(300);
+        $url = "http://-host-/cron/translate/stichoza_translate_do/{$cntNews}/";
+        
+        $this->each_http_query($url);
+        
+        echo date("H:i:s")."- OK - ".__METHOD__;
+    }
+    
     private function each_http_query($urlTpl){
         
         foreach ($this->parse_lang as $lang){
