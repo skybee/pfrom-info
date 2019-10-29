@@ -85,7 +85,7 @@
                             </a>
                             <h4>
                             <a href="<?=$newsUrl?>" class="mob-slider-news-titlelink">
-                                <?=Article_m::get_short_txt($articles[$i]['title'],100,'word','...')?>
+                                <?=Article_m::get_short_txt($articles[$i]['title'],90,'word','...')?>
                             </a>
                             </h4>>
                         </div>
