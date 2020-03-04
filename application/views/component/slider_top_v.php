@@ -11,7 +11,7 @@
         ?>
         <li class="ui-tabs-nav-item ">
             <a href="" data-slide-index="<?=$i?>">
-                <img src="/upload/images/small/<?=$article['main_img']?>" alt="" onerror="imgError(this);" />
+                <img src="https://static.pressfrom.info/upload/images/small/<?=$article['main_img']?>" alt="" onerror="imgError(this);" />
             </a>
         </li>
         <?php $i++; endforeach; ?>
@@ -32,9 +32,9 @@
     <div id="fragment-<?=$i?>" class="ui-tabs-panel " style="margin-top:1px; background-color:transparent; float:left;">
         <a href="<?=$newsUrl?>" class="top_slide_main_img">
             <?php if($i==0): ?>
-            <!--medium--><img src="/upload/images/real/<?=$article['main_img']?>" alt="" border="0" onerror="imgError(this);" />
+            <!--medium--><img src="https://static.pressfrom.info/upload/images/real/<?=$article['main_img']?>" alt="" border="0" onerror="imgError(this);" />
             <?php else: ?>
-            <!--medium--><img data-src="/upload/images/real/<?=$article['main_img']?>" src="/img/default_news.jpg" alt="" border="0" onerror="imgError(this);" />
+            <!--medium--><img data-src="https://static.pressfrom.info/upload/images/real/<?=$article['main_img']?>" src="/img/default_news.jpg" alt="" border="0" onerror="imgError(this);" />
             <?php endif;?>
         </a>
         <div class="info">
@@ -43,8 +43,10 @@
                     <?=Article_m::get_short_txt($article['title'],100,'word','...')?>
                 </a>
             </h2>
+            <!--
             <span class="date"><?=$dateStr?></span>
             <p><?=$article['text']?> [&hellip;]</p>
+            -->
         </div><!-- #info closer -->
     </div><!-- #fragment-1 closer -->
     </li>
@@ -54,6 +56,11 @@
 ?>
 </ul>
     </div>
+    
+    <div class="inslider_gads">
+        <span class="gAd" data="InSlider" load-queue="1"></span>
+    </div>
+    
 </div><!-- #featured closer -->
 <!-- SLIDER END -->
 
@@ -81,11 +88,11 @@
                         
                         <div class="mob-slider-news">
                             <a href="<?=$newsUrl?>" class="mob-slider-news-imglink">
-                                <img src="/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
+                                <img src="https://static.pressfrom.info/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
                             </a>
                             <h4>
                             <a href="<?=$newsUrl?>" class="mob-slider-news-titlelink">
-                                <?=Article_m::get_short_txt($articles[$i]['title'],90,'word','...')?>
+                                <?=Article_m::get_short_txt($articles[$i]['title'],83,'word','...')?>
                             </a>
                             </h4>>
                         </div>
@@ -97,11 +104,11 @@
                             
                             <div class="mob-slider-news">
                                 <a href="<?=$newsUrl?>" class="mob-slider-news-imglink">
-                                    <img src="/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
+                                    <img src="https://static.pressfrom.info/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
                                 </a>
                                 <h4>
                                 <a href="<?=$newsUrl?>" class="mob-slider-news-titlelink">
-                                    <?=Article_m::get_short_txt($articles[$i]['title'],100,'word','...')?>
+                                    <?=Article_m::get_short_txt($articles[$i]['title'],83,'word','...')?>
                                 </a>
                                 </h4>
                             </div>
