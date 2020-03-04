@@ -1,6 +1,10 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-<?php foreach( $mainpage_cat_list as $catlist_ar ): ?>
+<?php 
+    $i=0;
+    foreach( $mainpage_cat_list as $catlist_ar ): 
+        $i++;
+?>
 
 <div class="cat_listing">
 
@@ -16,7 +20,14 @@
         <div class="left">
             <div class="imgholder">
                 <a href="/<?=LANG_CODE?><?="/{$catlist_ar['s_cat_ar']['full_uri']}-{$catlist_ar[0]['id']}-{$catlist_ar[0]['url_name']}.html"?>">
-                    <!--medium--><img src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />
+                    <!--medium-->
+                    <?php if($i<=2):?>
+                        <img src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />
+                    <?php else: ?>
+                        <!--<img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />-->
+                        <img src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />
+                    <?php endif; ?>
+                    
                 </a>
                 <div class="description">
                     <h3>
@@ -30,56 +41,32 @@
         
         
         <div class="right">
-            <?php if( isset($catlist_ar[1]) ): ?>
-            <div class="small-listing">
-                <div class="thumb">
-                    <a href="/<?=LANG_CODE?><?="/{$catlist_ar[1]['full_uri']}-{$catlist_ar[1]['id']}-{$catlist_ar[1]['url_name']}.html"?>">
-                        <img src="/upload/images/small/<?=$catlist_ar[1]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />
-                    </a>
-                </div><!-- #thumb -->
-                <div class="description">
-                    <h4>
-                        <a href="/<?=LANG_CODE?><?="/{$catlist_ar[1]['full_uri']}-{$catlist_ar[1]['id']}-{$catlist_ar[1]['url_name']}.html"?>">
-                            <?= Article_m::get_short_txt($catlist_ar[1]['title'],100,'word','...')?>
-                        </a>
-                    </h4>
-                </div><!-- #description -->
-            </div><!-- #small-listing -->
-            <?php endif; ?>
             
-            <?php if( isset($catlist_ar[2]) ): ?>
-            <div class="small-listing">
-                <div class="thumb">
-                    <a href="/<?=LANG_CODE?><?="/{$catlist_ar[2]['full_uri']}-{$catlist_ar[2]['id']}-{$catlist_ar[2]['url_name']}.html"?>">
-                        <img src="/upload/images/small/<?=$catlist_ar[2]['main_img']?>" alt="<?=$catlist_ar[2]['title']?>"  border="0" onerror="imgError(this);" />
-                    </a>
-                </div><!-- #thumb -->
-                <div class="description">
-                    <h4>
-                        <a href="/<?=LANG_CODE?><?="/{$catlist_ar[2]['full_uri']}-{$catlist_ar[2]['id']}-{$catlist_ar[2]['url_name']}.html"?>">
-                            <?= Article_m::get_short_txt($catlist_ar[2]['title'],100,'word','...')?>
-                        </a>
-                    </h4>
-                </div><!-- #description -->
-            </div><!-- #small-listing -->
-            <?php endif; ?>
+            <?php for($ii=1;$ii<=3;$ii++): ?>
             
-            <?php if( isset($catlist_ar[3]) ): ?>
-            <div class="small-listing">
-                <div class="thumb">
-                    <a href="/<?=LANG_CODE?><?="/{$catlist_ar[3]['full_uri']}-{$catlist_ar[3]['id']}-{$catlist_ar[3]['url_name']}.html"?>">
-                        <img src="/upload/images/small/<?=$catlist_ar[3]['main_img']?>" alt="<?=$catlist_ar[3]['title']?>"  border="0" onerror="imgError(this);" />
-                    </a>
-                </div><!-- #thumb -->
-                <div class="description">
-                    <h4>
-                        <a href="/<?=LANG_CODE?><?="/{$catlist_ar[3]['full_uri']}-{$catlist_ar[3]['id']}-{$catlist_ar[3]['url_name']}.html"?>">
-                            <?= Article_m::get_short_txt($catlist_ar[3]['title'],100,'word','...')?>
+                <?php if( isset($catlist_ar[$ii]) ): ?>
+                <div class="small-listing">
+                    <div class="thumb">
+                        <a href="/<?=LANG_CODE?><?="/{$catlist_ar[$ii]['full_uri']}-{$catlist_ar[$ii]['id']}-{$catlist_ar[$ii]['url_name']}.html"?>">
+                            <?php if($i<=2):?>
+                                <img src="/upload/images/small/<?=$catlist_ar[$ii]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />
+                            <?php else: ?>
+                                <!--<img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/<?=$catlist_ar[$ii]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />-->
+                                <img src="/upload/images/small/<?=$catlist_ar[$ii]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />
+                            <?php endif; ?>
                         </a>
-                    </h4>
-                </div><!-- #description -->
-            </div><!-- #small-listing -->
-            <?php endif; ?>
+                    </div><!-- #thumb -->
+                    <div class="description">
+                        <h4>
+                            <a href="/<?=LANG_CODE?><?="/{$catlist_ar[$ii]['full_uri']}-{$catlist_ar[$ii]['id']}-{$catlist_ar[$ii]['url_name']}.html"?>">
+                                <?= Article_m::get_short_txt($catlist_ar[$ii]['title'],100,'word','...')?>
+                            </a>
+                        </h4>
+                    </div><!-- #description -->
+                </div><!-- #small-listing -->
+                <?php endif; ?>
+            
+            <?php endfor; ?>
             
         </div><!-- #right -->
     </div><!-- #content -->
