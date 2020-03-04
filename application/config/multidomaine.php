@@ -7,10 +7,30 @@ define('STATIC_REMOTE_HOST', 'us.static.lalalay.com');
 define('STATIC_REMOTE_ADD_URI', '/file_remote/add_file/');
 define('STATIC_REMOTE_DEL_URI', '/file_remote/del_file/');
 
-$config_var['pressfrom.com']['mail']                    = 'mail@pressfrom.com';
+$config_var['pressfrom.com']['mail']                    = 'mail@pressfrom.info';
 $config_var['pressfrom.com']['logo_img']                = 'logo-pressfrom-1.png';
 $config_var['pressfrom.com']['logo_img_mobile']         = 'logo-pressfrom-mob-1.png';
 $config_var['pressfrom.com']['site_name']               = 'PressFrom';
+$config_var['pressfrom.com']['tpl']                     = 'pressfrom';
+$config_var['pressfrom.com']['conf'] = [
+    'right_top'=>8,
+    'last_news'=>10,
+    'cat_list_txt_lenth'=>250
+    ];
+
+
+$config_var['pressreview24.com']['mail']                = 'mail@pressreview24.com';
+$config_var['pressreview24.com']['logo_img']            = 'logo-pressfrom-1.png';
+$config_var['pressreview24.com']['logo_img_mobile']     = 'logo-pressfrom-mob-1.png';
+$config_var['pressreview24.com']['site_name']           = 'PressReview24';
+$config_var['pressreview24.com']['tpl']                 = 'press24';
+$config_var['pressreview24.com']['conf'] = [
+    'right_top'=>9,
+    'last_news'=>20,
+    'cat_list_txt_lenth'=>180
+    ];
+
+$config_var['unionpress24.lh']                          = $config_var['pressreview24.com'];
 
 $config_var['francais-express.com']['mail']             = 'mail@francais-express.com';
 $config_var['francais-express.com']['logo_img']         = 'logo-fr.jpg';
@@ -52,7 +72,10 @@ $lock_host = array(
     'mamamia.com.au',
     'cbs.com',
     
-    '\.abril.com.br'
+    '\.abril.com.br',
+    'motor1.com',
+    'rideapart.com',
+    'www.roadandtrack.com'
 );
 
 function get_country_code(){
@@ -101,6 +124,7 @@ $config['multidomaine']['host_set'][$_SERVER['HTTP_HOST']] = get_country_code();
 
 
 //===== Ru =====//
+$config['multidomaine']['ru']['host_conf']          = $config_var['default'];
 $config['multidomaine']['ru']['site_name_str']      = $config_var['default']['site_name'].' - Россия';
 $config['multidomaine']['ru']['lang']               = 'ru';
 $config['multidomaine']['ru']['country_name']       = 'Russia';
@@ -130,6 +154,7 @@ $config['multidomaine']['ru']['translate']['lang_from'] = [];
 $config['multidomaine']['ru']['translate']['cat_id']    = '';
 
 //===== Fr =====//
+$config['multidomaine']['fr']['host_conf']          = $config_var['default'];
 $config['multidomaine']['fr']['site_name_str']      = $config_var['default']['site_name'].' - France';
 $config['multidomaine']['fr']['lang']               = 'fr';
 $config['multidomaine']['fr']['country_name']       = 'France';
@@ -159,6 +184,7 @@ $config['multidomaine']['fr']['translate']['lang_from'] = ['us','uk','ca','au'];
 $config['multidomaine']['fr']['translate']['cat_id']    = '5,6,10,11,12,16,17,18,19,20';
 
 //===== De =====//
+$config['multidomaine']['de']['host_conf']          = $config_var['default'];
 $config['multidomaine']['de']['site_name_str']      = $config_var['default']['site_name'].' - Deutschland';
 $config['multidomaine']['de']['lang']               = 'de';
 $config['multidomaine']['de']['country_name']       = 'Deutschland';
@@ -189,6 +215,7 @@ $config['multidomaine']['de']['translate']['cat_id']    = '5,6,9,10,11,12,13,14,
 
 
 //===== Gb =====//
+$config['multidomaine']['uk']['host_conf']          = $config_var['default'];
 $config['multidomaine']['uk']['site_name_str']      = $config_var['default']['site_name'].' - United Kingdom';
 $config['multidomaine']['uk']['lang']               = 'en';
 $config['multidomaine']['uk']['country_name']       = 'United Kingdom';
