@@ -61,9 +61,8 @@ class merger_css_js extends CI_Controller{
         if($htmlObj->has('script[src]') && $fileType=='js'){
             foreach($htmlObj->find('script[src]') as $key => $scriptObj){
                 $JSfileUri = $scriptObj->src;
-                if(preg_match("#(google|cloudflare)#i", $JSfileUri)){
-                    continue;
-                }
+                if(preg_match("#google#i", $JSfileUri)){continue; }
+                if(preg_match("#cloudflare#i", $JSfileUri)){ continue; }
                 $this->getNewFileContent($JSfileUri, 'js');
             }
         }
