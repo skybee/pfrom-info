@@ -1,4 +1,4 @@
-<?php   
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
  * Class for joint subDomaine (PR24)
@@ -79,6 +79,15 @@ class Combined_pr24 extends CI_Controller
     function like_translate($cntNews=1){
         set_time_limit(300);
         $url = "http://-host-/cron/translate/stichoza_translate_do/{$cntNews}/";
+        
+        $this->each_http_query($url);
+        
+        echo date("H:i:s")."- OK - ".__METHOD__;
+    }
+    
+    function parse_schema_author($cntNews=1){
+        set_time_limit(300);
+        $url = "http://-host-/cron/parse_schema_author/parse/{$cntNews}/";
         
         $this->each_http_query($url);
         
