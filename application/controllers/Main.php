@@ -1,14 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-if (!defined('BASEPATH')) exit('No direct script access allowed');
-
-
 class Main extends CI_Controller {
 
     function __construct() {
         parent::__construct();
         
-        if($_SERVER['HTTP_HOST'] != 'pressfrom.info' && $_SERVER['HTTP_HOST'] != 'express-info.lh' && $_SERVER['HTTP_HOST'] != 'pressfrom.vbox' ){
+        if(     $_SERVER['HTTP_HOST'] != 'pressfrom.info' 
+                && $_SERVER['HTTP_HOST'] != 'express-info.lh' 
+                && $_SERVER['HTTP_HOST'] != 'pressfrom.vbox' 
+                && $_SERVER['HTTP_HOST'] != 'pressreview24.com' 
+                && $_SERVER['HTTP_HOST'] != 'pressreview24.lh'
+                && $_SERVER['HTTP_HOST'] != 'unionpress24.lh'
+        ){
 
             header("HTTP/1.1 301 Moved Permanently"); 
             header("Location: https://pressfrom.info/".LANG_CODE."{$_SERVER['REQUEST_URI']}"); 
@@ -62,7 +65,7 @@ class Main extends CI_Controller {
 //        if($cat_name == 'news')
 //        {
             #$data_ar['express_news'] = $this->express_news_lib->get_news();
-            $expressNewsLangCodeAr = ['us','ca','uk','de','fr','au','ru'];
+            $expressNewsLangCodeAr = ['us','ca','uk','de','fr','au','ru','br'];
             $data_ar['express_news'] = $this->express_news_lib->get_news_OneHost($expressNewsLangCodeAr, false);
 //        }
         
@@ -74,21 +77,54 @@ class Main extends CI_Controller {
         $data_ar['mainpage_cat_list']   = $this->article_m->get_mainpage_cat_news($data_ar['second_menu_list']); // 9.5 sec.
         $data_ar['meta']['title']       = $data_ar['main_cat_ar']['title'];
         
-        $top_slider['articles']         = $this->article_m->get_top_slider_data($data_ar['main_cat_ar']['id'], 8, $this->catConfig['top_news_time_h'], $this->topSliderTxtLength, true, true); // 1.5 sec.
-        $right['right_top']             = $this->article_m->get_top_slider_data($data_ar['main_cat_ar']['id'], 8, $this->catConfig['right_top_news_time_h'], $this->topSliderTxtLength, true, true, 'right_top');
+        $top_slider['articles']         = $this->article_m->get_top_slider_data(
+                                                $data_ar['main_cat_ar']['id'], 
+                                                8, 
+                                                $this->catConfig['top_news_time_h'], 
+                                                $this->topSliderTxtLength, 
+                                                true, 
+                                                true
+                                                ); // 1.5 sec.
+        $right['right_top']             = $this->article_m->get_top_slider_data(
+                                                $data_ar['main_cat_ar']['id'], 
+                                                $this->multidomaine['host_conf']['conf']['right_top'], 
+                                                $this->catConfig['right_top_news_time_h'], 
+                                                $this->topSliderTxtLength, 
+                                                true, 
+                                                true, 
+                                                'right_top'
+                                                );
         $top_slider['main_cat_url']     = $data_ar['main_cat_ar']['url_name'];
-        $right['last_news']             = $this->article_m->get_last_left_news( $data_ar['main_cat_ar']['id'], 50 ); // 1.5 sec.
+        $right['last_news']             = $this->article_m->get_last_left_news( 
+                                                $data_ar['main_cat_ar']['id'], 
+                                                50 
+                                                ); // 1.5 sec.
 
-        $tpl_ar = $data_ar; //== !!! tmp    
-        $tpl_ar['content']  = $this->load->view('component/main_latest_v', $data_ar, true);
-        $tpl_ar['content'] .= $this->load->view('component/cat_listing_v', $data_ar, true);
-        $tpl_ar['content'] .= $this->load->view('component/main_other_news_v', $data_ar, true);// .'<div>'.$msg.'</div>';
         
-        $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
-        $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
-        $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', array('mobile_menu_list'=>$mobile_menu_list), true);
+        $tpl_ar = $data_ar; //== !!! tmp
+        
+        if($this->multidomaine['host_conf']['tpl'] == 'pressfrom'){    
+            $tpl_ar['content']  = $this->load->view('component/main_latest_v', $data_ar, true);
+            $tpl_ar['content'] .= $this->load->view('component/cat_listing_v', $data_ar, true);
+            $tpl_ar['content'] .= $this->load->view('component/main_other_news_v', $data_ar, true);// .'<div>'.$msg.'</div>';
+            $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
+            $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
+            $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', 
+                                                        array('mobile_menu_list'=>$mobile_menu_list), 
+                                                        true
+                                                        );
 
-        $this->load->view('main_v', $tpl_ar);
+            $this->load->view('main_v', $tpl_ar);
+        }
+        elseif($this->multidomaine['host_conf']['tpl'] == 'press24'){
+            $tpl_ar['r24_header']           = $this->load->view('review24/components/header_v', $data_ar, true);
+            $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $data_ar, true);
+            $tpl_ar['r24_main_top_slider']  = $this->load->view('review24/components/main_top_slider_v', $top_slider, true);
+            $tpl_ar['r24_right']            = $this->load->view('review24/page_body/right_sidebar_v', $right, true);
+            $tpl_ar['r24_content']          = $this->load->view('review24/page_body/category_tab_box_v', $data_ar, true);
+            
+            $this->load->view('review24/main_v', $tpl_ar);
+        }
 
 	$this->changeOutput();
     }
@@ -112,7 +148,9 @@ class Main extends CI_Controller {
         unset($data_ar['doc_data']['serp_object']);
         
         /* ! LANG_CODE Down */ 
-        $true_url = '/'.$data_ar['doc_data']['cat_full_uri'].'-'.$data_ar['doc_data']['id'].'-'.$data_ar['doc_data']['url_name'].'.html';
+        $true_url = '/' .$data_ar['doc_data']['cat_full_uri'].'-'
+                        .$data_ar['doc_data']['id'].'-'
+                        .$data_ar['doc_data']['url_name'].'.html';
         
         if( $true_url != $_SERVER['REQUEST_URI'] ){
             header("HTTP/1.1 301 Moved Permanently");
@@ -124,8 +162,18 @@ class Main extends CI_Controller {
         # $this->docRedirectToPR24('document', $data_ar['doc_data']['date']);
         
         $data_ar['cat_ar']              = $this->category_m->get_cat_data_from_id($data_ar['doc_data']['cat_id']);
-        $data_ar['like_articles']       = $this->article_m->get_like_articles( $data_ar['doc_data']['id'], $data_ar['doc_data']['cat_id'] /*$data_ar['cat_ar']['parent_id']*/, $data_ar['doc_data']['title'], 8, $this->catConfig['like_news_day_d'], $data_ar['doc_data']['date'] );
-        $data_ar['like_translate']      = $this->article_m->getTranslateForArticle($data_ar['doc_data']['id'],'pressfrom.info');
+        $data_ar['like_articles']       = $this->article_m->get_like_articles( 
+                                                $data_ar['doc_data']['id'], 
+                                                $data_ar['doc_data']['cat_id'] /*$data_ar['cat_ar']['parent_id']*/, 
+                                                $data_ar['doc_data']['title'], 
+                                                8, 
+                                                $this->catConfig['like_news_day_d'], 
+                                                $data_ar['doc_data']['date'] 
+                                                );
+        $data_ar['like_translate']      = $this->article_m->getTranslateForArticle(
+                                                $data_ar['doc_data']['id'],
+                                                'pressfrom.info'
+                                                );
         
         $data_ar['doc_data']['text']    = addTranslateToMainTxt($data_ar['doc_data']['text'], $data_ar['like_translate']);
         
@@ -133,21 +181,55 @@ class Main extends CI_Controller {
         $data_ar['second_menu_list']    = $this->list_m->get_sCat_from_name($this->catNameAr[0]);
         $data_ar['footer_menu_list']    = $this->list_m->get_footer_cat_link();
         $mobile_menu_list               = $this->list_m->getMenuListForMobile();
-        $data_ar['meta']['title']       = $data_ar['cat_ar']['name'].': '.$data_ar['doc_data']['title'].' - '.$data_ar['like_translate']['title'].' - '.$this->multidomaine['site_name_str'];
+        $data_ar['meta']['title']       = $data_ar['cat_ar']['name'].': '
+                                            .$data_ar['doc_data']['title'].' - '
+                                            .$data_ar['like_translate']['title'].' - '
+                                            .$this->multidomaine['site_name_str'];
         $data_ar['donor_rel']           = ' rel="nofollow" '; #botRelNofollow();
 
         //пометка изображений в тексте (костыль для редиректа при image 404)
-        $data_ar['doc_data']['text'] = preg_replace("#(/upload/images\S+\.(jpg|jpeg|gif|png|img))#i", "$1?content=1", $data_ar['doc_data']['text']);
+        $data_ar['doc_data']['text'] =  preg_replace(
+                                            "#(/upload/images\S+\.(jpg|jpeg|gif|png|img))#i", 
+                                            "$1?content=1", 
+                                            $data_ar['doc_data']['text']
+                                        );
+        //LazyLoad Text Rewrite
+        $data_ar['doc_data']['text'] = rewriteImgInToLazyLoad($data_ar['doc_data']['text']);
+        
         
         //вставка like_articles[0] в текст
-        $data_ar['doc_data']['text']    = insertLikeArtInTxt($data_ar['doc_data']['text'], $data_ar['like_articles'], $right['serp_list']);
-        $data_ar['doc_data']['text']    = addResponsiveVideoTag($data_ar['doc_data']['text']);
+        $data_ar['doc_data']['text']    =   insertLikeArtInTxt(
+                                                $data_ar['doc_data']['text'], 
+                                                $data_ar['like_articles'], 
+                                                $right['serp_list']
+                                            );
+        $data_ar['doc_data']['text']    =   addResponsiveVideoTag($data_ar['doc_data']['text']);
+        
+        $data_ar['doc_data']['author_json'] = getAuthorJsonData($data_ar['doc_data']['author_data']);
 
         $data_ar['like_video']          = $this->article_m->get_like_video($data_ar['doc_data']['id'],2);
         
-        $top_slider['articles']         = $this->article_m->get_top_slider_data( $data_ar['cat_ar']['id'], 8, $this->catConfig['top_news_time_h'], $this->topSliderTxtLength, true, false);
-        $right['right_top']             = $this->article_m->get_top_slider_data( $data_ar['cat_ar']['parent_id'], 8, $this->catConfig['right_top_news_time_h'], $this->topSliderTxtLength, true, true, 'right_top');
-        $right['last_news']             = $this->article_m->get_last_left_news( $data_ar['cat_ar']['parent_id'], 10 );
+        $top_slider['articles']         = $this->article_m->get_top_slider_data( 
+                                                $data_ar['cat_ar']['id'], 
+                                                8, 
+                                                $this->catConfig['top_news_time_h'], 
+                                                $this->topSliderTxtLength, 
+                                                true, 
+                                                false
+                                            );
+        $right['right_top']             = $this->article_m->get_top_slider_data( 
+                                                $data_ar['cat_ar']['parent_id'], 
+                                                $this->multidomaine['host_conf']['conf']['right_top'], 
+                                                $this->catConfig['right_top_news_time_h'], 
+                                                $this->topSliderTxtLength, 
+                                                true, 
+                                                true, 
+                                                'right_top'
+                                            );
+        $right['last_news']             = $this->article_m->get_last_left_news( 
+                                                $data_ar['cat_ar']['parent_id'], 
+                                                $this->multidomaine['host_conf']['conf']['last_news'] 
+                                            );
         
         if($_SERVER['HTTP_HOST'] !== $this->multidomaine['host']){ //Aliases Canonical
 //            $canonicalUrl                   = 'http://'.$this->multidomaine['host'].$_SERVER['REQUEST_URI'];
@@ -167,16 +249,31 @@ class Main extends CI_Controller {
 //            }
         }
         
-        $tpl_ar                 = $data_ar; //== !!! tmp
-        $tpl_ar['content']      = $this->load->view('page/doc_v', $data_ar, true); // .'<div>'.$msg.'</div>';
-        $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
-        $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
-        $tpl_ar['meta']['og']   = $this->load->view('component/meta_og_v', $data_ar['doc_data'], true);
-        $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', array('mobile_menu_list'=>$mobile_menu_list), true);
-        $tpl_ar['out_popup']    = $this->load->view('component/out_popup_v', $data_ar['like_articles'], true);
-        $tpl_ar['preload']      = $this->load->view('component/preload_mobi_v', array(), true);
+        $tpl_ar = $data_ar; //== !!! tmp
+        
+        if($this->multidomaine['host_conf']['tpl'] == 'pressfrom'){
+            $tpl_ar['content']      = $this->load->view('page/doc_v', $data_ar, true); // .'<div>'.$msg.'</div>';
+            $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
+            $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
+            $tpl_ar['meta']['og']   = $this->load->view('component/meta_og_v', $data_ar['doc_data'], true);
+            $tpl_ar['mobile_menu']  = $this->load->view(    
+                                                        'component/mobile_menu_v', 
+                                                        array('mobile_menu_list'=>$mobile_menu_list), 
+                                                        true
+                                                    );
+            $tpl_ar['out_popup']    = $this->load->view('component/out_popup_v', $data_ar['like_articles'], true);
 
-        $this->load->view('main_v', $tpl_ar);
+            $this->load->view('main_v', $tpl_ar);
+        }
+        elseif($this->multidomaine['host_conf']['tpl'] == 'press24'){
+            $tpl_ar['r24_header']           = $this->load->view('review24/components/header_v', $data_ar, true);
+            $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $data_ar, true);
+            $tpl_ar['r24_main_top_slider']  = $this->load->view('review24/components/main_top_slider_v', $top_slider, true);
+            $tpl_ar['r24_right']            = $this->load->view('review24/page_body/right_sidebar_v', $right, true);
+            $tpl_ar['r24_content']  = $this->load->view('review24/page_body/post_v', $data_ar, true);
+
+            $this->load->view('review24/main_v', $tpl_ar);
+        }
 
 	$this->changeOutput();
     }
@@ -205,8 +302,18 @@ class Main extends CI_Controller {
             exit();
         }
         
-        $data_ar['news_page_list']      = $this->article_m->get_page_list($data_ar['cat_ar']['id'], $page, 15, 250 );
-        $data_ar['pager_ar']            = $this->article_m->get_pager_ar( $data_ar['cat_ar']['id'], $page, 15, 4);
+        $data_ar['news_page_list']      = $this->article_m->get_page_list(
+                                                $data_ar['cat_ar']['id'], 
+                                                $page, 
+                                                15, 
+                                                $this->multidomaine['host_conf']['conf']['cat_list_txt_lenth'] 
+                                            );
+        $data_ar['pager_ar']            = $this->article_m->get_pager_ar( 
+                                                $data_ar['cat_ar']['id'], 
+                                                $page, 
+                                                15, 
+                                                4
+                                            );
         $data_ar['page_nmbr']           = $page;
         
         if (!$data_ar['news_page_list'])
@@ -223,17 +330,51 @@ class Main extends CI_Controller {
 //            $data_ar['meta']['noindex'] = true;
         }
 
-        $top_slider['articles']         = $this->article_m->get_top_slider_data( $data_ar['cat_ar']['id'], 8, $this->catConfig['top_news_time_h'], $this->topSliderTxtLength, true, false);
-        $right['right_top']             = $this->article_m->get_top_slider_data( $data_ar['cat_ar']['parent_id'], 8, $this->catConfig['right_top_news_time_h'], $this->topSliderTxtLength, true, true, 'right_top');
-        $right['last_news']             = $this->article_m->get_last_left_news( $data_ar['cat_ar']['parent_id'], 50 );
+        $top_slider['articles'] = $this->article_m->get_top_slider_data( 
+                                        $data_ar['cat_ar']['id'], 
+                                        8, 
+                                        $this->catConfig['top_news_time_h'], 
+                                        $this->topSliderTxtLength, 
+                                        true, 
+                                        false
+                                    );
+        $right['right_top']     = $this->article_m->get_top_slider_data( 
+                                        $data_ar['cat_ar']['parent_id'], 
+                                        $this->multidomaine['host_conf']['conf']['right_top'], 
+                                        $this->catConfig['right_top_news_time_h'], 
+                                        $this->topSliderTxtLength, 
+                                        true, 
+                                        true, 
+                                        'right_top'
+                                    );
+        $right['last_news']     = $this->article_m->get_last_left_news( 
+                                        $data_ar['cat_ar']['parent_id'], 
+                                        50 
+                                    );
         
-        $tpl_ar                 = $data_ar; //== !!! tmp
-        $tpl_ar['content']      = $this->load->view('page/cat_list_v', $data_ar, true);
-        $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
-        $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
-        $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', array('mobile_menu_list'=>$mobile_menu_list), true);
+        $tpl_ar = $data_ar; //== !!! tmp
+        
+        if($this->multidomaine['host_conf']['tpl'] == 'pressfrom'){
+            $tpl_ar['content']      = $this->load->view('page/cat_list_v', $data_ar, true);
+            $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
+            $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
+            $tpl_ar['mobile_menu']  = $this->load->view(
+                                                        'component/mobile_menu_v', 
+                                                        array('mobile_menu_list'=>$mobile_menu_list), 
+                                                        true
+                                                    );
 
-        $this->load->view('main_v', $tpl_ar);
+            $this->load->view('main_v', $tpl_ar);
+        }
+        elseif($this->multidomaine['host_conf']['tpl'] == 'press24'){
+            $tpl_ar['r24_header']           = $this->load->view('review24/components/header_v', $data_ar, true);
+            $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $data_ar, true);
+            $tpl_ar['r24_main_top_slider']  = $this->load->view('review24/components/main_top_slider_v', $top_slider, true);
+            $tpl_ar['r24_right']            = $this->load->view('review24/page_body/right_sidebar_v', $right, true);
+            $tpl_ar['r24_content']          = $this->load->view('review24/page_body/category_v', $data_ar, true);
+
+            $this->load->view('review24/main_v', $tpl_ar);
+        }
 	
         $this->changeOutput();
     }
@@ -257,8 +398,23 @@ class Main extends CI_Controller {
         $mobile_menu_list               = $this->list_m->getMenuListForMobile();
         $data_ar['meta']['title']       = 'Поиск: &laquo;'.$searchStr.'&raquo;  - '.$this->multidomaine['page_str'].' '.$page;
         
-        $top_slider['articles']         = $this->article_m->get_top_slider_data(1, 8, $this->catConfig['right_top_news_time_h'], $this->topSliderTxtLength, true, true); // 1.5 sec.
-        $right['right_top']             = $this->article_m->get_top_slider_data(1, 8, $this->catConfig['right_top_news_time_h'], $this->topSliderTxtLength, true, true, 'right_top');
+        $top_slider['articles']         = $this->article_m->get_top_slider_data(
+                                                1, 
+                                                8, 
+                                                $this->catConfig['right_top_news_time_h'], 
+                                                $this->topSliderTxtLength, 
+                                                true, 
+                                                true
+                                            ); // 1.5 sec.
+        $right['right_top']             = $this->article_m->get_top_slider_data(
+                                                1, 
+                                                $this->multidomaine['host_conf']['conf']['right_top'], 
+                                                $this->catConfig['right_top_news_time_h'], 
+                                                $this->topSliderTxtLength, 
+                                                true, 
+                                                true, 
+                                                'right_top'
+                                            );
         
         $right['last_news']              = $this->article_m->get_last_left_news( 1, 50 );
         
@@ -272,7 +428,11 @@ class Main extends CI_Controller {
         $tpl_ar['content']      = $this->load->view('page/cat_list_v', $data_ar, true);
         $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
         $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
-        $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', array('mobile_menu_list'=>$mobile_menu_list), true);
+        $tpl_ar['mobile_menu']  = $this->load->view(
+                                                    'component/mobile_menu_v', 
+                                                    array('mobile_menu_list'=>$mobile_menu_list), 
+                                                    true
+                                                );
 
         $this->load->view('main_v', $tpl_ar);
     }
