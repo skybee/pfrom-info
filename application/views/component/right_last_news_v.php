@@ -19,6 +19,11 @@
     </div>
 <?php endif;?>
 
+<?php if(0/*LANG_CODE == 'us'*/):?>
+<div style="float: left; margin: 0px 0px 20px 0px; font-size: 12px; color: #6b6b6b;">
+    As an Amazon Associate I earn from qualifying purchases.
+</div>
+<?php endif; ?>
 
 <!-- TOP News -->
 <h3 class="widget-title">
@@ -39,7 +44,7 @@
     ?>
     <div class="big-rtn">
         <a href="<?=$newsUrl?>" >
-            <img src="/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
+            <img src="https://static.pressfrom.info/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
         </a>
         <div class="big-rtn-title">
             <a href="<?=$newsUrl?>" >
@@ -52,6 +57,7 @@
         <div style="display: table;">
             <div style="display: table-cell; vertical-align: middle;">
                 <a href="<?=$newsUrl?>" >
+                    <!--<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />-->
                     <img src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />
                 </a>
             </div>
@@ -105,6 +111,7 @@
     ?>
     <div class="big-rtn">
         <a href="<?=$newsUrl?>" >
+            <!--<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />-->
             <img src="/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
         </a>
         <div class="big-rtn-title">
@@ -118,6 +125,7 @@
         <div style="display: table;">
             <div style="display: table-cell; vertical-align: middle;">
                 <a href="<?=$newsUrl?>" >
+                    <!--<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />-->
                     <img src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />
                 </a>
             </div>
