@@ -73,13 +73,14 @@ function insertLikeArticleInTxt($text, $likeList)
     $replace   .= '<p class="look_more_hdn">'."\n";
 
     if(!empty($likeList[0]['main_img'])){
+//        $replace .= '<img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/'.$likeList[0]['main_img'].'" alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n";
         $replace .= '<img src="/upload/images/small/'.$likeList[0]['main_img'].'" alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n";
     }
-    $replace   .= $likeText."\n "
-            . "<span style=\"display:block; margin-top:15px;\"> \n"
-            . "<span class=\"gAd\" data=\"content greyInTxt\"></span> \n "
-            . "</span> \n"
-            . "</p>\n";
+    $replace    .= $likeText."\n "
+                . "<span style=\"display:block; margin-top:15px;\"> \n"
+                . "<span class=\"gAd\" data=\"content greyInTxt\"></span> \n "
+                . "</span> \n"
+                . "</p>\n";
 
     $text = preg_replace($search, $replace, $text, 1);
 
@@ -118,12 +119,14 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
         
         $likeArtHtml =  "\n"
                         .' <h3 class="look_more_hdn" rel="'.$newsUrl.'">'
-                        . '<img src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
+                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
+//                        . '<img src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
                         .$likeTitle
                         . "</h3>\n"
                         . '<p class="look_more_hdn"> '."\n "
                         . "\t".'<span class="lmh_height_txt">'."\n"
-                        . '<img src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n"
+                        . '<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n"
+//                        . '<img src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n"
                         . $likeText."\n "
                         . "\t</span>\n "
                         . "</p>\n "
@@ -269,4 +272,39 @@ function addTranslateToMainTxt($mainTxt,$translateData){
     }
     
     return $mainTxt;
+}
+
+function rewriteImgInToLazyLoad($html){
+    
+    //========== Return First Img Without LazyLoad ==========//
+    $html = preg_replace("#<img #i",'<gmi ', $html,1); //удаление <img
+    //========== Return First Img Without LazyLoad ==========//
+    
+    $pattern        = "#(<img[\s\S]+?)src=['\"](\S+?)['\"]([\s\S]*?>)#i";
+    $replacement    = "$1 data-src=\"$2\" src=\"/img/no_img/content/no_img_content_flip.jpg\" lazyload=\"lazyload\" $3";
+    
+    $html = preg_replace($pattern, $replacement, $html);
+    
+    //========== Return First Img Without LazyLoad ==========//
+    $html = preg_replace("#<gmi #i",'<img ', $html,1); //возвращение <img
+    //========== Return First Img Without LazyLoad ==========//
+    
+    
+//    echo '<!-- ';
+//    print_r($matches);
+//    echo ' -->';
+    
+    return $html;
+}
+
+function getAuthorJsonData($jsonFromDB){
+    if(empty($jsonFromDB)){
+        $jsonFromDB = '{"publisher":{"@type":"Organization","name":"PressFrom","url":"https:\/\/pressfrom.info","logo":{"@type":"ImageObject","url":"https:\/\/pressfrom.info\/img\/logo-pressfrom-1-fff.png"}},"author":{"@type":"Organization","name":"PressFrom","url":"https:\/\/pressfrom.info","logo":{"@type":"ImageObject","url":"https:\/\/pressfrom.info\/img\/logo-pressfrom-1-fff.png"}}}';
+    }
+    $arr = json_decode($jsonFromDB, true);
+    
+    $resultAr['publisher']  = json_encode($arr['publisher']);
+    $resultAr['author']     = json_encode($arr['author']);
+    
+    return $resultAr;
 }
