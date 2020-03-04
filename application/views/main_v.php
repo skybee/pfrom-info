@@ -4,6 +4,7 @@
     <head>
         
         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!--
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133437377-1"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -12,21 +13,22 @@
 
           gtag('config', 'UA-133437377-1');
         </script>
+        -->
         
         <!-- Yandex.Metrika counter -->
-            <script type="text/javascript" >
+<!--            <script type="text/javascript" >
                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
                m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
                ym(50253969, "init", {
-                    clickmap:false,
-                    trackLinks:false,
+                    clickmap:true,
+                    trackLinks:true,
                     accurateTrackBounce:true,
                     webvisor:false
                });
             </script>
-            <noscript><div><img src="https://mc.yandex.ru/watch/50253969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+            <noscript><div><img src="https://mc.yandex.ru/watch/50253969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
         <!-- /Yandex.Metrika counter -->
 
         
@@ -41,14 +43,14 @@
         <link rel="stylesheet" type="text/css" href="/css/skin1/default.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/skin.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/font.css?v=<?=js_version('/css/skin1/font.css')?>" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/magnific-popup.css" />
+        <?php if(0):?><link rel="stylesheet" type="text/css" href="/css/skin1/magnific-popup.css" /><?php endif;?>
         <link rel="stylesheet" type="text/css" href="/css/skin1/jquery.bxslider.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/msn-parse.css?v=<?=js_version('/css/skin1/msn-parse.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/mobile.css?v=<?=js_version('/css/skin1/mobile.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=<?=js_version('/css/skin1/media-queries.css')?>" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=<?=js_version('/css/skin1/mobile_gads.css')?>" />-->
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=<?=js_version('/css/skin1/mobile_gads.css')?>" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css" />-->
+
         <link rel="stylesheet" type="text/css" href="/css/all-style.css?v=<?=js_version('/css/all-style.css')?>" />
         
         
@@ -61,27 +63,64 @@
         <?php if(isset($meta['noindex']) && $meta['noindex'] == true ): ?>
             <meta name="robots" content="noindex, follow" />
         <?php endif; ?>   
-            
-        <script defer type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-        <script defer type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
-        <script defer type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
+                    
+<!--        <script defer type='text/javascript' src="/js/skin1/lib/jquery-1.12.4.min.js"></script>
+        <script defer type='text/javascript' src="/js/skin1/lib/swiper-4.4.6.min.js"></script>
+        <script defer type='text/javascript' src="/js/skin1/lib/jquery.lazy.min.js">/*---NOT COMENT in Production---*/</script>
+        <script defer type='text/javascript' src='/js/skin1/lib/jquery-ui.min-tabs-1.12.1.js'>/*---NOT COMENT in Production---*/</script>
+        <script defer type='text/javascript' src='/js/skin1/lib/jquery.bxslider.min.js'>/*---NOT COMENT in Production---*/</script>-->
         
-<!--        <script defer type='text/javascript' src='/js/skin1/jquery.magnific-popup.min.js'></script>
-        <script defer type='text/javascript' src='/js/skin1/jquery.bxslider.min.js'></script>
+        <script defer type='text/javascript' src='/js/skin1/lib/all-lib.js?v=<?=js_version('/js/skin1/lib/all-lib.js')?>'>/*---NOT COMENT in Production---*/</script>
+        
+        
+<!--        <script defer type='text/javascript' src='/js/skin1/paste_code.js'></script>
         <script defer type='text/javascript' src='/js/skin1/sb.js?v=<?=js_version('/js/skin1/sb.js')?>'></script>
         <script defer type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>-->
             
         <script defer type='text/javascript' src='/js/all-script.js?v=<?=js_version('/js/all-script.js')?>'></script>
         
+        
         <!-- Google Ads -->
         <?php if(!isset($doc_data['show_ads']) || $doc_data['show_ads'] == 1): //отключение рекламы ?> 
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <?php endif; ?>
+<!--            <script data-ad-client="ca-pub-6096727633142370" async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({ //объявления уровня страницы
+                    google_ad_client: "ca-pub-6096727633142370",
+                    enable_page_level_ads: true
+                });
+            </script>-->
+        <?php endif; ?>        
+        
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org", 
+                "@type": "Organization",
+                "name": "PressFrom",
+                "url": "https://pressfrom.info",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "465 E Aultman St, Ely, NV 89301, US",
+                    "addressRegion": "NV",
+                    "postalCode": "89301",
+                    "addressCountry": "USA"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "email": "info@pressfrom.info"
+                }
+            }
+        </script>
         
     </head>
 
     <body>
         <span id="langCode" data="<?=LANG_CODE?>" style="display: none;" ></span>
+        
+        <!-- Google Ads -->
+        <?php if(!isset($doc_data['show_ads']) || $doc_data['show_ads'] == 1): //отключение рекламы ?>
+        <span class="paste_code paste_GAdsMainCode"></span>
+        <?php endif; ?>
         
         <?php // if(isset($preload)) echo $preload;?>
         
@@ -185,9 +224,9 @@
                         <!-- !!! Top Slider Here-->
 
                         <div id="middle">
-                            <div class="under_slider_gads">
+<!--                            <div class="under_slider_gads">
                                 <span class="gAd" data="UnderSlider" load-queue="1"></span>
-                            </div>
+                            </div>-->
                             <div id="left">
                                 <?= $content ?>
                             </div><!-- #left closer -->
@@ -223,9 +262,20 @@
                         <?php endforeach; ?>
                     </div>
                     <div class="footer_contact">
-                        <span><?=$this->multidomaine['contact_str'];?></span><br />
-                        E-mail: <!--<a href="mailto:<?#=$this->multidomaine['e_mail'];?>"><?#=$this->multidomaine['e_mail'];?></a>-->
-                        <a href="#" id="foot_mail"></a>
+                        <span><?=$this->multidomaine['contact_str'];?></span>
+                        <br />
+                        <ul>
+                            <li>
+                                Name:&nbsp;&nbsp;<span>PressFrom</span>
+                            </li>
+                            <li>
+                                E-mail:&nbsp;&nbsp;<a href="mailto:<?=$this->multidomaine['e_mail'];?>"><?=$this->multidomaine['e_mail'];?></a>
+                                <!--<a href="#" id="foot_mail"></a>-->
+                            </li>
+                            <li>
+                                465 E Aultman St, Ely, NV 89301, US
+                            </li>
+                        </ul>
                     </div>
                 </div><!-- #inside -->
             </div><!-- #footer_widget closer -->
@@ -259,5 +309,6 @@
         <div id="ow_bg"></div>
         <?php if(isset($out_popup)) echo $out_popup;?>
         
+        <span class="paste_code paste_YandexMetrika"></span>
     </body>
 </html>
