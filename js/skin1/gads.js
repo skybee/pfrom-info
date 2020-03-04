@@ -26,14 +26,17 @@ $( document ).ready(function(){
     }
     
     // </top adsense after image> //
-
-    if(addGadPosition()){ // добовляет дополнительные места(теги) для рекламы
-        $('span.gAd').each(function(){ // простановка блоков рекламы
-            blockName = $(this).attr('data');
-            toWrite = loadGAd(blockName);
-            $(this).replaceWith(toWrite);
-        });
-    }
+    setTimeout(function(){
+        paste_code('GAdsMainCode'); //добавление основного кода на страницу
+        
+        if(addGadPosition()){ // добовляет дополнительные места(теги) для рекламы
+            $('span.gAd').each(function(){ // простановка блоков рекламы
+                blockName = $(this).attr('data');
+                toWrite = loadGAd(blockName);
+                $(this).replaceWith(toWrite);
+            });
+        }
+    }, 2000);
 
 });
 
@@ -335,13 +338,25 @@ function loadGAdDesctop(blockName){
                         (adsbygoogle = window.adsbygoogle || []).push({}); \
                     </script>";
     }
-    if(blockName == 'UnderSlider'){ //PR24 info LinkBlock under slider
+//    if(blockName == 'UnderSlider'){ //PR24 info LinkBlock under slider
+//        toWrite = " <ins class=\"adsbygoogle\" \
+//                        style=\"display:block;height:30px;\" \
+//                        data-ad-client=\"ca-pub-6096727633142370\" \
+//                        data-ad-slot=\"5033317876\" \
+//                        data-ad-format=\"link\" \
+//                        data-full-width-responsive=\"true\"> \
+//                    </ins> \
+//                    <script> \
+//                        (adsbygoogle = window.adsbygoogle || []).push({}); \
+//                    </script>";
+//    }
+    if(blockName == 'InSlider'){ //Black in Slider FullScr
         toWrite = " <ins class=\"adsbygoogle\" \
-                        style=\"display:block;height:30px;\" \
+                        style=\"display:block;height:125px\" \
+                        data-ad-format=\"fluid\" \
+                        data-ad-layout-key=\"-gg+3r+8c-bc-1v\" \
                         data-ad-client=\"ca-pub-6096727633142370\" \
-                        data-ad-slot=\"5033317876\" \
-                        data-ad-format=\"link\" \
-                        data-full-width-responsive=\"true\"> \
+                        data-ad-slot=\"9221992516\"> \
                     </ins> \
                     <script> \
                         (adsbygoogle = window.adsbygoogle || []).push({}); \

@@ -95,17 +95,35 @@ $( document ).ready(function(){
     
     
     // <Content Link>
-    if($('span.out-link').length > 0)
-    {
-        $('span.out-link').each(function(){
-            url     = $(this).attr('src');
-            inner   = $(this).html();
-            cls     = $(this).attr('class');
-            stl     = $(this).attr('style');
-            aHtml = '<a target="_blank" href="'+url+'" class="'+cls+'" style="'+stl+'" rel="nofollow" >'+inner+'</a>';
-            $(this).replaceWith(aHtml);
-        });
-    }
+//    setTimeout(function(){
+//        if($('span.out-link').length > 0)
+//        {
+//            counter_convert_link = 0;
+//            $('span.out-link').each(function(){
+//                counter_convert_link ++;
+//                if(counter_convert_link>=3){ 
+//                    return true;
+//                }
+//
+//                url     = $(this).attr('src');
+//                inner   = $(this).html();
+//                cls     = $(this).attr('class');
+//                stl     = $(this).attr('style');
+//                aHtml = '<a target="_blank" href="'+url+'" class="'+cls+'" style="'+stl+'" rel="nofollow" >'+inner+'</a>';
+//                $(this).replaceWith(aHtml);
+//
+//            });
+//        }
+//    },10000);
+    
+    $('span.out-link').mouseover(function(){
+        url     = $(this).attr('src');
+        inner   = $(this).html();
+        cls     = $(this).attr('class');
+        stl     = $(this).attr('style');
+        aHtml = '<a target="_blank" href="'+url+'" class="'+cls+'" style="'+stl+'" rel="nofollow" >'+inner+'</a>';
+        $(this).replaceWith(aHtml);
+    });
     // <Content Link>
     
     
@@ -146,10 +164,27 @@ $( document ).ready(function(){
     
     setRightBlockTopSpace(); // Set RightTop Space size
     
-    setTimeout('pagePreloadClose()', 1500); //Close Page Preload
+//    setTimeout('pagePreloadClose()', 1500); //Close Page Preload
     
     //Rewrite TranslateTxt Position
     $('tlate').appendTo('.like-translate-bottom-position');
+    
+    
+    //LazyLoad IMG
+    setTimeout(
+    $("img[lazyload=lazyload]").lazy({ 
+        effect: "fadeIn",
+        effectTime: 600,
+        threshold: 200
+    }), 5000);
+
+
+    // Load YandexMetrika
+//    setTimeout(paste_code('YandexMetrika'),5000); //3000
+    
+    // Load YandexButtons
+//    setTimeout(paste_code('YandexButtons'),10000); //10000
+
 });
 
 var outWindow = 0;
@@ -210,13 +245,23 @@ function ifMobile(){
         // Optional parameters
         direction: 'horizontal',
         loop: true,
-      
+
         // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
         }
     });
+    
+    
+    
+    //LazyLoad IMG for Mobile
+    setTimeout(
+    $('img[lazyload="lazyload-mobile"]').lazy({ 
+        effect: "fadeIn",
+        effectTime: 600,
+        threshold: 200
+    }),5000);
     
 }
 //===================== </if Mobile> =====================//
@@ -226,25 +271,25 @@ function ifMobile(){
 function ifDesktop(){
     
     //========== <Sliders> ==========//
-    window.setTimeout("showTopSliderTimeOut()",2000);   
+    window.setTimeout("showTopSliderTimeOut()",1000);   
     //========== </Sliders> ==========//
 
 
     // <zoom img>
-    $('.image-popup-no-margins').magnificPopup({
-                type: 'image',
-                closeOnContentClick: true,
-                closeBtnInside: false,
-                fixedContentPos: true,
-                mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-                image: {
-                        verticalFit: true
-                },
-                zoom: {
-                        enabled: true,
-                        duration: 300 // don't foget to change the duration also in CSS
-                }
-        });
+//    $('.image-popup-no-margins').magnificPopup({
+//                type: 'image',
+//                closeOnContentClick: true,
+//                closeBtnInside: false,
+//                fixedContentPos: true,
+//                mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+//                image: {
+//                        verticalFit: true
+//                },
+//                zoom: {
+//                        enabled: true,
+//                        duration: 300 // don't foget to change the duration also in CSS
+//                }
+//        });
     // </zoom img>
 
     // <show this cat>
@@ -273,6 +318,14 @@ function ifDesktop(){
     }
     // <serp result add link>
     
+    //LazyLoad IMG for Desktop
+    setTimeout(
+    $('img[lazyload="lazyload-desktop"]').lazy({ 
+        effect: "fadeIn",
+        effectTime: 600,
+        threshold: 200
+    }),5000);
+    
     //Load Games
 //    setTimeout('$("#bottom-games").load("/html/bottom-games.html");', 10000);
 }
@@ -282,14 +335,14 @@ function ifDesktop(){
 //===================== <TopSliderLoad> =====================//
 function showTopSliderTimeOut(){
         $('#featured .featured-hide-preload').css({'display':'block'});
-        $('#featured .featured-hide-preload').animate({opacity:1}, 600,function(){
+        $('#featured .featured-hide-preload').animate({opacity:1}, 400,function(){
             $('.bxslider').bxSlider({
                 mode: 'fade',
                 pagerCustom: '#bx-pager',
                 controls: false,
                 auto: true,
-                speed: 400,
-                pause: 3000,
+                speed: 600,
+                pause: 4000,
                 onSlideBefore: lazySliderBefore
             });
         });
