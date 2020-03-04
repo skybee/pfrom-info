@@ -38,6 +38,7 @@
                 ?>
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">
+                        <!--<img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="<?=$imgUrl?>" alt="<?=htmlspecialchars($news['title'])?>" />-->
                         <img src="<?=$imgUrl?>" alt="<?=htmlspecialchars($news['title'])?>" />
                         <?=Article_m::get_short_txt($news['title'],100,'word','...')?>
                     </a>
