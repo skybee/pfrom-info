@@ -118,12 +118,14 @@ class Article_m extends CI_Model{
                         `article`.`views`, `article`.`show_ads`,
                         `category`.`name` AS 'cat_name', `category`.`full_uri` AS 'cat_full_uri', 
                         `donor`.`name` AS 'd_name', `donor`.`img` AS 'd_img', `donor`.`host` AS 'd_host',
-                        `article_like_serp`.`serp_object`
+                        `article_like_serp`.`serp_object`,
+                        `author`.`data` AS 'author_data'
                 FROM 
                     `article` 
-                    LEFT JOIN  `category` ON  `article`.`cat_id` =  `category`.`id` 
-                    LEFT JOIN  `donor` ON  `article`.`donor_id` =  `donor`.`id` 
-                    LEFT JOIN  `article_like_serp` ON  `article`.`id` =  `article_like_serp`.`article_id`
+                    LEFT JOIN  `category`   ON  `article`.`cat_id`      =  `category`.`id` 
+                    LEFT JOIN  `donor`      ON  `article`.`donor_id`    =  `donor`.`id` 
+                    LEFT JOIN  `article_like_serp` ON  `article`.`id`   =  `article_like_serp`.`article_id`
+                    LEFT JOIN  `author`     ON  `article`.`author_id`   =  `author`.`id`
                 WHERE 
                     `article`.`id`  = {$id}
                 LIMIT 1";            
