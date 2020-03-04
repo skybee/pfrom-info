@@ -1,5 +1,6 @@
 User-Agent: *
-Disallow: /js/
+#Disallow: /js/
 Disallow: /ajax/
 Disallow: /cron/
 Disallow: /parser/
+#Disallow: /upload/
