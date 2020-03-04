@@ -26,7 +26,11 @@ class History extends CI_Controller{
         $viewData['categoryData']   = $categoryData;
         
 //        print_r($viewData['categoryData']);
-
+        
+        $viewData['mainMenu']       = $this->load->view('sbadmin/component/right_main_menu_v','',true);
+        $viewData['mainMenu']      .= $this->load->view('sbadmin/component/history_menu_v','',true);
+        $viewData['rightContent']   = $this->load->view('sbadmin/page/history_v',$viewData,true);
+        
         $this->load->view('sbadmin/index_v',$viewData);
     }
     
