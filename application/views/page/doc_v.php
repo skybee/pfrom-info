@@ -34,7 +34,8 @@
     <div class="doc-date doc-date-top">
         
         <div class="social_btn social_btn_top">
-            <script async type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+            <span class="paste_code paste_YandexButtons"></span>
+<!--            <script async type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>-->
             <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareTheme="counter" data-yashareType="normal" data-yashareQuickServices="<?=$this->multidomaine['social_btn_list'];?>"></div> 
         </div>
         
@@ -77,10 +78,42 @@
         @media(max-width: 980px){ #left div.single div.content-gAd-bottom .mobile-noimg{width: 336px; height: 280px;} }
         @media(max-width: 340px){ #left div.single div.content-gAd-bottom .mobile-noimg{width: 300px; height: 250px;} }
     </style>
-
-    <div class="content copy-url">
+    
+    <?php #print_r($doc_data); ?>
+    
+    <!-- CONTENT START -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org", 
+            "@type": "NewsArticle",
+            "headline": "<?=htmlspecialchars($doc_data['title'],ENT_COMPAT)?>",
+            "image": "https://static.pressfrom.info/upload/images/real/<?=$doc_data['main_img']?>",
+            "datePublished": "<?=$dateAr['year_nmbr'].'-'.$dateAr['month_nmbr'].'-'.$dateAr['day_nmbr']?>",
+            "dateModified":  "<?=$dateAr['year_nmbr'].'-'.$dateAr['month_nmbr'].'-'.$dateAr['day_nmbr']?>",
+            "publisher": <?=$doc_data['author_json']['publisher']?>,
+            "author": <?=$doc_data['author_json']['author']?>,
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://<?=$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?>"
+            }
+        }
+    </script>
+    
+    <div class="content copy-url" >
+    <!--
+    <div class="content copy-url" itemscope itemtype="http://schema.org/Article">
+        <span class="schema_org_data" style="display:none;">
+            <span itemprop="headline" ><?=$doc_data['title']?></span>
+            <span itemprop="datePublished" ><?=$dateAr['year_nmbr'].'-'.$dateAr['month_nmbr'].'-'.$dateAr['day_nmbr']?></span>
+            <span itemprop="dateModified" ><?=$dateAr['year_nmbr'].'-'.$dateAr['month_nmbr'].'-'.$dateAr['day_nmbr']?></span>
+            <link itemprop="image" href="https://static.pressfrom.info/upload/images/real/<?=$doc_data['main_img']?>" />
+        </span>
+        -->
+        <section>
         <?=$doc_data['text']?>
+        </section>
     </div><!-- #content -->
+    <!-- CONTENT END -->
     
     <div class="doc-date doc-date-bottom">
         <div class="social_btn">
@@ -151,7 +184,8 @@
                 ?>
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">
-                        <img src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>" />
+                        <img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>" />
+                        <!--<img src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>" />-->
                         <?=Article_m::get_short_txt($likeArts['title'],80,'word','...')?>
                     </a>
                 </div>
