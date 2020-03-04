@@ -28,7 +28,13 @@
                            else
                                 $imgUrl = '/img/default_news.jpg';
                         ?>
-                        <img src="<?=$imgUrl?>" class="imgf" style="opacity: 1;" onerror="imgError(this);">
+                        
+                        <?php if($i<2): //Первые две без ленивой загрузки ?> 
+                            <img src="<?=$imgUrl?>" class="imgf" style="opacity: 1;" onerror="imgError(this);">
+                        <?php else: ?>
+                            <!--<img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="<?=$imgUrl?>" class="imgf" style="opacity: 1;" onerror="imgError(this);">-->
+                            <img src="<?=$imgUrl?>" class="imgf" style="opacity: 1;" onerror="imgError(this);">
+                        <?php endif; ?>
                         <!--<div class="cat-list-donor-logo" style="background-image: url('/upload/_donor-logo/<?=$news_page_ar['d_img']?>');"></div>-->
                         <!--<div class="cat-list-donor-logo" style="background-image: url('https://favicon.yandex.net/favicon/<?=$news_page_ar['d_host']?>');"></div>-->
                     </a>
@@ -39,10 +45,15 @@
                     <!--<h3><a href="<?=$news_url?>"><?=$news_page_ar['title']?></a></h3>-->
                     <div class="date_source">
                         <div class="cat-list-date"><?=$dateStr?></div>
+                        
+                        <?php if(0):?>
                         <div class="cat-list-donor" style="text-transform: uppercase;">
                             <!-- <?=$news_page_ar['d_name']?> -->
                             <?=  preg_replace("#(www\.|\.com$)#i", '', $news_page_ar['d_host'])?>
                         </div>
+                        <?php endif;?>
+                        
+                        
                     </div>
                     <p><?=$news_page_ar['text']?> <a href="<?=$news_url?>" target="_blank">>>></a> </p>
                 </div><!-- #small-desc -->
