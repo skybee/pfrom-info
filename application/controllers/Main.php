@@ -31,6 +31,7 @@ class Main extends CI_Controller {
         $this->load->library('multidomaine_lib');
         $this->load->library('cat_lib');
         $this->load->library('Express_news_lib');
+        $this->load->library('minox/Minox_lib');
 //        $this->load->library('user_agent');
         
         $this->catNameAr = $this->cat_lib->getCatFromUri();
@@ -188,13 +189,13 @@ class Main extends CI_Controller {
         $data_ar['donor_rel']           = ' rel="nofollow" '; #botRelNofollow();
 
         //пометка изображений в тексте (костыль для редиректа при image 404)
-        $data_ar['doc_data']['text'] =  preg_replace(
+        $data_ar['doc_data']['text']    =  preg_replace(
                                             "#(/upload/images\S+\.(jpg|jpeg|gif|png|img))#i", 
                                             "$1?content=1", 
                                             $data_ar['doc_data']['text']
                                         );
         //LazyLoad Text Rewrite
-        $data_ar['doc_data']['text'] = rewriteImgInToLazyLoad($data_ar['doc_data']['text']);
+        $data_ar['doc_data']['text']    = rewriteImgInToLazyLoad($data_ar['doc_data']['text']);
         
         
         //вставка like_articles[0] в текст
@@ -202,6 +203,10 @@ class Main extends CI_Controller {
                                                 $data_ar['doc_data']['text'], 
                                                 $data_ar['like_articles'], 
                                                 $right['serp_list']
+                                            );
+        $data_ar['doc_data']['text']    =   $this->minox_lib->addLinkToTxt(
+                                                $data_ar['doc_data']['text'],
+                                                $data_ar['doc_data']['pay_article']
                                             );
         $data_ar['doc_data']['text']    =   addResponsiveVideoTag($data_ar['doc_data']['text']);
         
@@ -230,6 +235,8 @@ class Main extends CI_Controller {
                                                 $data_ar['cat_ar']['parent_id'], 
                                                 $this->multidomaine['host_conf']['conf']['last_news'] 
                                             );
+        
+        $right['minox_link']            = $this->minox_lib->getLinkToMinoxPage();
         
         if($_SERVER['HTTP_HOST'] !== $this->multidomaine['host']){ //Aliases Canonical
 //            $canonicalUrl                   = 'http://'.$this->multidomaine['host'].$_SERVER['REQUEST_URI'];
