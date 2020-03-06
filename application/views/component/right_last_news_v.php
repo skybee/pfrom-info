@@ -167,6 +167,13 @@
 <?php
     endforeach;
 ?> 
+    
+    <?php if(isset($minox_link) && !empty($minox_link)): //MinoxidilPage Link ?>
+        <div class="lnl_news">
+            <?=$minox_link?>
+        </div>
+    <?php endif; ?>
+    
 </div>
 
 
