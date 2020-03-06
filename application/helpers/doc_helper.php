@@ -35,7 +35,7 @@ function serpDataFromJson($json)
     
     $data = json_decode($json, true);
     
-    if(count($data)<1)
+    if(!is_array($data) || count($data)<1)
     {
         $json = stripcslashes($json);
         $data = json_decode($json, true); 
@@ -132,6 +132,10 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
                         . "</p>\n "
                         . "<span class=\"gads_in_more_hdn\"> <span class=\"gAd\" data=\"LoockMoreInTxt\"></span> </span>\n " //GAds Block for JS Change
                         .'<blockquote class="serp-blockquote">'."\n".$likeSerpTxt."\n".'</blockquote>'."\n";
+        
+        if($i==1){ // Add Minoxidil Link Marker 
+            $likeArtHtml .= '<!--MinxLink-->'."\n";
+        }
         
         if($i==0)
         {
