@@ -132,7 +132,7 @@
                                                 </button>
                                             </form>
                                         </li>
-                                        <li class="d-none d-sm-block d-md-block d-lg-none">
+<!--                                        <li class="d-none d-sm-block d-md-block d-lg-none">
                                             <button type="button" class="login-btn" data-toggle="modal" data-target="#myModal">
                                                 <i class="fa fa-user" aria-hidden="true"></i>Sign in
                                             </button>
@@ -150,6 +150,7 @@
                                                 </a>
                                             </div>
                                         </li>
+-->
                                     </ul>
                                 </div>
                             </div>

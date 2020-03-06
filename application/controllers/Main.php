@@ -75,7 +75,10 @@ class Main extends CI_Controller {
         $data_ar['second_menu_list']    = $this->list_m->get_sCat_from_name($this->catNameAr[0]);
         $data_ar['footer_menu_list']    = $this->list_m->get_footer_cat_link();
         $mobile_menu_list               = $this->list_m->getMenuListForMobile();
-        $data_ar['mainpage_cat_list']   = $this->article_m->get_mainpage_cat_news($data_ar['second_menu_list']); // 9.5 sec.
+        $data_ar['mainpage_cat_list']   = $this->article_m->get_mainpage_cat_news( // 9.5 sec.
+                                                $data_ar['second_menu_list'],
+                                                $this->multidomaine['host_conf']['conf']['mainpage_cat_list']
+                                            ); 
         $data_ar['meta']['title']       = $data_ar['main_cat_ar']['title'];
         
         $top_slider['articles']         = $this->article_m->get_top_slider_data(
@@ -119,7 +122,7 @@ class Main extends CI_Controller {
         }
         elseif($this->multidomaine['host_conf']['tpl'] == 'press24'){
             $tpl_ar['r24_header']           = $this->load->view('review24/components/header_v', $data_ar, true);
-            $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $data_ar, true);
+            $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $right, true);
             $tpl_ar['r24_main_top_slider']  = $this->load->view('review24/components/main_top_slider_v', $top_slider, true);
             $tpl_ar['r24_right']            = $this->load->view('review24/page_body/right_sidebar_v', $right, true);
             $tpl_ar['r24_content']          = $this->load->view('review24/page_body/category_tab_box_v', $data_ar, true);
@@ -274,7 +277,7 @@ class Main extends CI_Controller {
         }
         elseif($this->multidomaine['host_conf']['tpl'] == 'press24'){
             $tpl_ar['r24_header']           = $this->load->view('review24/components/header_v', $data_ar, true);
-            $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $data_ar, true);
+            $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $right, true);
             $tpl_ar['r24_main_top_slider']  = $this->load->view('review24/components/main_top_slider_v', $top_slider, true);
             $tpl_ar['r24_right']            = $this->load->view('review24/page_body/right_sidebar_v', $right, true);
             $tpl_ar['r24_content']  = $this->load->view('review24/page_body/post_v', $data_ar, true);
@@ -375,7 +378,7 @@ class Main extends CI_Controller {
         }
         elseif($this->multidomaine['host_conf']['tpl'] == 'press24'){
             $tpl_ar['r24_header']           = $this->load->view('review24/components/header_v', $data_ar, true);
-            $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $data_ar, true);
+            $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $right, true);
             $tpl_ar['r24_main_top_slider']  = $this->load->view('review24/components/main_top_slider_v', $top_slider, true);
             $tpl_ar['r24_right']            = $this->load->view('review24/page_body/right_sidebar_v', $right, true);
             $tpl_ar['r24_content']          = $this->load->view('review24/page_body/category_v', $data_ar, true);

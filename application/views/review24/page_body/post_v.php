@@ -100,41 +100,4 @@
         </div>
     <!-- Like News END -->
     
-    
-    <div class="post-share-area mb-40 item-shadow-1">
-        <p>You can share this post!</p>
-        <ul class="social-default item-inline">
-            <li>
-                <a href="#" class="facebook">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="twitter">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="google">
-                    <i class="fa fa-google-plus" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="pinterest">
-                    <i class="fa fa-pinterest" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="rss">
-                    <i class="fa fa-rss" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="linkedin">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-    
 </div>

@@ -15,7 +15,8 @@ $config_var['pressfrom.com']['tpl']                     = 'pressfrom';
 $config_var['pressfrom.com']['conf'] = [
     'right_top'=>8,
     'last_news'=>10,
-    'cat_list_txt_lenth'=>250
+    'cat_list_txt_lenth'=>250,
+    'mainpage_cat_list'=>4
     ];
 
 
@@ -27,7 +28,8 @@ $config_var['pressreview24.com']['tpl']                 = 'press24';
 $config_var['pressreview24.com']['conf'] = [
     'right_top'=>9,
     'last_news'=>20,
-    'cat_list_txt_lenth'=>180
+    'cat_list_txt_lenth'=>180,
+    'mainpage_cat_list'=>8
     ];
 
 $config_var['unionpress24.lh']                          = $config_var['pressreview24.com'];

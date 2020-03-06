@@ -84,10 +84,10 @@ class Article_m extends CI_Model{
         
     }
     
-    function get_mainpage_cat_news( $news_cat_list ){ //принимает массив с id & name категорий
+    function get_mainpage_cat_news( $news_cat_list, $cntNews=4 ){ //принимает массив с id & name категорий
         $result_ar = array();
         foreach( $news_cat_list as $s_cat_ar ){
-            $tmp_ar = $this->get_last_news($s_cat_ar['id'], 4, true, false /*, false*/);
+            $tmp_ar = $this->get_last_news($s_cat_ar['id'], $cntNews, true, false /*, false*/);
             if( $tmp_ar == NULL || count($tmp_ar) < 1 ) continue; 
             $tmp_ar['s_cat_ar']                 = $s_cat_ar;
 //            $tmp_ar['s_cat_ar']['full_uri']     = $tmp_ar[0]['full_uri'];
