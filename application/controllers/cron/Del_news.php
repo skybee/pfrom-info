@@ -39,6 +39,8 @@ class Del_news extends CI_Controller{
                 . "WHERE  "
                 . "`views`=0 "
                 . "AND  "
+                . "`pay_article`=0 "
+                . "AND "
                 . "`date`<'{$date}' "
                 . $sql_catid_condition
                 . "ORDER BY `id` ASC "
