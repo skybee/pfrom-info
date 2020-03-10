@@ -193,7 +193,12 @@
                 <?=$serp['title']?>
                 <!-- <span>- <?=$serp['host']?></span> -->
             </span>
-            <p><?=$serp['text']?></p>
+            <p>
+                <?=$serp['text']?>
+                <a href="<?=$serp['url']?>" target="_blank" rel="nofollow" style="color:#4c8296;">
+                    <?=$serp['host']?>
+                </a>
+            </p>
 
             <?php
                 $i++;
