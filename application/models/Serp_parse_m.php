@@ -14,7 +14,7 @@ class Serp_parse_m extends CI_Model
             . "FROM `article` "
             . "LEFT JOIN  `article_like_serp` ON  `article`.`id` =  `article_like_serp`.`article_id` "
             . "WHERE `article_like_serp`.`article_id` IS NULL "
-            . "ORDER BY `id` "
+            . "ORDER BY `id` DESC " //Add DESC - newest first 
             . "LIMIT {$cnt} ";
 
         $query = $this->db->query($sql);
