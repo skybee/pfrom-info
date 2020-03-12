@@ -146,7 +146,7 @@ $config['multidomaine']['ru']['repost_news_str']    = 'Поделится Нов
 $config['multidomaine']['ru']['page_str']           = 'Страница';
 $config['multidomaine']['ru']['month_ar']           = array( 1=>'января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря');
 $config['multidomaine']['ru']['day_ar']             = array('Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота');
-$config['multidomaine']['ru']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D15';
+$config['multidomaine']['ru']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D20';
 $config['multidomaine']['ru']['social_btn_list']    = 'vkontakte,facebook,twitter,odnoklassniki';
 $config['multidomaine']['ru']['outwindow_str']      = 'Это интересно!';
 $config['multidomaine']['ru']['lock_donor']         = $lock_host;
@@ -176,7 +176,7 @@ $config['multidomaine']['fr']['repost_news_str']    = 'Partager dans le Soc. Ré
 $config['multidomaine']['fr']['page_str']           = 'Page';
 $config['multidomaine']['fr']['month_ar']           = array( 1=>'janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre');
 $config['multidomaine']['fr']['day_ar']             = array('Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi');
-$config['multidomaine']['fr']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D15';
+$config['multidomaine']['fr']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D20';
 $config['multidomaine']['fr']['social_btn_list']    = 'facebook,twitter,gplus';
 $config['multidomaine']['fr']['outwindow_str']      = 'C\'est intéressant!';
 $config['multidomaine']['fr']['lock_donor']         = $lock_host;
@@ -206,7 +206,7 @@ $config['multidomaine']['de']['repost_news_str']    = 'Teilen Sie Neuigkeiten in
 $config['multidomaine']['de']['page_str']           = 'Seite';
 $config['multidomaine']['de']['month_ar']           = array( 1=>'januar','februar','märz','april','mai','juni','juli','august','september','oktober','november','dezember');
 $config['multidomaine']['de']['day_ar']             = array('Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag');
-$config['multidomaine']['de']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D15';
+$config['multidomaine']['de']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D20';
 $config['multidomaine']['de']['social_btn_list']    = 'facebook,twitter,gplus';
 $config['multidomaine']['de']['outwindow_str']      = 'Das ist interessant!';
 $config['multidomaine']['de']['lock_donor']         = $lock_host;
@@ -237,7 +237,7 @@ $config['multidomaine']['uk']['repost_news_str']    = 'Share news in the SOC. Ne
 $config['multidomaine']['uk']['page_str']           = 'Page';
 $config['multidomaine']['uk']['month_ar']           = array( 1=>'january','february','march','april','may','june','july','august','september','october','november','december');
 $config['multidomaine']['uk']['day_ar']             = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
-$config['multidomaine']['uk']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D15';
+$config['multidomaine']['uk']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D20';
 $config['multidomaine']['uk']['social_btn_list']    = 'facebook,twitter,gplus';
 $config['multidomaine']['uk']['outwindow_str']      = 'This is interesting!';
 $config['multidomaine']['uk']['lock_donor']         = $lock_host;
@@ -307,7 +307,7 @@ $config['multidomaine']['br']['repost_news_str']    = 'Compartilhe notícias nas
 $config['multidomaine']['br']['page_str']           = 'Página';
 $config['multidomaine']['br']['month_ar']           = array( 1=>'janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro');
 $config['multidomaine']['br']['day_ar']             = array('Domingo','Segunda','Terça-feira','Quarta-feira','Quinta','Sexta-feira','Sábado');
-$config['multidomaine']['br']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D15';
+$config['multidomaine']['br']['xml_yandex_url']     = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D20';
 $config['multidomaine']['br']['social_btn_list']    = 'facebook,twitter,gplus';
 $config['multidomaine']['br']['outwindow_str']      = 'Isto é interessante!';
 $config['multidomaine']['br']['lock_donor']         = $lock_host;
