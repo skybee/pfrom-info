@@ -99,5 +99,36 @@
         </div>
         
     </div>
+
+    <!-- Serp News Start -->
+    <div class="sidebar-box">
+        <div class="topic-border color-cod-gray mb-30">
+            <div class="topic-box-lg color-cod-gray"><?=$this->multidomaine['serp_news_str'];?></div>
+        </div>
+        <ul class="mb-40 overflow-hidden right-serp">
+            <?php $i=0; ?>
+            <?php foreach($serp_list as $serp): ?>
+            <li>
+                <span class="out-link" src="<?=$serp['url']?>" rel="nofollow" target="_blank">
+                    <?=$serp['title']?>
+                </span>
+                <p>
+                    <?=$serp['text']?>
+                    <a href="<?=$serp['url']?>" target="_blank" rel="nofollow" style="color:#4c8296;">
+                        <?=$serp['host']?>
+                    </a>
+                </p>
+            </li>
+            <?php
+                $i++;
+                if($i>=10){ break; }
+                endforeach; 
+            ?>
+        </ul>
+    </div>
+    <!-- Serp News End -->
+    
 </div>
+
+
 <!-- Right Sidebar End -->
