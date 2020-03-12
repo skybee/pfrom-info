@@ -27,7 +27,7 @@ function botRelNofollow(){
     return $rel;
 }
 
-function serpDataFromJson($json)
+function serpDataFromJson($json,$splitUp=0)
 {
     if(empty($json)){
         return false;
@@ -41,7 +41,37 @@ function serpDataFromJson($json)
         $data = json_decode($json, true); 
     }
     
+    if($splitUp>0){
+        $data = splitUpSerpData($data,$splitUp);
+    }
+    
     return $data;
+}
+
+function splitUpSerpData($dataAr,$nmbrSplit=0){
+    if(!is_array($dataAr)|| count($dataAr)<2){return $dataAr;}
+    
+    $arrCnt = count($dataAr);
+    $splitUpArr[1]  = [];
+    $splitUpArr[2]  = [];
+    for($i=0; $i<$arrCnt; $i++){
+        if($i%2 == 0){
+            $splitUpArr[1][]  = $dataAr[$i];
+        }
+        else{
+            $splitUpArr[2][] = $dataAr[$i];
+        }
+    }
+    
+    if( isset($splitUpArr[$nmbrSplit])      && 
+        is_array($splitUpArr[$nmbrSplit])   && 
+        count($splitUpArr[$nmbrSplit]) >= 1
+    ){
+        return $splitUpArr[$nmbrSplit];
+    }
+    else{
+        return $dataAr;
+    }
 }
 
 function insertLikeArticleInTxt($text, $likeList)
