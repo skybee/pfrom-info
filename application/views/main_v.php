@@ -15,22 +15,6 @@
         </script>
         -->
         
-        <!-- Yandex.Metrika counter -->
-<!--            <script type="text/javascript" >
-               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-               m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-               (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-               ym(50253969, "init", {
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:false
-               });
-            </script>
-            <noscript><div><img src="https://mc.yandex.ru/watch/50253969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
-        <!-- /Yandex.Metrika counter -->
-
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><?= $meta['title'] ?></title>
@@ -70,7 +54,9 @@
         <script defer type='text/javascript' src='/js/skin1/lib/jquery-ui.min-tabs-1.12.1.js'>/*---NOT COMENT in Production---*/</script>
         <script defer type='text/javascript' src='/js/skin1/lib/jquery.bxslider.min.js'>/*---NOT COMENT in Production---*/</script>-->
         
-        <script defer type='text/javascript' src='/js/skin1/lib/all-lib.js?v=<?=js_version('/js/skin1/lib/all-lib.js')?>'>/*---NOT COMENT in Production---*/</script>
+        <script defer type='text/javascript' src='/js/skin1/lib/all-lib.js?v=<?=js_version('/js/skin1/lib/all-lib.js')?>'>
+            /*---!!!---NOT COMENT in Production---*/
+        </script>
         
         
 <!--        <script defer type='text/javascript' src='/js/skin1/paste_code.js'></script>
@@ -310,5 +296,6 @@
         <?php if(isset($out_popup)) echo $out_popup;?>
         
         <span class="paste_code paste_YandexMetrika"></span>
+        <div id="show_only_dectop__js_checker"></div>
     </body>
 </html>
