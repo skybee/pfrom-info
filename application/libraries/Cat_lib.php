@@ -12,14 +12,14 @@ class Cat_lib{
         
         return $this->getExpressNewsConf();
         
-        $catConf = $this->ci->config->item('category');
-        
-        if( isset($catConf[$this->mainCat]) ){
-            return $this->selectCatConf( $catConf );
-        }
-        else{
-            return $catConf['default'];
-        }
+//        $catConf = $this->ci->config->item('category');
+//        
+//        if( isset($catConf[$this->mainCat]) ){
+//            return $this->selectCatConf( $catConf );
+//        }
+//        else{
+//            return $catConf['default'];
+//        }
     }
     
     private function selectCatConf( $catConf, $catIndex = 0 ){
