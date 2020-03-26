@@ -208,6 +208,7 @@ class Parse_page_msn_lib{
         $this->delAll('#WidgetDiv'); //msn widgetLink
         $this->delAll('#ContentDiv'); //msn videoADS 
         $this->delAll('div.readmore'); //msn ads
+        $this->delAll('iframe'); //msn iframe   ---!!!--- ???
        
         
         //<video player content>
