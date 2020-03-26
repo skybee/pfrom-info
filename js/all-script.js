@@ -2,7 +2,7 @@
 
  - http://express-info.lh/js/skin1/paste_code.js
 
- - http://express-info.lh/js/skin1/sb.js?v=20191224-1302
+ - http://express-info.lh/js/skin1/sb.js?v=20200323-1354
 
  - http://express-info.lh/js/skin1/gads.js?v=20191217-1940
 
@@ -56,7 +56,7 @@ function paste_code(placeName){
 
 
 
- /* FILE START: http://express-info.lh/js/skin1/sb.js?v=20191224-1302 */ 
+ /* FILE START: http://express-info.lh/js/skin1/sb.js?v=20200323-1354 */ 
 function imgError(image){
     image.onerror = "";
 //    image.src = "/img/default_news_error.jpg";
@@ -145,7 +145,7 @@ $( document ).ready(function(){
     
 
     
-    if(!$('#right').is(':visible')){
+    if(!$('#show_only_dectop__js_checker').is(':visible')){ //old id: #right
         ifMobile();
     }
     else{
@@ -441,7 +441,7 @@ function setRightBlockTopSpace(){ //установка верхнего отст
     $('#fscreen-right-top-padding').css('height', rightSpaceSize+'px');
 //    alert(titleHeight);
 }
- /* FILE END: http://express-info.lh/js/skin1/sb.js?v=20191224-1302 */ 
+ /* FILE END: http://express-info.lh/js/skin1/sb.js?v=20200323-1354 */ 
 
 
 

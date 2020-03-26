@@ -86,7 +86,7 @@ $( document ).ready(function(){
     
 
     
-    if(!$('#right').is(':visible')){
+    if(!$('#show_only_dectop__js_checker').is(':visible')){ //old id: #right
         ifMobile();
     }
     else{

@@ -496,45 +496,45 @@
     /*-------------------------------------
      Jquery Stiky Menu at window Load
      -------------------------------------*/
-    $(window).on('scroll', function () {
-        var s = $('#sticker'),
-            sH = s.outerHeight(),
-            windowpos = $(window).scrollTop(),
-            windowWidth = $(window).width(),
-            h1 = $('#header-layout1'),
-            h2 = $('#header-layout2');
-        if (windowWidth > 991) {
-            var topBarH = 1,
-                mBottom = 0;
-
-            if (h2.length) {
-                topBarH = h2.find('.header-top-bar').outerHeight();
-            }
-
-            if (windowpos >= topBarH) {
-                if (h1.length) {
-                    s.addClass('stick');
-                }
-                if (h2.length) {
-                    s.addClass('stick');
-                    $('.main-menu-area').addClass('header-menu-fixed');
-                    $('body').css({
-                        'margin-top': sH + 'px'
-                    });
-                }
-
-            } else {
-                s.removeClass('stick');
-                if (h2.length) {
-                    s.removeClass('stick');
-                    $('.main-menu-area').removeClass('header-menu-fixed');
-                    $('body').css({
-                        'margin-top': 0
-                    });
-                }
-            }
-        }
-    });
+//    $(window).on('scroll', function () {
+//        var s = $('#sticker'),
+//            sH = s.outerHeight(),
+//            windowpos = $(window).scrollTop(),
+//            windowWidth = $(window).width(),
+//            h1 = $('#header-layout1'),
+//            h2 = $('#header-layout2');
+//        if (windowWidth > 991) {
+//            var topBarH = 1,
+//                mBottom = 0;
+//
+//            if (h2.length) {
+//                topBarH = h2.find('.header-top-bar').outerHeight();
+//            }
+//
+//            if (windowpos >= topBarH) {
+//                if (h1.length) {
+//                    s.addClass('stick');
+//                }
+//                if (h2.length) {
+//                    s.addClass('stick');
+//                    $('.main-menu-area').addClass('header-menu-fixed');
+//                    $('body').css({
+//                        'margin-top': sH + 'px'
+//                    });
+//                }
+//
+//            } else {
+//                s.removeClass('stick');
+//                if (h2.length) {
+//                    s.removeClass('stick');
+//                    $('.main-menu-area').removeClass('header-menu-fixed');
+//                    $('body').css({
+//                        'margin-top': 0
+//                    });
+//                }
+//            }
+//        }
+//    });
 
     /*-------------------------------------
      Masonry
