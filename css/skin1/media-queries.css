@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 980px) {
     
-    
+    #show_only_dectop__js_checker{display: none;}
 
     /*===============================*/
     body{font-size: 100%;}
@@ -33,7 +33,20 @@
     #headernavigation div.navigation{font-size: 0.7em;}
     #left div.single h1, #page h1, #left div.single h1 a{font-size: 1.6em;}
     
-    #right{ display: none;}
+    /*#right{ display: none;}*/
+    #right{
+        width: auto;
+        padding-top: 0;
+        margin-left: 0; 
+    }
+    #right div,
+    #right h3{ display: none;}
+    #right .mobile-visible,
+    #right .mobile-visible div{display: block;}
+    #right .serp_block{
+        height: auto; width: auto;
+    }
+    
     #left div.single{ width: auto; }
     #middle{ background: #fff; }
     #content{ width: auto;}
@@ -41,9 +54,31 @@
     .top_gads{ display: none;}
     #headernavigation div.navigation{ width: auto; }
     #left div.single .doc-date-bottom { width: 100%; }
-    p.look_more_hdn{ display: none;}
-    #left div.single div.content h3.look_more_hdn{ padding-bottom: 15px !important; border-bottom-width: 1px; height: 80px; min-height: 80px; padding-left: 0 !important;}
-    #left div.single div.content h3.look_more_hdn a{font-size: 16px !important; line-height: 1.4em !important }
+    .look_more_hdn{
+        padding-left: 10px !important; padding-right: 10px !important;
+        background-color: #151515;
+    }
+    p.look_more_hdn{ 
+        /*display: none;*/
+    }
+    p.look_more_hdn .look_more_img_desktop{
+        display: none;
+    }
+    p.look_more_hdn span.lmh_height_txt{
+        color: #fff;
+    }
+    #left div.single div.content h3.look_more_hdn{ 
+/*        padding-bottom: 15px !important; 
+        border-bottom-width: 1px; 
+        height: 80px; 
+        min-height: 80px; 
+        padding-left: 0 !important;*/
+    }
+    #left div.single div.content h3.look_more_hdn a{
+        font-size: 16px !important; 
+        line-height: 1.4em !important; 
+        color: #009DDB !important;
+    }
     #left div.single div.content h3.look_more_hdn img.look_more_img_mobile{display: inline-block;}
     ul.firstnav-menu{ padding-left: 12px;}
     #content_holder{padding-left: 5px;}
@@ -68,6 +103,9 @@
         width: auto !important;
         height: auto !important;
         max-width: 100% !important;
+    }
+    #left div.single div.content img.look_more_img_mobile{
+        max-width: 120px !important;
     }
     #container{ width: auto;}
     

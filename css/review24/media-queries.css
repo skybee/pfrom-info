@@ -1,0 +1,87 @@
+@media screen and (min-width: 981px) { /*-== Full Screen ==-*/
+    
+}
+
+
+@media screen and (max-width: 980px) {
+    
+    /*===============================*/
+    p.look_more_hdn{ display: none;}
+    div.content-pr h3.look_more_hdn{ padding-bottom: 15px !important; border-bottom-width: 1px; height: 98px; min-height: 80px; padding-left: 0 !important;}
+    div.content-pr h3.look_more_hdn a{font-size: 14px !important; line-height: 10px !important }
+    div.content-pr h3.look_more_hdn img.look_more_img_mobile{display: inline-block;}
+    div.content-pr .storyimage img{
+        max-width: 100%;
+    }
+    /*===============================*/
+}
+
+
+
+
+@media screen and (max-width: 640px){
+    
+    /* ============= <Main Page> ============= */
+    /* ============= </Main Page> ============= */
+    
+    /* ============= <Cat List Page> ============= */
+    /* ============= </Cat List Page> ============= */
+}
+
+
+
+
+@media screen and (max-width: 480px)
+{
+    /*==== <Like News> ====*/
+    #left div.othernews #like-acle-slider .slider-block .listing .content .left{ width: 200px;}
+    #left #like-acle-slider div.listing div.content div.left div.imgholder{ width: 190px; height: 130px;}
+    #left #like-acle-slider div.listing div.content div.left img{ width: 180px !important; height: 120px !important;}
+    
+    #left div.othernews #like-acle-slider .slider-block .right .small-desc h3 a{ font-size: 1em; line-height: 1.4em;}
+    #left div.othernews #like-acle-slider .slider-block .right .small-desc p{display: none;}
+    
+    #left div.othernews #like-acle-slider .slider-block .right .small-desc{ height: auto;}
+    /*#left .single div.listing div.content div.right {height: 145px;}*/
+    #left div.othernews #like-acle-slider .slider-block .left .imgholder .like-art-date{right: 6px;}
+    #left div.othernews #like-acle-slider .bx-wrapper .bx-controls-direction a{margin-top: -100px;}
+    /*==== </Like News> ====*/
+    
+    /*==== <Top Social> ====*/
+    #left div.single .doc-date-top{height: 20px;}
+    #left div.single .doc-date-top .social_btn_top{display: none;}
+    #left div.single .doc-date-top .dd_right{float:left; margin-left: 5px; line-height: 20px;}
+    /*==== </Top Social> ====*/
+    
+    
+    /* <Like Video in Doc> */
+    #like-video-container .like-video-item .like-video-item-right{display:none;}
+    #like-video-container .like-video-item .like-video-item-left{width: 98%;}
+    /* </Like Video in Doc> */
+}
+
+
+
+
+@media screen and (max-width: 320px)
+{
+    /*==== <Like News> ====*/
+    #left div.othernews #like-acle-slider .slider-block .listing .content .left{ width: 160px;}
+    #left #like-acle-slider div.listing div.content div.left div.imgholder{ width: 150px; height: 100px;}
+    #left #like-acle-slider div.listing div.content div.left img{ width: 140px !important; height: 90px !important;}
+    
+    #left div.othernews #like-acle-slider .slider-block .right .small-desc h3 a{ font-size: 0.9em; line-height: 1.4em;}
+    
+    #left div.listing div.content div.right {height: 117px;}
+    #left div.othernews #like-acle-slider .bx-wrapper .bx-controls-direction a{margin-top: -90px;}
+    /*==== </Like News> ====*/
+    
+/*    #left div.single .content-gAd-bottom{
+        max-width: 293px;
+        padding-left: -3px;
+        overflow: hidden;
+    }*/
+    #left {padding-right: 0;}
+    #content_holder {padding-left: 0;}
+    
+}

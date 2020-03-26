@@ -3838,6 +3838,10 @@ img.alignleft,a img.alignleft {
             width: 200px;
             margin: 0 10px 5px 0;
         }
+        p.look_more_hdn img.look_more_img_mobile{
+            display: none;
+            max-width: 120px;
+        }
         
         p.look_more_hdn span{
             border-top: 1px solid #009DDB;
@@ -3847,9 +3851,16 @@ img.alignleft,a img.alignleft {
         p.look_more_hdn span.lmh_height_txt{
             border: none;
             display: block;
-            height: 136px;
+            /*height: 136px;*/
             overflow: hidden;
             padding: 0;
+        }
+        blockquote.look_more_quote{
+            display: inline !important;
+            /*color: inherit;*/
+        }
+        .first-like-art-in-txt p.look_more_hdn span.lmh_height_txt{
+            height: 136px;
         }
 span.gads_in_more_hdn{
     display: block;
