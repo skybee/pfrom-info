@@ -1,7 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="<?=$this->multidomaine['lang'];?>">
     <head>
         <!-- NOINDEX --> <meta name="robots" content="noindex, nofollow" /> 
@@ -39,6 +37,7 @@
         <link rel="stylesheet" href="/css/review24/style.css">
         <!-- SB style CSS -->
         <link rel="stylesheet" href="/css/review24/sb.css">
+        <link rel="stylesheet" href="/css/review24/media-queries.css">
         <!-- For IE -->
         <link rel="stylesheet" type="text/css" href="/css/review24/ie-only.css" />
         <!-- Modernizr Js -->
@@ -48,6 +47,7 @@
         <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
         
         <!-- Yandex.Metrika counter -->
+        <!--
         <script type="text/javascript" >
             (function (d, w, c) {
                 (w[c] = w[c] || []).push(function() {
@@ -75,8 +75,9 @@
             })(document, window, "yandex_metrika_callbacks2");
         </script>
         <noscript><div><img src="https://mc.yandex.ru/watch/49638307" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        -->
         <!-- /Yandex.Metrika counter -->
-        
+        <script data-ad-client="ca-pub-6096727633142370" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     </head>
 
     <body>
@@ -838,8 +839,26 @@
         <script src="/js/review24/ticker.js " type="text/javascript"></script>
         <!-- Custom Js -->
         <script src="/js/review24/main.js " type="text/javascript"></script>
+        <!-- LazyLoad JQuery -->
+        <script src="/js/review24/jquery.lazy.min.js " type="text/javascript"></script>
         <!-- Skybee Js -->
         <script src="/js/review24/sb.js " type="text/javascript"></script>
+        
+        <div style="overflow: hidden; height: 1px; width: 1px; position: absolute; top: -100px;">
+            <!--LiveInternet counter-->
+            <script type="text/javascript"><!--
+            document.write("<a href='http://www.liveinternet.ru/click' " +
+                        "target=_blank><img src='//counter.yadro.ru/hit?t14.5;r" +
+                        escape(document.referrer) + ((typeof (screen) == "undefined") ? "" :
+                        ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
+                                screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) +
+                        ";" + Math.random() +
+                        "' alt='' title='LiveInternet: показано число просмотров за 24" +
+                        " часа, посетителей за 24 часа и за сегодня' " +
+                        "border='0' width='88' height='31'><\/a>")
+                        //--></script>
+            <!--/LiveInternet--> 
+        </div>
     </body>
 
 </html>
