@@ -16,7 +16,8 @@ $config_var['pressfrom.com']['conf'] = [
     'right_top'=>8,
     'last_news'=>10,
     'cat_list_txt_lenth'=>250,
-    'mainpage_cat_list'=>4
+    'mainpage_cat_list'=>4,
+    'serp_split_up'=>1 //номер разделенного массива YandexSerp
     ];
 
 
@@ -29,7 +30,8 @@ $config_var['pressreview24.com']['conf'] = [
     'right_top'=>9,
     'last_news'=>20,
     'cat_list_txt_lenth'=>180,
-    'mainpage_cat_list'=>8
+    'mainpage_cat_list'=>8,
+    'serp_split_up'=>2 //номер разделенного массива YandexSerp
     ];
 
 $config_var['unionpress24.lh']                          = $config_var['pressreview24.com'];
