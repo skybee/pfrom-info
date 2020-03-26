@@ -101,6 +101,7 @@
     </div>
 
     <!-- Serp News Start -->
+    <?php if(  isset($serp_list) && $serp_list != false):  ?> 
     <div class="sidebar-box">
         <div class="topic-border color-cod-gray mb-30">
             <div class="topic-box-lg color-cod-gray"><?=$this->multidomaine['serp_news_str'];?></div>
@@ -114,9 +115,12 @@
                 </span>
                 <p>
                     <?=$serp['text']?>
+                    
+                    <?php if($i<5): //показывать первые 5 ссылок ?>
                     <a href="<?=$serp['url']?>" target="_blank" rel="nofollow" style="color:#4c8296;">
                         <?=$serp['host']?>
                     </a>
+                    <?php endif;?>
                 </p>
             </li>
             <?php
@@ -126,6 +130,7 @@
             ?>
         </ul>
     </div>
+    <?php endif; ?>
     <!-- Serp News End -->
     
 </div>
