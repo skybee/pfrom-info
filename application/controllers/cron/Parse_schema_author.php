@@ -19,7 +19,7 @@ class Parse_schema_author extends CI_Controller{
         $arts   = $this->schema_m->getEmptyAuthorArt($cnt);
 //        
 //      SchemaTag    https://ftw.usatoday.com/2020/02/76ers-joel-embiid-shaq-soft/
-//        /*test Url*/ $arts[]['canonical'] = 'https://www.nytimes.com/2020/02/07/opinion/senate-impeachment-acquittal.html?partner=msn';
+//        /*test Url*/ $arts[]['canonical'] = 'https://mir24.tv/news/16401441/v-velikobritanii-nachnut-vysazhivat-mini-lesa';
 
         
         foreach ($arts as $key => $artData){
