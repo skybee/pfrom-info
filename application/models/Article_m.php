@@ -226,7 +226,7 @@ class Article_m extends CI_Model{
         $likeIds = $this->get_like_articles_id($id, $newsDate);
         if($likeIds !== false)
         {
-            return $this->get_like_articles_from_ids($likeIds);
+            return $this->get_like_articles_from_ids($likeIds,$cntNews);
         }
         
         $cleanPattern = "#(['\"\,\.\\\]+|&\w{2,6};)#i";
@@ -246,7 +246,18 @@ class Article_m extends CI_Model{
         else
             $dateSql = '';
         
-        $query  = $this->db->query("SELECT `sub_cat_id` FROM `category` WHERE `id` = ( SELECT `parent_id` FROM `category` WHERE  `id` = '{$cat_id}' LIMIT 1) LIMIT 1  ");
+        $query  = $this->db->query(
+                    "SELECT `sub_cat_id` "
+                    . "FROM `category` "
+                    . "WHERE "
+                    . "`id` = ( "
+                            . "SELECT `parent_id` "
+                            . "FROM `category` "
+                            . "WHERE  `id` = '{$cat_id}' "
+                            . "LIMIT 1"
+                            . ") "
+                    . "LIMIT 1  "
+                );
         $row    = $query->row();
         
         if( !empty($row->sub_cat_id) ){
@@ -257,7 +268,9 @@ class Article_m extends CI_Model{
         }
                         
         $sql = "SELECT 
-                    `article`.`id`, `article`.`title`, `article`.`url_name`, `article`.`main_img`, `article`.`date`, `article`.`description`, `article`.`views`, `category`.`full_uri` 
+                    `article`.`id`, `article`.`title`, `article`.`url_name`, 
+                    `article`.`main_img`, `article`.`date`, `article`.`description`, 
+                    `article`.`views`, `category`.`full_uri` 
                 FROM 
                     `article` LEFT OUTER JOIN `category` ON `article`.`cat_id` = `category`.`id`
                 WHERE 
@@ -615,7 +628,7 @@ class Article_m extends CI_Model{
         }
     }
     
-    private function get_like_articles_from_ids($idsStr){
+    private function get_like_articles_from_ids($idsStr,$limit=16){
         $sql = "SELECT 
                     `article`.`id`, `article`.`title`, `article`.`url_name`, `article`.`main_img`, `article`.`date`, `article`.`description`, `article`.`views`, `category`.`full_uri` 
                 FROM 
@@ -624,7 +637,7 @@ class Article_m extends CI_Model{
                     `article`.`id` IN {$idsStr}
                      AND
                      `category`.`id` = `article`.`cat_id`
-                LIMIT 9     
+                LIMIT {$limit}
                 ";
         $query = $this->db->query($sql); 
         
