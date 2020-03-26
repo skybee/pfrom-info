@@ -42,13 +42,13 @@ function serpDataFromJson($json,$splitUp=0)
     }
     
     if($splitUp>0){
-        $data = splitUpSerpData($data,$splitUp);
+        $data = arraySplitUp($data,$splitUp);
     }
     
     return $data;
 }
 
-function splitUpSerpData($dataAr,$nmbrSplit=0){
+function arraySplitUp($dataAr,$nmbrSplit=0){
     if(!is_array($dataAr)|| count($dataAr)<2){return $dataAr;}
     
     $arrCnt = count($dataAr);
@@ -149,17 +149,20 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
         
         $likeArtHtml =  "\n"
                         .' <h3 class="look_more_hdn" rel="'.$newsUrl.'">'
-                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
+//                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
 //                        . '<img src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
                         .$likeTitle
                         . "</h3>\n"
+                        . '<blockquote class="look_more_quote">'."\n"
                         . '<p class="look_more_hdn"> '."\n "
                         . "\t".'<span class="lmh_height_txt">'."\n"
-                        . '<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n"
+                        . '<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" class="look_more_img_desktop" />'."\n"
+                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
 //                        . '<img src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n"
-                        . $likeText."\n "
+                        .$likeText
                         . "\t</span>\n "
                         . "</p>\n "
+                        . "\n</blockquote> \n "
                         . "<span class=\"gads_in_more_hdn\"> <span class=\"gAd\" data=\"LoockMoreInTxt\"></span> </span>\n " //GAds Block for JS Change
                         .'<blockquote class="serp-blockquote">'."\n".$likeSerpTxt."\n".'</blockquote>'."\n";
         
@@ -337,8 +340,12 @@ function getAuthorJsonData($jsonFromDB){
     }
     $arr = json_decode($jsonFromDB, true);
     
-    $resultAr['publisher']  = json_encode($arr['publisher']);
-    $resultAr['author']     = json_encode($arr['author']);
+    if(isset($arr['publisher'])){
+        $resultAr['publisher']  = json_encode($arr['publisher']);
+    }
+    if(isset($arr['author'])){
+        $resultAr['author']     = json_encode($arr['author']);
+    }
     
     return $resultAr;
 }
