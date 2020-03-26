@@ -43,6 +43,9 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^upload/images(.*) /upload/%{HTTP_HOST}/images$1 [L]
 
+    #robots for host rewrite
+    RewriteRule ^robots\.txt /robots.php [L]
+
     #Removes access to the system folder by users.
     #Additionally this will allow you to create a System.php controller,
     #previously this would not have been possible.
