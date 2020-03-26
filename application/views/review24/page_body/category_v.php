@@ -55,28 +55,34 @@
 
 <!-- Paginator Start-->
 <div class="row mt-20-r mb-30">
-    <div class="col-sm-6 col-12">
+    <div class="col-sm-12 col-12">
         <div class="pagination-btn-wrapper text-center--xs mb15--xs">
             <ul>
-                <li class="active">
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
+                <?php
+                    foreach ($pager_ar as $page): 
+                    if( !isset($search_url_str) )
+                        $pager_url = '/'.LANG_CODE.'/'.$cat_ar['full_uri'].$page.'/';
+                    else
+                        $pager_url = '/'.LANG_CODE.'/search/'.$page.'/?q='.$search_url_str;
+                ?>
+                    <?php if($page != $page_nmbr && $page != '...'): ?>
+                    <li>
+                        <a href="<?=$pager_url?>"><?=$page?></a>
+                    </li>
+                    <?php else: ?>
+                    <li class="active">
+                        <!--<span class="pager_not_link"><?=$page?></span>-->
+                        <a href="javascript:void(0)"><?=$page?></a>
+                    </li>
+                    <?php endif;?>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
-    <div class="col-sm-6 col-12">
+<!--    <div class="col-sm-6 col-12">
         <div class="pagination-result text-right pt-10 text-center--xs">
             <p class="mb-none">Page 1 of 4</p>
         </div>
-    </div>
+    </div>-->
 </div>
 <!-- Paginator End-->
