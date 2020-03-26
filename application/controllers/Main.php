@@ -148,7 +148,11 @@ class Main extends CI_Controller {
             exit();
         }
 
-        $right['serp_list'] = serpDataFromJson($data_ar['doc_data']['serp_object']);
+        $right['serp_list'] = serpDataFromJson(
+                                $data_ar['doc_data']['serp_object'],
+                                $this->multidomaine['host_conf']['conf']['serp_split_up']
+                            );
+        
         unset($data_ar['doc_data']['serp_object']);
         
         /* ! LANG_CODE Down */ 
@@ -170,10 +174,18 @@ class Main extends CI_Controller {
                                                 $data_ar['doc_data']['id'], 
                                                 $data_ar['doc_data']['cat_id'] /*$data_ar['cat_ar']['parent_id']*/, 
                                                 $data_ar['doc_data']['title'], 
-                                                8, 
+                                                16, //old 8 (8*2sites) 
                                                 $this->catConfig['like_news_day_d'], 
                                                 $data_ar['doc_data']['date'] 
                                                 );
+        
+        if(count($data_ar['like_articles'])>=12){ //разбивка likeNews на 2 сайта
+            $data_ar['like_articles']   = arraySplitUp(
+                                            $data_ar['like_articles'],
+                                            $this->multidomaine['host_conf']['conf']['serp_split_up']
+                                        );
+        }
+        
         $data_ar['like_translate']      = $this->article_m->getTranslateForArticle(
                                                 $data_ar['doc_data']['id'],
                                                 'pressfrom.info'
