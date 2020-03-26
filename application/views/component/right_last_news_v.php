@@ -180,32 +180,35 @@
 
 <?php if(  isset($serp_list) && $serp_list != false):  ?> 
 
-<h3 class="widget-title" style="margin-top: 30px;">
+<h3 class="widget-title mobile-visible" style="margin-top: 30px;">
     <span class="title"><?=$this->multidomaine['serp_news_str'];?></span>
 </h3>
 
 
     
-        <div class="serp_block">
-            <?php $i=0; ?>
-            <?php foreach($serp_list as $serp): ?>
-            <span class="out-link" src="<?=$serp['url']?>" rel="nofollow" target="_blank">
-                <?=$serp['title']?>
-                <!-- <span>- <?=$serp['host']?></span> -->
-            </span>
-            <p>
-                <?=$serp['text']?>
-                <a href="<?=$serp['url']?>" target="_blank" rel="nofollow" style="color:#4c8296;">
-                    <?=$serp['host']?>
-                </a>
-            </p>
+<div class="serp_block mobile-visible">
+    <?php $i=0; ?>
+    <?php foreach($serp_list as $serp): ?>
+    <span class="out-link" src="<?=$serp['url']?>" rel="nofollow" target="_blank">
+        <?=$serp['title']?>
+        <!-- <span>- <?=$serp['host']?></span> -->
+    </span>
+    <p>
+        <?=$serp['text']?>
 
-            <?php
-                $i++;
-                if($i>=10){ break; }
-                endforeach; 
-            ?>
-        </div>
+        <?php if($i<5): //показывать первые 5 ссылок ?>
+        <a href="<?=$serp['url']?>" target="_blank" rel="nofollow" style="color:#4c8296;">
+            <?=$serp['host']?>
+        </a>
+        <?php endif;?>
+    </p>
+
+    <?php
+        $i++;
+        if($i>=10){ break; }
+        endforeach; 
+    ?>
+</div>
     
 
 <?php endif; ?>
