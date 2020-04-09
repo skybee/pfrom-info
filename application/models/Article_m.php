@@ -630,7 +630,9 @@ class Article_m extends CI_Model{
     
     private function get_like_articles_from_ids($idsStr,$limit=16){
         $sql = "SELECT 
-                    `article`.`id`, `article`.`title`, `article`.`url_name`, `article`.`main_img`, `article`.`date`, `article`.`description`, `article`.`views`, `category`.`full_uri` 
+                    `article`.`id`, `article`.`title`, `article`.`url_name`, 
+                    `article`.`main_img`, `article`.`date`, `article`.`description`, 
+                    `article`.`views`, `category`.`full_uri` 
                 FROM 
                     `article`, `category`
                 WHERE
