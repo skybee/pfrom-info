@@ -245,7 +245,7 @@ $config['multidomaine']['uk']['outwindow_str']      = 'This is interesting!';
 $config['multidomaine']['uk']['lock_donor']         = $lock_host;
 $config['multidomaine']['uk']['static_server']      = 'uk.static.lalalay.com';
 $config['multidomaine']['uk']['del_old_art_catid']  = '3,5,6,7,9,10,11,12';
-$config['multidomaine']['uk']['translate']['lang_from'] = [];
+$config['multidomaine']['uk']['translate']['lang_from'] = ['de','fr'];
 $config['multidomaine']['uk']['translate']['cat_id']    = '';
 
 
@@ -272,7 +272,7 @@ $config['multidomaine']['ca']['host']               = 'ca.pressfrom.com';
 $config['multidomaine']['ca']['lock_donor']         = $lock_host;
 $config['multidomaine']['ca']['static_server']      = 'ca.static.lalalay.com';
 $config['multidomaine']['ca']['del_old_art_catid']  = '4,7,8,11';
-$config['multidomaine']['ca']['translate']['lang_from'] = [];
+$config['multidomaine']['ca']['translate']['lang_from'] = ['de','fr'];
 $config['multidomaine']['ca']['translate']['cat_id']    = '';
 
 
@@ -284,7 +284,7 @@ $config['multidomaine']['au']['host']               = 'au.pressfrom.com';
 $config['multidomaine']['au']['lock_donor']         = $lock_host;
 $config['multidomaine']['au']['static_server']      = 'au.static.lalalay.com';
 $config['multidomaine']['au']['del_old_art_catid']  = '3,4,7,8,9';
-$config['multidomaine']['au']['translate']['lang_from'] = [];
+$config['multidomaine']['au']['translate']['lang_from'] = ['de','fr'];
 $config['multidomaine']['au']['translate']['cat_id']    = '';
 
 
@@ -317,3 +317,7 @@ $config['multidomaine']['br']['static_server']      = 'br.static.lalalay.com';
 $config['multidomaine']['br']['del_old_art_catid']  = 'all';
 $config['multidomaine']['br']['translate']['lang_from'] = [];
 $config['multidomaine']['br']['translate']['cat_id']    = '';
+
+
+
+//pay_article 1-payPost, 3-minox, 7-translated
