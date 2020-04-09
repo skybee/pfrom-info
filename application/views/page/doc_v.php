@@ -241,11 +241,11 @@
     </div>
     <?php endif; ?>
     
-    <div class="content copy-url content-bottom-translate" > <!-- JS remove translate to here -->
+<!--    <div class="content copy-url content-bottom-translate" >  JS remove translate to here 
         <div data-parse-version="1" class="parse-version p-version-1" style="padding-bottom: 0;">
             <div class="like-translate-bottom-position"></div>
         </div>
-    </div>
+    </div>-->
     
     <div style="font-size: 10px; color: #999; margin-top: 10px; float: left;">usr:  <?=$doc_data['views']?></div>
 
