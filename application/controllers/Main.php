@@ -186,12 +186,12 @@ class Main extends CI_Controller {
                                         );
         }
         
-        $data_ar['like_translate']      = $this->article_m->getTranslateForArticle(
-                                                $data_ar['doc_data']['id'],
-                                                'pressfrom.info'
-                                                );
-        
-        $data_ar['doc_data']['text']    = addTranslateToMainTxt($data_ar['doc_data']['text'], $data_ar['like_translate']);
+//        $data_ar['like_translate']      = $this->article_m->getTranslateForArticle(
+//                                                $data_ar['doc_data']['id'],
+//                                                'pressfrom.info'
+//                                                );
+//        
+//        $data_ar['doc_data']['text']    = addTranslateToMainTxt($data_ar['doc_data']['text'], $data_ar['like_translate']);
         
         $data_ar['main_menu_list']      = $this->list_m->get_cat(0);
         $data_ar['second_menu_list']    = $this->list_m->get_sCat_from_name($this->catNameAr[0]);
@@ -199,7 +199,7 @@ class Main extends CI_Controller {
         $mobile_menu_list               = $this->list_m->getMenuListForMobile();
         $data_ar['meta']['title']       = $data_ar['cat_ar']['name'].': '
                                             .$data_ar['doc_data']['title'].' - '
-                                            .$data_ar['like_translate']['title'].' - '
+//                                            .$data_ar['like_translate']['title'].' - '
                                             .$this->multidomaine['site_name_str'];
         $data_ar['donor_rel']           = ' rel="nofollow" '; #botRelNofollow();
 
