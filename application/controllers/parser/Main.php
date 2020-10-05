@@ -105,7 +105,7 @@ class Main extends CI_Controller
             $this->parser_m->set_url_scaning( $news_ar['id'] );
 			
             #<for test>
-//            $news_ar['url']     = 'http://www.msn.com/pt-br/noticias/brasil/oab-rj-pede-fim-de-opera%c3%a7%c3%b5es-policiais-em-hor%c3%a1rio-escolar-e-de-tiros-a-partir-de-helic%c3%b3pteros/ar-AAHJVlp';  
+//            $news_ar['url']     = 'https://www.msn.com/en-us/news/crime/arkansas-police-chief-files-lawsuit-against-police-union-alleging-conspiracy-against-reform/ar-BB19AYxZ';  
 //            $news_ar['host']    = 'www.msn.com';
             #</for test>
             
@@ -121,6 +121,9 @@ class Main extends CI_Controller
             $host                           = $this->news_parser_lib->get_donor_url( $news_ar['url'] );
 //            $insert_data                    = $this->parse_page_msn_didom_lib->get_data($html, $news_ar);
             $insert_data                    = $this->parse_page_msn_lib->get_data($html, $news_ar);
+            
+//            print_r($insert_data);
+//            exit();
             
             if(check_lock_donor($insert_data['donor-data']['host'], $this->multidomaine['lock_donor']))
             {
