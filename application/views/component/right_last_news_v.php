@@ -177,8 +177,7 @@
 </div>
 
 
-
-<?php if(  isset($serp_list) && $serp_list != false):  ?> 
+<?php if(  isset($serp_list) && $serp_list != false && $pay_article !== '1' ):  ?> 
 
 <h3 class="widget-title mobile-visible" style="margin-top: 30px;">
     <span class="title"><?=$this->multidomaine['serp_news_str'];?></span>
