@@ -127,6 +127,7 @@ class Del_news extends CI_Controller{
         if($donorId<1){echo 'Bad Donor ID'; return;}
         
         $sql = "SELECT `id`,`scan_url_id` FROM `article` WHERE `donor_id`='{$donorId}' ";
+//        $sql = "SELECT `id`,`scan_url_id` FROM `article` LIMIT 50 ";
         $query = $this->db->query($sql);
         
         if($query->num_rows()<1)
@@ -140,7 +141,8 @@ class Del_news extends CI_Controller{
             $code = $this->get_code();
             $this->del_news($row['id'], $code);
             
-            $this->db->query("UPDATE `scan_url` SET `scan`='0' WHERE `id`='{$row['scan_url_id']}' LIMIT 1"); //SET Scan URL = 0
+//            $this->db->query("UPDATE `scan_url` SET `scan`='0' WHERE `id`='{$row['scan_url_id']}' LIMIT 1"); //SET Scan URL = 0
+            flush();
         }
     }
     
