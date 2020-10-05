@@ -334,9 +334,9 @@ function rewriteImgInToLazyLoad($html){
     return $html;
 }
 
-function getAuthorJsonData($jsonFromDB){
-    if(empty($jsonFromDB)){
-        $jsonFromDB = '{"publisher":{"@type":"Organization","name":"PressFrom","url":"https:\/\/pressfrom.info","logo":{"@type":"ImageObject","url":"https:\/\/pressfrom.info\/img\/logo-pressfrom-1-fff.png"}},"author":{"@type":"Organization","name":"PressFrom","url":"https:\/\/pressfrom.info","logo":{"@type":"ImageObject","url":"https:\/\/pressfrom.info\/img\/logo-pressfrom-1-fff.png"}}}';
+function getAuthorJsonData($jsonFromDB, $payArticleInt = 0){ # payPostInt = 8 - translated news
+    if(empty($jsonFromDB) || $payArticleInt == 8){
+        $jsonFromDB = getDefaultAuthorJsonData();
     }
     $arr = json_decode($jsonFromDB, true);
     
@@ -348,4 +348,18 @@ function getAuthorJsonData($jsonFromDB){
     }
     
     return $resultAr;
+}
+
+function getDefaultAuthorJsonData(){
+    if($_SERVER['HTTP_HOST'] == 'pressfrom.info'){
+        $defaultJson = '{"publisher":{"@type":"Organization","name":"PressFrom","url":"https:\/\/pressfrom.info","logo":{"@type":"ImageObject","url":"https:\/\/pressfrom.info\/img\/logo-pressfrom-1-fff.png"}},"author":{"@type":"Organization","name":"PressFrom","url":"https:\/\/pressfrom.info","logo":{"@type":"ImageObject","url":"https:\/\/pressfrom.info\/img\/logo-pressfrom-1-fff.png"}}}';
+    }
+    elseif($_SERVER['HTTP_HOST'] == 'pressreview24.com'){
+        $defaultJson = '{"publisher":{"@type":"Organization","name":"PressReview24","url":"https:\/\/pressreview24.com","logo":{"@type":"ImageObject","url":"https:\/\/pressreview24.com/img/pr24/logo-1.png"}},"author":{"@type":"Organization","name":"PressReview24","url":"https:\/\/pressreview24.com","logo":{"@type":"ImageObject","url":"https:\/\/pressreview24.com/img/pr24/logo-1.png"}}}';
+    }
+    else{
+        $defaultJson = '{"publisher":{"@type":"Organization","name":"PressReview24","url":"https:\/\/pressreview24.com","logo":{"@type":"ImageObject","url":"https:\/\/pressreview24.com/img/pr24/logo-1.png"}},"author":{"@type":"Organization","name":"PressReview24","url":"https:\/\/pressreview24.com","logo":{"@type":"ImageObject","url":"https:\/\/pressreview24.com/img/pr24/logo-1.png"}}}';
+    }
+    
+    return $defaultJson;
 }
