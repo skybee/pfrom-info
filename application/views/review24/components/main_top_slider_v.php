@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
 <!-- News Slider Area Start Here -->
-<section class="container">
+<section class="container top-slider">
     <div class="bg-body box-layout">
         <div class="section-space-bottom-less4">
             <div class="row tab-space2">

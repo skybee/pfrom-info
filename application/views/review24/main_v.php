@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html class="no-js" lang="<?=$this->multidomaine['lang'];?>">
     <head>
-        <!-- NOINDEX --> <meta name="robots" content="noindex, nofollow" /> 
+        <!-- NOINDEX --> 
+        <!--<meta name="robots" content="noindex, nofollow" />--> 
         
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,7 +11,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        <meta name="theme-color" content="#111"> <!-- Mobile Color -->
+        
         <?php if(isset($meta['og'])) echo $meta['og']; ?>
+        
+        <!-- ============= STYLES / ============= -->
         
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
@@ -33,15 +38,53 @@
         <link rel="stylesheet" type="text/css" href="/css/review24/magnific-popup.css">
         <!-- Switch Style CSS -->
         <link rel="stylesheet" href="/css/review24/hover-min.css">
+        <!-- Social BtnLib Style (likely) -->
+        <link rel="stylesheet" href="/css/review24/likely.css">
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/review24/style.css">
+        <link rel="stylesheet" href="/css/review24/style.css?v=<?=js_version('/css/review24/style.css')?>">
         <!-- SB style CSS -->
-        <link rel="stylesheet" href="/css/review24/sb.css">
-        <link rel="stylesheet" href="/css/review24/media-queries.css">
+        <link rel="stylesheet" href="/css/review24/sb.css?v=<?=js_version('/css/review24/sb.css')?>">
+        <link rel="stylesheet" href="/css/review24/media-queries.css?v=<?=js_version('/css/review24/media-queries.css')?>">
         <!-- For IE -->
         <link rel="stylesheet" type="text/css" href="/css/review24/ie-only.css" />
+        
+        <!-- ============= SCRIPTS / ============= -->
+        
         <!-- Modernizr Js -->
         <script src="/js/review24/modernizr-2.8.3.min.js"></script>
+        <!-- jquery-->
+        <script src="/js/review24/jquery-2.2.4.min.js " type="text/javascript"></script>
+        <!-- Plugins js -->
+        <script src="/js/review24/plugins.js " type="text/javascript"></script>
+        <!-- Popper js -->
+        <script src="/js/review24/popper.js " type="text/javascript"></script>
+        <!-- Bootstrap js -->
+        <script src="/js/review24/bootstrap.min.js " type="text/javascript"></script>
+        <!-- WOW JS -->
+        <script src="/js/review24/wow.min.js"></script>
+        <!-- Owl Cauosel JS -->
+        <script src="/js/review24/owl.carousel.min.js " type="text/javascript"></script>
+        <!-- Meanmenu Js -->
+        <script src="/js/review24/jquery.meanmenu.min.js " type="text/javascript"></script>
+        <!-- Srollup js -->
+        <script src="/js/review24/jquery.scrollUp.min.js " type="text/javascript"></script>
+        <!-- jquery.counterup js -->
+        <script src="/js/review24/jquery.counterup.min.js"></script>
+        <script src="/js/review24/waypoints.min.js"></script>
+        <!-- Isotope js -->
+        <script src="/js/review24/isotope.pkgd.min.js " type="text/javascript"></script>
+        <!-- Magnific Popup -->
+        <script src="/js/review24/jquery.magnific-popup.min.js"></script>
+        <!-- Ticker Js -->
+        <script src="/js/review24/ticker.js " type="text/javascript"></script>
+        <!-- Social BtnLib (likely) -->
+        <script src="/js/review24/likely.js" type="text/javascript"></script>
+        <!-- Custom Js -->
+        <script src="/js/review24/main.js " type="text/javascript"></script>
+        <!-- LazyLoad JQuery -->
+        <script src="/js/review24/jquery.lazy.min.js " type="text/javascript"></script>
+        <!-- Skybee Js -->
+        <script src="/js/review24/sb.js " type="text/javascript"></script>
         
         <!-- Google Ads -->
         <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
@@ -78,6 +121,28 @@
         -->
         <!-- /Yandex.Metrika counter -->
         <script data-ad-client="ca-pub-6096727633142370" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org", 
+                "@type": "Organization",
+                "name": "PressReview24",
+                "url": "https://pressreview24.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "465 E Aultman St, Ely, NV 89301, US",
+                    "addressRegion": "NV",
+                    "postalCode": "89301",
+                    "addressCountry": "USA"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "email": "mail@pressreview24.com"
+                }
+            }
+        </script>
+        
     </head>
 
     <body>
@@ -129,14 +194,16 @@
                 <div class="bg-body box-layout">
                     <div class="section-space-bottom-less30">
                         <div class="row">
-                            <div class="col-lg-8 col-md-12">                    
-<!-- DEL --><?php #include './components/main_body.php'; ?>
-                            <?= $r24_content; ?>    
+                            <div class="col-lg-8 col-md-12 second-width">  
+                            <!--Left Content Start-->
+                            <!--<info-page>-->
+                            <?= $r24_content; ?>
+                            <!--</info-page>-->
+                            <!--Left Content End-->
                             </div>
-            <!-- Right Sidebar Start -->
-                <?= $r24_right; ?>
-<!-- DEL --><?php #include './components/body/body_right_sidebar.php';?>
-            <!-- Right Sidebar End -->
+                            <!-- Right Sidebar Start -->
+                            <?= $r24_right; ?>
+                            <!-- Right Sidebar End -->
                         </div>
                     </div>
                 </div>
@@ -595,7 +662,7 @@
                 <div class="footer-area-top">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+                            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 footer-padding">
                                 <div class="footer-box">
                                     <div id="footer_all_cat_block">
                                         <?php
@@ -614,17 +681,29 @@
                                                 </div>
                                             </div>
                                         <?php endforeach; ?>
+                                        
+                                        <!--info page links-->
+                                        <div class="footer_acb_main_cat">
+                                            <a href="/info/contact/" class="footer_main_cat_a">
+                                                About Us
+                                            </a>
+                                            
+                                            <div class="footer_acb_sec_cat">
+                                                <a href="/info/contact/">Contact</a>
+                                                <a href="/info/privacy-policy/">Privacy Policy</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 footer-padding">
                                 <div class="footer-box">
                                     <div class="footer_contact">
                                         <span class="contat-title"><?=$this->multidomaine['contact_str'];?></span>
                                         <br />
                                         <ul>
                                             <li>
-                                                Name:&nbsp;&nbsp;<span>PressFrom</span>
+                                                Name:&nbsp;&nbsp;<span><?=$this->multidomaine['site_name_str'];?></span>
                                             </li>
                                             <li>
                                                 E-mail:&nbsp;&nbsp;<a href="mailto:<?=$this->multidomaine['e_mail'];?>"><?=$this->multidomaine['e_mail'];?></a>

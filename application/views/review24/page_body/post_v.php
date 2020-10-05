@@ -4,6 +4,38 @@
 //    print_r($doc_data);
 ?>
 
+<?php $dateAr =& $doc_data['date_ar']; ?>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org", 
+        "@type": "NewsArticle",
+        "headline": "<?=htmlspecialchars($doc_data['title'],ENT_COMPAT)?>",
+        "image": "https://static.pressfrom.info/upload/images/real/<?=$doc_data['main_img']?>",
+        "datePublished": "<?=$dateAr['year_nmbr'].'-'.$dateAr['month_nmbr'].'-'.$dateAr['day_nmbr']?>",
+        "dateModified":  "<?=$dateAr['year_nmbr'].'-'.$dateAr['month_nmbr'].'-'.$dateAr['day_nmbr']?>",
+        "publisher": <?=$doc_data['author_json']['publisher']?>,
+        "author": <?=$doc_data['author_json']['author']?>,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://<?=$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?>"
+        }
+    }
+</script>
+
+
+
+
+<div class="social_btn">
+    <div class="likely likely-big likely-sb-desktop" data-title="<?=htmlspecialchars($doc_data['title'],ENT_COMPAT)?>">
+        <div class="facebook"></div>
+        <div class="twitter"></div>
+        <div class="linkedin"></div>
+        <div class="whatsapp"></div>
+        <div class="pinterest" data-media="https://static.pressfrom.info/upload/images/real/<?=$doc_data['main_img']?>"></div>
+    </div>
+</div>
+
 <div class="news-details-layout1">
 
     <h1 class="title-semibold-dark size-c30 post-pr">

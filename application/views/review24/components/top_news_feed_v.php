@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
 <!-- News Feed Area Start Here -->
-<section class="container">
+<section class="container top-feed">
     <div class="bg-body box-layout">
         <div class="row no-gutters d-flex align-items-center">
             <div class="col-lg-2 col-md-3 col-sm-4 col-5">

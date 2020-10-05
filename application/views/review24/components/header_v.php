@@ -2,7 +2,7 @@
 
 
 <!-- Header Area Start Here -->
-<header>
+<header class="header-main">
     <div id="header-layout2" class="header-style5">
         <div class="header-top-bar">
             <div class="top-bar-top bg-primarytextcolor box-layout">
@@ -44,7 +44,7 @@
                         <div class="col-lg-3 d-none d-lg-block">
                             <ul class="header-social">
                                 <li>
-                                    <a href="#" title="facebook">
+                                    <a href="https://www.facebook.com/PressReview24" title="facebook" target="_blank">
                                         <i class="fa fa-facebook" aria-hidden="true"></i>
                                     </a>
                                 </li>
@@ -122,7 +122,7 @@
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-md-2 col-sm-4 text-right position-static min-height-none">
+                            <div class="col-lg-2 col-md-2 col-sm-4 text-right position-static min-height-none tmp-hide">
                                 <div class="header-action-item on-mobile-fixed">
                                     <ul>
                                         <li>
