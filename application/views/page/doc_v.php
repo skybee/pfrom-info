@@ -34,9 +34,16 @@
     <div class="doc-date doc-date-top">
         
         <div class="social_btn social_btn_top">
-            <span class="paste_code paste_YandexButtons"></span>
-<!--            <script async type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>-->
-            <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareTheme="counter" data-yashareType="normal" data-yashareQuickServices="<?=$this->multidomaine['social_btn_list'];?>"></div> 
+            <div class="likely likely-big likely-sb-desktop">
+                <div class="facebook"></div>
+                <div class="twitter"></div>
+                <div class="linkedin"></div>
+                <div class="whatsapp"></div>
+                <div class="pinterest" data-media="https://static.pressfrom.info/upload/images/real/<?=$doc_data['main_img']?>"></div>
+            </div>
+            <!--<span class="paste_code paste_YandexButtons"></span>-->
+            <!--<script async type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>-->
+            <!--<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareTheme="counter" data-yashareType="normal" data-yashareQuickServices="<?=$this->multidomaine['social_btn_list'];?>"></div>--> 
         </div>
         
         <div class="dd_left">
@@ -117,7 +124,14 @@
     
     <div class="doc-date doc-date-bottom">
         <div class="social_btn">
-            <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareTheme="counter" data-yashareType="normal" data-yashareQuickServices="<?=$this->multidomaine['social_btn_list'];?>"></div> 
+            <div class="likely likely-big likely-sb-desktop">
+                <div class="facebook"></div>
+                <div class="twitter"></div>
+                <div class="linkedin"></div>
+                <div class="whatsapp"></div>
+                <div class="pinterest" data-media="https://static.pressfrom.info/upload/images/real/<?=$doc_data['main_img']?>"></div>
+            </div>
+            <!--<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareTheme="counter" data-yashareType="normal" data-yashareQuickServices="<?=$this->multidomaine['social_btn_list'];?>"></div>--> 
         </div>
         <div class="dd_left long_date_str">
             &mdash; &nbsp; <?=$this->multidomaine['repost_news_str'];?>
