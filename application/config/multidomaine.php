@@ -114,7 +114,7 @@ $config['multidomaine']['main_host'] = [
 ];
 
 $config['multidomaine']['parse_lang'] = [
-    'ru',
+//    'ru',
     'fr',
     'de',
     'uk',
@@ -320,4 +320,12 @@ $config['multidomaine']['br']['translate']['cat_id']    = '';
 
 
 
-//pay_article 1-payPost, 3-minox, 7-translated
+//pay_article 1-payPost, 3-minox, 7-translated, 8-don`t translate arts
+
+# категории где старые новости не переводятся
+//+ US: 1,3,4,5,6,7,9,17,18
+//+ CA: 1,4,5,6,7,8,11
+//+ AU: 1,3,4,6,7,8,9
+//+ UK: 1,3,4,5,6,7,9,10,11,12
+//+ FR: 1,2,3,4,7,8,10,11
+//+ DE: 1,3,4,7,8,9
