@@ -8,7 +8,7 @@ class Main extends CI_Controller {
         if(     $_SERVER['HTTP_HOST'] != 'pressfrom.info' 
                 && $_SERVER['HTTP_HOST'] != 'express-info.lh' 
                 && $_SERVER['HTTP_HOST'] != 'pressfrom.vbox' 
-                && $_SERVER['HTTP_HOST'] != 'pressreview24.com' 
+//                && $_SERVER['HTTP_HOST'] != 'pressreview24.com' 
                 && $_SERVER['HTTP_HOST'] != 'pressreview24.lh'
                 && $_SERVER['HTTP_HOST'] != 'unionpress24.lh'
         ){
@@ -225,7 +225,10 @@ class Main extends CI_Controller {
                                             );
         $data_ar['doc_data']['text']    =   addResponsiveVideoTag($data_ar['doc_data']['text']);
         
-        $data_ar['doc_data']['author_json'] = getAuthorJsonData($data_ar['doc_data']['author_data']);
+        $data_ar['doc_data']['author_json'] = getAuthorJsonData(
+                                                    $data_ar['doc_data']['author_data'],
+                                                    $data_ar['doc_data']['pay_article']
+                                                );
 
         $data_ar['like_video']          = $this->article_m->get_like_video($data_ar['doc_data']['id'],2);
         
@@ -252,6 +255,7 @@ class Main extends CI_Controller {
                                             );
         
         $right['minox_link']            = $this->minox_lib->getLinkToMinoxPage();
+        $right['pay_article']           = $data_ar['doc_data']['pay_article'];
         
         if($_SERVER['HTTP_HOST'] !== $this->multidomaine['host']){ //Aliases Canonical
 //            $canonicalUrl                   = 'http://'.$this->multidomaine['host'].$_SERVER['REQUEST_URI'];
@@ -293,6 +297,7 @@ class Main extends CI_Controller {
             $tpl_ar['r24_main_top_slider']  = $this->load->view('review24/components/main_top_slider_v', $top_slider, true);
             $tpl_ar['r24_right']            = $this->load->view('review24/page_body/right_sidebar_v', $right, true);
             $tpl_ar['r24_content']  = $this->load->view('review24/page_body/post_v', $data_ar, true);
+            $tpl_ar['meta']['og']   = $this->load->view('review24/components/meta_og_v', $data_ar['doc_data'], true);
 
             $this->load->view('review24/main_v', $tpl_ar);
         }
@@ -459,6 +464,48 @@ class Main extends CI_Controller {
         $this->load->view('main_v', $tpl_ar);
     }
     
+    function info($pageName){
+        $this->index(); // загрузка главной страницы
+        
+        $output = $this->output->get_output();
+        
+        $title = ''; $content = '';
+        
+        if($_SERVER['HTTP_HOST'] == 'pressfrom.info' || $_SERVER['HTTP_HOST'] == 'express-info.lh'){
+            if($pageName=='contact'){
+                $title      = 'Contact | About Us |'.$this->multidomaine['site_name_str'];
+                $content    = $this->load->view('page/info_page/contact_v', NULL, true);
+            }
+            elseif($pageName=='privacy-policy'){
+                $title      = 'Privacy Policy - '.$this->multidomaine['site_name_str'];
+                $content    = $this->load->view('page/info_page/privacy_policy_v', NULL, true);
+            }
+            
+            $output = preg_replace("#(<title>)[\s\S]+?(</title>)#i", "$1".$title."$2", $output);
+            $output = preg_replace("#<!--<info-page-replace>-->[\s\S]+?<!--</info-page-replace>-->#i", $content, $output);
+        }
+        else{
+            if($pageName=='contact'){
+                $title      = 'Contact | About Us |'.$this->multidomaine['site_name_str'];
+                $content    = $this->load->view('review24/info_page/contact_v', NULL, true);
+            }
+            elseif($pageName=='privacy-policy'){
+                $title      = 'Privacy Policy - '.$this->multidomaine['site_name_str'];
+                $content    = $this->load->view('review24/info_page/privacy_policy_v', NULL, true);
+            }
+            
+            $output = preg_replace("#(<title>)[\s\S]+?(</title>)#i", "$1".$title."$2", $output);
+            $output = preg_replace("#<!--<info-page>-->[\s\S]+?<!--</info-page>-->#i", $content, $output);
+        }
+        
+        if(empty($title) || empty($content)){
+            header("HTTP/1.1 301 Moved Permanently"); 
+            header("Location: /".LANG_CODE."/"); 
+            exit();
+        }
+        
+        $this->output->set_output($output);
+    }
     
     
     
