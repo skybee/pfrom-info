@@ -6,10 +6,11 @@ require_once './application/libraries/translate-stichoza/vendor/autoload.php';
 use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class Stichoza_translate_self_lib{
-    private $CI,
+    private 
             $donorDbLangCode;
     
-    public  $stichoza_translate_lib,
+    public  $CI,
+            $stichoza_translate_lib,
             $donorObj;
             
     
