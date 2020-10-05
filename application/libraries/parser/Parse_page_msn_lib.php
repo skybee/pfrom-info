@@ -36,6 +36,7 @@ class Parse_page_msn_lib{
         if( is_object( $this->htmlObj->find('section.articlebody',0) ) ){
 //            $this->articleBodyObj = $this->htmlObj->find('section.articlebody',0);
             $this->changeVideo();
+            $this->changeVideo2();
             $this->imgInTxt();
             $this->slideerRewrite();
             $this->delTagFromObj();
@@ -126,6 +127,43 @@ class Parse_page_msn_lib{
             $videoObj->outertext = $htmlVideo;
         }
     }
+    
+    private function changeVideo2(){
+        if( !is_object($this->htmlObj->find('.videojsplayer',0)) ){
+            return false;
+        }
+        
+        foreach($this->htmlObj->find('.videojsplayer') as $videoObj){
+        
+            if( !is_object($videoObj->find('video',0)) ){
+                continue;
+            }
+            
+            $videoTagObj    = $videoObj->find('video',0);
+            $divInfoObj     = $videoObj->find('.video-js',0);
+            $sourceObj      = $videoTagObj->find('source',0);
+            
+//            $metaData   = $videoTagObj->attr['data-pluginconfig'];
+//            $metaData   = html_entity_decode($metaData);
+//            $metaDataAr = json_decode($metaData,true);
+            
+            $metaDataAr['videoUrl']     = $sourceObj->attr['src'];
+            $metaDataAr['posterUrl']    = $divInfoObj->attr['poster'];
+            
+//            echo "\n\n---------------\n\n";
+//            print_r($metaDataAr);
+//            echo "\n\n---------------\n\n";
+            
+            
+            
+            $htmlVideo = '<video width="100%" height="auto"  poster="'.$metaDataAr['posterUrl'].'" controls > '
+                    . '<source src="'.$metaDataAr['videoUrl'].'" > '
+                    . 'Your browser does not support this video'
+                    . '</video>';
+            
+            $videoObj->outertext = $htmlVideo;
+        }
+    }
 
     private function imgInTxt(){
         if( !is_object($this->htmlObj->find('img',0)) ){
@@ -179,6 +217,17 @@ class Parse_page_msn_lib{
         
         foreach($this->htmlObj->find('.inline-slideshow') as $sliderObj)
         {
+            #определение рекламного слайдШоу
+            $tmpSlideHtml = $sliderObj->innertext;
+            if( preg_match("#data-page-partner-name#iu", $tmpSlideHtml) 
+                &&
+                preg_match("#data-page-publcat#iu", $tmpSlideHtml) 
+            ){
+                echo "\n\n<br /> ADs SlideShow <br />\n\n";
+                unset($tmpSlideHtml);
+                continue;
+            }
+            
             $i=0;
             foreach($sliderObj->find('ul.slideshow li') as $slideLi)
             {
