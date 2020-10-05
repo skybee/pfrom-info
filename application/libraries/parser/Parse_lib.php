@@ -38,6 +38,10 @@ class Parse_lib{
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_MAXREDIRS, 5);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        
+        if (defined('CURLOPT_IPRESOLVE') && defined('CURL_IPRESOLVE_V4')){
+            curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+         }
 
         if(isset($proxy) && $proxy!=false){
             $proxyIpPortAr = explode(':', $proxy);
@@ -51,9 +55,11 @@ class Parse_lib{
         $httpData   = curl_getinfo($ch);
         
 //        echo "\n<br/>----------------------<br/>\n";
+//        echo "\n#\n ERROR: ".curl_error($ch)."\n#\n";
 //        print_r($httpData);
-//        echo curl_error($ch);
 //        echo "\n<br/>----------------------<br/>\n";
+//        print_r($content);
+//        echo "\n<br/>----------------------<br/>\n"."\n<br/>----------------------<br/>\n";
         
 	curl_close($ch);
         
