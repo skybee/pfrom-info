@@ -27,15 +27,15 @@ $( document ).ready(function(){
     
     // </top adsense after image> //
     setTimeout(function(){
-        paste_code('GAdsMainCode'); //добавление основного кода на страницу
-        
-        if(addGadPosition()){ // добовляет дополнительные места(теги) для рекламы
-            $('span.gAd').each(function(){ // простановка блоков рекламы
-                blockName = $(this).attr('data');
-                toWrite = loadGAd(blockName);
-                $(this).replaceWith(toWrite);
-            });
-        }
+//        paste_code('GAdsMainCode'); //добавление основного кода на страницу
+//        
+//        if(addGadPosition()){ // добовляет дополнительные места(теги) для рекламы
+//            $('span.gAd').each(function(){ // простановка блоков рекламы
+//                blockName = $(this).attr('data');
+//                toWrite = loadGAd(blockName);
+//                $(this).replaceWith(toWrite);
+//            });
+//        }
     }, 2000);
 
 });

@@ -185,6 +185,25 @@ $( document ).ready(function(){
     // Load YandexButtons
 //    setTimeout(paste_code('YandexButtons'),10000); //10000
 
+
+
+    // Content Img Swiper MSI-Slider
+//    $('.inline-slideshow .slideshow li').addClass('swiper-slide');
+//    
+//    setTimeout(function(){
+//        var msiSwiper = new Swiper ('.inline-slideshow .slideshow', {
+//            // Optional parameters
+//            direction: 'horizontal',
+//            loop: true,
+//
+//            // Navigation arrows
+//            navigation: {
+//                nextEl: '.msi-swiper-button-next',
+//                prevEl: '.msi-swiper-button-prev'
+//            }
+//        });
+//    },2000);
+
 });
 
 var outWindow = 0;
