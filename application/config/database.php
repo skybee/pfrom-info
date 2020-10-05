@@ -127,9 +127,9 @@ function getStaticDbConnectSetting(){
 
 $db['default'] = getStaticDbConnectSetting();
 
-$db_ip = '5.9.40.120';
+$db_ip = '148.251.67.228'; #$db_ip = '5.9.40.120' '148.251.67.228'
 
-function getDbConnectSetting($langCode,$db_ip = '5.9.40.120'){
+function getDbConnectSetting($langCode,$db_ip = '148.251.67.228'){ #$db_ip = '5.9.40.120' '148.251.67.228'
     #-- RU --
     $db['ru']['hostname'] = $db_ip;
     $db['ru']['username'] = 'admin_smi_ru';
@@ -186,11 +186,11 @@ $db['default'] = array_merge($db['default'], $connectData);
 
 
 
-if( $_SERVER['HTTP_HOST'] == 'express-info.lh'){
+//if( $_SERVER['HTTP_HOST'] == 'express-info.lh'){
 //    $db['default']['hostname'] = 'localhost';
-//    $db['default']['username'] = 'root';
-//    $db['default']['password'] = '';
+//    $db['default']['username'] = 'mysql';
+//    $db['default']['password'] = 'mysql';
 //    $db['default']['database'] = 'admin_pf_br'; //'fr-express'; //DB: france, fr-express
-//    
-//    $db['default']['database'] = 'admin_pf_us'; // TMP test
-}
+////    
+////    $db['default']['database'] = 'admin_pf_us'; // TMP test
+//}
