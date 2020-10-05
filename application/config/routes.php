@@ -85,6 +85,7 @@ $route['[-a-z\d/]+?/(-\d+-.+)']                                 = "main/document
 //}
 $route['^(:any)$']        = "main/main_page/$1";
 
+$route['info/(:any)']                                           = "main/info/$1";
 $route['search/(:any)']                                         = "main/search/$1";
 $route['tmp/(:any)']                                            = "tmp/$1";
 $route['sbadmin/(:any)/(:any)']                                 = "sbadmin/$1/$2";
