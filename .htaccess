@@ -25,6 +25,9 @@
 
     #first page in cat pagination
     RewriteRule ^(.*)/1/$ $1/ [NC,L,R=301] 
+
+    #RU category redirect
+    RewriteRule ^ru/.*$ / [NC,L,R=301]
     
     
 #   Images Redirect:
