@@ -4,7 +4,7 @@
     <head>
         
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <!--
+        
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133437377-1"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -13,7 +13,7 @@
 
           gtag('config', 'UA-133437377-1');
         </script>
-        -->
+        
         
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -29,6 +29,7 @@
         <link rel="stylesheet" type="text/css" href="/css/skin1/font.css?v=<?=js_version('/css/skin1/font.css')?>" />
         <?php if(0):?><link rel="stylesheet" type="text/css" href="/css/skin1/magnific-popup.css" /><?php endif;?>
         <link rel="stylesheet" type="text/css" href="/css/skin1/jquery.bxslider.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/likely.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/msn-parse.css?v=<?=js_version('/css/skin1/msn-parse.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/mobile.css?v=<?=js_version('/css/skin1/mobile.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=<?=js_version('/css/skin1/media-queries.css')?>" />
@@ -48,22 +49,24 @@
             <meta name="robots" content="noindex, follow" />
         <?php endif; ?>   
                     
-<!--        <script defer type='text/javascript' src="/js/skin1/lib/jquery-1.12.4.min.js"></script>
+        <script defer type='text/javascript' src="/js/skin1/lib/jquery-1.12.4.min.js"></script>
         <script defer type='text/javascript' src="/js/skin1/lib/swiper-4.4.6.min.js"></script>
         <script defer type='text/javascript' src="/js/skin1/lib/jquery.lazy.min.js">/*---NOT COMENT in Production---*/</script>
         <script defer type='text/javascript' src='/js/skin1/lib/jquery-ui.min-tabs-1.12.1.js'>/*---NOT COMENT in Production---*/</script>
-        <script defer type='text/javascript' src='/js/skin1/lib/jquery.bxslider.min.js'>/*---NOT COMENT in Production---*/</script>-->
+        <script defer type='text/javascript' src='/js/skin1/lib/jquery.bxslider.min.js'>/*---NOT COMENT in Production---*/</script>
+        <script defer type='text/javascript' src='/js/skin1/lib/likely.js'>/*---NOT COMENT in Production---*/</script>
+
         
-        <script defer type='text/javascript' src='/js/skin1/lib/all-lib.js?v=<?=js_version('/js/skin1/lib/all-lib.js')?>'>
+<!--        <script defer type='text/javascript' src='/js/skin1/lib/all-lib.js?v=<?=js_version('/js/skin1/lib/all-lib.js')?>'>
             /*---!!!---NOT COMENT in Production---*/
-        </script>
+        </script>-->
         
         
-<!--        <script defer type='text/javascript' src='/js/skin1/paste_code.js'></script>
+        <script defer type='text/javascript' src='/js/skin1/paste_code.js'></script>
         <script defer type='text/javascript' src='/js/skin1/sb.js?v=<?=js_version('/js/skin1/sb.js')?>'></script>
-        <script defer type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>-->
+        <script defer type='text/javascript' src='/js/skin1/gads.js?v=<?=js_version('/js/skin1/gads.js')?>'></script>
             
-        <script defer type='text/javascript' src='/js/all-script.js?v=<?=js_version('/js/all-script.js')?>'></script>
+        <!--<script defer type='text/javascript' src='/js/all-script.js?v=<?=js_version('/js/all-script.js')?>'></script>-->
         
         
         <!-- Google Ads -->
@@ -93,7 +96,7 @@
                 "contactPoint": {
                     "@type": "ContactPoint",
                     "contactType": "customer support",
-                    "email": "info@pressfrom.info"
+                    "email": "mail@pressfrom.info"
                 }
             }
         </script>
@@ -214,7 +217,9 @@
                                 <span class="gAd" data="UnderSlider" load-queue="1"></span>
                             </div>-->
                             <div id="left">
+                                <!--<info-page-replace>-->
                                 <?= $content ?>
+                                <!--</info-page-replace>-->
                             </div><!-- #left closer -->
                             <div id="right">
                                 <?= $right; ?>
@@ -246,6 +251,18 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
+                        
+                        <div class="footer_acb_main_cat">
+                            <a href="/info/contact/" class="footer_main_cat_a">
+                                About Us
+                            </a>
+
+                            <div class="footer_acb_sec_cat">
+                                <a href="/info/contact/">Contact</a>
+                                <a href="/info/privacy-policy/">Privacy Policy</a>
+                            </div>
+                        </div>
+                        
                     </div>
                     <div class="footer_contact">
                         <span><?=$this->multidomaine['contact_str'];?></span>
@@ -256,6 +273,11 @@
                             </li>
                             <li>
                                 E-mail:&nbsp;&nbsp;<a href="mailto:<?=$this->multidomaine['e_mail'];?>"><?=$this->multidomaine['e_mail'];?></a>
+                                <!--<a href="#" id="foot_mail"></a>-->
+                            </li>
+                            <li>On Advertising:</li>
+                            <li>
+                                E-mail:&nbsp;&nbsp;<a href="mailto:advert@pressfrom.info">advert@pressfrom.info</a>
                                 <!--<a href="#" id="foot_mail"></a>-->
                             </li>
                             <li>
