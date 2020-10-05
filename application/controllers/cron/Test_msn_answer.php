@@ -17,7 +17,9 @@ class Test_msn_answer extends CI_Controller{
         
         $this->load->library('parser/Parse_lib');
         
-        $url = "https://www.msn.com/en-us/news/world/two-migrant-caravan-teens-slain-in-tijuana/ar-BBRa1nT";
+//        $url = "https://www.msn.com/en-us/news/world/two-migrant-caravan-teens-slain-in-tijuana/ar-BBRa1nT";
+//        $url = "https://money24.kharkov.ua/robots.txt";
+        $url = "https://evevy.com/request.php";
         
         $answer = $this->parse_lib->down_with_curl($url, true, true, 0);
         
