@@ -33,6 +33,11 @@
 //                        $imgUrl     = 'http://'.$host.'/upload/images/small/'.$news['main_img'];
                         
                         $newsUrl    = '/'.$lang_code.'/'.$news['full_uri'].'-'.$news['id'].'-'.$news['url_name'].'.html';
+                        
+                        # !!! TMP pressreview24.com Links
+//                        if(mt_rand(1,1000)<=300){
+//                            $newsUrl = 'https://pressreview24.com'.$newsUrl;
+//                        }
 //                        $imgUrl     = '/'.$lang_code.'/upload/images/small/'.$news['main_img'];
                         $imgUrl     = '/upload/images/small/'.$news['main_img'];
                 ?>
