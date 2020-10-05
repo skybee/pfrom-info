@@ -18,8 +18,8 @@ class Article_translate_self_m extends CI_Model{
                         . "`article_translated_self`.`language` =  '{$langFor}' "
                 . "WHERE "
                         . "`article_translated_self`.`id` IS NULL "
-                    . "AND "
-                        . "CHAR_LENGTH(`article`.`text`) < '8000' "
+//                    . "AND "
+//                        . "CHAR_LENGTH(`article`.`text`) < '8000' " # SET `pay_article` = '8' in setNotMarkOnLongArts()
                     . "AND "
                         . "`article`.`pay_article` = '0' "
                 . "ORDER BY `article`.`date` DESC "
@@ -38,6 +38,24 @@ class Article_translate_self_m extends CI_Model{
         }
         
         return $result;
+    }
+    
+    function setNotMarkOnLongArts(){
+        $sql = "UPDATE `article` "
+                . "SET `pay_article` = '8' "
+                . "WHERE "
+                . "CHAR_LENGTH(`text`) > '8000' "
+                . "AND "
+                . "`pay_article` = '0' ";
+        
+        if( $this->db->query($sql) ){
+            echo "\n\nDB: ".$this->db->database." Updated... SET `pay_article`= 8 WHERE `text` > 8000 \n\n";
+        }
+        else{
+            echo "\n\n!!! -- DB: ".$this->db->database." Did Not Update... \n\n";
+        }
+        
+//        print_r($this->db);
     }
     
     function setTranslatedArticle($artId,$lang){
@@ -98,6 +116,8 @@ class Article_translate_self_m extends CI_Model{
                     . "`article` "
                 . "WHERE " 
                     . "MATCH (`article`.`title`,`article`.`text`) AGAINST ('{$searchTxt}') "
+                    . "AND "
+                    . "`article`.`pay_article` != '7' " # 7-translated news
                 . "LIMIT {$limit}";
                 
         $query = $this->db->query($sql);        
