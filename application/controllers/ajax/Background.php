@@ -13,8 +13,8 @@ class Background extends CI_Controller{
     function set_top(){
         
         $id     = (int) $_POST['docId'];
-//        $ip     = $_SERVER['HTTP_X_REAL_IP'];
-        $ip     = $_SERVER['REMOTE_ADDR'];
+        $ip     = $_SERVER['HTTP_X_REAL_IP'];
+//        $ip     = $_SERVER['REMOTE_ADDR'];
         $ref    = $_POST['ref'];
         $rank   = 1;
         
