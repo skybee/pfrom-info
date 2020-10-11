@@ -79,7 +79,8 @@ $lock_host = array(
     '\.abril.com.br',
     'motor1.com',
     'rideapart.com',
-    'www.roadandtrack.com'
+    'www.roadandtrack.com',
+    'refinery29.com'
 );
 
 function get_country_code(){
