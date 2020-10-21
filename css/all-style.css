@@ -2,7 +2,7 @@
 
  - https://fonts.googleapis.com/css?family=Roboto
 
- - http://express-info.lh/css/skin1/style.css?v=20200414-0330
+ - http://express-info.lh/css/skin1/style.css?v=20201012-1248
 
  - http://express-info.lh/css/skin1/featured_long_style.css
 
@@ -22,7 +22,7 @@
 
  - http://express-info.lh/css/skin1/mobile.css?v=20190214-1420
 
- - http://express-info.lh/css/skin1/media-queries.css?v=20200326-0030
+ - http://express-info.lh/css/skin1/media-queries.css?v=20201012-2345
 
  - http://express-info.lh/css/skin1/mobile_gads.css?v=20180917-1425
 
@@ -42,7 +42,7 @@
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/style.css?v=20200414-0330 */ 
+ /* FILE START: http://express-info.lh/css/skin1/style.css?v=20201012-1248 */ 
 /*******************************************************************************
 
 Theme Name: London Live
@@ -98,6 +98,8 @@ blockquote {
 	/*float:left;*/
 	font-style:italic;
 	/*background:url(/img/block-quote.png) no-repeat;*/
+        display: inline-block;
+        margin: 0px;
 }
 
 code,pre {
@@ -3871,12 +3873,14 @@ img.alignleft,a img.alignleft {
     font-size: 14px !important;
     line-height: 1.4em !important;
     /*background-color: #F7F7F7;*/
-    background-color: #FCFCFC;
+    /*background-color: #FCFCFC;*/
+    background-color: #151515;
     padding: 15px 15px !important;
     padding-top: 7px !important;
     margin: 0 !important;
     
-    border: 1px solid #94c2ce;
+    /*border: 1px solid #94c2ce;*/
+    border: 1px solid #009DDB;
     /*border-width: 0px 1px 1px 1px;*/
     border-width: 0px 0px 1px 0px;
     /*display: none;*/
@@ -3884,6 +3888,7 @@ img.alignleft,a img.alignleft {
     p.look_more_hdn{
         padding-top: 10px !important;
         color: #3f3f3f !important;
+        color: #e0e0e0 !important;
         font-style: italic;
     }
         p.look_more_hdn img{
@@ -3907,6 +3912,7 @@ img.alignleft,a img.alignleft {
             /*height: 136px;*/
             overflow: hidden;
             padding: 0;
+            font-style: normal;
         }
         blockquote.look_more_quote{
             display: inline !important;
@@ -3917,8 +3923,10 @@ img.alignleft,a img.alignleft {
         }
 span.gads_in_more_hdn{
     display: block;
-    border-bottom: 1px solid #94c2ce;
-    background-color: #fcfcfc;
+    /*border-bottom: 1px solid #94c2ce;*/
+    border-bottom: 3px solid #009DDB;
+    /*background-color: #fcfcfc;*/
+    background-color: #151515;
     /*background-color: #fcc;*/
     padding: 10px 10px;
     /*height: 30px;*/
@@ -3946,11 +3954,12 @@ span.first-like-art-in-txt{
     padding-bottom: 0px !important;
     /*border: 1px solid #209C00;*/
     /*border-width: 1px 1px 0px 1px;*/
-    border-width: 1px 0px 0px 0px;
+    border-width: 3px 0px 0px 0px;
 }
     #left div.single div.content h3.look_more_hdn a{
-        font-size: 18px !important;
-        color: #4c8296 !important;
+        font-size: 20px !important;
+        /*color: #4c8296 !important;*/
+        color: #009ddb !important;
         line-height: 1.2em !important;
         text-decoration: none;
         font-weight: normal !important;
@@ -4175,7 +4184,7 @@ span.first-like-art-in-txt{
 /*<GAds Under Slider>*/
 
 /*============== </My> ==============*/
- /* FILE END: http://express-info.lh/css/skin1/style.css?v=20200414-0330 */ 
+ /* FILE END: http://express-info.lh/css/skin1/style.css?v=20201012-1248 */ 
 
 
 
@@ -5208,7 +5217,7 @@ body{
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/media-queries.css?v=20200326-0030 */ 
+ /* FILE START: http://express-info.lh/css/skin1/media-queries.css?v=20201012-2345 */ 
 @media screen and (min-width: 981px) { /*-== Full Screen ==-*/
     
     #left div.single h1{ /*широкий заголовок*/
@@ -5291,6 +5300,11 @@ body{
         color: #009DDB !important;
     }
     #left div.single div.content h3.look_more_hdn img.look_more_img_mobile{display: inline-block;}
+    
+    span.gads_in_more_hdn{
+        padding: 0;
+    }
+    
     ul.firstnav-menu{ padding-left: 12px;}
     #content_holder{padding-left: 5px;}
     #left{padding-right: 5px;}
@@ -5391,7 +5405,9 @@ body{
     /*========== TMP ============*/
     #categories, #header, #featured, #footer_widget{ display: none;}
     #left div.single .content-gAd-bottom{width: 100%;}
-    #left div.single .content-gAd-bottom .content-gAd-center{width: 100%;}
+    #left div.single .content-gAd-bottom .content-gAd-center{
+        width: 100%;
+    }
     
     
     /*==== <Video> ====*/
@@ -5583,7 +5599,7 @@ body{
     #content_holder {padding-left: 0;}
     
 }
- /* FILE END: http://express-info.lh/css/skin1/media-queries.css?v=20200326-0030 */ 
+ /* FILE END: http://express-info.lh/css/skin1/media-queries.css?v=20201012-2345 */ 
 
 
 
