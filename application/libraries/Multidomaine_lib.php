@@ -10,6 +10,7 @@ class Multidomaine_lib
     {   
         $multidomaineAll    = $this->ci->config->item('multidomaine');
         $hostSet            = $multidomaineAll['host_set'];
+        
         if($thisHost == false){
             $thisHost           = $_SERVER['HTTP_HOST'];
         }
