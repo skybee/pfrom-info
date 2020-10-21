@@ -53,6 +53,8 @@ blockquote {
 	/*float:left;*/
 	font-style:italic;
 	/*background:url(/img/block-quote.png) no-repeat;*/
+        display: inline-block;
+        margin: 0px;
 }
 
 code,pre {
@@ -3826,12 +3828,14 @@ img.alignleft,a img.alignleft {
     font-size: 14px !important;
     line-height: 1.4em !important;
     /*background-color: #F7F7F7;*/
-    background-color: #FCFCFC;
+    /*background-color: #FCFCFC;*/
+    background-color: #151515;
     padding: 15px 15px !important;
     padding-top: 7px !important;
     margin: 0 !important;
     
-    border: 1px solid #94c2ce;
+    /*border: 1px solid #94c2ce;*/
+    border: 1px solid #009DDB;
     /*border-width: 0px 1px 1px 1px;*/
     border-width: 0px 0px 1px 0px;
     /*display: none;*/
@@ -3839,6 +3843,7 @@ img.alignleft,a img.alignleft {
     p.look_more_hdn{
         padding-top: 10px !important;
         color: #3f3f3f !important;
+        color: #e0e0e0 !important;
         font-style: italic;
     }
         p.look_more_hdn img{
@@ -3862,6 +3867,7 @@ img.alignleft,a img.alignleft {
             /*height: 136px;*/
             overflow: hidden;
             padding: 0;
+            font-style: normal;
         }
         blockquote.look_more_quote{
             display: inline !important;
@@ -3872,8 +3878,10 @@ img.alignleft,a img.alignleft {
         }
 span.gads_in_more_hdn{
     display: block;
-    border-bottom: 1px solid #94c2ce;
-    background-color: #fcfcfc;
+    /*border-bottom: 1px solid #94c2ce;*/
+    border-bottom: 3px solid #009DDB;
+    /*background-color: #fcfcfc;*/
+    background-color: #151515;
     /*background-color: #fcc;*/
     padding: 10px 10px;
     /*height: 30px;*/
@@ -3901,11 +3909,12 @@ span.first-like-art-in-txt{
     padding-bottom: 0px !important;
     /*border: 1px solid #209C00;*/
     /*border-width: 1px 1px 0px 1px;*/
-    border-width: 1px 0px 0px 0px;
+    border-width: 3px 0px 0px 0px;
 }
     #left div.single div.content h3.look_more_hdn a{
-        font-size: 18px !important;
-        color: #4c8296 !important;
+        font-size: 20px !important;
+        /*color: #4c8296 !important;*/
+        color: #009ddb !important;
         line-height: 1.2em !important;
         text-decoration: none;
         font-weight: normal !important;
