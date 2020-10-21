@@ -1,405 +1,79 @@
-<div class="videojsplayer">
-    <div class="player-placeholder"></div>
-    <div class="player-root-wrapper">
-        <div tabindex="0" class="videojs player-wrapper loaded" aria-label="video 'court order: u.s. must delay tiktok ban or file legal papers defending ban by friday' ">
-            <div id="vjs_video_320" 
-                 elementtiming="TTVR.VideoPlayer" 
-                 data-m="{&quot;i&quot;:113,&quot;p&quot;:72,&quot;n&quot;:&quot;vjs-player&quot;,&quot;y&quot;:12,&quot;o&quot;:31}" 
-                 data-id="113" 
-                 data-pluginconfig="{&quot;freewheel&quot;:{&quot;activityId&quot;:&quot;a6b97c816eee4334a57f6ce35b808994&quot;,&quot;adString&quot;:&quot;Ad&quot;,&quot;adUpNextString&quot;:&quot;up next&quot;,&quot;assetId&quot;:&quot;DYNNLEF67D&quot;,&quot;assetId62&quot;:&quot;BB19okld&quot;,&quot;debug&quot;:false,&quot;midroll&quot;:[],&quot;network&quot;:&quot;188286&quot;,&quot;overlay&quot;:[],&quot;pageName&quot;:&quot;articlePage&quot;,&quot;postroll&quot;:0,&quot;preroll&quot;:1,&quot;profile&quot;:&quot;188286:MSN_HTML5_Live&quot;,&quot;providerId&quot;:&quot;7G5UV4Q&quot;,&quot;providerId62&quot;:&quot;AAnPvW&quot;,&quot;runtime&quot;:61,&quot;server&quot;:&quot;https://2df7e.v.fwmrm.net&quot;,&quot;skipAdDelay&quot;:5,&quot;skipAdLength&quot;:30,&quot;skipText&quot;:&quot;Skip Ad&quot;,&quot;siteSection&quot;:&quot;usanew&quot;,&quot;timeoutSeconds&quot;:20,&quot;visitorId&quot;:&quot;3AD3D3B78923659F1182DCF28848641B&quot;},&quot;qualityId&quot;:&quot;LO&quot;,&quot;videoFiles&quot;:[{&quot;bitrate&quot;:0,&quot;id&quot;:&quot;SMOOTH&quot;,&quot;url&quot;:&quot;https://wus-streaming-video-msn-com.akamaized.net/cf754457-1111-4f2b-b8c4-7ce6c97cd6df/9c2e57f6-c81a-4114-9f48-94746759.ism/manifest&quot;},{&quot;bitrate&quot;:0,&quot;id&quot;:&quot;HLS&quot;,&quot;url&quot;:&quot;https://wus-streaming-video-msn-com.akamaized.net/cf754457-1111-4f2b-b8c4-7ce6c97cd6df/9c2e57f6-c81a-4114-9f48-94746759.ism/manifest(format=m3u8-aapl)&quot;},{&quot;bitrate&quot;:0,&quot;id&quot;:&quot;DASH&quot;,&quot;url&quot;:&quot;https://wus-streaming-video-msn-com.akamaized.net/cf754457-1111-4f2b-b8c4-7ce6c97cd6df/9c2e57f6-c81a-4114-9f48-94746759.ism/manifest(format=mpd-time-csf)&quot;},{&quot;bitrate&quot;:650,&quot;id&quot;:&quot;LO&quot;,&quot;url&quot;:&quot;https://wus-streaming-video-msn-com.akamaized.net/cf754457-1111-4f2b-b8c4-7ce6c97cd6df/9c2e57f6-c81a-4114-9f48-94746759_650.mp4&quot;}]}" 
-                 data-config="{&quot;autoplay&quot;:false,&quot;comscoreUrl&quot;:&quot;https://sb.scorecardresearch.com/b?&quot;,&quot;comscoreProviderConfig&quot;:&quot;{\&quot;ca1\&quot;:\&quot;1\&quot;,\&quot;ca2\&quot;:\&quot;1000004\&quot;,\&quot;ca6\&quot;:\&quot;MSNCNBC\&quot;}&quot;,&quot;controlBar&quot;:{&quot;children&quot;:[&quot;playToggle&quot;,&quot;currentTimeDisplay&quot;,&quot;timeDivider&quot;,&quot;durationDisplay&quot;,&quot;progressControl&quot;,&quot;volumePanel&quot;,&quot;subsCapsButton&quot;,&quot;fullscreenToggle&quot;],&quot;volumePanel&quot;:{&quot;inline&quot;:false,&quot;vertical&quot;:true}},&quot;titleBar&quot;:{&quot;display&quot;:true,&quot;title&quot;:&quot;Court order: U.S. must delay TikTok ban or file legal papers defending ban by Friday&quot;},&quot;controls&quot;:true,&quot;liveui&quot;:false,&quot;inViewPlay&quot;:true,&quot;language&quot;:&quot;en&quot;,&quot;languages&quot;:{&quot;en&quot;:{&quot;Captions&quot;:&quot;Captions&quot;,&quot;Background&quot;:&quot;Background&quot;,&quot;Font Family&quot;:&quot;Font Family&quot;,&quot;Font Size&quot;:&quot;Font Size&quot;,&quot;Text&quot;:&quot;Text&quot;,&quot;Text Edge Style&quot;:&quot;Text Edge Style&quot;,&quot;Window&quot;:null,&quot;captions settings&quot;:&quot;Settings&quot;,&quot;subtitles settings&quot;:&quot;Settings&quot;,&quot;Done&quot;:&quot;Done&quot;,&quot;Close Modal Dialog&quot;:&quot;Close&quot;,&quot;Reset&quot;:&quot;Reset&quot;,&quot;restore all settings to the default values&quot;:&quot;Restore all settings to the default values&quot;,&quot;captions off&quot;:&quot;Captions OFF&quot;,&quot;subtitles off&quot;:&quot;Captions OFF&quot;,&quot;Fullscreen&quot;:&quot;Fullscreen&quot;,&quot;Non-Fullscreen&quot;:&quot;Exit Fullscreen&quot;,&quot;Play&quot;:&quot;Play&quot;,&quot;Pause&quot;:&quot;Pause&quot;,&quot;Mute&quot;:&quot;Mute&quot;,&quot;Unmute&quot;:&quot;Unmute&quot;}},&quot;muted&quot;:true,&quot;preload&quot;:&quot;auto&quot;,&quot;title&quot;:&quot;Court order: U.S. must delay TikTok ban or file legal papers defending ban by Friday&quot;}" 
-                 poster="//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19okla.img" 
-                 style="width:100%" 
-                 class="video-js vjs-msn vjs-controls-enabled vjs-workinghover vjs-v7 vjs-freewheel vjs-telemetry vjs-geofencing vjs_video_320-dimensions vjs-has-started vjs-hide-bigplaybutton vjs-paused vjs-user-inactive" tabindex="-1" role="region" lang="en" aria-label="Video Player">
-                
-                <video class="vjs-tech" style="width:100%" poster="" 
-                       data-config="{&quot;autoplay&quot;:false,&quot;comscoreUrl&quot;:&quot;https://sb.scorecardresearch.com/b?&quot;,&quot;comscoreProviderConfig&quot;:&quot;{\&quot;ca1\&quot;:\&quot;1\&quot;,\&quot;ca2\&quot;:\&quot;1000004\&quot;,\&quot;ca6\&quot;:\&quot;MSNCNBC\&quot;}&quot;,&quot;controlBar&quot;:{&quot;children&quot;:[&quot;playToggle&quot;,&quot;currentTimeDisplay&quot;,&quot;timeDivider&quot;,&quot;durationDisplay&quot;,&quot;progressControl&quot;,&quot;volumePanel&quot;,&quot;subsCapsButton&quot;,&quot;fullscreenToggle&quot;],&quot;volumePanel&quot;:{&quot;inline&quot;:false,&quot;vertical&quot;:true}},&quot;titleBar&quot;:{&quot;display&quot;:true,&quot;title&quot;:&quot;Court order: U.S. must delay TikTok ban or file legal papers defending ban by Friday&quot;},&quot;controls&quot;:true,&quot;liveui&quot;:false,&quot;inViewPlay&quot;:true,&quot;language&quot;:&quot;en&quot;,&quot;languages&quot;:{&quot;en&quot;:{&quot;Captions&quot;:&quot;Captions&quot;,&quot;Background&quot;:&quot;Background&quot;,&quot;Font Family&quot;:&quot;Font Family&quot;,&quot;Font Size&quot;:&quot;Font Size&quot;,&quot;Text&quot;:&quot;Text&quot;,&quot;Text Edge Style&quot;:&quot;Text Edge Style&quot;,&quot;Window&quot;:null,&quot;captions settings&quot;:&quot;Settings&quot;,&quot;subtitles settings&quot;:&quot;Settings&quot;,&quot;Done&quot;:&quot;Done&quot;,&quot;Close Modal Dialog&quot;:&quot;Close&quot;,&quot;Reset&quot;:&quot;Reset&quot;,&quot;restore all settings to the default values&quot;:&quot;Restore all settings to the default values&quot;,&quot;captions off&quot;:&quot;Captions OFF&quot;,&quot;subtitles off&quot;:&quot;Captions OFF&quot;,&quot;Fullscreen&quot;:&quot;Fullscreen&quot;,&quot;Non-Fullscreen&quot;:&quot;Exit Fullscreen&quot;,&quot;Play&quot;:&quot;Play&quot;,&quot;Pause&quot;:&quot;Pause&quot;,&quot;Mute&quot;:&quot;Mute&quot;,&quot;Unmute&quot;:&quot;Unmute&quot;}},&quot;muted&quot;:true,&quot;preload&quot;:&quot;auto&quot;,&quot;title&quot;:&quot;Court order: U.S. must delay TikTok ban or file legal papers defending ban by Friday&quot;}" 
-                       data-pluginconfig="{&quot;freewheel&quot;:{&quot;activityId&quot;:&quot;a6b97c816eee4334a57f6ce35b808994&quot;,&quot;adString&quot;:&quot;Ad&quot;,&quot;adUpNextString&quot;:&quot;up next&quot;,&quot;assetId&quot;:&quot;DYNNLEF67D&quot;,&quot;assetId62&quot;:&quot;BB19okld&quot;,&quot;debug&quot;:false,&quot;midroll&quot;:[],&quot;network&quot;:&quot;188286&quot;,&quot;overlay&quot;:[],&quot;pageName&quot;:&quot;articlePage&quot;,&quot;postroll&quot;:0,&quot;preroll&quot;:1,&quot;profile&quot;:&quot;188286:MSN_HTML5_Live&quot;,&quot;providerId&quot;:&quot;7G5UV4Q&quot;,&quot;providerId62&quot;:&quot;AAnPvW&quot;,&quot;runtime&quot;:61,&quot;server&quot;:&quot;https://2df7e.v.fwmrm.net&quot;,&quot;skipAdDelay&quot;:5,&quot;skipAdLength&quot;:30,&quot;skipText&quot;:&quot;Skip Ad&quot;,&quot;siteSection&quot;:&quot;usanew&quot;,&quot;timeoutSeconds&quot;:20,&quot;visitorId&quot;:&quot;3AD3D3B78923659F1182DCF28848641B&quot;},&quot;qualityId&quot;:&quot;LO&quot;,&quot;videoFiles&quot;:[{&quot;bitrate&quot;:0,&quot;id&quot;:&quot;SMOOTH&quot;,&quot;url&quot;:&quot;https://wus-streaming-video-msn-com.akamaized.net/cf754457-1111-4f2b-b8c4-7ce6c97cd6df/9c2e57f6-c81a-4114-9f48-94746759.ism/manifest&quot;},{&quot;bitrate&quot;:0,&quot;id&quot;:&quot;HLS&quot;,&quot;url&quot;:&quot;https://wus-streaming-video-msn-com.akamaized.net/cf754457-1111-4f2b-b8c4-7ce6c97cd6df/9c2e57f6-c81a-4114-9f48-94746759.ism/manifest(format=m3u8-aapl)&quot;},{&quot;bitrate&quot;:0,&quot;id&quot;:&quot;DASH&quot;,&quot;url&quot;:&quot;https://wus-streaming-video-msn-com.akamaized.net/cf754457-1111-4f2b-b8c4-7ce6c97cd6df/9c2e57f6-c81a-4114-9f48-94746759.ism/manifest(format=mpd-time-csf)&quot;},{&quot;bitrate&quot;:650,&quot;id&quot;:&quot;LO&quot;,&quot;url&quot;:&quot;https://wus-streaming-video-msn-com.akamaized.net/cf754457-1111-4f2b-b8c4-7ce6c97cd6df/9c2e57f6-c81a-4114-9f48-94746759_650.mp4&quot;}]}" 
-                       data-id="113" 
-                       data-m="{&quot;i&quot;:113,&quot;p&quot;:72,&quot;n&quot;:&quot;vjs-player&quot;,&quot;y&quot;:12,&quot;o&quot;:31}" 
-                       elementtiming="TTVR.VideoPlayer" 
-                       id="vjs_video_320_html5_api" 
-                       tabindex="-1" 
-                       role="application" 
-                       preload="auto" 
-                       muted="muted">
-                    
-                    <source src="https://wus-streaming-video-msn-com.akamaized.net/cf754457-1111-4f2b-b8c4-7ce6c97cd6df/9c2e57f6-c81a-4114-9f48-94746759_650.mp4" type="video/mp4">
-
-                </video><div class="vjs-freewheel-adskipper"><span class="adskipper-text">Skip Ad <span class="vjs-icon-next-item"></span></span><img class="adskipper-image" src="//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19okla.img"><span class="adskipper-timer">5</span></div><div class="vjs-poster vjs-hidden" tabindex="-1" aria-disabled="false" style=""></div><div class="vjs-text-track-display" aria-live="off" aria-atomic="true"><div style="position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; margin: 1.5%;"></div></div><div class="vjs-loading-spinner" dir="ltr"><span class="vjs-control-text">Video Player is loading.</span></div><button class="vjs-big-play-button" type="button" title="Play Video" aria-disabled="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Play Video</span></button><div class="vjs-control-bar" dir="ltr"><button class="vjs-play-control vjs-control vjs-button vjs-paused" type="button" title="Play" aria-disabled="false" data-m="{&quot;n&quot;:&quot;play&quot;,&quot;y&quot;:12,&quot;i&quot;:241,&quot;o&quot;:1,&quot;p&quot;:&quot;113&quot;}" data-id="241"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Play</span></button><div class="vjs-freewheel-ad-label vjs-time-control vjs-hidden"><span role="presentation">Ad </span><span></span></div><div class="vjs-current-time vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Current Time&nbsp;</span><span class="vjs-current-time-display" aria-live="off" role="presentation">0:01</span></div><div class="vjs-time-control vjs-time-divider" aria-hidden="true"><div><span>/</span></div></div><div class="vjs-duration vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Duration&nbsp;</span><span class="vjs-duration-display" aria-live="off" role="presentation">1:01</span></div><div class="vjs-progress-control vjs-control"><div tabindex="0" class="vjs-progress-holder vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="2.26" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar" aria-valuetext="0:01 of 1:01"><div class="vjs-load-progress" style="width: 95.1372%;"><span class="vjs-control-text"><span>Loaded</span>: <span class="vjs-control-text-loaded-percentage">95.14%</span></span><div style="left: 0%; width: 100%;"></div></div><div class="vjs-mouse-display"><div class="vjs-time-tooltip" aria-hidden="true"></div></div><div class="vjs-play-progress vjs-slider-bar" aria-hidden="true" style="width: 2.26%;"><div class="vjs-time-tooltip" aria-hidden="true" style="right: 0px;">0:01</div></div></div></div><div class="vjs-volume-panel vjs-control vjs-volume-panel-vertical"><button class="vjs-mute-control vjs-control vjs-button vjs-vol-0" type="button" title="Unmute" aria-disabled="false" data-m="{&quot;n&quot;:&quot;vid_volmute&quot;,&quot;y&quot;:12,&quot;i&quot;:243,&quot;o&quot;:1,&quot;p&quot;:&quot;113&quot;}" data-id="243"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Unmute</span></button><div class="vjs-volume-control vjs-control vjs-volume-vertical"><div class="vjs-volume-label">0</div><div tabindex="0" class="vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-vertical" role="slider" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Volume Level" aria-live="polite" aria-valuetext="0%"><div class="vjs-volume-level" style="height: 0%;"><span class="vjs-control-text"></span></div></div></div></div><div class="vjs-subs-caps-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button"><button class="vjs-subs-caps-button vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Captions" aria-haspopup="true" aria-expanded="false" data-m="{&quot;n&quot;:&quot;closecaption&quot;,&quot;y&quot;:12,&quot;i&quot;:244,&quot;o&quot;:1,&quot;p&quot;:&quot;113&quot;}" data-id="244"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Captions</span></button><div class="vjs-menu"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-texttrack-settings" tabindex="-1" role="menuitem" aria-disabled="false"><span class="vjs-menu-item-text">Settings</span><span class="vjs-control-text" aria-live="polite">, opens captions settings dialog</span></li><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">Captions OFF</span><span class="vjs-control-text" aria-live="polite">, selected</span></li><li class="vjs-menu-item vjs-captions-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">United States (English)
-                                        <span aria-hidden="true" class="vjs-icon-placeholder"></span>
-                                        <span class="vjs-control-text"> Captions</span>
-                                    </span><span class="vjs-control-text" aria-live="polite"></span></li></ul></div></div><button class="vjs-fullscreen-control vjs-control vjs-button" type="button" title="Fullscreen" aria-disabled="false" data-m="{&quot;n&quot;:&quot;vid_fs&quot;,&quot;y&quot;:12,&quot;i&quot;:242,&quot;o&quot;:9,&quot;p&quot;:&quot;113&quot;}" data-id="242"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Fullscreen</span></button></div><div class="vjs-error-display vjs-modal-dialog vjs-hidden " tabindex="-1" aria-describedby="vjs_video_320_component_479_description" aria-hidden="true" aria-label="Modal Window" role="dialog"><p class="vjs-modal-dialog-description vjs-control-text" id="vjs_video_320_component_479_description">This is a modal window.</p><div class="vjs-modal-dialog-content" role="document"></div></div><div class="vjs-modal-dialog vjs-hidden  vjs-text-track-settings" tabindex="-1" aria-describedby="vjs_video_320_component_483_description" aria-hidden="true" aria-label="Caption Settings Dialog" role="dialog"><p class="vjs-modal-dialog-description vjs-control-text" id="vjs_video_320_component_483_description">Beginning of dialog window. Escape will cancel and close the window.</p><div class="vjs-modal-dialog-content" role="document"><div class="vjs-track-settings-title">Closed Captions [CC] Settings</div><div class="vjs-track-settings-colors"><fieldset class="vjs-fg-color vjs-track-setting"><legend id="captions-text-legend-vjs_video_320_component_483">Text</legend><label id="captions-foreground-color-vjs_video_320_component_483" class="vjs-label">Color</label><select aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483"><option id="captions-foreground-color-vjs_video_320_component_483-White" value="#FFF" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483-White">White</option><option id="captions-foreground-color-vjs_video_320_component_483-Black" value="#000" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483-Black">Black</option><option id="captions-foreground-color-vjs_video_320_component_483-Red" value="#F00" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483-Red">Red</option><option id="captions-foreground-color-vjs_video_320_component_483-Green" value="#0F0" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483-Green">Green</option><option id="captions-foreground-color-vjs_video_320_component_483-Blue" value="#00F" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483-Blue">Blue</option><option id="captions-foreground-color-vjs_video_320_component_483-Yellow" value="#FF0" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483-Yellow">Yellow</option><option id="captions-foreground-color-vjs_video_320_component_483-Magenta" value="#F0F" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483-Magenta">Magenta</option><option id="captions-foreground-color-vjs_video_320_component_483-Cyan" value="#0FF" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483 captions-foreground-color-vjs_video_320_component_483-Cyan">Cyan</option></select><span class="vjs-text-opacity vjs-opacity"><label id="captions-foreground-opacity-vjs_video_320_component_483" class="vjs-label">Transparency</label><select aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-opacity-vjs_video_320_component_483"><option id="captions-foreground-opacity-vjs_video_320_component_483-Opaque" value="1" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-opacity-vjs_video_320_component_483 captions-foreground-opacity-vjs_video_320_component_483-Opaque">Opaque</option><option id="captions-foreground-opacity-vjs_video_320_component_483-SemiTransparent" value="0.5" aria-labelledby="captions-text-legend-vjs_video_320_component_483 captions-foreground-opacity-vjs_video_320_component_483 captions-foreground-opacity-vjs_video_320_component_483-SemiTransparent">Semi-Transparent</option></select></span></fieldset><fieldset class="vjs-bg-color vjs-track-setting"><legend id="captions-background-vjs_video_320_component_483">Background</legend><label id="captions-background-color-vjs_video_320_component_483" class="vjs-label">Color</label><select aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483"><option id="captions-background-color-vjs_video_320_component_483-Black" value="#000" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483-Black">Black</option><option id="captions-background-color-vjs_video_320_component_483-White" value="#FFF" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483-White">White</option><option id="captions-background-color-vjs_video_320_component_483-Red" value="#F00" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483-Red">Red</option><option id="captions-background-color-vjs_video_320_component_483-Green" value="#0F0" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483-Green">Green</option><option id="captions-background-color-vjs_video_320_component_483-Blue" value="#00F" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483-Blue">Blue</option><option id="captions-background-color-vjs_video_320_component_483-Yellow" value="#FF0" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483-Yellow">Yellow</option><option id="captions-background-color-vjs_video_320_component_483-Magenta" value="#F0F" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483-Magenta">Magenta</option><option id="captions-background-color-vjs_video_320_component_483-Cyan" value="#0FF" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483 captions-background-color-vjs_video_320_component_483-Cyan">Cyan</option></select><span class="vjs-bg-opacity vjs-opacity"><label id="captions-background-opacity-vjs_video_320_component_483" class="vjs-label">Transparency</label><select aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-opacity-vjs_video_320_component_483"><option id="captions-background-opacity-vjs_video_320_component_483-Opaque" value="1" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-opacity-vjs_video_320_component_483 captions-background-opacity-vjs_video_320_component_483-Opaque">Opaque</option><option id="captions-background-opacity-vjs_video_320_component_483-SemiTransparent" value="0.5" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-opacity-vjs_video_320_component_483 captions-background-opacity-vjs_video_320_component_483-SemiTransparent">Semi-Transparent</option><option id="captions-background-opacity-vjs_video_320_component_483-Transparent" value="0" aria-labelledby="captions-background-vjs_video_320_component_483 captions-background-opacity-vjs_video_320_component_483 captions-background-opacity-vjs_video_320_component_483-Transparent">Transparent</option></select></span></fieldset><fieldset class="vjs-window-color vjs-track-setting"><legend id="captions-window-vjs_video_320_component_483">Window</legend><label id="captions-window-color-vjs_video_320_component_483" class="vjs-label">Color</label><select aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483"><option id="captions-window-color-vjs_video_320_component_483-Black" value="#000" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483-Black">Black</option><option id="captions-window-color-vjs_video_320_component_483-White" value="#FFF" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483-White">White</option><option id="captions-window-color-vjs_video_320_component_483-Red" value="#F00" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483-Red">Red</option><option id="captions-window-color-vjs_video_320_component_483-Green" value="#0F0" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483-Green">Green</option><option id="captions-window-color-vjs_video_320_component_483-Blue" value="#00F" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483-Blue">Blue</option><option id="captions-window-color-vjs_video_320_component_483-Yellow" value="#FF0" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483-Yellow">Yellow</option><option id="captions-window-color-vjs_video_320_component_483-Magenta" value="#F0F" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483-Magenta">Magenta</option><option id="captions-window-color-vjs_video_320_component_483-Cyan" value="#0FF" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483 captions-window-color-vjs_video_320_component_483-Cyan">Cyan</option></select><span class="vjs-window-opacity vjs-opacity"><label id="captions-window-opacity-vjs_video_320_component_483" class="vjs-label">Transparency</label><select aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-opacity-vjs_video_320_component_483"><option id="captions-window-opacity-vjs_video_320_component_483-Transparent" value="0" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-opacity-vjs_video_320_component_483 captions-window-opacity-vjs_video_320_component_483-Transparent">Transparent</option><option id="captions-window-opacity-vjs_video_320_component_483-SemiTransparent" value="0.5" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-opacity-vjs_video_320_component_483 captions-window-opacity-vjs_video_320_component_483-SemiTransparent">Semi-Transparent</option><option id="captions-window-opacity-vjs_video_320_component_483-Opaque" value="1" aria-labelledby="captions-window-vjs_video_320_component_483 captions-window-opacity-vjs_video_320_component_483 captions-window-opacity-vjs_video_320_component_483-Opaque">Opaque</option></select></span></fieldset></div><div class="vjs-track-settings-font"><fieldset class="vjs-font-percent vjs-track-setting"><legend id="captions-font-size-vjs_video_320_component_483" class="">Font Size</legend><select aria-labelledby="captions-font-size-vjs_video_320_component_483"><option id="captions-font-size-vjs_video_320_component_483-50" value="0.50" aria-labelledby="captions-font-size-vjs_video_320_component_483 captions-font-size-vjs_video_320_component_483-50">50%</option><option id="captions-font-size-vjs_video_320_component_483-75" value="0.75" aria-labelledby="captions-font-size-vjs_video_320_component_483 captions-font-size-vjs_video_320_component_483-75">75%</option><option id="captions-font-size-vjs_video_320_component_483-100" value="1.00" aria-labelledby="captions-font-size-vjs_video_320_component_483 captions-font-size-vjs_video_320_component_483-100">100%</option><option id="captions-font-size-vjs_video_320_component_483-125" value="1.25" aria-labelledby="captions-font-size-vjs_video_320_component_483 captions-font-size-vjs_video_320_component_483-125">125%</option><option id="captions-font-size-vjs_video_320_component_483-150" value="1.50" aria-labelledby="captions-font-size-vjs_video_320_component_483 captions-font-size-vjs_video_320_component_483-150">150%</option><option id="captions-font-size-vjs_video_320_component_483-175" value="1.75" aria-labelledby="captions-font-size-vjs_video_320_component_483 captions-font-size-vjs_video_320_component_483-175">175%</option><option id="captions-font-size-vjs_video_320_component_483-200" value="2.00" aria-labelledby="captions-font-size-vjs_video_320_component_483 captions-font-size-vjs_video_320_component_483-200">200%</option><option id="captions-font-size-vjs_video_320_component_483-300" value="3.00" aria-labelledby="captions-font-size-vjs_video_320_component_483 captions-font-size-vjs_video_320_component_483-300">300%</option><option id="captions-font-size-vjs_video_320_component_483-400" value="4.00" aria-labelledby="captions-font-size-vjs_video_320_component_483 captions-font-size-vjs_video_320_component_483-400">400%</option></select></fieldset><fieldset class="vjs-edge-style vjs-track-setting"><legend id="vjs_video_320_component_483" class="">Text Edge Style</legend><select aria-labelledby="vjs_video_320_component_483"><option id="vjs_video_320_component_483-None" value="none" aria-labelledby="vjs_video_320_component_483 vjs_video_320_component_483-None">None</option><option id="vjs_video_320_component_483-Raised" value="raised" aria-labelledby="vjs_video_320_component_483 vjs_video_320_component_483-Raised">Raised</option><option id="vjs_video_320_component_483-Depressed" value="depressed" aria-labelledby="vjs_video_320_component_483 vjs_video_320_component_483-Depressed">Depressed</option><option id="vjs_video_320_component_483-Uniform" value="uniform" aria-labelledby="vjs_video_320_component_483 vjs_video_320_component_483-Uniform">Uniform</option><option id="vjs_video_320_component_483-Dropshadow" value="dropshadow" aria-labelledby="vjs_video_320_component_483 vjs_video_320_component_483-Dropshadow">Dropshadow</option></select></fieldset><fieldset class="vjs-font-family vjs-track-setting"><legend id="captions-font-family-vjs_video_320_component_483" class="">Font Family</legend><select aria-labelledby="captions-font-family-vjs_video_320_component_483"><option id="captions-font-family-vjs_video_320_component_483-ProportionalSansSerif" value="proportionalSansSerif" aria-labelledby="captions-font-family-vjs_video_320_component_483 captions-font-family-vjs_video_320_component_483-ProportionalSansSerif">Proportional Sans-Serif</option><option id="captions-font-family-vjs_video_320_component_483-MonospaceSansSerif" value="monospaceSansSerif" aria-labelledby="captions-font-family-vjs_video_320_component_483 captions-font-family-vjs_video_320_component_483-MonospaceSansSerif">Monospace Sans-Serif</option><option id="captions-font-family-vjs_video_320_component_483-ProportionalSerif" value="proportionalSerif" aria-labelledby="captions-font-family-vjs_video_320_component_483 captions-font-family-vjs_video_320_component_483-ProportionalSerif">Proportional Serif</option><option id="captions-font-family-vjs_video_320_component_483-MonospaceSerif" value="monospaceSerif" aria-labelledby="captions-font-family-vjs_video_320_component_483 captions-font-family-vjs_video_320_component_483-MonospaceSerif">Monospace Serif</option><option id="captions-font-family-vjs_video_320_component_483-Casual" value="casual" aria-labelledby="captions-font-family-vjs_video_320_component_483 captions-font-family-vjs_video_320_component_483-Casual">Casual</option><option id="captions-font-family-vjs_video_320_component_483-Script" value="script" aria-labelledby="captions-font-family-vjs_video_320_component_483 captions-font-family-vjs_video_320_component_483-Script">Script</option><option id="captions-font-family-vjs_video_320_component_483-SmallCaps" value="small-caps" aria-labelledby="captions-font-family-vjs_video_320_component_483 captions-font-family-vjs_video_320_component_483-SmallCaps">Small Caps</option></select></fieldset></div><div class="vjs-track-settings-controls"><button type="button" class="vjs-default-button" title="Restore all settings to the default values">Reset<span class="vjs-control-text"> Restore all settings to the default values</span></button><button type="button" class="vjs-done-button">Done</button></div></div><button class="vjs-close-button vjs-control vjs-button" type="button" aria-disabled="false" title="Close"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Close</span></button><p class="vjs-control-text">End of dialog window.</p></div><div class="vjs-title-bar"><div class="vjs-title-text">Court order: U.S. must delay TikTok ban or file legal papers defending ban by Friday</div></div></div>
-
-
-            <div class="overlay-open">
-                <button data-id="140" data-m="{&quot;i&quot;:140,&quot;p&quot;:72,&quot;n&quot;:&quot;overlay-open&quot;,&quot;y&quot;:12,&quot;o&quot;:53}">
-                    Click to expand
-                </button>
-            </div>
-
-
-
-            <div class="video-endslate with-playlist">
-                <div class="action">
-                    <button class="replay" title="Replay Video">
-                        <span>Replay Video</span>
-                    </button>
-                    <div class="share">
-                        <div class="stb novig" data-aop="sharingtoolbar_social" data-id="141" data-m="{&quot;i&quot;:141,&quot;p&quot;:72,&quot;n&quot;:&quot;socialtoolbar&quot;,&quot;y&quot;:8,&quot;o&quot;:54}">
-
-                            <a data-id="142" data-m="{&quot;i&quot;:142,&quot;p&quot;:141,&quot;n&quot;:&quot;LINKEDIN&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:1}" class="stb-btn stb-linkedin stb-btn-first" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dsl&amp;title=Court+order%3a+U.S.+must+delay+TikTok+ban+or+file+legal+papers+defending+ban+by+Friday&amp;source=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dsl" data-piitxt="tmx-stb-linkedin" title="share" target="_blank">
-                                <span class="stb-box"></span>
-                            </a>
-                            <a data-id="143" data-m="{&quot;i&quot;:143,&quot;p&quot;:141,&quot;n&quot;:&quot;FACEBOOK&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:2}" class="stb-btn stb-facebook" href="http://a.msn.com/01/en-us/BB19okld?ocid=sf" data-piitxt="tmx-stb-facebook" title="share" target="_blank">
-                                <span class="stb-box"></span>
-                            </a>
-                            <a data-id="144" data-m="{&quot;i&quot;:144,&quot;p&quot;:141,&quot;n&quot;:&quot;TWITTER&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:3}" class="stb-btn stb-twitter" href="https://twitter.com/share?url=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dst&amp;text=Court+order%3a+U.S.+must+delay+TikTok+ban+or+file+legal+papers+defending+ban+by+Friday&amp;original_referer=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dst" data-piitxt="tmx-stb-twitter" title="tweet" target="_blank">
-                                <span class="stb-box"></span>
-                            </a>
-                            <a data-id="145" data-m="{&quot;i&quot;:145,&quot;p&quot;:141,&quot;n&quot;:&quot;WHATSAPP&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:4}" class="stb-btn stb-whatsapp" href="https://web.whatsapp.com/send?text=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dsw" data-piitxt="tmx-stb-whatsapp" title="share" target="_blank">
-                                <span class="stb-box"></span>
-                            </a>
-                            <a data-id="146" data-m="{&quot;i&quot;:146,&quot;p&quot;:141,&quot;n&quot;:&quot;EMAIL&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:5}" class="stb-btn stb-email" href="mailto:?subject=Court%20order%3a%20U.S.%20must%20delay%20TikTok%20ban%20or%20file%20legal%20papers%20defending%20ban%20by%20Friday&amp;body=I%20thought%20you%20would%20be%20interested%20in%20this%20video%20I%20found%20on%20MSN%3a%20Court%20order%3a%20U.S.%20must%20delay%20TikTok%20ban%20or%20file%20legal%20papers%20defending%20ban%20by%20Friday%20http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dse" data-piitxt="tmx-stb-email" title="email" target="_blank">
-                                <span class="stb-box"></span>
-                            </a>
-
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="vertical-line"></div>
-                <ul class="playlist">
-                    <li data-id="147" data-m="{&quot;i&quot;:147,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BOAz&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:55}">
-                        <a title="Wall Street won't be ruled by code, but algos will guide career choices: Former Goldman CFO" href="https://www.msn.com/en-us/news/other/wall-street-wont-be-ruled-by-code-but-algos-will-guide-career-choices-former-goldman-cfo/vi-BB19BOAz" data-id="190" data-m="{&quot;i&quot;:190,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:98}" target="_blank">
-                            <img alt="R. Martin Chavez, Jon Fortt are posing for a picture" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19ojci.img?h=70&amp;w=94&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1045&amp;y=458&quot;}}" src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19ojci.img?h=70&amp;w=94&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1045&amp;y=458" title="https://image.cnbcfm.com/api/v1/image/106714855-16009051524ED1-REQ-FinanceTechAWS-092320.jpg?v=16009... - Provided by CNBC" class="loaded">
-                            <span class="title">Wall Street won't be ruled by code, but algos will guide career choices: Former Goldman CFO</span>
-                            <span class="desc" title="Relatively few people will have a profession that is solely coding, according to former Goldman Sachs CIO and CFO Martin Chavez. But every worker will need to understand the way algorithms think.">Relatively few people will have a profession that is solely coding, according to former Goldman Sachs CIO and CFO Martin Chavez. But…</span>
-                            <span class="provider">
-                                <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f" class="loaded">
-                                <span>CNBC</span>
-                            </span>
-                        </a>
-
-                    </li>
-                    <li data-id="148" data-m="{&quot;i&quot;:148,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BTCU&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:56}">
-                        <a title="U.S. markets will not wait for a vaccine to be distributed before they react, expert says" href="https://www.msn.com/en-us/news/other/us-markets-will-not-wait-for-a-vaccine-to-be-distributed-before-they-react-expert-says/vi-BB19BTCU" data-id="191" data-m="{&quot;i&quot;:191,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:99}" target="_blank">
-                            <img alt="a screen shot of a man" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19Bngu.img?h=70&amp;w=94&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1068&amp;y=458&quot;}}" src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19Bngu.img?h=70&amp;w=94&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1068&amp;y=458" title="https://image.cnbcfm.com/api/v1/image/106725394-16015568435ED2-REQ-100120-SBE-USMarkets.jpg?v=160155... - Provided by CNBC" class="loaded">
-                            <span class="title">U.S. markets will not wait for a vaccine to be distributed before they react, expert says</span>
-                            <span class="desc">Chuck Lieberman, chief investment officer at Global Wealth Partners, discusses the U.S. economy.</span>
-                            <span class="provider">
-                                <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f" class="loaded">
-                                <span>CNBC</span>
-                            </span>
-                        </a>
-
-                    </li>
-                    <li data-id="149" data-m="{&quot;i&quot;:149,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BMew&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:57}">
-                        <a title="Jim Cramer: DraftKings is gaining 'first-mover advantage' in sports betting" href="https://www.msn.com/en-us/news/other/jim-cramer-draftkings-is-gaining-first-mover-advantage-in-sports-betting/vi-BB19BMew" data-id="192" data-m="{&quot;i&quot;:192,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:100}" target="_blank">
-                            <img alt="graphical user interface, website" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BMet.img?h=70&amp;w=94&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1501&amp;y=333&quot;}}" src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BMet.img?h=70&amp;w=94&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1501&amp;y=333" title="https://image.cnbcfm.com/api/v1/image/106725400-16015570301601557023-11692247475-1080pnbcnews.jpg?v=... - Provided by CNBC" class="loaded">
-                            <span class="title">Jim Cramer: DraftKings is gaining 'first-mover advantage' in sports betting</span>
-                            <span class="desc">CNBC's Jim Cramer joins the "Squawk Box" team with his first take on DraftKings versus Penn National Gaming.</span>
-                            <span class="provider">
-                                <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f" class="loaded">
-                                <span>CNBC</span>
-                            </span>
-                        </a>
-
-                    </li>
-                </ul>
-
-            </div>
-
-
-
-            <div class="nextvideo-outer">
-                <div class="nextvideo-inner" data-id="150" data-m="{&quot;i&quot;:150,&quot;p&quot;:72,&quot;n&quot;:&quot;nextvid&quot;,&quot;y&quot;:12,&quot;o&quot;:58}">
-                    <img alt="UP NEXT" class="vid-image">
-                    <div class="coming-up">
-                        UP NEXT
-                    </div>
-                    <div class="vid-title truncate"></div>
-                    <div class="circle"></div>
-                    <div class="next-seconds"></div>
-                    <button class="cancel" data-id="151" data-m="{&quot;i&quot;:151,&quot;p&quot;:72,&quot;n&quot;:&quot;cnt-cancel&quot;,&quot;y&quot;:12,&quot;o&quot;:59}"></button>
-                </div>
-            </div>
-            <div class="video-overlay">
-                <div class="video-info">
-                    <div id="left">
-                        <div>
-                            <div id="title">Court order: U.S. must delay TikTok ban or file legal papers defending ban by Friday</div>
-                            <div>
-                                <a class="provider" aria-label="cnbc" href="http://cnbc.com/" target="_self" data-id="173" data-m="{&quot;i&quot;:173,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:81}">
-                                    <img alt="" data-src="{&quot;default&quot;:&quot;//img-s-msn-com.akamaized.net:443/tenant/amp/entityid/AAap5NA.img?f=png&amp;h=20&amp;w=20&amp;m=6&amp;q=60&amp;u=t&amp;o=f&amp;l=f&amp;f=png&quot;}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">  <span>CNBC</span>
-                                </a>
-                                <a class="more-videos" href="/en-us/video" data-id="114" data-m="{&quot;i&quot;:114,&quot;p&quot;:72,&quot;n&quot;:&quot;see-more&quot;,&quot;y&quot;:12,&quot;o&quot;:32}" target="_blank">
-                                    See more videos
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="right">
-                        <div class="share-container">
-                            <div class="stb-bsb novig" data-aop="sharingtoolbar_social" data-id="115" data-m="{&quot;i&quot;:115,&quot;p&quot;:72,&quot;n&quot;:&quot;socialtoolbar&quot;,&quot;y&quot;:8,&quot;o&quot;:33}">
-
-                                <a data-id="116" data-m="{&quot;i&quot;:116,&quot;p&quot;:115,&quot;n&quot;:&quot;LINKEDIN&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:1}" class="stb-btn stb-linkedin stb-btn-first" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dsl&amp;title=Court+order%3a+U.S.+must+delay+TikTok+ban+or+file+legal+papers+defending+ban+by+Friday&amp;source=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dsl" data-piitxt="tmx-stb-linkedin" aria-label="share on linkedin" target="_blank">
-                                    <div class="stb-box">
-                                        <span class="stb-text" aria-hidden="true" role="presentation">SHARE</span>
-                                    </div>
-                                </a>
-                                <a data-id="117" data-m="{&quot;i&quot;:117,&quot;p&quot;:115,&quot;n&quot;:&quot;FACEBOOK&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:2}" class="stb-btn stb-facebook" href="http://a.msn.com/01/en-us/BB19okld?ocid=sf" data-piitxt="tmx-stb-facebook" aria-label="share on facebook" target="_blank">
-                                    <div class="stb-box">
-                                        <span class="stb-text" aria-hidden="true" role="presentation">SHARE</span>
-                                    </div>
-                                </a>
-                                <a data-id="118" data-m="{&quot;i&quot;:118,&quot;p&quot;:115,&quot;n&quot;:&quot;TWITTER&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:3}" class="stb-btn stb-twitter" href="https://twitter.com/share?url=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dst&amp;text=Court+order%3a+U.S.+must+delay+TikTok+ban+or+file+legal+papers+defending+ban+by+Friday&amp;original_referer=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dst" data-piitxt="tmx-stb-twitter" aria-label="tweet" target="_blank">
-                                    <div class="stb-box">
-                                        <span class="stb-text" aria-hidden="true" role="presentation">TWEET</span>
-                                    </div>
-                                </a>
-                                <a data-id="119" data-m="{&quot;i&quot;:119,&quot;p&quot;:115,&quot;n&quot;:&quot;WHATSAPP&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:4}" class="stb-btn stb-whatsapp" href="https://web.whatsapp.com/send?text=http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dsw" data-piitxt="tmx-stb-whatsapp" aria-label="share on whatsapp" target="_blank">
-                                    <div class="stb-box">
-                                        <span class="stb-text" aria-hidden="true" role="presentation">SHARE</span>
-                                    </div>
-                                </a>
-                                <a data-id="120" data-m="{&quot;i&quot;:120,&quot;p&quot;:115,&quot;n&quot;:&quot;EMAIL&quot;,&quot;t&quot;:&quot;sharingToolbar&quot;,&quot;l&quot;:&quot;BB19okld&quot;,&quot;v&quot;:&quot;news&quot;,&quot;o&quot;:5}" class="stb-btn stb-email" href="mailto:?subject=Court%20order%3a%20U.S.%20must%20delay%20TikTok%20ban%20or%20file%20legal%20papers%20defending%20ban%20by%20Friday&amp;body=I%20thought%20you%20would%20be%20interested%20in%20this%20video%20I%20found%20on%20MSN%3a%20Court%20order%3a%20U.S.%20must%20delay%20TikTok%20ban%20or%20file%20legal%20papers%20defending%20ban%20by%20Friday%20http%3a%2f%2fa.msn.com%2f01%2fen-us%2fBB19okld%3focid%3dse" data-piitxt="tmx-stb-email" aria-label="share via email" target="_blank">
-                                    <div class="stb-box">
-                                        <span class="stb-text" aria-hidden="true" role="presentation">EMAIL</span>
-                                    </div>
-                                </a>
-
-
-
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="playlist-container">
-                    <div class="playlist-title">
-                        What to watch next
-                    </div>
-                    <ul class="playlist">
-                        <li data-id="BB19BOAz" data-m="{&quot;i&quot;:121,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BOAz&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:34}">
-                            <a title="Wall Street won't be ruled by code, but algos will guide career choices: Former Goldman CFO" href="https://www.msn.com/en-us/news/other/wall-street-wont-be-ruled-by-code-but-algos-will-guide-career-choices-former-goldman-cfo/vi-BB19BOAz" data-id="174" data-m="{&quot;i&quot;:174,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:82}" target="_blank">
-                                <img alt="R. Martin Chavez, Jon Fortt are posing for a picture" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19ojci.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1045&amp;y=458&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106714855-16009051524ED1-REQ-FinanceTechAWS-092320.jpg?v=16009... - Provided by CNBC">
-                                <p class="title">Wall Street won't be ruled by code, but algos will guide career choices: Former Goldman CFO</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BTCU" data-m="{&quot;i&quot;:122,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BTCU&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:35}">
-                            <a title="U.S. markets will not wait for a vaccine to be distributed before they react, expert says" href="https://www.msn.com/en-us/news/other/us-markets-will-not-wait-for-a-vaccine-to-be-distributed-before-they-react-expert-says/vi-BB19BTCU" data-id="175" data-m="{&quot;i&quot;:175,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:83}" target="_blank">
-                                <img alt="a screen shot of a man" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19Bngu.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1068&amp;y=458&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725394-16015568435ED2-REQ-100120-SBE-USMarkets.jpg?v=160155... - Provided by CNBC">
-                                <p class="title">U.S. markets will not wait for a vaccine to be distributed before they react, expert says</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BMew" data-m="{&quot;i&quot;:123,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BMew&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:36}">
-                            <a title="Jim Cramer: DraftKings is gaining 'first-mover advantage' in sports betting" href="https://www.msn.com/en-us/news/other/jim-cramer-draftkings-is-gaining-first-mover-advantage-in-sports-betting/vi-BB19BMew" data-id="176" data-m="{&quot;i&quot;:176,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:84}" target="_blank">
-                                <img alt="graphical user interface, website" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BMet.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1501&amp;y=333&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725400-16015570301601557023-11692247475-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">Jim Cramer: DraftKings is gaining 'first-mover advantage' in sports betting</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BsXy" data-m="{&quot;i&quot;:124,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BsXy&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:37}">
-                            <a title="Here's why Las Vegas is betting on a comeback amid the pandemic" href="https://www.msn.com/en-us/news/other/heres-why-las-vegas-is-betting-on-a-comeback-amid-the-pandemic/vi-BB19BsXy" data-id="177" data-m="{&quot;i&quot;:177,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:85}" target="_blank">
-                                <img alt="Jane Wells holding a sign" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BMev.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=929&amp;y=309&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725387-16015565931601556590-11692155914-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">Here's why Las Vegas is betting on a comeback amid the pandemic</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BLVi" data-m="{&quot;i&quot;:125,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BLVi&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:38}">
-                            <a title="Economy is making good progress: Economist" href="https://www.msn.com/en-us/news/other/economy-is-making-good-progress-economist/vi-BB19BLVi" data-id="178" data-m="{&quot;i&quot;:178,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:86}" target="_blank">
-                                <img alt="Joe Kernen smiling for the camera" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BLVg.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=957&amp;y=350&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725353-16015559301601555924-11692019348-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">Economy is making good progress: Economist</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BsGV" data-m="{&quot;i&quot;:126,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BsGV&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:39}">
-                            <a title="Influx of foreign investors to drive European equities higher, UBS says" href="https://www.msn.com/en-us/news/other/influx-of-foreign-investors-to-drive-european-equities-higher-ubs-says/vi-BB19BsGV" data-id="179" data-m="{&quot;i&quot;:179,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:87}" target="_blank">
-                                <img alt="a man standing in front of a book shelf" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BDkY.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=980&amp;y=405&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725184-16015525205ED2-REQ-100120-SBENelson.jpg?v=1601552519... - Provided by CNBC">
-                                <p class="title">Influx of foreign investors to drive European equities higher, UBS says</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BJ53" data-m="{&quot;i&quot;:127,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BJ53&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:40}">
-                            <a title="Here's what the weekly jobless claims indicate for the U.S. economy" href="https://www.msn.com/en-us/news/other/heres-what-the-weekly-jobless-claims-indicate-for-the-us-economy/vi-BB19BJ53" data-id="180" data-m="{&quot;i&quot;:180,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:88}" target="_blank">
-                                <img alt="a screen shot of Steve Liesman" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BsGS.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1461&amp;y=256&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725345-16015557291601555727-11691978896-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">Here's what the weekly jobless claims indicate for the U.S. economy</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19Bst6" data-m="{&quot;i&quot;:128,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19Bst6&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:41}">
-                            <a title="U.S. weekly jobless claims come in at 837,000 vs. 850,000 estimated" href="https://www.msn.com/en-us/news/other/us-weekly-jobless-claims-come-in-at-837000-vs-850000-estimated/vi-BB19Bst6" data-id="181" data-m="{&quot;i&quot;:181,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:89}" target="_blank">
-                                <img alt="graphical user interface, website" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BHOf.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1451&amp;y=315&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725340-16015556041601555602-11691954463-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">U.S. weekly jobless claims come in at 837,000 vs. 850,000 estimated</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BAST" data-m="{&quot;i&quot;:129,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BAST&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:42}">
-                            <a title="Sen. Braun: Stimulus deal will happen" href="https://www.msn.com/en-us/news/other/sen-braun-stimulus-deal-will-happen/vi-BB19BAST" data-id="182" data-m="{&quot;i&quot;:182,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:90}" target="_blank">
-                                <img alt="graphical user interface" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BCUa.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1478&amp;y=282&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725290-16015541631601554151-11691652376-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">Sen. Braun: Stimulus deal will happen</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BHym" data-m="{&quot;i&quot;:130,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BHym&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:43}">
-                            <a title="The Pre-Market Rundown 2: October 01, 2020" href="https://www.msn.com/en-us/news/other/the-pre-market-rundown-2-october-01-2020/vi-BB19BHym" data-id="183" data-m="{&quot;i&quot;:183,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:91}" target="_blank">
-                                <img alt="Bertha Coombs posing for a photo in front of a computer" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19Bl6B.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=905&amp;y=305&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725296-16015543835ED2-REQ-100120-NewsPRE2.jpg?v=1601554383&amp;... - Provided by CNBC">
-                                <p class="title">The Pre-Market Rundown 2: October 01, 2020</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BHyk" data-m="{&quot;i&quot;:131,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BHyk&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;newspolitics&quot;,&quot;o&quot;:44}">
-                            <a title="Stimulus talks continue as House delays relief bill vote" href="https://www.msn.com/en-us/news/politics/stimulus-talks-continue-as-house-delays-relief-bill-vote/vi-BB19BHyk" data-id="184" data-m="{&quot;i&quot;:184,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:92}" target="_blank">
-                                <img alt="a person holding a sign" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BFZG.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=930&amp;y=370&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725278-16015539241601553921-11691605347-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">Stimulus talks continue as House delays relief bill vote</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BCUd" data-m="{&quot;i&quot;:132,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BCUd&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:45}">
-                            <a title="Ford CFO Tim Stone is leaving the company" href="https://www.msn.com/en-us/news/other/ford-cfo-tim-stone-is-leaving-the-company/vi-BB19BCUd" data-id="185" data-m="{&quot;i&quot;:185,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:93}" target="_blank">
-                                <img alt="a screen shot of Phil LeBeau" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BCU7.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1534&amp;y=273&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725273-16015538211601553819-11691585280-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">Ford CFO Tim Stone is leaving the company</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BAGI" data-m="{&quot;i&quot;:133,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BAGI&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:46}">
-                            <a title="Why this expert thinks Palantir is a weak company" href="https://www.msn.com/en-us/news/other/why-this-expert-thinks-palantir-is-a-weak-company/vi-BB19BAGI" data-id="186" data-m="{&quot;i&quot;:186,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:94}" target="_blank">
-                                <img alt="a screen shot of a person" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BFDM.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1575&amp;y=233&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725221-16015534251601553421-11691501148-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">Why this expert thinks Palantir is a weak company</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BAGJ" data-m="{&quot;i&quot;:134,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BAGJ&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:47}">
-                            <a title="September auto sales rate estimated as much as 15.9 million vehicles" href="https://www.msn.com/en-us/news/other/september-auto-sales-rate-estimated-as-much-as-159-million-vehicles/vi-BB19BAGJ" data-id="187" data-m="{&quot;i&quot;:187,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:95}" target="_blank">
-                                <img alt="a screen shot of Phil LeBeau" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BCDP.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=1502&amp;y=278&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725196-16015530321601553030-11691422212-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">September auto sales rate estimated as much as 15.9 million vehicles</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BArl" data-m="{&quot;i&quot;:135,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BArl&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:48}">
-                            <a title="The American Dream megamall reopens after closing seven months ago because of Covid-19" href="https://www.msn.com/en-us/news/other/the-american-dream-megamall-reopens-after-closing-seven-months-ago-because-of-covid-19/vi-BB19BArl" data-id="188" data-m="{&quot;i&quot;:188,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:96}" target="_blank">
-                                <img alt="The American Dream megamall reopens after closing seven months ago because of Covid-19" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19Bm19.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106724358-GettyImages-1193181780-jpg?v=1601502291&amp;w=1910&amp;h=100... - Provided by CNBC">
-                                <p class="title">The American Dream megamall reopens after closing seven months ago because of Covid-19</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li data-id="BB19BExF" data-m="{&quot;i&quot;:136,&quot;p&quot;:72,&quot;n&quot;:&quot;HeadlineItemViewModel&quot;,&quot;y&quot;:13,&quot;l&quot;:&quot;BB19BExF&quot;,&quot;v&quot;:&quot;news&quot;,&quot;c&quot;:&quot;other&quot;,&quot;o&quot;:49}">
-                            <a title="Playboy to go public through a SPAC merger" href="https://www.msn.com/en-us/news/other/playboy-to-go-public-through-a-spac-merger/vi-BB19BExF" data-id="189" data-m="{&quot;i&quot;:189,&quot;p&quot;:72,&quot;n&quot;:&quot;partnerLink&quot;,&quot;y&quot;:24,&quot;o&quot;:97}" target="_blank">
-                                <img alt="Joe Kernen holding a sign" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19BExB.img?h=96&amp;w=170&amp;m=6&amp;q=60&amp;o=t&amp;l=f&amp;x=949&amp;y=393&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif" title="https://image.cnbcfm.com/api/v1/image/106725141-16015509031601550900-11690992663-1080pnbcnews.jpg?v=... - Provided by CNBC">
-                                <p class="title">Playboy to go public through a SPAC merger</p>
-                                <span class="provider">
-                                    <div class="vidplogotext">
-                                        <img alt="CNBC Logo" data-src="{&quot;default&quot;:{&quot;load&quot;:&quot;defer&quot;,&quot;src&quot;:&quot;//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAADLcm.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;o=t&amp;l=f&quot;}}" src="//static-entertainment-neu-s-msn-com.akamaized.net/sc/9b/e151e5.gif">
-                                    </div>
-                                    <span class="sourcetitle">CNBC</span>
-                                </span>
-                            </a>
-
-                        </li>
-                    </ul>
-                    <button class="leftarrow" data-id="137" data-m="{&quot;i&quot;:137,&quot;p&quot;:72,&quot;n&quot;:&quot;leftarrow&quot;,&quot;y&quot;:12,&quot;o&quot;:50}"></button>
-                    <button class="rightarrow" data-id="138" data-m="{&quot;i&quot;:138,&quot;p&quot;:72,&quot;n&quot;:&quot;rightarrow&quot;,&quot;y&quot;:12,&quot;o&quot;:51}"></button>
-                </div>
-                <button class="overlay-close" title="close" data-otfuseviewportforvisibility="true" data-id="139" data-m="{&quot;i&quot;:139,&quot;p&quot;:72,&quot;n&quot;:&quot;close&quot;,&quot;y&quot;:11,&quot;o&quot;:52}">
-                    <span></span>
-                </button>
-            </div></div>
-
+<div data-parse-version="1" class="parse-version p-version-1">
+    <!--likeMarker-->
+    <script>
+        requestAnimationFrame(function () {
+            setTimeout(function () {
+                window._perfMarker && window._perfMarker("TTVR.ArticleContent", true, true);
+                define("c.articleContent", 1);
+            }, 0);
+        });
+    </script>
+    <p>Hospitals in and around Kansas City, Missouri, are overwhelmed amid a troubling spike in <span class="out-link" src="http://www.abcnews.com/coronavirus">COVID-19</span> cases that has forced some facilitates to refuse non-emergency care and others to turn away ambulances due to over-occupancy. </p> <span class="storyimage fullwidth inlineimage"> <span class="image"    data-m='{"i":73,"p":72,"n":"openModal","t":"articleImages","o":1}'> <img alt="a group of people sitting in chairs in front of a crowd: Fans take in a flyover before the Kansas City Chiefs take on the Las Vegas Raiders at Arrowhead Stadium in Kansas City, Mo., Oct. 11, 2020." src="/upload/images/real/2020/10/18/a-group-of-people-sitting-in-chairs-in-front-of-a-crowd-fans-take-in-a-flyover-before-the-kansas-cit_816804_.img"> </span> <span class="caption truncate"> <span class="attribution">© Kyle Rivas/UPI via Newscom</span> Fans take in a flyover before the Kansas City Chiefs take on the Las Vegas Raiders at Arrowhead Stadium in Kansas City, Mo., Oct. 11, 2020. </span>
+    </span>
+    <p>Average daily COVID-19 hospitalizations were up about 10% this week across the Kansas City region as the Midwest grapples with record-breaking daily infection rates and intensive care unit bed shortages, according to the Mid-America Regional Council's dashboard.
+        <!--#-->
+    </p>
+    <!--likeMarker-->
+    <p>Earlier this week, the Kansas City metro area saw its highest number of new COVID-19 hospitalizations on record with the seven-day average rising to about 133. Separately, hospitals in the area reported a 28% increase in the average number of patients on ventilators, week-over-week, while daily ICU occupancy rose about 11% from last week, according to the dashboard. </p>
+    <p>All in all, total weekly hospitalizations jumped to 867, compared to 835 last week, pushing several area hospitals to refuse ambulances due to lack of beds. </p>
+    <div style="margin:0 auto;width:300px;height:250px;margin-bottom:20px;margin-bottom:60px;border-top:1px solid #dfdfdd;border-left:1px solid #dfdfdd;border-bottom:1px solid #dfdfdd;">
+        <!-- WWW -->
     </div>
+    <p>Marc Larsen, operations director of Saint Luke's COVID Response Team, the second-largest care provider in the region, said Kansas City area hospitals are "bursting at the seams."
+        <br>
+    </p>
+    <!-- WWW -->
+    <!-- WWW -->
+    <h3>Hospitals being 'pushed to the brink' </h3>
+    <p>Saint Luke's daily patient average rose to about 85 for the month of October, compared to about 63 per day in September, Larsen said. The system reported a daily patient average of only about 15 COVID-19 patients a day in May and June.
+        <!--#-->
+    </p>
+    <!--likeMarker-->
+    <p>"The current trajectory and the rapid increase in infections is a big concern for me," Larsen told ABC News in an interview Friday. "And with our numbers where they are coming into influenza season, I worry that the facilities will continue to be pushed to the brink on our ability to care for each and every single one of these patients like we need to." </p>
+    <p>He added, "As a result, our emergency departments and having to leverage alternative care units in our facilities, meaning that we wind up seeing emergency department patients in our pre-anesthesia care units, recovery rooms and sometimes in waiting rooms."</p> <span class="storyimage fullwidth inlineimage"> <span class="image"    data-m='{"i":74,"p":72,"n":"openModal","t":"articleImages","o":2}'> <img alt="a group of people sitting in chairs in front of a crowd: Fans take in a flyover before the Kansas City Chiefs take on the Las Vegas Raiders at Arrowhead Stadium in Kansas City, Mo., Oct. 11, 2020." src="/upload/images/real/2020/10/18/a-group-of-people-sitting-in-chairs-in-front-of-a-crowd-fans-take-in-a-flyover-before-the-kansas-cit_556528_.img"> </span> <span class="caption truncate"> <span class="attribution">© Kyle Rivas/UPI via Newscom</span> Fans take in a flyover before the Kansas City Chiefs take on the Las Vegas Raiders at Arrowhead Stadium in Kansas City, Mo., Oct. 11, 2020. </span>
+    </span>
+    <p>Larsen, who is also an emergency care physician at the downtown Kansas City hospital, said at least eight metro hospitals and emergency departments had to temporarily stop accepting ambulances due to the high volume of patients on Tuesday and Wednesday.
+        <!--#-->
+    </p>
+    <!--likeMarker-->
+    <p>"We had eight facilities at one given time that were on 'diversion,' or what we call high-volume status," he said. "That doesn't mean that we don't still take the time-critical diagnoses -- we still take our stroke patients, our trauma patients and our heart attack patients -- but it does limit our ability to provide care to the remainder of ambulances." </p>
+    <p>"When we get to that volume and when we get to that capacity we're force to hold patients, because may not physically even have a bed available," he added.</p><span class="out-link" src="https://abcnews.go.com/Health/key-coronavirus-indicators-suggest-winter-approaches-us-headed/story?id=73653843">MORE: Key coronavirus indicators suggest as winter approaches, US headed in wrong direction</span>
+    <div>
+        <br>
+        <p><strong>Gallery: 10 States Are Breaking COVID Records (ETNT Health)</strong></p>
+        <div class="storyimage fullwidth"> <span class="image"> <span class="out-link" src="/en-us/news/us/10-states-are-breaking-covid-records/ss-BB19TyoV?parent-title=some-kansas-city-hospitals-forced-to-divert-ambulances-as-covid-19-cases-jump&parent-ns=ar&parent-content-id=BB1a6B9c&fullscreen=true"> <img alt="a man riding on the back of a truck: Male and female EMTs wearing face masks during Coronavirus pandemic remove gurney from ambulance parked at Boca Raton Community Hospital" src="/upload/images/real/2020/10/18/a-man-riding-on-the-back-of-a-truck-male-and-female-emts-wearing-face-masks-during-coronavirus-pande_62176_.img"> </span> </span>
+        </div>
+    </div>
+    <p>Hospitals volumes were in much better shape as of Friday afternoon, but he said he "would not be surprised if this evening and throughout the weekend that we continue to see high volumes and emergency departments across the region." </p>
+    <p>He said Saint Luke's hospitals were currently experiencing volumes that they only see during peak flu season, warning the public that the situation could get a lot worse by winter.
+        <!--#-->
+    </p>
+    <!--likeMarker-->
+    <h3>Fears of a brutal flu 'pandemic'</h3>
+    <p>"Peak flu season is always our busiest time of the year. We have a lot of sick patients and our volumes are a lot higher," Larsen said. "The volumes that we're seeing at this moment are very similar to what we see, typically, in January or February. If we're already at that level and we have this large influx of influenza patients -- as we typically do -- where will we take care of all these patients?" </p>
+    <p>Like many health officials, he urged all Americans <span class="out-link" src="https://abcnews.go.com/Health/health-officials-urge-americans-flu-vaccine-concerns-mount/story?id=73371454">to get a flu shot this year</span>, even if you've never gotten one before.</p><span class="out-link" src="https://abcnews.go.com/US/south-dakota-gov-kristi-noem-lockdowns-useless-states/story?id=73451385">MORE: South Dakota Gov. Kristi Noem says lockdowns are 'useless' as state's COVID-19 cases soar</span>
+    <p>"Aside from the social distancing, masking and hand hygiene, we don't have a way to prevent this, but we do have one for the other pandemic that we're looking at and that's influenza," Larsen said. "I've been encouraging all my patients to get their flu shots now because I think that's gonna really help us prevent this second surge, not of COVID patients but other patients that need the same type of resources that COVID patients need." </p>
+    <h3>Alarming figures across the board</h3>
+    <p>As of Friday, Missouri had reported 2,017 new confirmed cases over the last 24 hours, bringing the total number of cases since the start of the pandemic to 152,571.
+        <!--#-->
+    </p>
+    <!--likeMarker-->
+    <p>The state now ranks fourth nationally in reported deaths over the past seven days, and eighth in the number of new cases, according to the statewide dashboard.</p> <span class="storyimage fullwidth inlineimage"> <span class="image"    data-m='{"i":76,"p":72,"n":"openModal","t":"articleImages","o":4}'> <img alt="Mike Parson wearing a suit and tie: In this Aug. 6, 2020 file photo, Missouri Republican Gov. Mike Parson speaks during a news conference in St. Louis." src="/upload/images/real/2020/10/18/mike-parson-wearing-a-suit-and-tie-in-this-aug-6-2020-file-photo-missouri-republican-gov-mike-parson_483446_.img"> </span> <span class="caption truncate"> <span class="attribution">© Jeff Roberson/AP, File</span> In this Aug. 6, 2020 file photo, Missouri Republican Gov. Mike Parson speaks during a news conference in St. Louis. </span>
+    </span>
+    <p>Missouri also reported 17 new virus-related deaths on Friday, pushing the total number of COVID-19 fatalities to 2,459, state officials said Friday. </p>
+    <div style="width:100%;border:1px solid #CCC;padding:10px;">
+        <div style="display:table-row-group;">
+            <div style="display:table-row;">
+                <div style="background:url(https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB153pHQ.img) no-repeat center / contain;display:block;cursor:pointer;border:none;display:table-cell;padding:0 10px 0 10px;width:55px;height:55px;"></div>
+                <div style="border:none;display:table-cell;padding:0 10px 0 10px;font-size:20px;vertical-align:middle;"><span class="out-link" src="https://www.microsoft.com/edge/?form=MY01II&OCID=MY01II"> The new Microsoft Edge<br>Download now the latest browser recommended by Microsoft</span> </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        <br>
+    </p>
+    <p>As of late Thursday, COVID-19 hospitalizations were up to 1,443 across the state, the highest on record. Health officials had not released Fridays data as of the time of publication.</p><span class="out-link" src="https://abcnews.go.com/Health/live-updates/coronavirus/?id=73650526">MORE: Coronavirus updates: Chris Christie speaks out after contracting COVID-19</span>
+    <p>Gov. Mike Parson recently announced that the state had submitted its plan for administering the impending COVID-19 vaccine to the Centers for Disease Control and Prevention in an effort to be proactive about slowing the spread. </p>
+    <p>"This has been an incredible collaborative effort, and I want to thank all of the agencies and partners involved for their hard work and dedication. In the midst of an ever-changing and unprecedented situation, our team of professionals has done outstanding work to develop a detailed plan," Parson said in a statement this week after submitting the plan. "We are in a great place in the planning process and will be well-prepared to take action as soon as a vaccine becomes available." </p>
+    <!-- WWW -->
 </div>
