@@ -382,7 +382,7 @@ class Article_m extends CI_Model{
                     {$imgSql}    
                 ORDER BY  
                     `article`.`views` DESC, `article`.`id` DESC 
-                LIMIT {$cntNews}";
+                LIMIT {$cntNews}"; 
                 
         $query = $this->db->query( $sql );
         
