@@ -258,6 +258,7 @@ class Parse_page_msn_lib{
         $this->delAll('#ContentDiv'); //msn videoADS 
         $this->delAll('div.readmore'); //msn ads
         $this->delAll('iframe'); //msn iframe   ---!!!--- ???
+        $this->delAll('script');
        
         
         //<video player content>
