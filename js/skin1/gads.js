@@ -27,15 +27,15 @@ $( document ).ready(function(){
     
     // </top adsense after image> //
     setTimeout(function(){
-//        paste_code('GAdsMainCode'); //добавление основного кода на страницу
-//        
-//        if(addGadPosition()){ // добовляет дополнительные места(теги) для рекламы
-//            $('span.gAd').each(function(){ // простановка блоков рекламы
-//                blockName = $(this).attr('data');
-//                toWrite = loadGAd(blockName);
-//                $(this).replaceWith(toWrite);
-//            });
-//        }
+        paste_code('GAdsMainCode'); //добавление основного кода на страницу
+        
+        if(addGadPosition()){ // добовляет дополнительные места(теги) для рекламы
+            $('span.gAd').each(function(){ // простановка блоков рекламы
+                blockName = $(this).attr('data');
+                toWrite = loadGAd(blockName);
+                $(this).replaceWith(toWrite);
+            });
+        }
     }, 2000);
 
 });
@@ -77,11 +77,13 @@ function loadGAdMobile(blockName){
     if( blockName == 'content noImg' || blockName == 'content bottom Netboard' ){
         /* Grey in Text */
         toWrite = "<!-- mobile -->\
-                    <ins class=\"adsbygoogle mobile-noimg\"\
-                         style=\"display:block\"\
-                         data-ad-client=\"ca-pub-6096727633142370\"\
-                         data-ad-slot=\"8859464449\"\
-                         data-ad-format=\"rectangle\"></ins>\
+                    <ins class=\"adsbygoogle mobile-noimg\" \
+                         style=\"display:block\" \
+                         data-ad-client=\"ca-pub-6096727633142370\" \
+                         data-ad-slot=\"8859464449\" \
+                         data-ad-format=\"rectangle\" \
+                         data-full-width-responsive=\"false\"> \
+                    </ins> \
                     <script>\
                     (adsbygoogle = window.adsbygoogle || []).push({});\
                     </script>";
@@ -111,7 +113,7 @@ function loadGAdMobile(blockName){
                             data-ad-client=\"ca-pub-6096727633142370\" \
                             data-ad-slot=\"2670565727\" \
                             data-ad-format=\"auto\" \
-                            data-full-width-responsive=\"true\"> \
+                            data-full-width-responsive=\"false\"> \
                         </ins> \
                         <script> \
                              (adsbygoogle = window.adsbygoogle || []).push({}); \
@@ -124,7 +126,8 @@ function loadGAdMobile(blockName){
                             data-ad-format=\"fluid\" \
                             data-ad-layout-key=\"-am+4z+b-2a+gu\" \
                             data-ad-client=\"ca-pub-6096727633142370\" \
-                            data-ad-slot=\"3397609443\"> \
+                            data-ad-slot=\"3397609443\" \
+                            data-full-width-responsive=\"false\"> \
                         </ins> \
                         <script> \
                              (adsbygoogle = window.adsbygoogle || []).push({}); \
@@ -228,11 +231,11 @@ function loadGAdMobile(blockName){
         
         // <!-- Test Mobile Small -->
         toWrite = " <ins class=\"adsbygoogle\" \
-                        style=\"display:block\" \
+                        style=\"display:block;margin-left:0;\" \
                         data-ad-client=\"ca-pub-6096727633142370\" \
                         data-ad-slot=\"7018265929\" \
                         data-ad-format=\"auto\" \
-                        data-full-width-responsive=\"true\"></ins> \
+                        data-full-width-responsive=\"false\"></ins> \
                    <script> \
                         (adsbygoogle = window.adsbygoogle || []).push({}); \
                    </script>";
