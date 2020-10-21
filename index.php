@@ -59,16 +59,25 @@
     $uri = $_SERVER['REQUEST_URI'];
     preg_match("#^/([a-z]{2})(/.*)#i", $uri, $langCodeAr);
     
+    $allowCode = ['fr','de','uk','us','ca','au','br'];
+    
     if( isset($langCodeAr[1]) && !empty($langCodeAr[1]) ){
         $_SERVER['REQUEST_URI'] = $langCodeAr[2];
-        define('LANG_CODE', $langCodeAr[1]);
+        
+        if(in_array($langCodeAr[1], $allowCode)){
+            define('LANG_CODE', $langCodeAr[1]);
+        }
+        else{
+            define('LANG_CODE', 'us');
+        }
+        
     }
     else{ define('LANG_CODE', 'us'); }
     //Get Lang Code & Change URI End
     
 
 
-    if($_SERVER['HTTP_HOST'] == 'pressfrom.vbox' || $_SERVER['HTTP_HOST'] == 'pressreview24.lh' || $_SERVER['HTTP_HOST'] == 'unionpress24.lh' || $_SERVER['HTTP_HOST'] == 'express-info.lh' || $_SERVER['REMOTE_ADDR'] == '109.86.165.207' || $_SERVER['REMOTE_ADDR'] == '37.54.250.219')
+    if($_SERVER['HTTP_HOST'] == 'pressfrom.vbox' || $_SERVER['HTTP_HOST'] == 'pressreview24.lh' || $_SERVER['HTTP_HOST'] == 'unionpress24.lh' || $_SERVER['HTTP_HOST'] == 'express-info.lh' || $_SERVER['HTTP_X_REAL_IP'] == '109.86.165.207')
     {
         define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
     }
