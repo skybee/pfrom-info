@@ -8,7 +8,7 @@ class Main extends CI_Controller {
         if(     $_SERVER['HTTP_HOST'] != 'pressfrom.info' 
                 && $_SERVER['HTTP_HOST'] != 'express-info.lh' 
                 && $_SERVER['HTTP_HOST'] != 'pressfrom.vbox' 
-//                && $_SERVER['HTTP_HOST'] != 'pressreview24.com' 
+                && $_SERVER['HTTP_HOST'] != 'pressreview24.com' 
                 && $_SERVER['HTTP_HOST'] != 'pressreview24.lh'
                 && $_SERVER['HTTP_HOST'] != 'unionpress24.lh'
         ){
@@ -292,6 +292,13 @@ class Main extends CI_Controller {
             $this->load->view('main_v', $tpl_ar);
         }
         elseif($this->multidomaine['host_conf']['tpl'] == 'press24'){
+            
+            if( $data_ar['doc_data']['pay_article'] == '1' ){ //pay art redirect if host pressreview24.com
+                header("HTTP/1.1 301 Moved Permanently");
+                header("Location: ".'https://pressfrom.info/'.LANG_CODE.$true_url);
+                exit();
+            }
+            
             $tpl_ar['r24_header']           = $this->load->view('review24/components/header_v', $data_ar, true);
             $tpl_ar['r24_top_news_feed']    = $this->load->view('review24/components/top_news_feed_v', $right, true);
             $tpl_ar['r24_main_top_slider']  = $this->load->view('review24/components/main_top_slider_v', $top_slider, true);
