@@ -14,7 +14,7 @@
           gtag('config', 'UA-133437377-1');
         </script>
         
-        
+        <meta name="theme-color" content="#151515" />
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><?= $meta['title'] ?></title>
