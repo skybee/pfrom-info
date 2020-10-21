@@ -36,20 +36,6 @@ class News_parser_msn_lib extends News_parser_lib{
         
         $data_ar['title']   = html_entity_decode($data_ar['title'], ENT_QUOTES, 'UTF-8');
         $data_ar['text']    = html_entity_decode($data_ar['text'],  ENT_QUOTES, 'UTF-8');
-        
-//        $sql = "   INSERT INTO `article` 
-//                    SET
-//                        `title`         = '{$data_ar['title']}', 
-//                        `description`   = '".$this->CI->db->escape_str($data_ar['description'])."',    
-//                        `text`          = '".$this->CI->db->escape_str($data_ar['text']) ."',
-//                        `cat_id`        = '{$data_ar['cat_id']}',    
-//                        `main_img`      = '{$data_ar['img_name']}',
-//                        `date`          = '{$data_ar['date']}',
-//                        `url_name`      = '{$data_ar['url_name']}',
-//                        `scan_url_id`   = '{$data_ar['scan_url_id']}',
-//                        `donor_id`      = '{$donorId}',
-//                        `canonical`     = '{$data_ar['canonical']}'    
-//                "; 
                         
         $sql2 =  "  INSERT INTO `article` 
                     SET
@@ -63,11 +49,8 @@ class News_parser_msn_lib extends News_parser_lib{
                         `scan_url_id`   = '{$data_ar['scan_url_id']}',
                         `donor_id`      = '{$donorId}',
                         `canonical`     = '{$data_ar['canonical']}'    
-                ";               
-
-//        echo $sql2;                
+                ";
                         
-//        $this->CI->db->query($sql);
         $this->CI->db->query($sql2, array($data_ar['title'], $data_ar['description'], $data_ar['text']));
         
         $article_id = $this->CI->db->insert_id();
