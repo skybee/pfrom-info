@@ -105,7 +105,7 @@ class Main extends CI_Controller
             $this->parser_m->set_url_scaning( $news_ar['id'] );
 			
             #<for test>
-//            $news_ar['url']     = 'https://www.msn.com/en-us/news/crime/arkansas-police-chief-files-lawsuit-against-police-union-alleging-conspiracy-against-reform/ar-BB19AYxZ';  
+//            $news_ar['url']     = 'http://www.msn.com/en-us/news/us/some-kansas-city-hospitals-forced-to-divert-ambulances-as-covid-19-cases-jump/ar-BB1a6B9c';  
 //            $news_ar['host']    = 'www.msn.com';
             #</for test>
             
