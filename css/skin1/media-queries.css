@@ -80,6 +80,7 @@
         color: #009DDB !important;
     }
     #left div.single div.content h3.look_more_hdn img.look_more_img_mobile{display: inline-block;}
+    p.look_more_hdn img.look_more_img_mobile{display: inline-block;}
     
     span.gads_in_more_hdn{
         padding: 0;
@@ -110,7 +111,9 @@
         max-width: 100% !important;
     }
     #left div.single div.content img.look_more_img_mobile{
-        max-width: 120px !important;
+        /*max-width: 120px !important;*/
+        width: 120px !important;
+        height: 80px !important;
     }
     #container{ width: auto;}
     
@@ -216,6 +219,34 @@
     }
     #headernavigation .navigation{ display: none;}
     /*====== </Top Block> ======*/
+    
+    /*==== <Fix Social Btn> =====*/
+    .social_btn_fix{
+        width: 45px; height: 208px;
+        /*height: auto;*/ 
+        border: 2px solid #009DDB;
+        border-width: 2px 0 2px 2px;
+        /*background-color: rgba(248, 248, 248,0.8);*/
+        background-color: rgba(21, 21, 21,0.85);
+        /*background-color: #f8f8f8;*/
+
+        padding-left: 0px; padding-right: 0px;
+        padding-top: 20px; padding-bottom: 20px;
+        
+        position: fixed;
+        bottom: 90px; right: 0px;
+        z-index: 10;
+        border-radius: 8px 0 0 8px;
+    }
+    .social_btn_fix .likely-sb-desktop{
+        position: relative;
+        top: -4px; 
+        left: 0;
+    }
+    .social_btn_fix .likely-big .likely__widget{
+        margin: 0 12px 12px;
+    }
+    /*==== </Fix Social Btn> =====*/
 }
 
 
