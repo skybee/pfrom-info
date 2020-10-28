@@ -11,7 +11,7 @@
         ?>
         <li class="ui-tabs-nav-item ">
             <a href="" data-slide-index="<?=$i?>">
-                <img src="https://static.pressfrom.info/upload/images/small/<?=$article['main_img']?>" alt="" onerror="imgError(this);" />
+                <img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="https://static.pressfrom.info/upload/images/small/<?=$article['main_img']?>" alt="" onerror="imgError(this);" />
             </a>
         </li>
         <?php $i++; endforeach; ?>
@@ -32,7 +32,7 @@
     <div id="fragment-<?=$i?>" class="ui-tabs-panel " style="margin-top:1px; background-color:transparent; float:left;">
         <a href="<?=$newsUrl?>" class="top_slide_main_img">
             <?php if($i==0): ?>
-            <!--medium--><img src="https://static.pressfrom.info/upload/images/real/<?=$article['main_img']?>" alt="" border="0" onerror="imgError(this);" />
+            <!--medium--><img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="https://static.pressfrom.info/upload/images/real/<?=$article['main_img']?>" alt="" border="0" onerror="imgError(this);" />
             <?php else: ?>
             <!--medium--><img data-src="https://static.pressfrom.info/upload/images/real/<?=$article['main_img']?>" src="/img/default_news.jpg" alt="" border="0" onerror="imgError(this);" />
             <?php endif;?>
@@ -70,6 +70,8 @@
 
 
 
+<?php if(isset($article_page) == false): //отключение мобильного слайдера на странице статьи ?> 
+
 <!-- Mobile Top Slider START -->
 
 <div class="mobile-slider">
@@ -88,11 +90,17 @@
                         
                         <div class="mob-slider-news">
                             <a href="<?=$newsUrl?>" class="mob-slider-news-imglink">
-                                <img src="https://static.pressfrom.info/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
+                                
+                                <?php // if($i<2): ?>
+                                    <img src="https://static.pressfrom.info/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
+                                <?php // else: ?>
+                                    <!--<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="https://static.pressfrom.info/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />-->
+                                <?php // endif; ?>
+                                
                             </a>
                             <h4>
                             <a href="<?=$newsUrl?>" class="mob-slider-news-titlelink">
-                                <?=Article_m::get_short_txt($articles[$i]['title'],83,'word','...')?>
+                                <?=Article_m::get_short_txt($articles[$i]['title'],76,'word','...')?>
                             </a>
                             </h4>>
                         </div>
@@ -104,11 +112,17 @@
                             
                             <div class="mob-slider-news">
                                 <a href="<?=$newsUrl?>" class="mob-slider-news-imglink">
-                                    <img src="https://static.pressfrom.info/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
+                                    
+                                    <?php // if($i<2): ?>
+                                        <img src="https://static.pressfrom.info/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />
+                                    <?php // else: ?>
+                                        <!--<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="https://static.pressfrom.info/upload/images/small/<?=$articles[$i]['main_img']?>" alt="" onerror="imgError(this);" />-->
+                                    <?php // endif; ?>
+                                    
                                 </a>
                                 <h4>
                                 <a href="<?=$newsUrl?>" class="mob-slider-news-titlelink">
-                                    <?=Article_m::get_short_txt($articles[$i]['title'],83,'word','...')?>
+                                    <?=Article_m::get_short_txt($articles[$i]['title'],76,'word','...')?>
                                 </a>
                                 </h4>
                             </div>
@@ -125,3 +139,12 @@
     </div>
 </div>
 <!-- Mobile Top Slider END -->
+
+<?php else: ?>
+<style>
+    @media screen and (max-width: 980px){
+        #middle { margin-top: 0px; }
+    }
+</style>
+<?php endif; ?>
+
