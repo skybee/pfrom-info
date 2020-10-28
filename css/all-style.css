@@ -2,7 +2,7 @@
 
  - https://fonts.googleapis.com/css?family=Roboto
 
- - http://express-info.lh/css/skin1/style.css?v=20201012-1248
+ - http://express-info.lh/css/skin1/style.css?v=20201026-1716
 
  - http://express-info.lh/css/skin1/featured_long_style.css
 
@@ -22,7 +22,7 @@
 
  - http://express-info.lh/css/skin1/mobile.css?v=20190214-1420
 
- - http://express-info.lh/css/skin1/media-queries.css?v=20201012-2345
+ - http://express-info.lh/css/skin1/media-queries.css?v=20201026-1720
 
  - http://express-info.lh/css/skin1/mobile_gads.css?v=20180917-1425
 
@@ -42,7 +42,7 @@
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/style.css?v=20201012-1248 */ 
+ /* FILE START: http://express-info.lh/css/skin1/style.css?v=20201026-1716 */ 
 /*******************************************************************************
 
 Theme Name: London Live
@@ -565,6 +565,32 @@ hr {
 #left div.single .doc-date .social_btn .likely-sb-desktop .likely__widget:first-child{
     margin-left: 6px;
 }
+
+
+/*=== <Fix Social Btn> ===*/
+.social_btn_fix{
+    width: 340px;
+    height: 40px;
+    border: 2px solid #009DDB;
+    background-color: rgba(21, 21, 21,0.85);
+    /*background-color: #f8f8f8;*/
+    
+    position: fixed;
+    bottom: 22px; 
+    /*left: 50% -170px;*/
+    left: auto;
+    z-index: 10;
+    border-radius: 8px;
+}
+.social_btn_fix .likely-sb-desktop{
+    position: relative;
+    top: 4px; left: 32px;
+}
+.social_btn_fix .likely-big .likely__widget{
+    margin: 0 12px 12px;
+}
+/*=== <Fix Social Btn> ===*/
+
 
 #left div.single .content-gAd{
     /*background-color: #F7F7F7;*/
@@ -3641,7 +3667,8 @@ img.alignleft,a img.alignleft {
     
 }
 #right .right-top-news .big-rtn img{
-    width: 100%;
+    /*width: 100%;*/
+    width: 300px; height: 200px;
 }
 #right .right-top-news .big-rtn .big-rtn-title{
     position: absolute;
@@ -3671,7 +3698,7 @@ img.alignleft,a img.alignleft {
     padding: 15px 0;
 }
 #right .right-top-news .small-rtn img{
-    width: 120px;
+    width: 120px; height: 80px;
     margin-right: 10px;
     opacity: 0.8;
 }
@@ -3894,6 +3921,7 @@ img.alignleft,a img.alignleft {
         p.look_more_hdn img{
             float: left;
             width: 200px;
+            height: 133px;
             margin: 0 10px 5px 0;
         }
         p.look_more_hdn img.look_more_img_mobile{
@@ -4151,6 +4179,7 @@ span.first-like-art-in-txt{
 .like-article-list .like-article-item img{
     float: left;
     width: 120px;
+    height: 80px;
     margin-right: 15px;
 }
 .like-article-list .like-article-item:nth-child(even){
@@ -4184,7 +4213,7 @@ span.first-like-art-in-txt{
 /*<GAds Under Slider>*/
 
 /*============== </My> ==============*/
- /* FILE END: http://express-info.lh/css/skin1/style.css?v=20201012-1248 */ 
+ /* FILE END: http://express-info.lh/css/skin1/style.css?v=20201026-1716 */ 
 
 
 
@@ -5217,7 +5246,7 @@ body{
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/media-queries.css?v=20201012-2345 */ 
+ /* FILE START: http://express-info.lh/css/skin1/media-queries.css?v=20201026-1720 */ 
 @media screen and (min-width: 981px) { /*-== Full Screen ==-*/
     
     #left div.single h1{ /*широкий заголовок*/
@@ -5300,6 +5329,7 @@ body{
         color: #009DDB !important;
     }
     #left div.single div.content h3.look_more_hdn img.look_more_img_mobile{display: inline-block;}
+    p.look_more_hdn img.look_more_img_mobile{display: inline-block;}
     
     span.gads_in_more_hdn{
         padding: 0;
@@ -5330,7 +5360,9 @@ body{
         max-width: 100% !important;
     }
     #left div.single div.content img.look_more_img_mobile{
-        max-width: 120px !important;
+        /*max-width: 120px !important;*/
+        width: 120px !important;
+        height: 80px !important;
     }
     #container{ width: auto;}
     
@@ -5436,6 +5468,34 @@ body{
     }
     #headernavigation .navigation{ display: none;}
     /*====== </Top Block> ======*/
+    
+    /*==== <Fix Social Btn> =====*/
+    .social_btn_fix{
+        width: 45px; height: 208px;
+        /*height: auto;*/ 
+        border: 2px solid #009DDB;
+        border-width: 2px 0 2px 2px;
+        /*background-color: rgba(248, 248, 248,0.8);*/
+        background-color: rgba(21, 21, 21,0.85);
+        /*background-color: #f8f8f8;*/
+
+        padding-left: 0px; padding-right: 0px;
+        padding-top: 20px; padding-bottom: 20px;
+        
+        position: fixed;
+        bottom: 90px; right: 0px;
+        z-index: 10;
+        border-radius: 8px 0 0 8px;
+    }
+    .social_btn_fix .likely-sb-desktop{
+        position: relative;
+        top: -4px; 
+        left: 0;
+    }
+    .social_btn_fix .likely-big .likely__widget{
+        margin: 0 12px 12px;
+    }
+    /*==== </Fix Social Btn> =====*/
 }
 
 
@@ -5599,7 +5659,7 @@ body{
     #content_holder {padding-left: 0;}
     
 }
- /* FILE END: http://express-info.lh/css/skin1/media-queries.css?v=20201012-2345 */ 
+ /* FILE END: http://express-info.lh/css/skin1/media-queries.css?v=20201026-1720 */ 
 
 
 
