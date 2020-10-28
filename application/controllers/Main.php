@@ -232,6 +232,8 @@ class Main extends CI_Controller {
 
         $data_ar['like_video']          = $this->article_m->get_like_video($data_ar['doc_data']['id'],2);
         
+        
+//        $top_slider['article_page']     = true; // флаг для отключения мобильного слайдера на странице статьи
         $top_slider['articles']         = $this->article_m->get_top_slider_data( 
                                                 $data_ar['cat_ar']['id'], 
                                                 8, 
