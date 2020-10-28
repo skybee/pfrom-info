@@ -12,7 +12,7 @@
         ?>
         <div class="ow_item">
             <a href="<?=$url;?>">
-                <img src="/upload/images/real/<?=$lArticle['main_img'];?>" onerror="imgError(this);" />
+                <img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/<?=$lArticle['main_img'];?>" onerror="imgError(this);" />
             </a>
             <a href="<?=$url;?>" class="ow_item_title">
                 <?=Article_m::get_short_txt($lArticle['title'],110,'word','...');?>
