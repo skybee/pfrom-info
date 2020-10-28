@@ -44,7 +44,7 @@
     ?>
     <div class="big-rtn">
         <a href="<?=$newsUrl?>" >
-            <img src="https://static.pressfrom.info/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
+            <img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="https://static.pressfrom.info/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
         </a>
         <div class="big-rtn-title">
             <a href="<?=$newsUrl?>" >
@@ -58,7 +58,7 @@
             <div style="display: table-cell; vertical-align: middle;">
                 <a href="<?=$newsUrl?>" >
                     <!--<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />-->
-                    <img src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />
+                    <img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />
                 </a>
             </div>
             <div style="display: table-cell; vertical-align: middle;">
@@ -112,7 +112,7 @@
     <div class="big-rtn">
         <a href="<?=$newsUrl?>" >
             <!--<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />-->
-            <img src="/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
+            <img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/<?=$article['main_img']?>" alt="<?=$article['title']?>" onerror="imgError(this);" />
         </a>
         <div class="big-rtn-title">
             <a href="<?=$newsUrl?>" >
@@ -126,7 +126,7 @@
             <div style="display: table-cell; vertical-align: middle;">
                 <a href="<?=$newsUrl?>" >
                     <!--<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />-->
-                    <img src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />
+                    <img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/<?=$article['main_img']?>"  alt="<?=$article['title']?>" onerror="imgError(this);" />
                 </a>
             </div>
             <div style="display: table-cell; vertical-align: middle;">
