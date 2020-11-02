@@ -201,6 +201,7 @@ class Main extends CI_Controller {
                                             .$data_ar['doc_data']['title'].' - '
 //                                            .$data_ar['like_translate']['title'].' - '
                                             .$this->multidomaine['site_name_str'];
+        $data_ar['meta']['canonical']   = 'https://pressfrom.info/'.LANG_CODE.$true_url;
         $data_ar['donor_rel']           = ' rel="nofollow" '; #botRelNofollow();
 
         //пометка изображений в тексте (костыль для редиректа при image 404)

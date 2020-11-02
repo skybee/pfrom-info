@@ -47,7 +47,11 @@
         
         <?php if(isset($meta['noindex']) && $meta['noindex'] == true ): ?>
             <meta name="robots" content="noindex, follow" />
-        <?php endif; ?>   
+        <?php endif; ?>
+         
+        <?php if(isset($meta['canonical']) && !empty($meta['canonical']) ): ?>
+            <link rel="canonical" href="<?=$meta['canonical']?>" />
+        <?php endif; ?>       
                     
         <script defer type='text/javascript' src="/js/skin1/lib/jquery-1.12.4.min.js"></script>
         <script defer type='text/javascript' src="/js/skin1/lib/swiper-4.4.6.min.js"></script>
