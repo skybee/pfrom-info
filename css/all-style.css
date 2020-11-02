@@ -2,7 +2,7 @@
 
  - https://fonts.googleapis.com/css?family=Roboto
 
- - http://express-info.lh/css/skin1/style.css?v=20201026-1716
+ - http://express-info.lh/css/skin1/style.css?v=20201028-2308
 
  - http://express-info.lh/css/skin1/featured_long_style.css
 
@@ -22,7 +22,7 @@
 
  - http://express-info.lh/css/skin1/mobile.css?v=20190214-1420
 
- - http://express-info.lh/css/skin1/media-queries.css?v=20201026-1720
+ - http://express-info.lh/css/skin1/media-queries.css?v=20201029-1358
 
  - http://express-info.lh/css/skin1/mobile_gads.css?v=20180917-1425
 
@@ -42,7 +42,7 @@
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/style.css?v=20201026-1716 */ 
+ /* FILE START: http://express-info.lh/css/skin1/style.css?v=20201028-2308 */ 
 /*******************************************************************************
 
 Theme Name: London Live
@@ -3907,7 +3907,7 @@ img.alignleft,a img.alignleft {
     margin: 0 !important;
     
     /*border: 1px solid #94c2ce;*/
-    border: 1px solid #009DDB;
+    border: 3px solid #f92f05;
     /*border-width: 0px 1px 1px 1px;*/
     border-width: 0px 0px 1px 0px;
     /*display: none;*/
@@ -4213,7 +4213,7 @@ span.first-like-art-in-txt{
 /*<GAds Under Slider>*/
 
 /*============== </My> ==============*/
- /* FILE END: http://express-info.lh/css/skin1/style.css?v=20201026-1716 */ 
+ /* FILE END: http://express-info.lh/css/skin1/style.css?v=20201028-2308 */ 
 
 
 
@@ -5246,7 +5246,7 @@ body{
 
 
 
- /* FILE START: http://express-info.lh/css/skin1/media-queries.css?v=20201026-1720 */ 
+ /* FILE START: http://express-info.lh/css/skin1/media-queries.css?v=20201029-1358 */ 
 @media screen and (min-width: 981px) { /*-== Full Screen ==-*/
     
     #left div.single h1{ /*широкий заголовок*/
@@ -5280,7 +5280,10 @@ body{
     body{font-size: 100%;}
     #left div.single div.copy-url p{ font-size: 1em;}
     #headernavigation div.navigation{font-size: 0.7em;}
-    #left div.single h1, #page h1, #left div.single h1 a{font-size: 1.6em;}
+    #left div.single h1, #page h1, #left div.single h1 a{font-size: 2em; line-height: 1.4em;}
+    
+    .parse-version .storyimage .caption{ color: #aaa;}
+    .parse-version .storyimage .caption .attribution { color: #999;}
     
     /*#right{ display: none;}*/
     #right{
@@ -5303,6 +5306,10 @@ body{
     .top_gads{ display: none;}
     #headernavigation div.navigation{ width: auto; }
     #left div.single .doc-date-bottom { width: 100%; }
+    
+    
+    /*== <Look More> ==*/
+
     .look_more_hdn{
         padding-left: 10px !important; padding-right: 10px !important;
         background-color: #151515;
@@ -5315,6 +5322,7 @@ body{
     }
     p.look_more_hdn span.lmh_height_txt{
         color: #fff;
+        display: none;
     }
     #left div.single div.content h3.look_more_hdn{ 
 /*        padding-bottom: 15px !important; 
@@ -5322,18 +5330,31 @@ body{
         height: 80px; 
         min-height: 80px; 
         padding-left: 0 !important;*/
+
+        /*background: #555;*/
     }
     #left div.single div.content h3.look_more_hdn a{
-        font-size: 16px !important; 
-        line-height: 1.4em !important; 
+        font-size: 20px !important; 
+        line-height: 1.2em !important; 
         color: #009DDB !important;
     }
     #left div.single div.content h3.look_more_hdn img.look_more_img_mobile{display: inline-block;}
     p.look_more_hdn img.look_more_img_mobile{display: inline-block;}
     
     span.gads_in_more_hdn{
-        padding: 0;
+        padding: 20px 0px;
+        margin-bottom: 50px;
     }
+    
+    #left div.single div.content p.look_more_hdn img.look_more_img_mobile{
+        float: none;
+        display: block;
+        margin: 0 auto;
+        width: 300px !important; 
+        height: 200px !important;
+    }
+    
+    /*== </Look More> ==*/
     
     ul.firstnav-menu{ padding-left: 12px;}
     #content_holder{padding-left: 5px;}
@@ -5361,8 +5382,8 @@ body{
     }
     #left div.single div.content img.look_more_img_mobile{
         /*max-width: 120px !important;*/
-        width: 120px !important;
-        height: 80px !important;
+/*        width: 120px !important;
+        height: 80px !important;*/
     }
     #container{ width: auto;}
     
@@ -5659,7 +5680,7 @@ body{
     #content_holder {padding-left: 0;}
     
 }
- /* FILE END: http://express-info.lh/css/skin1/media-queries.css?v=20201026-1720 */ 
+ /* FILE END: http://express-info.lh/css/skin1/media-queries.css?v=20201029-1358 */ 
 
 
 

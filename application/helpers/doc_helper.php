@@ -74,7 +74,7 @@ function arraySplitUp($dataAr,$nmbrSplit=0){
     }
 }
 
-function insertLikeArticleInTxt($text, $likeList)
+function insertLikeArticleInTxt($text, $likeList) //== Not use 
 {   
     return $text; # -- TMP -- #
     
@@ -152,15 +152,17 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
 //                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
 //                        . '<img src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
                         .$likeTitle
+//                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
                         . "</h3>\n"
                         . '<blockquote class="look_more_quote">'."\n"
                         . '<p class="look_more_hdn"> '."\n "
                         . "\t".'<span class="lmh_height_txt">'."\n"
                         . '<img lazyload="lazyload-desktop" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" class="look_more_img_desktop" />'."\n"
-                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
+//                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
 //                        . '<img src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n"
                         .$likeText
                         . "\t</span>\n "
+                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
                         . "</p>\n "
                         . "\n</blockquote> \n "
                         . "<span class=\"gads_in_more_hdn\"> <span class=\"gAd\" data=\"LoockMoreInTxt\"></span> </span>\n " //GAds Block for JS Change
