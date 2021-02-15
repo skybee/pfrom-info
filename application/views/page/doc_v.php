@@ -47,7 +47,10 @@
         </div>
         
         <div class="dd_left">
-            <?php $dateAr =& $doc_data['date_ar']; ?>
+            <?php 
+                $dateAr     =& $doc_data['date_ar']; 
+                $dateSerpAr =& $doc_data['date_serp_ar']; //yandex serp or articles date
+            ?>
             <span class="long_date_str">
             <?=$dateAr['time'].'&nbsp;&nbsp;'.$dateAr['day_nmbr'].'&nbsp;'.$dateAr['month_str'].'&nbsp; '.$dateAr['year_nmbr'];?>
             </span>
@@ -96,7 +99,7 @@
             "headline": "<?=htmlspecialchars($doc_data['title'],ENT_COMPAT)?>",
             "image": "https://static.pressfrom.info/upload/images/real/<?=$doc_data['main_img']?>",
             "datePublished": "<?=$dateAr['year_nmbr'].'-'.$dateAr['month_nmbr'].'-'.$dateAr['day_nmbr']?>",
-            "dateModified":  "<?=$dateAr['year_nmbr'].'-'.$dateAr['month_nmbr'].'-'.$dateAr['day_nmbr']?>",
+            "dateModified":  "<?=$dateSerpAr['year_nmbr'].'-'.$dateSerpAr['month_nmbr'].'-'.$dateSerpAr['day_nmbr']?>",
             "publisher": <?=$doc_data['author_json']['publisher']?>,
             "author": <?=$doc_data['author_json']['author']?>,
             "mainEntityOfPage": {
