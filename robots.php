@@ -1,7 +1,7 @@
 <?php
 
 $pressReviewHosts   = ['pressreview24.com','unionpress24.lh'];
-$pressFromHosts     = ['pressfrom.info','express-info.lh'];
+$pressFromHosts     = ['pressfrom.info','express-info.lh','static.pressfrom.info'];
 
 header('Content-Type: text/plain; charset=utf-8');
 
