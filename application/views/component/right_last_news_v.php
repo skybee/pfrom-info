@@ -195,7 +195,7 @@
     <p>
         <?=$serp['text']?>
 
-        <?php if($i<5): //показывать первые 5 ссылок ?>
+        <?php if($i<3): //показывать первые 5 ссылок ?>
         <a href="<?=$serp['url']?>" target="_blank" rel="nofollow" style="color:#4c8296;">
             <?=$serp['host']?>
         </a>
