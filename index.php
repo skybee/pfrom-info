@@ -77,7 +77,15 @@
     
 
 
-    if($_SERVER['HTTP_HOST'] == 'pressfrom.vbox' || $_SERVER['HTTP_HOST'] == 'pressreview24.lh' || $_SERVER['HTTP_HOST'] == 'unionpress24.lh' || $_SERVER['HTTP_HOST'] == 'express-info.lh' || $_SERVER['HTTP_X_REAL_IP'] == '109.86.165.207')
+    if( $_SERVER['HTTP_HOST'] == 'pressfrom.vbox' 
+        ||  
+        $_SERVER['HTTP_HOST'] == 'pressreview24.lh' 
+        || 
+        $_SERVER['HTTP_HOST'] == 'unionpress24.lh' 
+        || 
+        $_SERVER['HTTP_HOST'] == 'express-info.lh' 
+        || 
+        $_SERVER['REMOTE_ADDR'] == '178.151.78.247')
     {
         define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
     }
