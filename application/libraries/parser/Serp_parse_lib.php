@@ -7,6 +7,34 @@ class Serp_parse_lib
     private $yandexUrl  = 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D15';
     private $thisHost   = false;
     private $lang       = 'ru';
+    private $proxyData  = false;
+    
+    private function getProxyData(){
+        
+        $proxyesDataAr[] = array(
+            'yandex_url'    => 'https://xmlsearch.yandex.com/xmlsearch?user=mail@lalalay.com&key=03.1130000018332401:db8ac7bad789ba8f7aabca04b0aa6308&maxpassages=5&groupby=groups-on-page%3D15',
+            'proxy' => false
+        );
+        
+        $proxyesDataAr[] = array(
+            'yandex_url'    => 'https://xmlsearch.yandex.com/xmlsearch?user=skybee84&key=03.47372985:0ec36ca944189961ac6da27d41f5d404&maxpassages=5&groupby=groups-on-page%3D15',
+            'proxy' => array(
+                'ip_port'   => '217.29.63.202:57044',
+                'log_pass'  => '6KecBB:4mmeSE',
+             )
+        );
+        
+        
+        $proxyesDataAr[] = array(
+            'yandex_url'    => 'https://xmlsearch.yandex.com/xmlsearch?user=aleksandr-a-shev&key=03.250209074:69ad970be8cb71cf4071dbb1b6c887f3&maxpassages=5&groupby=groups-on-page%3D15',
+            'proxy' => array(
+                'ip_port'   => '217.29.63.240:10292',
+                'log_pass'  => '6KecBB:4mmeSE',
+             )
+        );
+        
+        return $proxyesDataAr[mt_rand(0,count($proxyesDataAr)-1)];
+    }
 
     function setThisHost($thisHost)
     {
@@ -15,6 +43,13 @@ class Serp_parse_lib
 
     function getData($articleData)
     {
+        $proxyesData        = $this->getProxyData();
+        $this->yandexUrl    = $proxyesData['yandex_url'];
+        $this->proxyData    = $proxyesData['proxy'];
+
+        echo "\n\n Use Proxy: ".$proxyesData['proxy']['ip_port']."\n";
+
+        
         $title      = $this->cleanQuery($articleData['title']);
         $queryUrl   = $this->yandexUrl .'&query='.$title.'&lang='.$this->lang;
         
@@ -130,6 +165,11 @@ class Serp_parse_lib
         curl_setopt($ch, CURLOPT_ENCODING, '');
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_MAXREDIRS, 5);
+        
+        if($this->proxyData !== false && is_array($this->proxyData)){ // if use proxy
+            curl_setopt($ch, CURLOPT_PROXY,         $this->proxyData['ip_port']);
+            curl_setopt($ch, CURLOPT_PROXYUSERPWD,  $this->proxyData['log_pass']);
+        }
 
 	$content = curl_exec($ch);
 	curl_close($ch);
