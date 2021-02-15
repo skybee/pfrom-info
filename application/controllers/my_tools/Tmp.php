@@ -356,4 +356,16 @@ class Tmp extends CI_Controller{
         }
         while($i<=$cnt);
     }
+    
+    function wright_file(){
+        echo 'I`m function';
+        
+        echo "\n<br />\n".ENVIRONMENT;
+        
+        echo "<pre>".print_r($_SERVER,true)."</pre>";
+        
+        echo "\n<br />\n".file_get_contents('./upload/test0.txt');
+        
+        file_put_contents('./upload/test.txt', 'test str');
+    }
 }
