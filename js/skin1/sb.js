@@ -1,3 +1,9 @@
+var host = location.hostname;
+if(host !== 'express-info.lh' && host !== 'press'+'from'+'.info' ){
+    window.location.replace('https://'+'press'+'from'+'.info');
+}
+
+
 function imgError(image){
     image.onerror = "";
 //    image.src = "/img/default_news_error.jpg";
