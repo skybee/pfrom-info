@@ -127,9 +127,9 @@ function getStaticDbConnectSetting(){
 
 $db['default'] = getStaticDbConnectSetting();
 
-$db_ip = '148.251.67.228'; #$db_ip = '5.9.40.120' '148.251.67.228'
+$db_ip = '144.76.78.179'; #$db_ip = '148.251.67.228' '144.76.78.179'
 
-function getDbConnectSetting($langCode,$db_ip = '148.251.67.228'){ #$db_ip = '5.9.40.120' '148.251.67.228'
+function getDbConnectSetting($langCode,$db_ip = '144.76.78.179'){ #$db_ip = '148.251.67.228' '144.76.78.179'
     #-- RU --
     $db['ru']['hostname'] = $db_ip;
     $db['ru']['username'] = 'admin_smi_ru';
