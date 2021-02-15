@@ -8,7 +8,7 @@ class Main extends CI_Controller {
         if(     $_SERVER['HTTP_HOST'] != 'pressfrom.info' 
                 && $_SERVER['HTTP_HOST'] != 'express-info.lh' 
                 && $_SERVER['HTTP_HOST'] != 'pressfrom.vbox' 
-                && $_SERVER['HTTP_HOST'] != 'pressreview24.com' 
+//                && $_SERVER['HTTP_HOST'] != 'pressreview24.com' 
                 && $_SERVER['HTTP_HOST'] != 'pressreview24.lh'
                 && $_SERVER['HTTP_HOST'] != 'unionpress24.lh'
         ){
