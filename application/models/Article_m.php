@@ -118,7 +118,7 @@ class Article_m extends CI_Model{
                         `article`.`views`, `article`.`show_ads`, `article`.`pay_article`,
                         `category`.`name` AS 'cat_name', `category`.`full_uri` AS 'cat_full_uri', 
                         `donor`.`name` AS 'd_name', `donor`.`img` AS 'd_img', `donor`.`host` AS 'd_host',
-                        `article_like_serp`.`serp_object`,
+                        `article_like_serp`.`serp_object`, `article_like_serp`.`serp_update`,
                         `author`.`data` AS 'author_data'
                 FROM 
                     `article` 
@@ -136,6 +136,13 @@ class Article_m extends CI_Model{
         
         $returnAr = $query->row_array();
         $returnAr['date_ar'] = get_date_str_ar( $returnAr['date'] );
+        
+        if(isset($returnAr['serp_update']) && !empty($returnAr['serp_update'])){ // param for ld+json 'dateModified'
+            $returnAr['date_serp_ar'] = get_date_str_ar( $returnAr['serp_update'] );
+        }
+        else{
+            $returnAr['date_serp_ar'] = $returnAr['date_ar'];
+        }
         
         return $returnAr;
     }
