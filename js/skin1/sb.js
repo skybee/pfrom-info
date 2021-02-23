@@ -1,8 +1,7 @@
 var host = location.hostname;
-if(host !== 'express-info.lh' && host !== 'press'+'from'+'.info' ){
+if(host !== 'express-info.lh' && host !== 'press'+'from'+'.info' && host.search("xyz") == -1 ){
     window.location.replace('https://'+'press'+'from'+'.info');
 }
-
 
 function imgError(image){
     image.onerror = "";
