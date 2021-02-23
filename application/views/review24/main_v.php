@@ -143,6 +143,10 @@
             }
         </script>
         
+        <?php if(isset($meta['canonical']) && !empty($meta['canonical']) ): ?>
+            <link rel="canonical" href="<?=$meta['canonical']?>" />
+        <?php endif; ?>
+        
     </head>
 
     <body>
