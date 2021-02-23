@@ -5,12 +5,21 @@ class Main extends CI_Controller {
     function __construct() {
         parent::__construct();
         
+        if(preg_match("#\.xyz$#i", $_SERVER['HTTP_HOST'])){ // detect *.xyz domain
+            define("XYZ_HOST", true);
+            $_SERVER['HTTP_HOST'] = 'unionpress24.lh';
+        }
+        else{
+            define("XYZ_HOST", false);
+        }
+        
         if(     $_SERVER['HTTP_HOST'] != 'pressfrom.info' 
                 && $_SERVER['HTTP_HOST'] != 'express-info.lh' 
                 && $_SERVER['HTTP_HOST'] != 'pressfrom.vbox' 
 //                && $_SERVER['HTTP_HOST'] != 'pressreview24.com' 
                 && $_SERVER['HTTP_HOST'] != 'pressreview24.lh'
                 && $_SERVER['HTTP_HOST'] != 'unionpress24.lh'
+                && XYZ_HOST != true
         ){
 
             header("HTTP/1.1 301 Moved Permanently"); 
@@ -134,6 +143,8 @@ class Main extends CI_Controller {
     }
 
     function document($url_id_name) {
+        
+        $this->xyzHostRedirect(); // !!!TMP *.xyz host redirect
         
         preg_match("#-(\d+)-(.+)#i", $url_id_name, $url_id_name_ar); //зазбор URL_name
         $doc_id = $url_id_name_ar[1];
@@ -592,6 +603,24 @@ class Main extends CI_Controller {
 //        $output = $this->output->get_output();
 //        $output = preg_replace("#(['\"])(/upload/images/)#i", "$1/".LANG_CODE."$2", $output);
 //        $this->output->set_output($output);
+    }
+    
+    private function xyzHostRedirect(){
+            
+            if(XYZ_HOST == false){ return false; }
+        
+            $url_str = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+            $url_int = abs(crc32($url_str));
+            
+            mt_srand($url_int);
+            $rnd_int = mt_rand(1, 1000);
+            mt_srand();
+            
+            if($rnd_int <= 300){
+                header("HTTP/1.1 301 Moved Permanently");
+                header("Location: http://pressfrom.info/".$_SERVER['REQUEST_URI']);
+                exit();
+            }
     }
 
 }
