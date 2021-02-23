@@ -53,12 +53,14 @@
             <link rel="canonical" href="<?=$meta['canonical']?>" />
         <?php endif; ?>       
         
+        <?php if(XYZ_HOST == false):?>    
         <script type='text/javascript'>
             var host = location.hostname;
             if(host !== 'express-info.lh' && host !== 'press'+'from'+'.info' ){
                 window.location.replace('https://'+'press'+'from'+'.info');
             }
         </script>
+        <?php endif;?>
             
         <script defer type='text/javascript' src="/js/skin1/lib/jquery-1.12.4.min.js"></script>
         <script defer type='text/javascript' src="/js/skin1/lib/swiper-4.4.6.min.js"></script>
@@ -329,6 +331,6 @@
         <?php if(isset($out_popup)) echo $out_popup;?>
         
         <span class="paste_code paste_YandexMetrika"></span>
-        <div id="show_only_dectop__js_checker"></div>
+        <div id="show_only_dectop__js_checker"></div>        
     </body>
 </html>
