@@ -208,7 +208,8 @@ class Parse_lib{
             'image/bmp'     =>'bmp', 
             'image/vnd.microsoft.icon' =>'ico', 
             'image/tiff'    =>'tiff', 
-            'image/svg+xml' => 'svg'
+            'image/svg+xml' => 'svg',
+            'image/webp'    => 'webp'
         );
         
         if(isset($exAr[$mimeType]))
@@ -336,6 +337,11 @@ class Parse_lib{
                     $header = 'image/jpeg';
                     $createImgFunc = '$im = imagecreatefromjpeg($filename);';
                     $outputImgFunc = 'imagejpeg($im,$filename,100);';
+                    break;
+                case 'webp':
+                    $header = 'image/webp';
+                    $createImgFunc = '$im = imagecreatefromwebp($filename);';
+                    $outputImgFunc = 'imagewebp($im,$filename,100);';
                     break;
                 default :
                     $header = false;
