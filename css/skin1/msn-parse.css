@@ -11,7 +11,7 @@
 }
 
 .parse-version .storyimage.floated{
-    float: left;
+    /*float: left;*/
     margin-bottom: 14px;
     margin-right: 24px;
 }
