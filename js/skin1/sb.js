@@ -176,12 +176,13 @@ $( document ).ready(function(){
     
     
     //LazyLoad IMG
-    setTimeout(
-    $("img[lazyload=lazyload]").lazy({ 
-        effect: "fadeIn",
-        effectTime: 600,
-        threshold: 200
-    }), 5000);
+    setTimeout(function(){
+        $("img[lazyload=lazyload]").lazy({ 
+            effect: "fadeIn",
+            effectTime: 600,
+            threshold: 200
+        });
+    }, 5000);
 
 
     // Load YandexMetrika
@@ -233,6 +234,15 @@ function pagePreloadClose(){
 // </ Preload Page Close >
 
 
+//===== < Show Social Buttons > =====//
+setTimeout(function(){
+    $.getScript("/js/skin1/lib/likely.js").done(function(){
+        likely.initiate();
+    });
+},10000);
+//===== </ Show Social Buttons > =====//
+
+
 //===================== <if Mobile> =====================//
 function ifMobile(){
     
@@ -248,10 +258,21 @@ function ifMobile(){
     // </show this cat>
     
 //    alert('123-'+mobMenuTabIndex);
-    $('#mobile_menu_tabs').tabs({active: mobMenuTabIndex});
+//    $('#mobile_menu_tabs').tabs({active: mobMenuTabIndex});
     
     $('#mobile_nav_btn').click(function(){
-            $('#mobile_menu').slideToggle();
+        
+            if(window.jqueryTabsLoadedFlag !== true){
+                $.getScript("/js/skin1/lib/jquery-ui.min-tabs-1.12.1.js").done(function(){
+                    $('#mobile_menu_tabs').tabs({active: mobMenuTabIndex});
+                    $('#mobile_menu').slideToggle();
+                });
+                
+                window.jqueryTabsLoadedFlag = true;
+            }
+            else{
+                $('#mobile_menu').slideToggle();
+            }
         }
     );
     
@@ -265,17 +286,21 @@ function ifMobile(){
     
     // top slider mobile
     //initialize swiper when document ready
-    var mySwiper = new Swiper ('.swiper-container', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
+    setTimeout(function(){
+        $.getScript("/js/skin1/lib/swiper-6.4.15.min.js").done(function(){
+            var mySwiper = new Swiper ('.swiper-container', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
 
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        }
-    });
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            });
+        });
+    }, 3000);
     
     
     
@@ -285,7 +310,7 @@ function ifMobile(){
         effect: "fadeIn",
         effectTime: 600,
         threshold: 200
-    }),5000);
+    }), 5000);
     
 }
 //===================== </if Mobile> =====================//
@@ -295,26 +320,8 @@ function ifMobile(){
 function ifDesktop(){
     
     //========== <Sliders> ==========//
-    window.setTimeout("showTopSliderTimeOut()",1000);   
+//    window.setTimeout("showTopSliderTimeOut()",1000);   
     //========== </Sliders> ==========//
-
-
-    // <zoom img>
-//    $('.image-popup-no-margins').magnificPopup({
-//                type: 'image',
-//                closeOnContentClick: true,
-//                closeBtnInside: false,
-//                fixedContentPos: true,
-//                mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-//                image: {
-//                        verticalFit: true
-//                },
-//                zoom: {
-//                        enabled: true,
-//                        duration: 300 // don't foget to change the duration also in CSS
-//                }
-//        });
-    // </zoom img>
 
     // <show this cat>
     if( $('span').is('#opt-tag-main-cat') ){ 
@@ -343,45 +350,18 @@ function ifDesktop(){
     // <serp result add link>
     
     //LazyLoad IMG for Desktop
-    setTimeout(
-    $('img[lazyload="lazyload-desktop"]').lazy({ 
-        effect: "fadeIn",
-        effectTime: 600,
-        threshold: 200
-    }),5000);
+    setTimeout(function(){
+        $('img[lazyload="lazyload-desktop"]').lazy({ 
+            effect: "fadeIn",
+            effectTime: 600,
+            threshold: 200
+        });
+    }, 5000);
     
     //Load Games
 //    setTimeout('$("#bottom-games").load("/html/bottom-games.html");', 10000);
 }
 //===================== <if Desktop> =====================//
-
-
-//===================== <TopSliderLoad> =====================//
-function showTopSliderTimeOut(){
-        $('#featured .featured-hide-preload').css({'display':'block'});
-        $('#featured .featured-hide-preload').animate({opacity:1}, 400,function(){
-            $('.bxslider').bxSlider({
-                mode: 'fade',
-                pagerCustom: '#bx-pager',
-                controls: false,
-                auto: true,
-                speed: 600,
-                pause: 4000,
-                onSlideBefore: lazySliderBefore
-            });
-        });
-//        alert("slider");
-};
-
-function lazySliderBefore(thisBlock){
-    thisImg = $('img', thisBlock);
-    newSrc = thisImg.attr('data-src');
-    if(newSrc !== undefined){
-        thisImg.attr('src',newSrc);
-        thisImg.removeAttr('data-src');
-    }
-}
-//===================== </TopSliderLoad> =====================//
 
 
 
