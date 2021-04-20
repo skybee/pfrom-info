@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24 февр. 2021 г., 10:24:35
+    Author     : Alex
+*/
+
+#sb_top_slider{
+    /*border: dotted 1px #f00;*/
+    background-color: #181818;
+    
+    width:956px;
+    height:300px;
+/*    padding-left:10px;
+    padding-right:10px;*/
+    /*padding-top:19px;*/
+    overflow:hidden;
+    float:left;
+    position: absolute;
+    top: 164px; left: 20px;
+}
+
+#sb_top_slider #sb_top_slider_left{
+    /*border: dotted 1px #f00;*/
+    float: left;
+    height: 298px; width: 640px;
+}
+
+#sb_top_slider #sb_top_slider_right{ /*ads block*/
+    /*border: dotted 1px #f00;*/
+    float: right;
+    width: 300px; height: 280px;
+    margin: 10px 10px 0 0;
+}
+
+#sb_top_slider #sb_top_slider_left a.sb_ts_news_container{
+    display: block;
+    position: relative;
+    /*border: dotted 1px #d39e00;*/
+    border-bottom: solid 2px #009DDB; 
+    width: 200px; height: 133px;
+    margin: 10px 0px 0px 10px;
+    float: left;
+    overflow: hidden;
+    
+    background-size: cover;
+    background-position: center;
+}
+
+#sb_top_slider #sb_top_slider_left a.sb_ts_news_container:hover{
+    border-bottom: solid 2px #d82000;
+    
+    background-size: 130%;
+    animation: scale 0.2s linear;
+}
+@keyframes scale {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 130%;
+  }
+}
+
+#sb_top_slider #sb_top_slider_left .sb_ts_news_container span{
+    display: block;
+    position: absolute;
+    left: 0; top: 90px;
+    padding: 3px 7px 0px 7px;
+    min-height: 50px;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    overflow: hidden;
+    font-size: 14px; line-height: 18px;
+    
+}
