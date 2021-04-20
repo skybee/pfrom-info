@@ -69,7 +69,7 @@ class Del_html_from_news extends CI_Controller {
 //            print_r($metaDataAr);
 //            echo "\n\n---------------\n\n";
 
-            $htmlVideo = '<video width="100%" height="auto"  poster="' . $metaDataAr['posterUrl'] . '" controls > '
+            $htmlVideo = '<video loading="lazy" width="100%" height="auto"  poster="' . $metaDataAr['posterUrl'] . '" controls > '
                     . '<source src="' . $metaDataAr['videoUrl'] . '" > '
                     . 'Your browser does not support this video'
                     . '</video>';
