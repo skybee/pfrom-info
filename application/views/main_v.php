@@ -22,19 +22,17 @@
         
 <!--        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/style.css?v=<?=js_version('/css/skin1/style.css')?>" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long_style.css" />
-        <link rel="stylesheet" type="text/css" href="/css/skin1/featured_long.css" />
+        <link rel="stylesheet" type="text/css" href="/css/skin1/sb_top_slider.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/default.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/skin.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/font.css?v=<?=js_version('/css/skin1/font.css')?>" />
         <?php if(0):?><link rel="stylesheet" type="text/css" href="/css/skin1/magnific-popup.css" /><?php endif;?>
-        <link rel="stylesheet" type="text/css" href="/css/skin1/jquery.bxslider.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/likely.css" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/msn-parse.css?v=<?=js_version('/css/skin1/msn-parse.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/mobile.css?v=<?=js_version('/css/skin1/mobile.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/media-queries.css?v=<?=js_version('/css/skin1/media-queries.css')?>" />
         <link rel="stylesheet" type="text/css" href="/css/skin1/mobile_gads.css?v=<?=js_version('/css/skin1/mobile_gads.css')?>" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css" />-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.15/swiper-bundle.min.css" />-->
 
         <link rel="stylesheet" type="text/css" href="/css/all-style.css?v=<?=js_version('/css/all-style.css')?>" />
         
@@ -63,11 +61,10 @@
         <?php endif;?>
             
         <script defer type='text/javascript' src="/js/skin1/lib/jquery-1.12.4.min.js"></script>
-        <script defer type='text/javascript' src="/js/skin1/lib/swiper-4.4.6.min.js"></script>
+        <!--<script defer type='text/javascript' src="/js/skin1/lib/swiper-6.4.15.min.js">/*---LOAD in sb.js---*/</script>-->
         <script defer type='text/javascript' src="/js/skin1/lib/jquery.lazy.min.js">/*---NOT COMENT in Production---*/</script>
-        <script defer type='text/javascript' src='/js/skin1/lib/jquery-ui.min-tabs-1.12.1.js'>/*---NOT COMENT in Production---*/</script>
-        <script defer type='text/javascript' src='/js/skin1/lib/jquery.bxslider.min.js'>/*---NOT COMENT in Production---*/</script>
-        <script defer type='text/javascript' src='/js/skin1/lib/likely.js'>/*---NOT COMENT in Production---*/</script>
+        <!--<script defer type='text/javascript' src='/js/skin1/lib/jquery-ui.min-tabs-1.12.1.js'>/*---LOAD in sb.js---*/</script>-->
+        <!--<script defer type='text/javascript' src='/js/skin1/lib/likely.js'>/*---LOAD in sb.js---*/</script>-->
 
         
 <!--        <script defer type='text/javascript' src='/js/skin1/lib/all-lib.js?v=<?=js_version('/js/skin1/lib/all-lib.js')?>'>
@@ -162,7 +159,6 @@
                     </style>    
                     
                     <?php #if(preg_match("#(pressfrom.com|lalalay.com|francais-express.com)$#i", $_SERVER['HTTP_HOST'], $pregHostResult)):?>
-                    <a class="lang-link" href="/ru/">RU</a>
                     <a class="lang-link" href="/br/">BR</a>
                     <a class="lang-link" href="/au/">AU</a>
                     <a class="lang-link" href="/fr/">FR</a>
@@ -187,7 +183,8 @@
                 <div id="white_space">
                     <div id="content_holder">
                         <div id="header">
-                            <a href="/<?=LANG_CODE?>/"><img src="/img/<?=$this->multidomaine['logo_img'];?>" border="0" alt="<?=$this->multidomaine['site_name_str'];?> Logo" class="logo"  /></a>
+                            <a href="/<?=LANG_CODE?>/">
+                                <img width="176" height="58" loading="lazy" src="/img/<?=$this->multidomaine['logo_img'];?>" border="0" alt="<?=$this->multidomaine['site_name_str'];?> Logo" class="logo"  /></a>
                             <!--                            <div class="ad "></div> #ad 468x60 closer -->
 
                             <div class="search_top_block">
