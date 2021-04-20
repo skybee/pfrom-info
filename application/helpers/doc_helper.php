@@ -162,7 +162,7 @@ function insertLikeArtInTxt($text, $likeList, $likeSerpAr)
 //                        . '<img src="/upload/images/real/'.$likeArticle['main_img'].'"  alt="'.$likeTitle.'" onerror="imgError(this);" />'."\n"
                         .$likeText
                         . "\t</span>\n "
-                        . '<img lazyload="lazyload-mobile" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
+                        . '<img lazyload="lazyload-mobile" width="300px" height="200px" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/'.$likeArticle['main_img'].'" alt="" onerror="imgError(this);" class="look_more_img_mobile"/>'."\n"
                         . "</p>\n "
                         . "\n</blockquote> \n "
                         . "<span class=\"gads_in_more_hdn\"> <span class=\"gAd\" data=\"LoockMoreInTxt\"></span> </span>\n " //GAds Block for JS Change
@@ -332,6 +332,28 @@ function rewriteImgInToLazyLoad($html){
 //    echo '<!-- ';
 //    print_r($matches);
 //    echo ' -->';
+    
+    return $html;
+}
+
+function setSizeForFirstImg($html){
+    if( preg_match("#(<img[\s\S]+?)src=['\"](\S+?)['\"]([\s\S]*?>)#i", $html, $matches) === false ){
+        return $html;
+    }
+    
+    if(isset($matches[2]) && !empty($matches[2])){
+        $fileName = '.'.$matches[2];
+        $fileName = preg_replace("#\?\S+$#i", '', $fileName); //удаление: ?content=1
+        
+        if( file_exists($fileName) ){
+            $imgSize = getimagesize($fileName);
+            
+            if( isset($imgSize[3]) && !empty($imgSize[3]) ){
+                $replacement = '<img '.$imgSize[3].' style="height: auto;" ';
+                $html = preg_replace("#<img #i",$replacement, $html,1);
+            }
+        }
+    }
     
     return $html;
 }
