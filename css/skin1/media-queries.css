@@ -183,7 +183,7 @@
     
     /*==== </Like News> ====*/
     
-    div.parse-version{padding-bottom: 115px;} /*bottom padding to first like news in text*/
+    div.parse-version{padding-bottom: 750px;} /*bottom padding to first like news in text*/
     
     
     
@@ -207,7 +207,7 @@
     
     
     /*========== TMP ============*/
-    #categories, #header, #featured, #footer_widget{ display: none;}
+    #categories, #header, #featured, #footer_widget, #sb_top_slider{ display: none;}
     #left div.single .content-gAd-bottom{width: 100%;}
     #left div.single .content-gAd-bottom .content-gAd-center{
         width: 100%;
