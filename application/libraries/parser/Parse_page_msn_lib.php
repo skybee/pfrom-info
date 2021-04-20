@@ -119,7 +119,7 @@ class Parse_page_msn_lib{
             $metaDataAr = json_decode($metaData,true);
 //            print_r($metaDataAr);
             
-            $htmlVideo = '<video width="100%" height="auto"  poster="'.$metaDataAr['headlineImage']['url'].'" controls > '
+            $htmlVideo = '<video loading="lazy" width="100%" height="auto"  poster="'.$metaDataAr['headlineImage']['url'].'" controls > '
                     . '<source src="'.$metaDataAr['videoFiles'][0]['url'].'" > '
                     . 'Your browser does not support this video'
                     . '</video>';
@@ -156,7 +156,7 @@ class Parse_page_msn_lib{
             
             
             
-            $htmlVideo = '<video width="100%" height="auto"  poster="'.$metaDataAr['posterUrl'].'" controls > '
+            $htmlVideo = '<video loading="lazy" width="100%" height="auto"  poster="'.$metaDataAr['posterUrl'].'" controls > '
                     . '<source src="'.$metaDataAr['videoUrl'].'" > '
                     . 'Your browser does not support this video'
                     . '</video>';
