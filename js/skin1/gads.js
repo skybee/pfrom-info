@@ -18,7 +18,6 @@ $( document ).ready(function(){
     }
     
     if($('h3.look_more_hdn').length >= 3){ //add after like news block
-//        $('p.look_more_hdn:eq(2)').after(gAdsInContentHtml);
         $('span.gads_in_more_hdn:eq(2)').after(gAdsInContentHtml);
         if($('h3.look_more_hdn').length >= 5){ //add after like news block
             $('span.gads_in_more_hdn:eq(4)').after(gAdsInContentHtml);
@@ -36,7 +35,7 @@ $( document ).ready(function(){
                 $(this).replaceWith(toWrite);
             });
         }
-    }, 2000);
+    }, 1800);
 
 });
 
@@ -283,7 +282,7 @@ function loadGAdDesctop(blockName){
             toWrite = " <ins class=\"adsbygoogle\" \
                             style=\"display:block\" \
                             data-ad-format=\"fluid\" \
-                            data-ad-layout-key=\"-d2+6f-3y-ip+1my\" \
+                            data-ad-layout-key=\"-cs+6h-4a-lu+1o5\" \
                             data-ad-client=\"ca-pub-6096727633142370\" \
                             data-ad-slot=\"8912358297\"> \
                         </ins> \
@@ -365,9 +364,21 @@ function loadGAdDesctop(blockName){
                         (adsbygoogle = window.adsbygoogle || []).push({}); \
                     </script>";
     }
+    if(blockName == 'InTopSlider'){ //TopSliderFeed 
+        toWrite = " <ins class=\"adsbygoogle\" \
+                        style=\"display:block;height:280px;\" \
+                        data-ad-format=\"fluid\" \
+                        data-ad-layout-key=\"-72+eg+2c-1w-4c\" \
+                        data-ad-client=\"ca-pub-6096727633142370\" \
+                        data-ad-slot=\"7201412950\"> \
+                    </ins> \
+                    <script> \
+                        (adsbygoogle = window.adsbygoogle || []).push({}); \
+                    </script>";
+    }
     if(blockName == 'LoockMoreInTxt'){ 
         toWrite = " <ins class=\"adsbygoogle\" \
-                        style=\"display:block; max-height:90px;\" \
+                        style=\"display:block; height:100px;\" \
                         data-ad-client=\"ca-pub-6096727633142370\" \
                         data-ad-slot=\"8066584408\" \
                         data-ad-format=\"horizontal\" \
