@@ -22,10 +22,10 @@
                 <a href="/<?=LANG_CODE?><?="/{$catlist_ar['s_cat_ar']['full_uri']}-{$catlist_ar[0]['id']}-{$catlist_ar[0]['url_name']}.html"?>">
                     <!--medium-->
                     <?php if($i<=2):?>
-                        <img src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />
+                        <img  loading="lazy" src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />
                     <?php else: ?>
                         <!--<img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />-->
-                        <img src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />
+                        <img  loading="lazy" src="/upload/images/real/<?=$catlist_ar[0]['main_img']?>" alt="<?=$catlist_ar[0]['title']?>" border="0" onerror="imgError(this);" />
                     <?php endif; ?>
                     
                 </a>
@@ -49,10 +49,10 @@
                     <div class="thumb">
                         <a href="/<?=LANG_CODE?><?="/{$catlist_ar[$ii]['full_uri']}-{$catlist_ar[$ii]['id']}-{$catlist_ar[$ii]['url_name']}.html"?>">
                             <?php if($i<=2):?>
-                                <img src="/upload/images/small/<?=$catlist_ar[$ii]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />
+                                <img loading="lazy" src="/upload/images/small/<?=$catlist_ar[$ii]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />
                             <?php else: ?>
                                 <!--<img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="/upload/images/small/<?=$catlist_ar[$ii]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />-->
-                                <img src="/upload/images/small/<?=$catlist_ar[$ii]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />
+                                <img loading="lazy" src="/upload/images/small/<?=$catlist_ar[$ii]['main_img']?>" alt="<?=$catlist_ar[1]['title']?>"  border="0" onerror="imgError(this);" />
                             <?php endif; ?>
                         </a>
                     </div><!-- #thumb -->
