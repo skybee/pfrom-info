@@ -389,7 +389,7 @@ hr {
 	border-top:1px solid #fff;
         background-color: #009DDB;
         
-        margin-bottom: 317px;
+        margin-bottom: 300px;
 }
 
 #left {
@@ -497,8 +497,8 @@ hr {
 #left div.single .doc-date .dd_right .doc-donor-link:hover{ color: #009DDB; }
 
 #left div.single .doc-date .social_btn{
-    /*height: 25px;*/ 
-    /*width: 140px;*/ 
+    height: 32px; 
+    width: 184px; 
     float: left;
     overflow: hidden;
     position: relative; 
@@ -554,7 +554,7 @@ hr {
     /*background-position: center center;*/
     /*border:#eee 1px solid; border-width: 1px 0px;*/
     /*height: 100px;*/
-    margin: 25px 0px !important;
+    margin: 40px 0px 25px 0px !important;
     
 }
     #left div.single .content-gAd .content-gAd-center{
@@ -587,8 +587,9 @@ hr {
     width: 100%;
     padding-left: 17px;
     border-left: 3px solid #f92f05;
-    margin-left: -21px;
+    margin-left: -21px; 
 }
+#left div.single .content-gAd-in-text .content-gAd-center:first-child{min-height: 250px;}
 
 #left div.single table{
     border-collapse: collapse;
@@ -1652,6 +1653,9 @@ margin-top: 6px;
 #left div.single div.content h3, #left div.single div.content h2{
     font-size: 16px !important;
     line-height: 1.5em !important;
+}
+#left div.single div.content h2{
+    font-size: 20px !important;
 }
 
 #left div.single div.content ul,#left div.single div.content ol,#page div.entry-content ul,#page div.entry-content ol {
@@ -3313,7 +3317,8 @@ text-shadow: none;
 }
 #left div.single div.content a{
     font-weight: normal !important;
-    font-size: 13px; line-height:16px;
+    /*font-size: 13px;*/ 
+    /*line-height:16px;*/
 }
 #left div.single div.content a:hover{
     color: #009DDB;
@@ -3861,16 +3866,16 @@ img.alignleft,a img.alignleft {
     padding-top: 7px !important;
     margin: 0 !important;
     
-    /*border: 1px solid #94c2ce;*/
-    border: 3px solid #f92f05;
+    border: 1px solid #009DDB;
+    /*border: 3px solid #f92f05;*/
     /*border-width: 0px 1px 1px 1px;*/
-    border-width: 0px 0px 1px 0px;
+    border-width: 0px 0px 3px 0px;
     /*display: none;*/
 }
     p.look_more_hdn{
         padding-top: 10px !important;
         color: #3f3f3f !important;
-        color: #e0e0e0 !important;
+        color: #d0d0d0 !important;
         font-style: italic;
     }
         p.look_more_hdn img{
@@ -3892,7 +3897,7 @@ img.alignleft,a img.alignleft {
         p.look_more_hdn span.lmh_height_txt{
             border: none;
             display: block;
-            /*height: 136px;*/
+            height: 136px;
             overflow: hidden;
             padding: 0;
             font-style: normal;
@@ -3906,18 +3911,15 @@ img.alignleft,a img.alignleft {
         }
 span.gads_in_more_hdn{
     display: block;
-    /*border-bottom: 1px solid #94c2ce;*/
     border-bottom: 3px solid #009DDB;
-    /*background-color: #fcfcfc;*/
-    background-color: #151515;
-    /*background-color: #fcc;*/
-    padding: 10px 10px;
-    /*height: 30px;*/
+    padding: 10px 0px;
+    /*height: 100px;*/
+    margin-bottom: 30px;
 }
         
 div.parse-version{
     position: relative;
-    padding-bottom: 330px;
+    padding-bottom: 380px;
     padding-top: 15px;
 }
         
@@ -3932,7 +3934,7 @@ span.first-like-art-in-txt{
     font-size: 14px !important;
     color: #4c8296 !important;
     line-height: 1.2em !important;
-    margin: 0 !important;
+    margin: 30px 0 0 0 !important;
     width: auto !important;
     padding-bottom: 0px !important;
     /*border: 1px solid #209C00;*/
