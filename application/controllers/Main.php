@@ -5,7 +5,7 @@ class Main extends CI_Controller {
     function __construct() {
         parent::__construct();
         
-        if(preg_match("#\.xyz$#i", $_SERVER['HTTP_HOST'])){ // detect *.xyz domain
+        if(preg_match("#(\.xyz|odnako\.su)$#i", $_SERVER['HTTP_HOST'])){ // detect *.xyz domain
             define("XYZ_HOST", true);
             $_SERVER['HTTP_HOST'] = 'unionpress24.lh';
         }
@@ -15,10 +15,11 @@ class Main extends CI_Controller {
         
         if(     $_SERVER['HTTP_HOST'] != 'pressfrom.info' 
                 && $_SERVER['HTTP_HOST'] != 'express-info.lh' 
-                && $_SERVER['HTTP_HOST'] != 'pressfrom.vbox' 
-//                && $_SERVER['HTTP_HOST'] != 'pressreview24.com' 
+                && $_SERVER['HTTP_HOST'] != 'pressfrom.vbox'
                 && $_SERVER['HTTP_HOST'] != 'pressreview24.lh'
                 && $_SERVER['HTTP_HOST'] != 'unionpress24.lh'
+//                && $_SERVER['HTTP_HOST'] != 'pressreview24.com'
+//                && $_SERVER['HTTP_HOST'] != 'odnako.su'
                 && XYZ_HOST != true
         ){
 
@@ -121,7 +122,7 @@ class Main extends CI_Controller {
             $tpl_ar['content'] .= $this->load->view('component/cat_listing_v', $data_ar, true);
             $tpl_ar['content'] .= $this->load->view('component/main_other_news_v', $data_ar, true);// .'<div>'.$msg.'</div>';
             $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
-            $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
+            $tpl_ar['top_slider']   = $this->load->view('component/slider_top_2_v', $top_slider, true);
             $tpl_ar['mobile_menu']  = $this->load->view('component/mobile_menu_v', 
                                                         array('mobile_menu_list'=>$mobile_menu_list), 
                                                         true
@@ -223,6 +224,7 @@ class Main extends CI_Controller {
                                         );
         //LazyLoad Text Rewrite
         $data_ar['doc_data']['text']    = rewriteImgInToLazyLoad($data_ar['doc_data']['text']);
+        $data_ar['doc_data']['text']    = setSizeForFirstImg($data_ar['doc_data']['text']);
         
         
         //вставка like_articles[0] в текст
@@ -293,7 +295,7 @@ class Main extends CI_Controller {
         
         if($this->multidomaine['host_conf']['tpl'] == 'pressfrom'){
             $tpl_ar['content']      = $this->load->view('page/doc_v', $data_ar, true); // .'<div>'.$msg.'</div>';
-            $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
+            $tpl_ar['top_slider']   = $this->load->view('component/slider_top_2_v', $top_slider, true);
             $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
             $tpl_ar['meta']['og']   = $this->load->view('component/meta_og_v', $data_ar['doc_data'], true);
             $tpl_ar['mobile_menu']  = $this->load->view(    
@@ -404,7 +406,7 @@ class Main extends CI_Controller {
         
         if($this->multidomaine['host_conf']['tpl'] == 'pressfrom'){
             $tpl_ar['content']      = $this->load->view('page/cat_list_v', $data_ar, true);
-            $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
+            $tpl_ar['top_slider']   = $this->load->view('component/slider_top_2_v', $top_slider, true);
             $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
             $tpl_ar['mobile_menu']  = $this->load->view(
                                                         'component/mobile_menu_v', 
@@ -474,7 +476,7 @@ class Main extends CI_Controller {
         
         $tpl_ar                 = $data_ar; //== !!! tmp
         $tpl_ar['content']      = $this->load->view('page/cat_list_v', $data_ar, true);
-        $tpl_ar['top_slider']   = $this->load->view('component/slider_top_v', $top_slider, true);
+        $tpl_ar['top_slider']   = $this->load->view('component/slider_top_2_v', $top_slider, true);
         $tpl_ar['right']        = $this->load->view('component/right_last_news_v', $right, true);
         $tpl_ar['mobile_menu']  = $this->load->view(
                                                     'component/mobile_menu_v', 
