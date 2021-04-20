@@ -186,11 +186,11 @@ $db['default'] = array_merge($db['default'], $connectData);
 
 
 
-//if( $_SERVER['HTTP_HOST'] == 'express-info.lh'){
+if( $_SERVER['HTTP_HOST'] == 'express-info.lh'){
 //    $db['default']['hostname'] = 'localhost';
 //    $db['default']['username'] = 'mysql';
 //    $db['default']['password'] = 'mysql';
 //    $db['default']['database'] = 'admin_pf_br'; //'fr-express'; //DB: france, fr-express
-////    
-////    $db['default']['database'] = 'admin_pf_us'; // TMP test
-//}
+//    
+//    $db['default']['database'] = 'admin_pf_us'; // TMP test
+}
