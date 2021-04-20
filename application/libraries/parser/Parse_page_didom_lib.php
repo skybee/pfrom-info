@@ -180,7 +180,7 @@ class parseMsn extends parse_page{
             $metaDataAr = json_decode($metaData,true);
 //            print_r($metaDataAr);
             
-            $htmlVideo = '<video width="100%" height="auto"  poster="'.$metaDataAr['headlineImage']['url'].'" controls > '
+            $htmlVideo = '<video loading="lazy" width="100%" height="auto"  poster="'.$metaDataAr['headlineImage']['url'].'" controls > '
                     . '<source src="'.$metaDataAr['videoFiles'][0]['url'].'" > '
                     . 'Your browser does not support this video'
                     . '</video>';
