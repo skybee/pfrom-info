@@ -211,7 +211,7 @@
                 ?>
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">
-                        <img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>" />
+                        <img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>"  width="120px" height="80px" />
                         <!--<img src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>" />-->
                         <?=Article_m::get_short_txt($likeArts['title'],80,'word','...')?>
                     </a>
