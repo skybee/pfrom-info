@@ -174,6 +174,12 @@
         </div>
     <?php endif; ?>
     
+    <?php if($payart_url = getRndPaylink(1) ): ?>
+        <div class="lnl_news">
+            <a href="<?=$payart_url?>" class="right-last-news-item"><?=$payart_url?></a>
+        </div>
+    <?php endif; ?>
+    
 </div>
 
 
