@@ -4,3 +4,5 @@ Disallow: /ajax/
 Disallow: /cron/
 Disallow: /parser/
 Disallow: /upload/
+
+Sitemap: https://pressfrom.info/sitemap/sitemap.xml
