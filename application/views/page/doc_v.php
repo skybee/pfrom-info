@@ -1,4 +1,4 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
+W<?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
 <!-- TMP RAND INT-->
 <?php 
@@ -205,9 +205,14 @@
             
             <div class="like-article-list">
                 <?php
+                    $i_OtherNews = 0;
                     foreach ($like_articles as $likeArts):
                         $newsUrl    = '/'.LANG_CODE."/{$likeArts['full_uri']}-{$likeArts['id']}-{$likeArts['url_name']}.html";
-                        $imgUrl     = '/upload/images/small/' . $likeArts['main_img']
+                        $imgUrl     = '/upload/images/small/' . $likeArts['main_img'];
+                                
+                        if($i_OtherNews == 4){ // add rand redirect host to link
+                            $newsUrl = 'http://'.getRedirectHost($_SERVER['REQUEST_URI']).$newsUrl;
+                        }        
                 ?>
                 <div class="like-article-item">
                     <a href="<?=$newsUrl?>">
@@ -217,6 +222,7 @@
                     </a>
                 </div>
                 <?php
+                    $i_OtherNews++;
                     endforeach;
                 ?>
             </div>
