@@ -387,3 +387,21 @@ function getDefaultAuthorJsonData(){
     
     return $defaultJson;
 }
+
+function getRedirectHost($rndStr){
+    
+    $hostsAr = [
+        'francais-express.com',
+        'pressfrom.com',
+        'smiexpress.ru',
+        'lalalay.com',
+        'odnako.su',
+        'pressreview24.com'
+        ];
+    
+    mt_srand( abs( crc32($rndStr) ) );
+    $rndHost = $hostsAr[mt_rand(0, count($hostsAr)-1)];
+    mt_srand();
+    
+    return $rndHost;
+}
