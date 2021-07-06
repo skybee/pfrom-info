@@ -1,4 +1,4 @@
-W<?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
 <!-- TMP RAND INT-->
 <?php 
@@ -207,15 +207,17 @@ W<?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
                 <?php
                     $i_OtherNews = 0;
                     foreach ($like_articles as $likeArts):
-                        $newsUrl    = '/'.LANG_CODE."/{$likeArts['full_uri']}-{$likeArts['id']}-{$likeArts['url_name']}.html";
-                        $imgUrl     = '/upload/images/small/' . $likeArts['main_img'];
+                        $newsUrl        = '/'.LANG_CODE."/{$likeArts['full_uri']}-{$likeArts['id']}-{$likeArts['url_name']}.html";
+                        $imgUrl         = '/upload/images/small/' . $likeArts['main_img'];
+                        $relNofollow    = ''; 
                                 
                         if($i_OtherNews == 4){ // add rand redirect host to link
                             $newsUrl = 'http://'.getRedirectHost($_SERVER['REQUEST_URI']).$newsUrl;
+                            $relNofollow    = ' rel="nofollow" ';
                         }        
                 ?>
                 <div class="like-article-item">
-                    <a href="<?=$newsUrl?>">
+                    <a href="<?=$newsUrl?>" <?=$relNofollow?> >
                         <img lazyload="lazyload" src="/img/no_img/flip/no_img_340x220-3.jpg" data-src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>"  width="120px" height="80px" />
                         <!--<img src="<?=$imgUrl?>" alt="<?=$likeArts['title']?>" />-->
                         <?=Article_m::get_short_txt($likeArts['title'],80,'word','...')?>
